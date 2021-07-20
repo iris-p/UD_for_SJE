@@ -1,0 +1,1492 @@
+# Distributed under the terms of the GNU General Public License version 2
+# or any later version.
+
+# =========================================================================== #
+#!!    S Y N T A C T I C   F U N C T I O N S   F O R   P I T E   S Á M I
+# =========================================================================== #
+# =========================================================================== #
+
+### Delimiters #
+
+DELIMITERS = "<.>" "<!>" "<?>" "<...>" "<¶>" "<…>" sent ;
+PARENTHESES = ("<(>" "<)>") ("<[>" "<]>") ("<{>" "<}>") ; # matched pairs of parentheses are left out on a first run. Then they are re-introduced and another complete run executed. works for mapping only because deps would be completely overridden in the second run. I still have to test this
+
+
+SECTION SETS;
+
+# We define end of clause and beginning of clause in a way so that the file
+# may be read both by the CG-2 and the vislcg formalisms.
+# CG3 doesn´t function without >>> and <<< !
+
+LIST BOS = (>>>) (<s>);
+LIST EOS = (<<<) (</s>);
+# utterances in a spoken corpus are often not marked with a separate delimiter = EOS
+# in that case the last word gets the magic tag <<<
+# therefore, instead of (1 EOS), use ((0 EOS) OR (1 EOS))
+
+
+#!! Tags declared as single-membered LISTs
+
+#!! Parts of speech
+
+LIST N = N ;			# Noun
+LIST A = A ;			# Adjective
+LIST Adv = Adv ;		# Adverb
+LIST V = V ;			# Verb
+LIST Pron = Pron ;		# Pronoun
+LIST Det = Det ;		# Determiner
+
+LIST CS = CS ;			# Subordinating conjunction
+LIST CC = CC ;			# Coordinating conjunction
+LIST Po = Po ;			# Postposition
+LIST Pr = Pr ;			# Preposition
+LIST Pcle = Pcle ;		# Particle
+LIST Num = Num ;		# Numeral
+LIST Interj = Interj ;	# Interjection
+LIST ABBR = ABBR ;		# Abbreviation
+LIST ACR = ACR ;		# Acronym
+
+LIST CLB = CLB ;		# Clause boundary
+LIST QMARK = """ ; 		# ADD " FOR SYNTAX COLOURING.
+LIST Arab = Arab ;		# Arabic Numerals
+
+LIST COMMA = "," ;		# Comma
+LIST ¶ = ¶;				# Pilcrow
+
+LIST PUNCTUATION = "," "." "?" "!" "'" ";" ":" "¶" "..." "…" "-" """ ; #"
+
+
+
+#!! Sets for POS sub-categories
+
+# Pronouns
+LIST Pers = Pers ;				# Personal
+LIST Dem = Dem ;				# Demonstrative
+LIST Interr = Interr ;			# Interrogative
+LIST Indef = Indef ;			# Indefinite
+LIST Recipr = Recipr ;			# Reciprocal
+LIST Refl = Refl ;				# Reflexive
+LIST Rel = Rel ;				# Relative
+
+# Nouns
+LIST Coll = Coll ;				# Collocation - not used in FST?
+LIST Prop = Prop ;				# Proper - not used in standard FST! only in my version
+
+
+
+#!! Sets for Morphosyntactic properties
+
+LIST Nom = Nom ;	# Nominative
+LIST Acc = Acc ;	# Accusative
+LIST Gen = Gen ;	# Genitive
+LIST Ill = Ill ;	# Illative
+LIST Com = Com ;	# Comitative
+LIST Ess = Ess ;	# Essive
+LIST Ine = Ine ;	# Inessive
+LIST Ela = Ela ;	# Elative
+LIST Abe = Abe ;	# Abessive
+
+LIST Sg = Sg ;		# Singular
+LIST Du = Du ;		# Dual
+LIST Pl = Pl ;		# Plural
+
+LIST Comp = Comp ;		# Comparative
+LIST Superl = Superl ;	# Superlative
+
+LIST Attr = Attr ;		# Attributive
+LIST Ord = Ord ;		# Ordinal
+
+# Verbs
+LIST Prt = Prt;			# Preterite
+LIST Prs = Prs ;		# Present
+
+LIST Ind = Ind ;		# Indicative
+LIST Pot = Pot ;		# Potential
+
+LIST Imprt = Imprt ;	# Imperative
+
+LIST Sg1 = Sg1 ;		# Giellatekno number+person tags
+LIST Sg2 = Sg2 ;
+LIST Sg3 = Sg3 ;
+
+LIST Du1 = Du1 ;
+LIST Du2 = Du2 ;
+LIST Du3 = Du3 ;
+
+LIST Pl1 = Pl1 ;
+LIST Pl2 = Pl2 ;
+LIST Pl3 = Pl3 ;
+
+LIST Inf = Inf ;		# Infinitive
+LIST ConNeg = ConNeg ;	# Connegative
+LIST Neg = Neg ;		# Negation verb
+LIST PrfPrc = PrfPrc ;	# Perfect Participle
+LIST PrsPrc = PrsPrc ;	# Present Participle
+LIST VGen = VGen ;		# Verb Genitive
+LIST VAbess = VAbess ;	# Verb Abessive
+LIST Vsubst = Vsubst ;	# nominalised verb?
+
+LIST GerI = GerI ;		# Gerund
+LIST GerII = GerII ;	# Gerund II = (Actio Ess) in sme?
+LIST Sup = Sup ;		# Supine
+
+
+#!! Derivation
+
+LIST Der/NomAg = Der/NomAg ;	# Derived agent noun
+LIST Der/State = Der/State ;	# Derived state noun
+LIST Der/Dimin = Der/Dimin ;	# Derived diminutive, exists in numerals.lexc, but commented(?)
+
+
+
+#!! Syntactic tags
+
+LIST @FAUX = @FAUX ;  	#!! * @FAUX : finite auxiliary verb 
+		 					#!! ** ferte: Son ferte oaidnit ollislaš gova. - She must see the whole picture.
+LIST @FMV = @FMV ;	#!! * @FMV : finite main verb
+							#!! ** oaidná: Son oaidná ollislaš gova. - She sees the whole picture	
+LIST @IAUX = @IAUX ;	#!! * @IAUX : infinite auxiliary verb
+							#!! ** sáhte: In sáhte gáhku borrat. - (negation.finite-modal.infinite-main.infinite) I cannot eat cake.	
+LIST @IMV = @IMV ;	#!! * @IMV : infinite main verb
+							#!! ** oaidnit: Son ferte oaidnit ollislaš gova. - She must see the whole picture.
+LIST @-FSUBJ> = @-FSUBJ> ;	#!! * @-FSUBJ> : Subject of infinite verb outside the verbal.
+							#!! ** mu: Diet dáhpáhuvai mu dieđikeahttá. - It happened without me knowing about it.
+LIST @-F<OBJ = @-F<OBJ ;	#!! * @-F<OBJ : Object of infinite verb outside the verbal. Right of verb
+							#!! ** nuppi: Ulbmil lea oažžut nuppi boagustit. - The goal is to get the other one to laugh.
+LIST @-FOBJ> = @-FOBJ> ;	#!! * @-FOBJ> : Object of infinite verb outside the verbal. Left of verb
+							#!! ** váldovuoittuid: Sii vurde váldovuoittuid fasket. - They waited to grab the main prizes.
+LIST @SPRED<OBJ = @SPRED<OBJ ;	#!! * @SPRED<OBJ : Object of a subject predicative. (some adjectives are transitive)
+							  	#!! ** guliid: Mánát leat oažžulat guliid. - The children are (adjective?having received@<SPRED) fish
+LIST @-FADVL> = @-FADVL> ; 	#!! * @-FADVL> : Adverbial complement of infinite verb outside the verbal. Left of verb
+							#!! ** várrogasat: Dihkkadeaddji rávve skohtervuddjiid várrogasat mátkkoštit. - The roadman warns snowscooter drivers to drive carefully.
+LIST @-F<ADVL = @-F<ADVL ; #!! * @-FADVL> : Adverbial complement of infinite verb outside the verbal. Right of verb
+
+LIST @-F<SPRED = @-F<SPRED ; 	#!! * @-F<PRED : Predicative complement of infinite verb outside the verbal.
+							#!! ** ággan: Jáhkken kulturmáhtu leat oktan ággan. - I believed cultural knowledge to be one argument (?)
+LIST @>ADVL = @>ADVL ; 	#!! * @>ADVL : Modifier of an adverbial to the right.
+						#!! ** vaikko: doppe leat vaikko man ollu studeanttat. - Der er [om så] hvor mye studenter.
+LIST @ADVL< = @ADVL< ; 	#!! * @ADVL< : Komplement for adverbial.
+						#!! ** vahkus: Son málesta guktii vahkus. - He cooks dinner twice [in a week].
+LIST @<ADVL = @<ADVL ;	#!! * @<ADVL : Adverbial after the main verb.
+						#!! ** dás: Eanet dieđuid gávnnat dás.
+LIST @ADVL> = @ADVL> ;	#!! * @ADVL> : Adverbial to the left of the main verb
+						#!! ** viimmat: Dál de viimmat asttan lohkat reivve.
+LIST @ADVL = @ADVL ;	#!! Adverbial with elliptical verb
+	# is that correct?? cf. https://giellalt.uit.no/lang/common/docu-deptags.html:
+	# @ADVL: Sentence adverbial.
+    # Dál lea Bireha vuorru. - 'It is Biret's turn now.'
+	# ... but not included in the list in smi?
+LIST @ADVL>CS = @ADVL>CS ;	#!! * @ADVL>CS : Adverbial modifying subjunction.
+							#!! ** 'beare' pointing at 'danin go': Muhto dus ii leat riekti dearpat su beare danin go sáhtát.
+LIST @>N = @>N ;      	#!! * @>N : Modifier of a noun to the right.
+						#!! ** geavatlaš: Ráđđehussii lea geavatlaš politihkka deaŧalaš. - For the government, practical politics is important.
+LIST @N< = @N< ;		#!! * @N< : Complement of noun to the left.
+						#!! ** vihtta: Mun boađán diibmu vihtta.
+LIST @>A = @>A ;		#!! * @>A : Modifier of an adjective to the right.
+						#!! ** juohke: Seminára lágiduvvo juohke nuppi jagi.
+LIST @P< = @P< ;		#!! * @P< : Complement of preposition.
+						#!! ** soađi: Dat dáhpáhuvai maŋŋel soađi.
+LIST @>P = @>P ;		#!! * @>P : Complement of postposition.
+						#!! ** riegádeami: Seta riegádeami maŋŋel Áttán elii vel 800 jagi.
+LIST @HNOUN = @HNOUN ;	#!! * @HNOUN : Stray noun in sentence fragment.
+						#!! ** muittut: Fidnokurssa muittut.
+LIST @INTERJ = @INTERJ ;	#!! * @INTERJ : Interjection.
+							#!! ** Hei: Hei, boađe!
+LIST @>Num = @>Num ;		#!! * @>Num : Attribute of numeral to the right.
+						#!! ** dušše: Mun ledjen dušše guokte mánu doppe.
+LIST @Pron< = @Pron< ;	#!! * @Pron< : Complement of pronoun to the left.
+						#!! ** Birehiin: Moai Birehiin leimme doppe.
+LIST @>Pron = @>Pron ;	#!! * @>Pron : Modifyer of pronoun to the right.
+						#!! ** vaikko: Olmmoš sáhttá bargat vaikko maid.
+LIST @Num< = @Num< ;	#!! * @Num< : Complement of numeral to the left.
+						#!! ** girjjiin: Dat lea okta min buoremus girjjiin.
+LIST @OBJ = @OBJ ;		#!! * @OBJ : Object, the verb is not in the sentence (ellipse)
+LIST @<OBJ = @<OBJ ;	#!! * @<OBJ : Object, the verb is to the left.
+						#!! ** gávtti: Son goarru gávtti.
+LIST @OBJ> = @OBJ> ;	#!! * @OBJ> : Object, the verb is to the right.
+						#!! ** filmma: Dán filmma leat Kárášjoga nuorat oaidnán.
+LIST @OPRED = @OPRED ;	#!! * @OPRED : Object predicative, the verb is not in the sentence (ellipse).
+LIST @<OPRED = @<OPRED ;	#!! * @<OPRED : Object predicative, the verb is to the left.
+							#!! ** buriid: Son ráhkada gáhkuid hui buriid.
+LIST @OPRED> = @OPRED> ;	#!! * @OPRED> : Object predicative, the verb is to the right.
+							#!! ** dohkkemeahttumin: Son oinnii dohkkemeahttumin bargat ášši nu.
+LIST @PCLE = @PCLE ;		#!! * @PCLE : Particle.
+							#!! ** Amma: Amma mii eat leat máksán? - We have not paid, have we?
+LIST @COMP-CS< = @COMP-CS< ;	#!! * @COMP-CS< : Complement of subjunction.
+								#!! ** vejolaš: Dat šaddá nu buorre go vejolaš.
+LIST @SPRED = @SPRED ;		#!! * @SPRED : Subject predicative, the verb is not in the sentence (ellipse).
+LIST @<SPRED = @<SPRED ;		#!! * @<SPRED : Subject predicative, the verb is to the left.
+							#!! ** árgabivttas: Ovdal lei gákti árgabivttas.
+LIST @SPRED> = @SPRED> ;		#!! * @SPRED> : Subject predicative, the verb is to the left.
+							#!! ** álbmogin: Sápmelaččaid historjá álbmogin lea duháhiid jagiid boaris.
+LIST @SUBJ = @SUBJ ;		#!! * @SUBJ : Subject, the finite verb is not in the sentence (ellipse).
+LIST @<SUBJ = @<SUBJ ;		#!! * @<SUBJ : Subject, the finite verb is to the left.
+							#!! ** gákti: Ovdal lei gákti árgabivttas.
+LIST @SUBJ> = @SUBJ> ;		#!! * @SUBJ> : Subject, the finite verb is to the right.
+							#!! ** Son: Son lea mu oabbá. - Sheis my sister.
+LIST @PPRED = @PPRED ;		#!! * @PPRED : Predicative for predicative.
+LIST @APP = @APP ;			#!! * @APP : Apposition
+LIST @APP-N< = @APP-N< ;	#!! * @APP-N< : Apposition to noun to the left.
+							#!! ** oahpaheaddji: Oidnen Ánne, min oahpaheaddji.
+LIST @APP-Pron< = @APP-Pron< ;	#!! * @APP-Pron< : Apposition to pronoun to the left.
+								#!! ** boazodoalloáirasat: Ja moai boazodoalloáirasat áigguime vaikko guovttá joatkit barggu.
+LIST @APP>Pron = @APP>Pron ;	#!! * @APP>Pron : Apposition to noun to the right.
+LIST @APP-Num< = @APP-Num< ;	#!! * @APP-Num< : Apposition to numeral to the left.
+LIST @APP-ADVL< = @APP-ADVL< ;	#!! * @APP-ADVL< : Apposition to adverbial to the left.
+								#!! ** bearjadaga: Mun vuolggán ihttin, bearjadaga.
+LIST @APP>ADVL = @APP>ADVL ;	#!! * @APP>ADVL : Apposition to adverbial to the right.
+								#!! ** [Bárrka], danne sáme idni buhtsujt giesen.	Bárrka, there the sámi keep reindeer in the summer
+LIST @VOC = @VOC ;	#!! * @VOC : Vocative
+					#!! ** Miss Turner : Bures boahtin deike, Miss Turner! - Welcome her, Miss Turner!
+LIST @CVP = @CVP ;	#!! * @CVP : Conjunction or subjunction that conjoins finite verb phrases.
+					#!! ** go : Leago guhkes áigi dassá go Máreha oidnet? - Is it a long time since you saw Máret?
+LIST @CNP = @CNP ;	#!! * @CNP : Local conjunction or subjunction.
+					#!! ** vai : Leago nieida vai bárdni? - Is it a girl or a boy?
+LIST @CMPND = @CMPND ;	#!! * @CMPND
+LIST @PUNCT = @PUNCT ;	#!! IP: added punctuation as function!
+LIST @X = @X ;		#!! * @X : The function is unknown, e.g. because the word is unknown
+
+LIST @ADVLs = @ADVL @ADVL> @ADVL< @<ADVL @>ADVL @-F<ADVL ; # all adverbial function tags
+LIST ADVL = Adv Ill Com Loc Po Pr Ine Ela ; # features that indicate adverbial functions
+SET SUBJ = @<SUBJ OR @SUBJ> OR @SUBJ ;
+SET SPRED = @<SPRED OR @SPRED> OR @SPRED ;
+SET OPRED = @<OPRED OR @OPRED> OR @OPRED ;
+SET FOBJ = @-F<OBJ OR @-FOBJ> ;
+SET MV = @IMV OR @FMV OR (V @<OBJ) OR (V @N<) OR (V @A<) OR (V @<SUBJ) OR (V @<ADVL) ;
+SET AUX = @IAUX OR @FAUX ;
+LIST HAB-V-TAGS = Pl3 Sg3 ConNeg PrfPrc Inf ;
+
+SET OBJ = (@<OBJ) OR (@OBJ>) OR (@OBJ) OR (@-F<OBJ) OR (@-FOBJ>) ;
+LIST <OBJ = @-F<OBJ @<OBJ ;
+LIST OBJ> = @OBJ> @-FOBJ> ;
+
+
+#!! temporary tags
+LIST <mv> = <mv> ; #!! unambiguous main verb
+LIST <aux> = <aux> ; #!! auxiliary
+LIST <hab> = <hab> ;	#!! * <hab> : Habitive, specifying an adverbial, e.g. @ADVL> <hab> # rare in SJE, not used yet
+						#!! ** Máhtes: Máhtes lea beana.
+LIST <ext> = <ext> ;	#!! * <ext> : Extencial, specifying a subject, e.g. @<SUBJ <ext>
+						#!! ** beana: Máhtes lea beana.
+LIST <cs> = <cs> ;	#!! * <cs> : # for e.g. ADVL that resemble s-boundaries, not used yet
+LIST <cnp> = <cnp> ; #!! "local" comma
+LIST <cvp> = <cvp> ; #!! comma between clauses
+
+
+#!! Other Lists
+# Initials
+
+LIST INITIAL = "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q" "r" "s" "t" "u" "v" "w" "x" "y" "z" "á" "æ" "ø" "å" "ö" "ä" ;
+
+LIST CAP-INITIAL = "A" "B" "C" "D" "E" "F" "G" "H" "I" "J" "K" "L" "M" "N" "O" "P" "Q" "R" "S" "T" "U" "V" "W" "X" "Y" "Z" "Á" "Æ" "Ø" "Å" "Ö" "Ä" ;
+
+
+
+### Tag sets ###
+
+#!! Word or not
+LIST WORD = N A Adv V Pron Det CS CC Po Pr Interj Pcle Num ABBR ACR  \? ;
+
+
+#!! Verb sets
+
+# Finiteness and mood
+
+SET VFIN = Ind OR Pot OR Imprt OR Neg ;	# = V-MOOD, verbs are finite if in moods
+SET VFIN-NOT-IMP = VFIN - Imprt ;		# finite verbs but not in imperative mood
+
+# Verb sub-categories
+
+LIST COPULAS = "sjaddat" "lä" ;
+# sjaddat is never aux (?)
+SET NOT-COP-V = V - COPULAS ;
+
+# sme LIST MOD-ASP = áigut (skulle/ville) bállet (ha fred til) berret (burde) dáidit (maybe) fertet (måtte) galgat (shall) gillet (orke) lávet (pleie/bruke) sáhttit (kunne) seahtit (=sáhttit?) soaitit (kanskje) viggat (prøve/streve) ;
+# Verbs that never have arguments of their own
+LIST MOD-ASP = "bällit" "berrut" "gallgat" "nahkat" "vassjat" "viggat" "verrtit" "pruvvut" "dárbahit" "duasstat"; #"sihtat"
+# SJE MODs:
+# vassjat = feel like, have energy to - checked
+# nahkat = manage, orke - checked
+# verrtit = must - checked
+# pruvvkut = use/usually do - checked
+# duasstat = dare - in corpus, checked
+# dárbahit = need - checked
+
+# gallgat = always aux, can be promoted: mån galgav iednoj - jag ska till älven
+# bällit = get the opportunity to - not in corpus(?)
+# berrut = burde - not in corpus(?)
+# ájjgot = intend, mean to - not in corpus(?)
+# såjjtet = could happen - not in corpus(?)
+# nagadit = can - not in corpus(?)
+# viedjet = may, shall, orka - not in corpus(?)
+# gähttjalit = try, attempt - not in corpus(?)
+# sáhttet = can - not in corpus(?)
+
+
+# verbs that take open clausal complements (subject determined by xcomp-verb)(concept from UD, but useful here)
+LIST XCOMP_VERBS = "pruvvut" "vassjat" "nahkat" "állget" "usjudit" "åjáldit" "åjáldahttet" "sihtat" "lijjsit" "bádjat" "häjjtet"; # try, feel like, orke, start, think/mean to, forget, forget, go, want, be worth doing/succeed, let/cause, stop
+
+LIST AUX-OR-MAIN = "máhttet" "årrot" "pruvvkut" "ådtjot"; #"sihtat" 
+# sihtat = ville - checked - don't want to use this as mod, behaves just like a TV
+# ådtjot = may, receive, be allowed to - checked
+
+
+LIST ESS-Vs = "gåhttjot" "sjaddat" ; # "gåhtjoduvvut"
+
+SET VAUX = ("lä") OR Neg OR MOD-ASP OR AUX-OR-MAIN ;
+SET MAIN = V - VAUX ;
+
+SET VFIN-NOT-AUX = VFIN - VAUX ;
+
+# some verbs that exclude OBJ reading
+LIST IV = ("lä" @FMV) "årrot" IV ;
+# transitive verb tag (only partly implemented!!)
+LIST TV = TV;
+
+# LÄ (copula)
+LIST LÄ = "lä" ;
+
+
+#!! Person sets
+LIST FIRST = Sg1 Du1 Pl1;
+LIST SECOND = Sg2 Du2 Pl2;
+LIST THIRD = Sg3 Du3 Pl3;
+
+LIST SG = Sg1 Sg2 Sg3 ;
+LIST PL = Pl1 Pl2 Pl3 ;
+LIST DU = Du1 Du2 Du3 ; 
+
+LIST PERS-TAGS = Sg1 Sg2 Sg3 Du1 Du2 Du3 Pl1 Pl2 Pl3 ;
+
+#!! Pronoun sets
+
+# IP these are used in rules via: SGPRON -> NP-HEAD-SG -> NP-HEAD-NOM
+LIST SGPRON = (Pron Sg1) (Pron Sg2) (Pron Sg3) (Pron Sg);
+LIST DUPRON = (Pron Du1) (Pron Du2) (Pron Du3);
+LIST PLPRON = (Pron Pl1) (Pron Pl2) (Pron Pl3) (Pron Pl);
+
+#!! Adjectival sets and their complements
+
+SET NOT-A = WORD - A ;							# used, e.g. MAP:pron<
+SET NOT-A-ADV = WORD - A - Adv ;				# used in MAP:pron<
+
+
+#!! Adverbial sets and their complements
+
+SET NOT-ADV            = WORD - Adv OR CLB ;	# used, e.g. MAP:AdjSpredSg>
+SET NOT-ADV-PCLE       = NOT-ADV - Pcle ;		# used, e.g. MAP:n<:Refl
+
+
+#!! Coordinators
+
+SET CRD = @CNP OR COMMA OR ("/") OR ("-") ;		# used, e.g. MAP:p<coor
+    # AFTER LCRD vs. GCRD disambiguation
+
+
+#!! Adverbs
+# IP lexical adverbs - degree
+LIST GRADE-ADV = "åbbå" "ilá" "ber" "bar" "bär" "vanj" "nåv" "nav" "viehka" "ullu" "ájbmadis" "gájk" "hállva" "ienabut" "man" "tjärrgedis" "ållå" "gujt" "huj";
+# quite, too (excessive), just, just, really, so, so, quite, very, very, absolutely, almost, more, hvor, extremely, completely, quite (huj not in FST!)
+
+# sme LIST GRADE-ADV =  "áibbas" (ganske) "badjelmeare" (?overdrevet.Adv) "beare" (bare) ("eanet" Adv)(flere/mer) "erenoamán" (særlig) "erenoamáš" (særlig) "hirbmat" (svært/veldig) "hui" (veldig) "ila" (altfor) "issoras" (forferdelig) ("man" Adv)(hvor) ("mealgat" Adv)(nokså mye) "measta" (nesten) "menddo" (altfor) "muđui" (ellers, ansonsten) "muhtun_muddui" (til en viss grad) "nu" (slik) "oalle" (ganske) "oba" (temmelig) ("oppa" Adv)(hele) "sakka" (meget) "seammá" (samme, ebenfalls) ("veaháš" Adv)(litt) ("uhccán" Adv)(lite) ("unnán" Adv)(lite) "vehá" (litt) "veháš" (litt) "veahá" (litt) "veaháš" (litt) "viehka" (ganske) "dan" (?);
+
+#!! adverbs that can modify a noun (phrase)
+LIST NMOD-ADV = "åvdep" "njuallga"; # add more ...
+	#$ åvdep bále (pit080924.045)
+	#$ njuallga bálges (pit090930a.279)
+
+# IP lexical adverbs - nettopp/just
+# IP not sure if these are correct
+# wordlist jiese = jisse/jis in corpus
+#$ ja dát lä jisse norrda samej tjuohppa - and just this here is a North-Saami cap (pit080708h.009)
+LIST EASKKA = "jiese" "jisse" "jis" "jura" "jur" ;
+
+LIST Q_WORDS = "galle" "gallen" "galles" "gen" "gev" "gie" "giejna" "giesa" "guggu" "gukkte" "gunne" "gusa" "guse" "gusne" "gusne" "gusste" "gåbbá" "gåbbelij" "gåbbelin" "gåbbelist" "gåk" "gåk" "gåkkte" "gånne" "gåsse" "gåsste" "gässte" "maggár" "maggárijda" "majna" "majt" "maktes" "manen" "masa" "masste" "mav" "mava" "mejt" "miggir" "mij" Interr; # question words. important because they can introduce dependent clauses -> then link to the next MV
+
+
+# markers for adverbials: cases (ill, com, iness, ela), adverbs, adpositions
+LIST ADVLCASEAdv = Adv Ill Com Po Pr Ine Ela ;
+
+# without illative and comitative
+SET ADVL-INE-ELA = Ela OR Po OR Pr OR Ine OR Adv;
+
+# IP: add more when noticing, what about  or "gidda"/"git"?
+SET MOD-ADV = GRADE-ADV OR EASKKA OR NMOD-ADV ;
+
+
+### Sets of elements with common syntactic behaviour ###
+
+#!! Sets for verbs
+
+# verbs as modifiers of N e.g. PrsPrc
+LIST NOT-REAL-V = PrsPrc (V @>N) Vsubst;
+
+SET REAL-V = V - NOT-REAL-V  ;
+	# ** V is all readings with a V tag in them, REAL-V should
+	# be the ones without an N tag following the V.
+	# The REAL-V set thus awaits a fix to the preprocess V ... N bug.
+
+
+#!! NP sets defined according to their morphosyntactic features
+# not all of these are used
+SET NP-HEAD        = Pron OR N ;
+SET NP-HEAD-SG     = SGPRON OR (N Sg) OR (A Sg) - Dem ;
+SET NP-HEAD-PL     = PLPRON OR (N Pl) OR (A Pl) - Dem ;
+SET NP-HEAD-SG-NOM = SGPRON + Nom OR (N Sg Nom) OR (A Sg Nom)  ;
+SET NP-HEAD-PL-NOM = PLPRON + Nom OR (N Pl Nom) OR (A Pl Nom)  ;
+SET NP-HEAD-NOM    = NP-HEAD-SG-NOM OR NP-HEAD-PL-NOM ;
+SET NP-HEAD-ACC    = (Pron Acc) OR (N Acc) OR (Num Acc) OR (A Acc) - (Dem Attr) ;
+SET NP-HEAD-GEN    = (Pron Gen) OR (N Gen) OR (A Gen) - (Dem Attr) ;
+
+
+#!! The PRE-NP-HEAD family of sets
+# modifiers left of NP head
+
+SET PRE-AP-HEAD = GRADE-ADV OR CC ; # modifiers of adjectives
+
+SET AttrAPpossible = (A Attr) OR PRE-AP-HEAD ; # words that can get an @>A tag
+SET PRE-NP-HEAD = (Prop @>N) OR AttrAPpossible OR (ABBR Attr) OR (Pron Pers Gen) OR (N Gen) OR (A Gen) OR
+         Num OR (Pron Dem) OR (Pron Refl Gen) OR (Pron Indef) OR (Indef Attr) OR
+         (PrfPrc @>N) OR PrsPrc OR (A Ord) OR (A Sg) OR (A Pl) OR Det OR
+		 (A @>N) OR @>N OR @>A OR @>Pron OR @Num< OR (CC @CNP) OR (@>CC) OR (@Pron<) OR (\?);
+         # The strict version of items that can only be premodifiers, not parts of the predicate
+		 
+		 # attributive marked proper noun/abbreviation/adjective/proper noun modifying noun to right
+		 # personal pronoun/noun/adjective in genitive
+		 # numeral, demonstrative, reflexive pronoun in genitive, attributive indefinite pronoun
+		 # perfect participle modifying >N, present participle, ordinal number, adjective, determiner
+		 
+# verb-forms that can occur in NPs left of head? why some finite verbs - subclauses?
+SET PRE-NP-V = PrfPrc OR PrsPrc OR (V A) OR (Prs Sg3) + Ind OR (Prs Sg1) + Ind OR (Imprt Du2) ;
+    # to be used together with PRE-NP-HEAD before @>N is disambiguated
+
+
+# all apposition tags
+SET @APPOSITION = @APP OR @APP-N< OR @APP-Pron< OR @APP>Pron OR @APP-Num< OR @APP-ADVL< OR @APP>ADVL ;
+
+
+	# The set __NOT-NPMOD__ is used to find barriers between NPs.
+	# Typical usage: ... (*1 N BARRIER NOT-NPMOD) ...
+	# meaning: Scan to the first noun, ignoring anything that can be
+	# part of the noun phrase of that noun (i.e., "scan to the next NP head")
+
+SET NOT-NPMOD     = WORD - PRE-NP-HEAD OR ABBR ;
+
+SET NOT-NPMODADV    = WORD - PRE-NP-HEAD - Adv - Pcle ;
+
+
+#!! Miscellaneous sets
+
+SET REAL-CLB = CLB - <cnp> ;
+
+SET NoAP = WORD - A - PRE-AP-HEAD ; #NoAP = not possibly anywhere in AP, plus CC
+
+
+#!! Border sets and their complements
+
+# from phrase structure grammar, complementiser phrase marker?
+SET CP = (Pron Interr) OR (Pron Rel) ;
+
+LIST BOUNDARYSYMBOLS =  "\;" ":" "-" "–" ;
+
+#tried @CVP - CC but there are too many rules depending on CVP as S-BOUNDARY
+SET S-BOUNDARY = CP OR BOUNDARYSYMBOLS OR (Neg Sup) OR @CVP OR Rel OR CS OR <cvp> ; # OR (",") ; # OR ("val" "vala" "men")
+	# includes CP
+	# this one includes @CVP, the conjunction which actually connects two sentences (each with a finite verb) to each other,
+	# and not @CNP, which coordinates internal NP-/AdvP-/AP ... coordination
+	# To be used only AFTER the disambiguation of @CVP and @CNP taking place in the chapter right before "Disambiguating pronouns"
+
+# clause boundaries = sentence boundary or start/end of sentence
+SET BOC = S-BOUNDARY OR BOS ;
+SET EOC = S-BOUNDARY OR EOS ;
+
+SET NP-BOUNDARY = BOS OR EOS OR REAL-CLB OR VFIN OR Inf OR ConNeg OR VGen OR Sup OR Recipr OR Po OR Pr OR Pcle OR Interj OR CS OR CP OR @CVP ;
+
+SET APP-BOUNDARY = REAL-CLB OR VFIN OR Inf OR ConNeg OR VGen OR Sup OR Recipr OR Po OR Pr OR Pcle OR Interj OR CS OR CP OR PrfPrc - @>N ;
+# A special barrier used with mapping of appositions.
+
+# This set contains MV with @, which means that it functions for all kinds of mainverbs after the verb-mapping rules
+SET SV-BOUNDARY = S-BOUNDARY OR Inf - AUX OR Sup OR MV ;
+	# VFIN-NOT-AUX ;
+	# should be MAIN-V linked to VFIN-aux to the left. (cg-3)
+	# This set is meant for use in rules for disambiguating due to verbs or verbsets. It contains @.
+
+# possible cases for NP adverbials
+SET ADVLCASE = Ill OR Com OR Ess OR Ine OR Ela OR Abe ;
+LIST CASE = Nom Acc Gen Ill Com Ess Ine Ela Abe;
+
+
+#!! Syntactic sets
+
+LIST ALLSYNTAG = @FAUX @FMV @IAUX @IMV @-FSUBJ> @-FOBJ @-F<ADVL @-FADVL> @-F<SPRED @>A @>ADVL @ADVL< @<ADVL @ADVL> @ADVL @>N @APP @APP-N< @APP-Pron< @APP>Pron @APP-Num< @APP-ADVL< @VOC @CNP @CVP @P< @>P @HNOUN @INTERJ @Pron< @OBJ @OBJ> @<OBJ @OPRED @<OPRED @OPRED> @SPRED<OBJ @PCLE @COMP-CS< @N< @SPRED @<SPRED @SPRED> @PPRED @Num< @SUBJ @<SUBJ @SUBJ> @X ;
+
+# tags that link directly to the finite verb, not modifiers
+LIST HEAD = @SUBJ> @<SUBJ @SUBJ @OBJ @OBJ> @<OBJ @ADVL @ADVL> @<ADVL @SPRED> @<SPRED @SPRED @OPRED> @<OPRED @OPRED @-FSUBJ> @-FOBJ> @-FADVL> @-FSPRED> @-F<SUBJ @-F<OBJ @-F<ADVL @-F<SPRED ;
+
+LIST AHTE = "ahte" "att" "at" "jut" "juhte" ;
+
+# all syntactic tags that point to a head to the left
+LIST POINT-LEFT = @<-F<OBJ @SPRED<OBJ @-F<ADVL @-F<SPRED @<ADVL @<OBJ @<OPRED @<SPRED @<SUBJ ;
+
+# all syntactic tags that point to a head to the right
+LIST POINT-RIGHT = @-FSUBJ> @-FOBJ> @-FADVL> @ADVL> @ADVL>CS @OBJ> @OPRED> @SPRED> @SUBJ> ;
+
+#!! Semantic sets
+
+# TIME
+# to remove subject reading
+LIST WEEKDAYS = "ájlek" "mánnodak" "dijstak" "gasskavahkko" "duorastak" "bärrjedak" "lávvodak" ;
+LIST TIME_COMPOUNDS = ("[A-záåäŋ]+árrat"r N) ("[A-záåäŋ]+iehket"r N) ("[A-záåäŋ]+bäjjve"r N) ; # ájlekárrat bärrjetiehket skåvvlåbäjjve
+
+# nouns that function as ADVLs in Nom
+LIST ARRAT = "árrat" "iehket" "bálle" "jahke" "bäjjve" "dállve" "giesse" "tjaktjagiesse";
+	# morning, evening, time, year, day, winter
+# nouns that function as ADVLs in Acc
+LIST TEMPAcc = "tijbma" "vahkko";
+	# hour, week
+	#$ ja muhtin del sjaddaj vahkov tjuajjgat daj urudasaj maŋŋen inan fáhtádij - och ibland då blev det så, han åkte skidor efter de rovdjuren i en vecka innan han fick tag i dem (pit090609a.094) -> to-do
+
+
+# WEATHER
+LIST WEATHER = ("[A-záåäŋ]*dállke"r N) ;
+
+
+
+### END_SECTION
+
+
+BEFORE-SECTIONS corrections ;
+#!! section that is run once at the beginning
+
+# these are particles in FST, but function as adverbs. should be changed in the FST at some point
+SUBSTITUTE:dä_pcle Pcle Adv TARGET ("dä") OR ("jis") OR ("gujt"); # $SJE
+
+#!! tag unambiguous main verbs with <mv> (if not done)
+ADD:<mv> <mv> TARGET MAIN - <mv> (0 REAL-V); # $SJE
+
+# Swedish "or", not in FST but frequently used
+ADD:ccEller CC TARGET ("eller") - CC ; # $SJE
+
+#!! "'l" should be one token!
+# instead of changing preprocessing & FST, merge cohorts:
+# "'" + "l" -> "'l", keeping PoS/morph tags from "l"
+MERGECOHORTS ("<$2$1>"v "lä" *) ("<(l)>"r) WITH (-1 ("<(')>"r)); # $SJE
+
+
+SECTION TO-DO ;
+#!! sentences to check in the future:
+# [mav ienabuv] dihki Áhkábákten? - what.acc more.acc did you do in Á? (pit080924.021) (currently OBJ> PRON<)
+# [iednagav mav] gillgin del dä ságastit? much.acc what.acc shall we talk about? (pit080924.293) (currently double OBJ>)
+# mav modifier of ienabuv?
+
+#!! some types of predicatives that are used in SMI
+# IP I'm not sure if they exist / what they look like in sje
+	# OPRED
+		#$ Gáhkkuid son ráhkada hui [buriid]. - 'Cakes, s/he makes really [good ones].'
+	# PPRED
+		#$ Máhtes lea Jovnna reaŋgan. - 'Máhtte has Jovnna as a searvant.'
+
+#!! -FSUBJ + ICL-OBJ vs. OBJ + open clausal complement
+# bája [mijav] ávon [årrot] - let [us.acc] [be] happy
+# GT: mijáv -> -FSUBJ, årrot -> ICL-OBJ
+# see SECTION Infinite_subjects ; (commented), IMV>bádjat
+# --> replace OBJ with -FSUBJ in dependency.cg3!
+
+#!! expand word lists
+# temp Acc that function as ADVLs
+# see MAP:temp<ADVL / árrat
+
+#!! better systematic approach to fronted elements (UD: dislocated) / appositions
+
+#!! SPRED problems
+#!! sjaddat now always has an SPRED - fix this
+# see MAP:<spredSjaddat
+#!! numeral SPREDs
+#$ gu lidjiv akkta låk gålbmå dä lidjiv uktuk. (pit080924.072/073)
+
+#!! <ehead> for elliptical constructions??
+# see SMI dependency.cg3:
+    # cases where ":" repleaces "leat", which should be the daughter of root
+
+#!! is degu/gu a preposition??
+	#$ Dä båråjmä degu krema melkijn. - then we ate it like a cream with milk (pit080924.161)
+# also, comparisons with "gu"/"gunnik"??
+# not mentioned in the 2014 grammar
+	#$ Årrå jage bäjjve lä bivvalup dä gu gasskagiese bäjjve. - New Years Day was warmer than Midsummer Day (sje20150329b.067/068RED)
+# cf. lagercrantz1926: tot̄no-l̥ s'nôlo ku tšài̯ɔ̄ni̬ė - dånnå'l ? gu tjájdne. ’du bist so geizig wie ein Specht’. (p. 31)
+
+### END_SECTION
+
+
+SECTION clear_cases ;
+MAP:pcle (@PCLE) TARGET Pcle ; # $SJE
+MAP:interj (@INTERJ) TARGET Interj ; # $SJE
+
+### END_SECTION
+
+
+SECTION CC&CS ; 
+#!! coordination of VPs vs. other types
+# smi maps both, then removes either, but that should be avoided in CG!
+
+# local conjunction if between adjectives or numerals
+SET AdjOrNum = A OR Num ;
+MAP:CNPAdjNum (@CNP) TARGET CC (*-1 $$AdjOrNum BARRIER (*) - COMMA)(1 $$AdjOrNum); # $SJE
+
+# local if coordinating infinite verbs
+MAP:CNPInf (@CNP) TARGET CC ((-1 Inf LINK 2 Inf LINK NEGATE *-1 VFIN BARRIER S-BOUNDARY) OR (-1 Inf LINK 2 Inf LINK NEGATE *1 VFIN BARRIER S-BOUNDARY)); # $SJE
+
+MAP:CVPInitial (@CVP) TARGET CC (-1 BOS); # select initial cvp (= discourse marker) # $SJE
+
+# CVP if not followed by an NP
+MAP:CVPnoNP (@CVP) TARGET CC (NEGATE *1 NP-HEAD BARRIER VFIN OR Inf OR S-BOUNDARY OR CC) ; # $SJE_DISAMB
+# CVP for men
+MAP:CVPmen (@CVP) TARGET CC (0 ("men")) ; # $SJE_DISAMB
+# CNP between APs
+MAP:CNPap (@CNP) TARGET CC (*-1 A BARRIER NoAP)(*1 A BARRIER NoAP) ; # $SJE_DISAMB
+# CNP between pronoun, proper noun or noun in same case
+MAP:CNPnps @CNP TARGET CC (-1 NP-HEAD + $$CASE)(*1 NP-HEAD + $$CASE BARRIER NOT-NPMOD); # $SJE
+# CNP if between appositions
+# possibly useless because @APP is not yet mapped!
+MAP:CNPappos (@CNP) TARGET CC (-1 $$@APPOSITION)(*1 $$@APPOSITION BARRIER APP-BOUNDARY); # $SJE
+# CVP after comma (nordsamisk tegnsetting!)
+MAP:CVPComma (@CVP) TARGET CC (-1 COMMA) ; # $SJE
+# CNP if followed by another CC before a verb
+MAP:CNPCC (@CNP) TARGET CC (*1 CC BARRIER VFIN); # $SJE
+# CVP if on one side there is a verb but not on the other side
+MAP:CVPoneVerb @CVP TARGET CC ((1 V LINK *-2 WORD - V BARRIER WORD) OR (*-1 V BARRIER WORD LINK 2 WORD - V)); # $SJE
+
+# cs always CVP
+MAP:CSasCVP (@CVP) TARGET CS ; # $SJE
+
+# worst case: map both
+MAP:CCasCNPCVP (@CNP @CVP) TARGET (CC) ; # $SJE
+
+
+### COMMA cnp/cvp
+#!! do the same for commas
+# function of comma is always @PUNCT, but add a temporary tag:
+# comma between VPs = <cvp>
+# comma between NPs = <cnp>
+
+SET Comma_unspec = COMMA - <cnp> - <cvp>; # only add tag if there is none
+ADD:CommaCNPAdj <cnp> TARGET Comma_unspec IF (-1 $$AdjOrNum)(*1 $$AdjOrNum BARRIER NoAP) ; # between APs or Num # $SJE
+ADD:CommaCNPInf <cnp> TARGET Comma_unspec IF ((-1 Inf LINK 2 Inf LINK NEGATE *-1 VFIN BARRIER S-BOUNDARY) OR (-1 Inf LINK 2 Inf LINK NEGATE *1 VFIN BARRIER S-BOUNDARY)); # local if coordinating infinite verbs # $SJE
+# can happen if it is still unspecified in a later run (unlike @CNP)
+ADD:CommaCNPAppos <cnp> TARGET Comma_unspec IF (*1 @APPOSITION BARRIER APP-BOUNDARY OR COMMA); # between appositions # $SJE
+#ADD:CommaCNPnp <cnp> TARGET Comma_unspec IF (-1 N + $$CASE LINK *1 N + $$CASE BARRIER NOT-NPMOD)(NEGATE *1 MV); # nouns, no verb to right # $SJE
+
+
+ADD:CommaCVPnoNP <cvp> TARGET Comma_unspec IF (*-1 VFIN BARRIER S-BOUNDARY)(*1 VFIN); # $SJE
+ADD:CommaCVPpointers <cvp> TARGET Comma_unspec IF (*-1 POINT-LEFT BARRIER POINT-RIGHT OR V)(*1 POINT-RIGHT BARRIER POINT-LEFT OR V); # $SJE
+ADD:CommaCVPonewayVerb <cvp> TARGET Comma_unspec ((1 V LINK -2 WORD - V LINK NOT -1 COMMA) OR (-1 V LINK 2 WORD - V LINK NOT 1 COMMA)); # $SJE
+ADD:CommaCLB <cvp> TARGET Comma_unspec (1 S-BOUNDARY); # $SJE
+### END_SECTION
+
+
+
+SECTION Verbs ;
+# dependency.cg3 replaces these with more fine-grained verb tags for main & subordinate clauses
+# smi functions.cg3 uses -FMAINV/+FMAINV, then replaces them with IMV/FMV in dependency.cg3 = unnecessary extra step
+
+#!! participles & Vsubst as nominal modifiers - needs more work!!
+MAP:Prc>N @>N TARGET PrfPrc OR PrsPrc OR Vsubst (*-1 Det + $$CASE BARRIER NOT-NPMOD - Adv OR N + $$CASE)(*1 N + $$CASE BARRIER NOT-NPMOD); # $SJE
+	#$ Dat lä såmes mujjtulis dajst åvdep vássem äjgijst. - That is a story from those earlier bygone times (sje19760600a.021)
+	#$ guddoj'l mässkam sårve maddagiehtje. - Baumstumpf is das Wurzelende einer [morsch gewordenen] Föhre (lagercrantz1926:80)
+#!! Vsubst as nominal modifiers (can never be in verb complex)
+MAP:Vsubst>N @>N TARGET Vsubst (*1 N + $$CASE BARRIER NOT-NPMOD); # $SJE
+	#$ inijmä jåhtem sáme gájtsajt
+
+#!! basic rules to map finite and infinite main verbs that cannot be AUX
+MAP:FMV @FMV TARGET VFIN-NOT-AUX ; # Finite unambiguous main verb # $SJE_DISAMB
+MAP:IMV @IMV TARGET MAIN - VFIN ; # Infinite unambiguous main verb # $SJE
+MAP:onlyFMV @FMV TARGET VFIN (NEGATE *0 REAL-V BARRIER S-BOUNDARY); # only finite verb in clause # $SJE
+
+
+#!! @FAUX and @FMV target Neg, årrot/lä
+
+MAP:FAUXNeg @FAUX TARGET Neg (*0 V) ; # Negation verb is always finite and always aux unless there is absolutely no other verb # $SJE
+
+#!! finite lä = main verb if not used together with an infinite verb form
+MAP:FMVlä @FMV TARGET ("lä") + VFIN (NEGATE *0 PrfPrc - @>N OR GerII BARRIER SV-BOUNDARY OR V) ; # $SJE
+
+#!! infinite lä without infinite verb form
+MAP:IMVlä @IMV TARGET ("lä") - VFIN (NEGATE *0 PrfPrc - @>N OR GerII BARRIER SV-BOUNDARY OR V) ; # $SJE
+
+#!! finite lä = aux with PrfPrc/GerII
+MAP:FAUXlä @FAUX TARGET ("lä") + VFIN-NOT-IMP (*0 PrfPrc - @>N OR GerII BARRIER SV-BOUNDARY OR V) ; # $SJE
+
+#!! infinite lä with PrfPrc/GerII
+MAP:IAUXlä @IAUX TARGET ("lä") - VFIN (*0 PrfPrc - @>N OR GerII BARRIER SV-BOUNDARY OR V) ; # $SJE
+	#$ mån iv lä välldum (pit080621) - I am not married
+
+
+
+#!! @FAUX and @FMV target AUX(-OR-MAIN)
+
+#!! finite AUX verb = @FAUX if accompanied by Inf (left or right)
+MAP:FAUXaux @FAUX TARGET VAUX + VFIN-NOT-IMP (*0 Inf BARRIER SV-BOUNDARY OR AUX OR VFIN LINK NOT 0 ADVL OR OBJ) (NEGATE 0 ("sjaddat") LINK *1 Nom OR Ess BARRIER NOT-ADV-PCLE LINK NOT 1 Inf) ; # $SJE
+	#$ så diedá gåk lä, gu jåhtet gallgá almatj (pit080703.030) - you know how it is when you [shall] move
+	# --> Inf + aux
+
+#!! @FMV for AUX-OR-MAIN if only verb in sentence or if not accompanied by an infinitive
+MAP:FMVaux|main @FMV TARGET AUX-OR-MAIN + VFIN OR MOD-ASP + VFIN ((NEGATE *0 REAL-V BARRIER S-BOUNDARY) OR (NEGATE *0 Inf BARRIER VFIN) ) ; # $SJE
+
+#!! @FAUX for AUX-OR-MAIN/MOD-ASP if accompanied by an Inf
+MAP:Faux|main @FAUX TARGET AUX-OR-MAIN + VFIN OR MOD-ASP + VFIN (*0 Inf BARRIER VFIN) ; # $SJE
+
+#!! IAUX for VAUX if infinite but accompanied by an infinitive
+MAP:iaux|main @IAUX TARGET VAUX - VFIN (*0 Inf BARRIER VFIN) ; # $SJE
+
+#!! @IMV for all leftover infitite verbs if not followed by an infinitive
+MAP:IMVaux|main @IMV TARGET REAL-V - VFIN ((NEGATE *0 REAL-V BARRIER S-BOUNDARY) OR (NEGATE *1 MAIN + Inf BARRIER VFIN OR COMMA OR CC) ) ; # $SJE
+
+
+#!! leftovers: finite verbs get @FMV, infinite verbs get @IMV
+MAP:leftoverFMV @FMV TARGET VFIN ; # $SJE
+MAP:leftoverIMV @IMV TARGET REAL-V - VFIN ; # $SJE
+
+### END_SECTION
+
+
+SECTION P_complements ;
+#!! postposition complements
+# numeral postposition complement: first numeral gets @>P, others @Num<
+	#$ [akta] tjuode nanne (pit080622a)
+MAP:>PoNum @>P TARGET Num + Gen OR Num - CASE (*1 Po BARRIER (*) - Num)(NEGATE -1 Num); # $SJE
+
+# N Genitive = complement of postposition if followed by Po
+MAP:>Po @>P TARGET Gen (1 Po) ; # $SJE
+
+#!! preposition, rare in sje - maybe extend with Nom? 
+#$ badjel guok mijla - over two miles (pit090609a.041)
+MAP:P< @P< TARGET Gen (*-1 Pr BARRIER NOT-NPMOD)(NEGATE 1 Gen)(NEGATE 1 Po) ; # $SMI|SJE
+	#$ dajt äjtijt tseggijin dal nav birra dán dievá - they put them up like this around this hill (pit090915.044)
+
+#!! PP coordination
+# N Gen = @>P if coordinated with another @>P to the right
+MAP:>Pcoor @>P TARGET Gen (1 CC LINK *1 @>P BARRIER NOT-NPMOD) ; # $SMI
+MAP:>Pcoor @>P TARGET Gen (1 COMMA LINK *1 @>P BARRIER NOT-NPMOD) ; # $SMI
+
+# N Gen = @P< if coordinated with another @P< to the left, if not followed by another Gen
+MAP:P<coor @P< TARGET Gen (-1 CRD OR COMMA LINK -1 @P<)(NEGATE 1 Gen) ; # $SMI
+	#$ Maŋŋegiđa ja árrageasi guohtu boazu lulábeali rámaid, čohkaid ja jekkiid.
+
+### END_SECTION
+
+
+
+SECTION Modifiers ;
+
+#!! proper nouns: in GT the next Prop on the right is the head, cf. Korp:
+	#$ Máhtte@>N Sikku@>N Valio
+# GT makes chains here!
+MAP:Prop@>N @>N TARGET Prop + $$CASE (1 Prop + $$CASE); # $SJE
+
+
+#!! degree Adv = modifier of Num/N/A to right;
+	#$ dålen dä lij ber akkta råmmå - back then there was only one room (090823.008)
+MAP:>NumGrade (@>Num) TARGET GRADE-ADV (1 Num) ; # $SJE
+MAP:>Ngrade (@>N) TARGET GRADE-ADV (*1 N BARRIER NOT-NPMOD OR A) ; # $SJE
+MAP:>Agrade (@>A) TARGET GRADE-ADV (*1 A BARRIER NOT-NPMOD) ; # GRADE-ADV = mod A if A to right barrier NP-boundary # $SJE
+MAP:>NgradeCoor (@>N) TARGET GRADE-ADV (1 CC OR COMMA LINK 1 GRADE-ADV LINK 1 N) ; # GRADE-ADV = mod N if coordinated with another mod N GRADE-ADV # $SMI
+
+
+#!! @Num< @>Num modifier of numeral
+# GT probably uses the right part of a complex numeral as the head (hard to tell).
+# I use the leftmost (makes sense and works with UD, could be changed in the future)
+MAP:Num<Num (@Num<) TARGET Num (-1 Num)  ; # Num (not Nom/Acc) = modifier of numerals to right for "flat" complex numerals # $SJE
+	#$ akkta [guäkkte] [låge]
+MAP:>NumAttr (@>Num) TARGET Attr (1 Num)  ; # attributive (adj) = modifier of Num to right # $SJE
+
+# attributive = mod A IF (not-attr) A or not-Gen Ord to right, barrier clause/NP boundary or N
+MAP:>AAttr (@>A) TARGET Attr (*1C A - Attr OR Ord - Gen BARRIER NOT-NPMOD OR CC OR N OR COMMA)  ; # $SJE
+	#$ ja dä huj garra bivval budij - and then a very strong warm (phase) came (sje20150329b.059)
+
+#!! Attr = mod N IF N to right (Attr: A, Det)
+# also works for indefinite pronouns! 
+	#$ dat lä stuorajmus daggár - the biggest such (mold) (pit080708b.017)
+MAP:>nAttrA (@>N) TARGET Attr IF (*1 N OR Indef BARRIER NOT-NPMOD); # $SMI|SJE
+
+MAP:>nAttrCoor (@>N) TARGET Attr (1 CC LINK 1 @>N)  ; # Attr = mod N if coordinated with another mod N # $SMI
+
+#!! (@>N) for Ordinals if in NP
+MAP:>nOrd (@>N) TARGET Ord (*1 N BARRIER NOT-NPMOD) ; # $SJE
+
+#!! Pron Indef as modifier: next noun to the right
+MAP:n>Indef @>N TARGET Indef (*1 N BARRIER NOT-NPMOD); # $SJE
+
+#!! Indef same case
+# Indef as modifier is usually Attr but not always
+MAP:n>Indef (@>N) TARGET Indef + $$CASE  (1 N + $$CASE) ; # $SJE
+	#$ muvne ij lä [akktak] vuopta (pit080926)
+
+
+# SMI: demonstrative in same case as head noun.
+# in SJE disambiguated to Det! can therefore be left out (?)
+#MAP:>n (@>N) TARGET $$CASE (0 Dem OR Num + Acc LINK *1 $$CASE + N BARRIER NOT-NPMOD) ;
+	# any of set CASE = mod N IF it is Dem/NumAcc followed by N in the same CASE within the NP
+	#$ Pluppe tjuara dam rovnegs tjoevkem vuartasjidh guktie buelieminie.
+
+
+#!! @>N numerals 
+MAP:>n (@>N) TARGET Num (*1 (N Pl) BARRIER NOT-NPMOD) ; # Num = mod N IF followed by N Pl. # $SJE
+	#$ nällje biejve - 4 days
+MAP:akkta (@>N) TARGET ("akkta") (*1 N + Sg BARRIER NOT-NPMOD); # akkta = 1 # $SJE
+	#$ akkta sajen - in one place
+MAP:>nNumCoor (@>N) TARGET Num (1 CC OR COMMA LINK 1 Num + @>N)  ; # Num = mod N if coordinated with another Num mod N # $SMI|SJE
+	#$ näldje jalá vihta tijma - 4 or 5 hours
+
+
+#!! @Pron<
+# for "what kind of"/"what else" + N/A
+# for comitative coordination: Dual + Com
+LIST MII = "mij" "miggir" ; # = "hva"
+LIST GII = "gie" ; # = "hvem"
+MAP:pron< (@Pron<) TARGET (Acc) (-1 MII + Pron OR GII + Pron)((*1 ("?")) OR (1 VFIN)) ; # Acc = modifier of gii/mii to left IF question or before the finite verb # $SMI
+	#$ mij märkajt(?) lä bijlen? - which brand is the car? (pit080917a.040)
+	#$ mav ienabijt båråjdä?  - what else did you eat (pit080924.157)
+MAP:pron< (@Pron<) TARGET (Sg Com) (-1 (Pers Du1) OR (Pers Du2) OR (Pers Du3)) ; # comitative coordination # $SJE
+	#$ måj Jåsjåjn - "we two with Josh" = me and Josh (pit100404.181)
+
+
+#!! Reflexive Pronouns 
+
+#!! SMI: (@N<) for (Refl Nom); if to the left is (N Nom), or if first one to the left is a main verb with a (N Nom) to the left
+MAP:n<:Refl (@N<) TARGET Refl + Nom IF ((*-1 (N Nom) BARRIER NOT-ADV-PCLE) OR (-1 MV LINK *-1 (N Nom) BARRIER SV-BOUNDARY OR Nom) OR (-1 AUX LINK *-1 (N Nom) BARRIER SV-BOUNDARY OR Nom)) ; # $SMI
+	#$ Eadni dal ieš čohkká ommangáttis ja boraha uhca nieiddažis gean son doallá askkistis.
+	#$ Juohke bearaš fertii ieš omardit biepmuid, ja koahkkanieidda bargun lei vuoššat mállása.
+MAP:pron< (@Pron<) TARGET $$CASE (0 Refl LINK *-1 $$CASE + Pers BARRIER S-BOUNDARY OR CC) ; # Refl = mod Pers to left if agreeing in case # $SJE
+
+
+#!! Determiners
+#MAP:>n (@>N) TARGET $$CASE + Det (*1 $$CASE + N BARRIER NOT-NPMOD OR (Pers Gen)) ;
+	# Determiner is modifier of Noun in NP with which it agrees in case ## number agreement?
+	# not if there is a pers pronoun in Gen
+	#$ **dajt dijá gámasujnijt - this your shoe-hay (pit080924.221) (is actually apposition/dislocated)
+#MAP:>nA @>N TARGET $$CASE + Det (*1 $$CASE + A BARRIER NOT-NPMOD OR N OR (Pers Gen)) ;
+	#$ Tage duv nubbev vuhtjij (pit080924)
+# worst case: Det is always @>N, though sometimes stranded. If there is no head, it's Pron Dem
+MAP:DetREST (@>N) TARGET Det ; # $SJE
+
+#!! genitive personal pronoun = modifier of noun to right
+MAP:>nPronGen (@>N) TARGET Pron + Gen (*1 N BARRIER NOT-NPMOD); # $SJE
+	#$ gunne'l muv dåhpe?
+#!! genitive noun = modifier of noun to right
+MAP:>nNGen (@>N) TARGET N + Gen (*1 N BARRIER NOT-NPMOD); # $SJE
+	#$ gukkte lä dan almatja namma?
+
+### END_SECTION
+
+
+
+SECTION Appositions ;
+	# Apposition - APP
+	
+#!! Appositions in same case, pointing left
+# Pers Pron third person , N $
+MAP:APP-Pron<Case (@APP-Pron<) TARGET N + $$CASE OR (N Nom) IF (*-1 COMMA BARRIER APP-BOUNDARY OR CC OR Adv LINK -1 Pers + $$CASE + THIRD)((1 EOC OR COMMA) OR (0 EOC)) ; # $SJE
+MAP:APP-N<Case (@APP-N<) TARGET N + $$CASE OR (N Nom) IF (*-1 COMMA BARRIER APP-BOUNDARY OR CC OR Adv LINK -1 N + $$CASE)((1 EOC OR COMMA) OR (0 EOC)) ; # $SJE
+MAP:APP-N<Nom (@APP-N<) TARGET (N Nom) IF (*-1 COMMA BARRIER APP-BOUNDARY OR CC OR Adv LINK -1 N)((1 EOC OR COMMA) OR (0 EOC)) ; # $SJE
+# Dem Pron , N $
+MAP:APP-Dem<Case (@APP-Pron<) TARGET N + $$CASE OR (N Nom) IF (*-1 COMMA BARRIER APP-BOUNDARY OR CC OR Adv LINK -1 Dem + $$CASE)((1 EOC OR COMMA) OR (0 EOC)) ; # $SJE
+	#$ dä burri dajt, dijá gámasujnijt. - then they eat it, your shoe-hay (pit080924.221)
+
+#!! Appositions to pronouns & Dem in same case, pointing right
+# Pers Pron OR Dem , N $
+MAP:APP>PronCase (@APP>Pron) TARGET N + $$CASE OR (N Nom) IF (*-1 BOS BARRIER NOT-NPMODADV)(1 COMMA LINK 1 Pers + $$CASE + THIRD) ; # $SJE
+MAP:APP>DemCase (@APP>Pron) TARGET N + $$CASE OR (N Nom) IF (*-1 BOS BARRIER NOT-NPMODADV)(1 COMMA LINK 1 Dem + $$CASE) ; # $SJE
+
+
+#!! apposition with coordination, pointing left
+	#$ Muv ednu, Halvar ja Oskar, ...
+MAP:CoordApp (@APP-N<) TARGET N + $$CASE OR (N Nom) IF (*-1 COMMA BARRIER APP-BOUNDARY OR CC LINK -1 N + $$CASE)(*1 N + $$CASE BARRIER NOT-NPMOD OR WORD - CC LINK 1 COMMA); # $SJE
+MAP:CoordApp2 (@APP-N<) TARGET N + $$CASE OR (N Nom) IF (*-1 N + $$CASE + @APP-N< BARRIER APP-BOUNDARY LINK *-1 COMMA BARRIER APP-BOUNDARY OR CC)(1 COMMA); # $SJE
+
+
+#!! appositions to pronouns
+MAP:app-pron< (@APP-Pron<) TARGET $$CASE - Gen OR (N Nom) (0 N LINK -1 $$CASE + Pers)(1 VFIN) ; # $SMI
+ 	#$ Ja moai boazodoalloáirasat áigguime vaikko guovttá joatkit barggu.
+MAP:app>pron (@APP>Pron) TARGET (N Nom) IF (*-1 BOS BARRIER NOT-NPMODADV)(1 COMMA LINK 1 (Pron Dem)); # $SJE
+
+#!! Appositions to adverbs
+	#$ Bárrka, danne sáme idni buhtsujt giesen. ## Bárrka, there the sámi keep reindeer in the summer.
+MAP:app>advl (@APP>ADVL) TARGET (N Nom) IF (*-1 BOS BARRIER NOT-NPMODADV)(1 COMMA LINK 1 Adv); # $SJE
+MAP:app-advl< (@APP-ADVL<) TARGET (Po) IF ((0 EOS) OR (1 EOS))(*-1 COMMA BARRIER NOT-NPMODADV LINK -1 Adv); # $SJE
+
+### END_SECTION
+
+
+SECTION Vocative ; # VOC
+# these will work better once names are tagged properly
+
+MAP:voc (@VOC) TARGET (N Nom) IF (*-1 COMMA BARRIER NP-BOUNDARY LINK -1 ("burist"))((1 EOC) OR (0 EOC)); # burist + , + [N Nom] + $ # $SJE
+	#$ men buris, muv kristäddne - well hello, my godmother (pit090702.468)
+MAP:voc (@VOC) TARGET (N Nom) IF (*-1 COMMA BARRIER NP-BOUNDARY LINK *-1 ("burist") BARRIER REAL-V OR S-BOUNDARY); # $SJE
+
+#!! vocative with Imperative (mostly SMI)
+MAP:voc (@VOC) TARGET Nom IF (-1 COMMA)(0 Pers)(0 Sg2 OR Du2 Or Pl2) (*1 Nom BARRIER NOT-NPMOD LINK 1 EOS); # , + [2Pers Nom] +* Nom + $  # $SMI
+	## Gáidet eret mu luhtte, dii verrošeaddjit!
+
+MAP:voc (@VOC) TARGET (N Nom) IF (-2 BOS)(-1 (Imprt Sg2))(NEGATE -1 Adv)((0 EOS) OR (1 EOS)); # ^ + Imprt Sg + [N Nom] + $ # $SMI
+	## Gula eadni! ## listen, mother
+MAP:voc (@VOC) TARGET (N Nom) IF (-3 BOS)(-2 (Imprt Sg2))(-1 COMMA)((0 EOS) OR (1 EOS)); # ^ + Imprt Sg + , + [N Nom] + $ # $SJE
+	#$ Gula, Eva-Karin! (<- only works if Eva-Karin is tagged as N Nom)
+# if Imprt is certain, rules can be less strict
+MAP:voc (@VOC) TARGET (N Nom) IF (*-1C (Imprt Sg2) BARRIER V)(*-1 COMMA BARRIER NP-BOUNDARY)((0 EOS) OR (1 EOS)); # ^ + Imprt Sg + , + [N Nom] + $ # $SJE
+	#$ Ja vadde, Eva-Karin! (pit090519.208)
+
+MAP:voc (@VOC) TARGET (N Nom) IF (-3 BOS)(-2 (Imprt Sg2))(NEGATE -2 Nom) (-1 COMMA)(1 COMMA); # ^ + Imprt Sg2 + , + [N Nom] + , # $SMI
+	## Buvttes, Máhtte, goikemuoraid!
+
+MAP:voc (@VOC) TARGET (N Nom) IF (-4 BOS)(-3 (V Sg2))(-1 COMMA)(1 COMMA); # ^ + V Sg2 + __ + , + [N Nom] + ,# $SMI
+	## It go, bártnážan, boađáše fargga ruoktot?
+
+
+#!! select imperative if a vocative follows
+SELECT:Imprt_voc Imprt IF (*1 @VOC BARRIER V); # $SJE
+### END_SECTION
+
+
+
+SECTION Existential ;
+	# <ext> = Subject in existential clauses
+	# locational non-verbal predication is counted as existential here
+#!! SMI - TO CHECK
+
+SET NOT-EXT = A OR Pers OR Dem OR Rel OR ("dállke") OR Prop OR Refl ; # SJE dállke=weather, sme has Sem/Time etc.
+
+#!! * __Nom>Advlcase<subj__ (<ext> @<SUBJ) for Nom; it allows adverbials with Ill/Com/Ess to be found inbetween Nom and <ext> @<SUBJ.
+MAP:Nom>Advlcase<subj (<ext> @<SUBJ) TARGET Nom - NOT-EXT (*-1 ADVLCASE - Ess BARRIER NOT-ADV-PCLE LINK -1 LÄ + MV + HAB-V-TAGS LINK *-1 Nom BARRIER WORD - Neg) ; # $SMI
+	#% Son lea oahpaheaddjin hui čeahppi.
+
+#!! * __<extSubj__ (<ext> @<SUBJ) for Nom; if copulas to the left, and some kind of adverb, or Po to the left of it. OR: if Ill or @Pron< to the left, followed by copulas and the before mentioned to the left of copulas.
+MAP:<extSubj (<ext> @<SUBJ) TARGET Nom - NOT-EXT ((*-1 LÄ + MV + HAB-V-TAGS BARRIER NOT-NPMODADV LINK *-1 Ill OR Po OR Adv BARRIER SV-BOUNDARY OR Nom LINK NEGATE -1 Nom) OR (*-1 Ill OR @Pron< BARRIER NOT-NPMOD LINK *-1 LÄ + MV + HAB-V-TAGS BARRIER NOT-NPMODADV LINK *-1 Ill  OR Po BARRIER SV-BOUNDARY))(NEGATE *1 Nom OR Ess BARRIER NOT-NPMOD OR CC OR COMMA LINK NOT 0 Rel) ; # $SMI
+	#$ Dá lea dutnje biebmu.
+
+#!! * __<extSubj__ (<ext> @<SUBJ) for Nom; if leat to the left and sentenceboundary
+MAP:<extSubj (<ext> @<SUBJ) TARGET Nom - NOT-EXT (*-1 LÄ + MV + HAB-V-TAGS BARRIER NOT-NPMODADV OR Ord OR (Ref Gen) LINK *-1 BOC - Nom BARRIER WORD - Neg) (NEGATE *1 Nom - Rel - Interr OR Ess - Rel BARRIER NOT-NPMOD OR CC)(NEGATE *1 ("ahte")) ;#(NEGATE *1 MV BARRIER SV-BOUNDARY) ; # $SMI
+	#% Ii leat gal dienas lottiid vuovdit.
+
+#!! * __<extsubjcoor__ (<ext> @<SUBJ) for Nom. Coordination
+MAP:<extsubjcoor (<ext> @<SUBJ) TARGET Nom - NOT-EXT - Pron (*-1 (CC @CNP) OR Neg OR COMMA BARRIER NOT-NPMOD LINK *-1 <ext> BARRIER WORD)(NEGATE 1 REAL-V) ; # $SMI
+	#$ Eai lean boraspiret, eai ealggat, eaige nu ollu bohccot dain duovdagiin go dál.
+
+### END_SECTION
+
+MAP:Relsubj> (@SUBJ>) TARGET (Rel Nom) IF (*1 VFIN) ; # Rel Nom = Subj IF followed by MV # $SMI
+	#$ Go dat geažit mat geaigut leaba bajás, gohčoduvvoba spahká-oaivin.
+
+SECTION Subject_predicatives ; # SPRED
+#!! SOME FROM SMI - TO CHECK
+#!! IP I always excluded pronouns - to check
+
+LIST COORDS = "ja" "jala" "jalá" "jili" "vaj" "eller" ;
+
+#!! * __<NomBeforeSpred__ (@<SPRED) for (A Nom) if; Nom to the left, and copulas is to the left of Nom. There is no Nom allowed to the right of copulas! To avoid messing with coordination: COORDS and COMMA are not allowed to your left. Comma is not allowed to your right; if so then you are likely to be coordinated
+MAP:<ANomBeforeSpred (@<SPRED) TARGET (A Nom) IF (*-1 Nom BARRIER NOT-NPMODADV LINK *-1 COPULAS + MV BARRIER NOT-NPMODADV OR S-BOUNDARY LINK NEGATE -1 Nom)(NEGATE *-1 COORDS BARRIER NOT-NPMODADV)(NEGATE -1 COMMA)(NEGATE 1 V) ; # $SMI
+	#$ Earát fas orro olbmuid luhtte, ja sin mielas lei dát hui givssálaš.
+	#$ Dábálaččat lea čuollu guhkit, golbma, njeallje fierbmebaji guhku.
+	#$ Suomas maid lea dilli váttis.
+	#$ Dán oktavuođas leat dološ geavahusa njuolggadusat miellagiddevaččat.
+	#$ Márehis lea oaivi bávččas.
+#!! NOM + COPULA + (A Nom)=<SPRED
+# if copula MV to the left and either Nom or ahte to left of that
+MAP:<ASpred (@<SPRED) TARGET (A Nom) IF (*-1 COPULAS + MV BARRIER S-BOUNDARY LINK (*-1 Nom BARRIER NOT-NPMODADV ) OR (*-1 AHTE BARRIER S-BOUNDARY)); # $SMI
+
+#!! single A before COPULA = SPRED>
+MAP:ASpred> (@SPRED>) TARGET (A Nom) IF (1 COPULAS + MV); # $SJE
+
+#!! single A after COPULA = <SPRED
+MAP:A<Spred (@<SPRED) TARGET (A Nom) IF (*-1 COPULAS + MV BARRIER S-BOUNDARY OR COMMA)(NEGATE *1 Nom BARRIER NOT-NPMOD); # $SJE
+
+#!! * __<spred__ (@<SPRED) for N Nom if; the subject Nom is on the same side of copulas as you: on the right side of copulas
+MAP:<spred (@<SPRED) TARGET (A Nom) OR (N Nom) IF (*-1 (N Nom) BARRIER NOT-A LINK -1 COPULAS + MV)(NEGATE -1 @<SPRED) ; # $SMI
+
+#!! * __<spredSg__ (@<SPRED) for Sg Nom ## Sg SPRED if coordinated with another Sg SPRED
+MAP:<spredSg (@<SPRED) TARGET (Sg Nom) - Pron IF (*-1C @CNP BARRIER REAL-V - COPULAS OR S-BOUNDARY LINK *-1 @<SPRED BARRIER WORD) ; # $SMI
+	#$ Son lea mu oabbá, ja 10 jagi boaris. ## she is my sister, and 10 years old
+
+#!! * __<spredPg__ (@<SPRED) for Pl Nom ## Pl SPRED if another Nom to the left of copula
+MAP:<spredPl (@<SPRED) TARGET (Pl Nom) - Pron IF ((*-1 COPULAS BARRIER NOT-NPMODADV LINK *-1 (Pl Nom) OR PLPRON + Nom OR DUPRON + Nom BARRIER NOT-ADV-PCLE) OR (*-1 COPULAS BARRIER NOT-NPMODADV LINK -1 Nom LINK *-1 CC BARRIER NOT-NPMOD LINK -1 Nom) OR (*-1 COPULAS BARRIER NOT-NPMODADV LINK *-1 AUX BARRIER NOT-ADV-PCLE LINK *-1 (Pl Nom) OR PLPRON + Nom OR DUPRON + Nom BARRIER NOT-ADV-PCLE)) ; # $SMI
+	#$ Arkiivaávdnasat leat 25-30 jagi boarrásat. ## the [archive materials]Nom1 [are]copula 25-30 [years]Nom2 older
+
+#!! * __<spred__ (@<SPRED) for Nom; if copulas to the left, and Nom or sentence boundary to the left of copulas.
+MAP:<spred (@<SPRED) TARGET Nom - Pron IF (*-1 COPULAS + MV BARRIER NOT-NPMODADV LINK -1 Nom OR S-BOUNDARY)(NEGATE 1 Nom)(NEGATE 0* REAL-V - COPULAS - @>N BARRIER COPULAS OR S-BOUNDARY) ; # Nom/Sbound . COP MV * [Nom] # $SMI
+	#$ Arkiivaávdnasat galget sáddejuvvot go leat sullii 25-30 jagi boarrásat. ## the archive materials shall be sent which are about 25-30 years old
+
+#!! * __<spred__ (@<SPRED) for Nom; if Nom to the left and copulas to the left of that
+MAP:<spred (@<SPRED) TARGET Nom - Pron IF (*-1 @<SUBJ BARRIER VFIN OR S-BOUNDARY LINK *-1 COPULAS + MV BARRIER NOT-NPMOD); # $SMI|SJE
+	#$ Arkiivaávdnasat galget sáddejuvvot go leat sullii [25-30] jagi boarrásat. ## the archive materials shall be sent which are about 25-30 years old
+
+#!! <SPRED for Nom; if copula to the left and nominative pronoun to the right
+	# dä lij fuodno dat - then it was the devil (pit081011.163)
+MAP:<spred @<SPRED TARGET Nom - Pron IF (*-1 COPULAS + MV BARRIER NOT-NPMODADV LINK NOT *-1 SPRED OR SUBJ)(1 (Pron Nom));
+
+
+#!! Essive SPREDs
+# left of verb
+MAP:spred>EssV @SPRED> TARGET Ess IF (*1 ESS-Vs + MV BARRIER S-BOUNDARY OR MV) ; # $SJE
+	#$ Ij lam del anj Jånnå Bieroga vivvan sjaddam. (sje19760600a.020)
+# right of verb
+MAP:<spredEssV @<SPRED TARGET Ess IF (*-1 ESS-Vs + MV BARRIER S-BOUNDARY OR MV) ; # $SJE
+	#$ ja da sjiddin árrjen - and they became an esker (pit090915.010)
+
+
+#!! * __spredSgMII>__ (@SPRED>) ## [hva]SgNOM SgNOM COPULA -> SPRED
+MAP:spredSgMII> (@SPRED>) TARGET MII + (Sg Nom) IF (*1 (Sg Nom) BARRIER NOT-NPMOD LINK 1 COPULAS) ; # $SMI
+
+## [SgNom] SgNom Copula -> SPRED
+MAP:spredSg> (@SPRED>) TARGET (Sg Nom) - Pron IF (1 (N Sg Nom) OR SGPRON + Nom - Rel OR (Indef Nom) LINK 1 COPULAS) ; # $SMI
+	#$ Mii mun lean? ## What am I? | [What] I am?
+
+#!! * __AdjSpredSg>__ (@SPRED>) for A Sg Nom; if copulas to the right, but not if A or @<SPRED are found to the right of copulas
+MAP:AdjSpredSg> (@SPRED>) TARGET (A Sg Nom) IF (*1 COPULAS + MV BARRIER SV-BOUNDARY OR COMMA OR CC LINK NEGATE *1 A OR @<SPRED BARRIER NOT-NPMOD); # $SMI
+	#$ Buorre lea oažžut su boahtit deike. ## [good] is it to get him to come here
+
+# [NomPl] NomPl Copula -> SPRED
+MAP:spredPl> (@SPRED>) TARGET (Pl Nom) - Pron IF (1 (Pl Nom) OR PLPRON + Nom OR DUPRON + Nom LINK 1 COPULAS)  ; # $SMI
+# [Nom!Rel] CC|, * SPRED -> SPRED
+MAP:spred>Coor (@SPRED>) TARGET Nom - Pron IF (1 CC OR COMMA LINK *1 @SPRED> BARRIER NOT-NPMOD)(NEGATE 1 VFIN) ; # $SMI
+	#$ Gosse daejtie vuejniejibie, dellie daejriejibie daelvie guhkies jïh tjåetskemes sjædta.
+
+# SPRED CC|, * [Nom!Rel] !VFIN -> SPRED
+MAP:<spredCoor (@<SPRED) TARGET Nom - Pron IF (*-1 @CNP OR COMMA BARRIER NOT-NPMOD LINK -1 @<SPRED)(NEGATE *1 VFIN BARRIER S-BOUNDARY) ; # $SMI
+
+#!! * __Spred>SubjInf__ (@SPRED>) for Nom; if copulas to the right, and the subject of copulas is an Inf to the right
+MAP:spred>SubjInf (@SPRED>) TARGET Nom - Pron IF (*1 COPULAS + MV BARRIER SV-BOUNDARY OR COMMA)(*2 @<SUBJ + Inf BARRIER NOT-ADV-PCLE) ; # $SMI
+	#$ Gurssa ulbmil lea oahppat goarrut Ivgu gávtti.
+
+#!! * __spredCoord__ (@<SPRED) coordination for Nom; only if there already is a SPRED to the left of CNP. Not if there is some kind of comparison involved.
+MAP:spredCoord (@<SPRED) TARGET Nom - Pron IF (*-1 @CNP BARRIER NOT-NPMODADV )(*-2 @<SPRED BARRIER WORD - Adv);#(*1 EOS)(NEGATE *1 MV) ; # $SMI
+	#$ De eai leat šat dušše tálat, muhto bustávat maid.
+
+
+#!! obligatory SPRED for sjaddat (unless pers)
+### to do: sjaddat also = "grow" with normal subject
+MAP:<spredSjaddat (@<SPRED) TARGET Nom - Pers - Dem IF (*-1 ("sjaddat") + MV BARRIER S-BOUNDARY)(NEGATE *0 SPRED BARRIER S-BOUNDARY); # $SJE
+MAP:spred>Sjaddat (@SPRED>) TARGET Nom - Pers - Dem IF (*1 ("sjaddat") + MV BARRIER S-BOUNDARY)(NEGATE *0 SPRED BARRIER S-BOUNDARY); # $SJE
+#SUBSTITUTE:<spredInfSjaddat @IMV @<SPRED TARGET Inf IF (*-1 ("sjaddat") + MV BARRIER S-BOUNDARY)(NEGATE *0 SPRED BARRIER S-BOUNDARY); # $SJE
+
+
+#!! SJE adjective predicatives without subject; ^ !Nom "lä" * [A Nom] !N
+	#$ dä lä nåv njállge - then (that) is so tasty (pit100404.115)
+MAP:A<SPRED (@<SPRED) TARGET (A Nom) (NEGATE *1 (N Nom) BARRIER S-BOUNDARY) (*-1 ("lä") + MV BARRIER N OR S-BOUNDARY LINK NEGATE *-1 Nom BARRIER S-BOUNDARY); # $SJE
+MAP:ASPRED> (@SPRED>) TARGET (A Nom) (NEGATE *1 (N Nom) BARRIER S-BOUNDARY)(*1 COPULAS) ; # SPRED> if there is a copula to the right # $SJE
+MAP:ASPRED> (@SPRED) TARGET (A Nom) (NEGATE *1 (N Nom) BARRIER S-BOUNDARY) ; # SPRED if attachment is unclear # $SJE
+
+#!! SJE numeral predicatives ; "lä" * [Num]
+	#$ dä lä nåv njállge - then (that) is so tasty (pit100404.115)
+MAP:A<SPRED (@<SPRED) TARGET Num (*-1 ("lä") + MV BARRIER N OR S-BOUNDARY)(NEGATE *1 N BARRIER S-BOUNDARY); # $SJE
+MAP:ASPRED> (@SPRED>) TARGET Num (*-1 ("lä") + MV BARRIER N OR S-BOUNDARY) ; # $SJE
+
+#!! infinitive as SPRED
+	#$ pit080926 muv barrgo lä tjállet - my job is to write
+	# does it ever happen to be Inf @SPRED> COP @<SUBJ?
+	# heavy SPREDs might have expletive construction:
+	# pit080924.644 dat lij nav suohtas tieltajn viessot - that was so fun to stay in tents
+SUBSTITUTE:IMV<spred (@IMV) (@<SPRED) TARGET Inf (*-1 ("lä" @FMV) BARRIER S-BOUNDARY LINK *-1 @SUBJ> BARRIER S-BOUNDARY LINK NEGATE *0 VAUX - COPULAS BARRIER S-BOUNDARY); # $SJE
+#!! infinitive as SPRED with sjaddat
+SUBSTITUTE:IMV<spredSjaddat (@IMV) (@<SPRED) TARGET Inf (*-1 ("sjaddat") + MV BARRIER S-BOUNDARY)(NEGATE *0 SPRED BARRIER S-BOUNDARY); # $SJE
+
+### END_SECTION
+
+
+
+SECTION Subjects ;
+	# Subjects - SUBJ
+
+#!! SUBJECTS IN GT ARE DEPENDENTS OF THE FINITE VERB, NOT THE MAIN VERB!!!
+
+#!! Pronoun subject if Nom agrees with VFin to right
+MAP:subj>Pers (@SUBJ>) TARGET $$PERS-TAGS + Nom IF ((*1 $$PERS-TAGS + VFIN BARRIER SV-BOUNDARY OR VFIN) OR (*1 Refl BARRIER NOT-ADV-PCLE LINK *1 $$PERS-TAGS + VFIN BARRIER NOT-ADV-PCLE)) ; # $SMI
+	#$ Moai Birehiin barggašeimme mánáidgárddis.
+#!! Subject Pron if Nom agrees with VFin to left
+MAP:<subjPers (@<SUBJ) TARGET $$PERS-TAGS + Nom IF (*-1 $$PERS-TAGS + VFIN BARRIER VFIN) ; # $SMI
+
+
+#!! first person
+## X and I ...
+MAP:subj>Pers1 (@SUBJ>) TARGET FIRST + Nom (-1 @CNP LINK *2 (V Pl1) OR (V Du1) BARRIER NOT-ADV-PCLE) ; # $SMI|SJE
+MAP:<subjPers1 @<SUBJ TARGET FIRST + Nom (-1 @CNP LINK *-1 (V Pl1) OR (V Du1) BARRIER S-BOUNDARY)(NEGATE *1 VFIN + Pl1) ; # $SJE
+## Sg1Nom CC * N.Pl * V.Pl
+## me and X ...
+MAP:subj>Pers1 (@SUBJ>) TARGET FIRST + Nom (1 @CNP LINK *1 N BARRIER NOT-NPMOD LINK *1 (V Pl1) OR (V Du1) BARRIER NOT-ADV-PCLE) ; # $SMI|SJE
+MAP:<subjPers1 @<SUBJ TARGET FIRST + Nom (1 @CNP LINK *1 N BARRIER NOT-NPMOD)(*-1 (V Pl1) OR (V Du1) BARRIER NOT-ADV-PCLE) ; # $SJE
+	#$ danne ... pruvvkuji månnå ja ietjá näjjda ... (pit100404.144)
+
+## !Vfin.Sg3 * [SgNom] * VFin.Sg3 -> Subj
+MAP:subj>Sgnr1 (@SUBJ>) TARGET (Nom Sg) - A OR (Sg3 Nom) OR (Indef Nom) IF (*1 VFIN + Sg3 BARRIER REAL-V OR S-BOUNDARY OR Nom)(NEGATE *-1 VFIN + Sg3 BARRIER NOT-ADV-PCLE); # $SMI|SJE
+	#$ Niibi lea stális.
+	#$ Girji lea Máreha.
+
+
+#!! * __subj>Pl__ (@SUBJ>) for plural nominatives
+MAP:subj>Pl (@SUBJ>) TARGET (Nom Pl) OR (Pl3 Nom) IF (*1 VFIN + Pl3 BARRIER VFIN OR S-BOUNDARY) ; # $SMI|SJE
+#!! * __<subjPl__ (@<SUBJ) for plural nominatives
+MAP:<subjPl (@<SUBJ) TARGET (Nom Pl) OR (Pl3 Nom) IF (*-1 VFIN + Pl3 BARRIER VFIN OR S-BOUNDARY)(NEGATE *1 VFIN + Pl3 BARRIER VFIN OR S-BOUNDARY) ; # $SMI|SJE
+
+
+#!! * __subj>Sg__ (@SUBJ>) for Nom Sg; if VFIN + Sg3 to the right.
+MAP:subj>Sg (@SUBJ>) TARGET (Nom Sg) - A IF (*1 VFIN + Sg3 BARRIER REAL-V OR S-BOUNDARY OR COMMA); # $SMI
+	#$ Nuba áddjá árvala ahte eiseválddit galggaše bálkáhit baicce vuorrolohkkiid, vai rehkenasto vuorruid mearri maiddái, iige dušše dat mearri guliin mii goddo deanus.
+
+#!! * __copPl3<subj__ (@<SUBJ) for Nom Pl; not just nouns, Nom Pl. To the left is copulas and first one to the right is @<SPRED
+MAP:copPl3<subj (@<SUBJ) TARGET (Nom Pl) IF (*-1 COPULAS + Pl3 BARRIER NOT-NPMOD)(*1 @<SPRED BARRIER NOT-ADV) ; # $SMI
+	#$ Girjji namma čujuha dasa ahte dološ myhtain leat sámit mánát.
+
+
+	# Subject coordination
+	
+MAP:subj>Coor1 (@SUBJ>) TARGET Nom IF (1 CC OR COMMA LINK *1 Nom BARRIER NOT-NPMOD LINK *1 VFIN + PL OR VFIN + DU BARRIER VFIN)(NEGATE *-1 VFIN BARRIER S-BOUNDARY) ; # $SMI|SJE
+
+MAP:subjCoor2 (@SUBJ>) TARGET Nom IF ((1 CC OR COMMA LINK *1 @SUBJ> - Rel BARRIER NOT-NPMOD LINK *1 VFIN + Pl3 OR VFIN + Du3) OR (*-1 CC BARRIER NOT-NPMOD LINK -1 @SUBJ>))(NEGATE *1 VFIN + SG BARRIER VFIN) ; # $SMI|SJE
+
+MAP:subjCoor3 @<SUBJ TARGET Nom + SG OR Nom + Sg (*-1 VFIN + PL BARRIER VFIN)(1 CC OR COMMA LINK *1 Nom BARRIER NOT-NPMOD LINK NOT *1 VFIN BARRIER S-BOUNDARY) ; # $SJE
+
+MAP:subjCoor5 (@<SUBJ) TARGET Nom IF (*-1 CC OR COMMA BARRIER NOT-NPMOD OR CC LINK -1 @<SUBJ LINK NOT *-1 VFIN + SG BARRIER VFIN)(NEGATE *1 VFIN BARRIER S-BOUNDARY - CC) ; # $SMI|SJE
+
+	# Numeral subjects
+
+#MAP:subj>Num (@SUBJ>) TARGET (Num Nom) (*1 (N Sg Gen) BARRIER NOT-A LINK *1 VFIN + Pl3 BARRIER NOT-ADV-PCLE) ; # $SMI
+#MAP:<subjNum (@<SUBJ) TARGET (Num Nom) (*1 (N Sg Gen) BARRIER NOT-A)(*-1 VFIN + Pl3 BARRIER Nom OR S-BOUNDARY) ; # $SMI
+
+MAP:subj>Rel (@SUBJ>) TARGET (Nom Pl) OR (Nom Pl3) IF (1 Rel LINK *1 MV LINK *1 VFIN + Pl3) ; # $SMI
+	#$ Dat mat sáhttet háhkkojuvvot, leat ovdalis juo namuhuvvon.
+MAP:subj>App (@SUBJ>) TARGET Nom IF (1 COMMA LINK **1 @APP-N< OR @APP-Pron< LINK *1 COMMA BARRIER REAL-V LINK *1 VFIN BARRIER SUBJ) ; # $SMI
+# Nom followed by relative clause followed by another finite verb
+MAP:subj>Rel (@SUBJ>) TARGET (N Nom) OR (Pron Nom) OR (A Nom) IF (*1 Rel BARRIER WORD LINK *1 MV LINK *1 VFIN + Sg3 OR VFIN + Pl3) ; # $SMI
+# Nom followed by an apposition followed by a finite verb
+MAP:subj>App (@SUBJ>) TARGET (N Nom) OR (Pron Nom) (1 COMMA LINK *1 @APP-N< OR @APP-Pron< BARRIER NOT-NPMOD LINK *1 VFIN) ; # $SMI
+	#$ Jovsset, su irgi, gii lei rehálaš olmmái ii ge hálidan heahppašuhttit su, áiggui earránit sus suoli.
+
+
+#!! infinitive as subject
+# requires a finite main verb. does not work e.g. with lä + PrfPrc
+SUBSTITUTE:IMV_subj> (@IMV) (@SUBJ>) TARGET (Inf) (*1 VFIN-NOT-AUX + Sg3 BARRIER S-BOUNDARY LINK NEGATE *0 SUBJ BARRIER S-BOUNDARY)(NEGATE *0 VAUX BARRIER S-BOUNDARY); # $SJE
+# if in combination with an XCOMP_VERB, it should be an object: Ja dä älgij galbmet. - and then it started to freeze (sje20150329b.037)
+SUBSTITUTE:IMV_<subj (@IMV) (@<SUBJ) TARGET (Inf) (*-1 VFIN-NOT-AUX + Sg3 - XCOMP_VERBS BARRIER S-BOUNDARY LINK NEGATE *0 SUBJ BARRIER S-BOUNDARY)(NEGATE *0 VAUX BARRIER S-BOUNDARY); # $SJE
+
+#!! infinitive as subject of copula	
+SUBSTITUTE:IMV_<subj_cop (@IMV) (@<SUBJ) TARGET (Inf) (*-1 ("lä" @FMV) BARRIER S-BOUNDARY LINK NEGATE *0 SUBJ BARRIER S-BOUNDARY LINK NEGATE *0 VAUX - COPULAS BARRIER S-BOUNDARY); #alternatively?: TARGET (Inf)(*0 SPRED BARRIER S-BOUNDARY) # $SJE
+	#$ men dä lä buorak vuäjdnet. (pit080924.016)
+SUBSTITUTE:IMV_subj>_cop (@IMV) (@SUBJ>) TARGET (Inf) (*1 ("lä" @FMV) BARRIER S-BOUNDARY OR SUBJ LINK NEGATE *0 SUBJ BARRIER S-BOUNDARY LINK NEGATE *0 VAUX - COPULAS BARRIER S-BOUNDARY); # $SJE
+
+
+
+#!! Subject leftovers: subj> Sg
+MAP:subj>VSg3 (@SUBJ>) TARGET (N Sg Nom) if (*1 VFIN + (Sg3) BARRIER S-BOUNDARY OR VFIN LINK NEGATE *1 @<SUBJ BARRIER V)(NEGATE *1 @SUBJ> BARRIER V)(NEGATE *-1 VFIN + (Sg3) BARRIER S-BOUNDARY OR SUBJ); # $SJE
+#!! Subject leftovers: <subj Sg
+MAP:<subj_VSg3 (@<SUBJ) TARGET (N Sg Nom) if (*-1 VFIN + (Sg3) BARRIER S-BOUNDARY OR VFIN LINK NEGATE *-1 @SUBJ> BARRIER V)(NEGATE *-1 @<SUBJ BARRIER V)(NEGATE *1 VFIN + (Sg3) BARRIER S-BOUNDARY OR SUBJ); # $SJE
+
+#!! Subject leftovers: subj> Pl
+MAP:subj>VSg3 (@SUBJ>) TARGET (N Pl Nom) if (*1 VFIN + (Pl3) BARRIER S-BOUNDARY OR VFIN LINK NEGATE *1 @<SUBJ BARRIER V)(NEGATE *1 @SUBJ> BARRIER V)(NEGATE *-1 VFIN + (Pl3) BARRIER S-BOUNDARY OR SUBJ); # $SJE
+#!! Subject leftovers: <subj Pl
+MAP:<subj_VSg3 (@<SUBJ) TARGET (N Pl Nom) if (*-1 VFIN + (Pl3) BARRIER S-BOUNDARY OR VFIN LINK NEGATE *-1 @SUBJ> BARRIER V)(NEGATE *-1 @<SUBJ BARRIER V)(NEGATE *1 VFIN + (Pl3) BARRIER S-BOUNDARY OR SUBJ); # $SJE
+
+#!! Subject leftovers: subj> Pron
+MAP:subj>VSg3 (@SUBJ>) TARGET (Pron Sg Nom) if (*1 VFIN + (Sg3) BARRIER S-BOUNDARY OR VFIN LINK NEGATE *1 @<SUBJ BARRIER V)(NEGATE *1 @SUBJ> BARRIER V)(NEGATE *-1 VFIN + (Sg3) BARRIER S-BOUNDARY OR SUBJ); # $SJE
+#!! Subject leftovers: <subj Pron
+MAP:<subj_VSg3 (@<SUBJ) TARGET (Pron Sg Nom) if (*-1 VFIN + (Sg3) BARRIER S-BOUNDARY OR VFIN LINK NEGATE *-1 @SUBJ> BARRIER V)(NEGATE *-1 @<SUBJ BARRIER V)(NEGATE *1 VFIN + (Sg3) BARRIER S-BOUNDARY OR SUBJ OR COMMA); # $SJE
+
+# unmapped numerals
+MAP:<subjNum @<SUBJ Num ((*-1 VFIN + Pl3 BARRIER S-BOUNDARY OR VFIN) OR (*-1 MV BARRIER REAL-V OR S-BOUNDARY LINK *1 VAUX + Pl3 BARRIER REAL-V OR S-BOUNDARY))(NEGATE *0 SUBJ BARRIER S-BOUNDARY)(0 Num + Nom OR Num - CASE); # $SMI|SJE
+MAP:subj>Num @SUBJ> Num ((*1 VFIN + Pl3 BARRIER S-BOUNDARY OR VFIN) OR (*1 MV BARRIER REAL-V OR S-BOUNDARY LINK *-1 VAUX + Pl3 BARRIER REAL-V OR S-BOUNDARY))(NEGATE *0 SUBJ BARRIER S-BOUNDARY)(0 Num + Nom OR Num - CASE); # $SMI|SJE
+### END_SECTION
+
+
+# does this exist in sje?
+#MAP:Num<vil (@Num<) TARGET ("vil") (-1 Num) ;
+	#$ Mun áiggun ovtta vel ## I want one more
+
+
+	#!! Infinite object - FOBJ
+
+# IP: TV rarely marked in SJE! a less than safe version of the old rule
+#!! @-FOBJ> for Acc if in front of gerundiumI, perfectum participle or infinitive. No OBJ to the right
+MAP:-fobj> (@-FOBJ>) TARGET Acc - TEMPAcc (1 (GerI) OR (PrfPrc) OR (Inf) LINK NOT 0 IV LINK NOT *1 OBJ BARRIER S-BOUNDARY)(NEGATE *0 @FAUX OR XCOMP_VERBS BARRIER S-BOUNDARY OR CS); # $SJE
+	#$ da lä nåv låssåt dajt giesset - they are so heavy to pull them (pit090826.050)
+
+SECTION Adverbials ;
+## in GT, adverbials are linked to the *main* verb, while the subject is linked to the *finite* verb
+# leads to lots of crossing links
+
+#!! @-F<ADVL for adverbials to Infs
+# not for adverbials to a main verb in Inf accompanied by an AUX
+MAP:f<advl (@-F<ADVL) TARGET ADVL (*-1C @IMV - XCOMP_VERBS BARRIER SV-BOUNDARY OR CS OR @FMV)(NEGATE *1 MV BARRIER S-BOUNDARY OR CS)(NEGATE *0 VAUX BARRIER S-BOUNDARY OR CS) ; # $SJE
+	#$ Min mielas goit lea veara jurddašit nissongova birra mii boahtá ovdan jearahallamiin. ##~ etter min mening i alle fall er verdt å tenke [om kvinnebilde] som kommer fram i intervjus.
+#!! @-F<ADVL for adverbials to Infs
+MAP:fadvl> (@-FADVL>) TARGET ADVL (NEGATE *-1 @FMV OR @IMV BARRIER S-BOUNDARY OR CS)(*1 @IMV BARRIER SV-BOUNDARY OR CS OR @FMV)(NEGATE *0 VAUX BARRIER S-BOUNDARY OR CS) ; # $SMI|SJE
+	#$ Anán buorebun odne vuolgit go ihttážii vuordit. ## jeg betre bruker i dag til å dra heller enn å vente til i morgen.
+
+#!! Single adverbs in elliptical constructions
+# looks too general!
+#MAP:advStranded @ADVL TARGET Adv (*-1 COMMA OR CC BARRIER (*) - Adv LINK -1 (*) - Adv)(NEGATE *1 MV) ; # $SJE
+
+#!! * __advl>mainV__ (@ADVL>) if; mainverb not found to the left, but the mainverb is found to the right.
+MAP:advl>mainV (@ADVL>) TARGET ADVLCASEAdv (NEGATE *-1 MV BARRIER S-BOUNDARY OR (","))(*1 MV BARRIER SV-BOUNDARY OR (",")) ; # $SMI
+	#$ Dál de viimmat asttan lohkat reivve.
+
+#!! * __V<advl__ (@<ADVL) if; finite mainverb found to the left. Not if a comma is found immediately to the left and a finite mainverb is located somewhere to the right of this comma.
+MAP:V<advl (@<ADVL) TARGET ADVLCASEAdv - Rel - MOD-ADV - Attr (*-1 MV - XCOMP_VERBS BARRIER SV-BOUNDARY - (":"))(NEGATE -1 COMMA LINK *1 MV BARRIER S-BOUNDARY)(NEGATE 0 Q_WORDS) ; # $SMI
+	#$ Giellatekno álggahuvvui 1.8.2001 prošeaktan ráhkadit sámegiela grammatihkalaš analysa.
+	#$ Dán filmma leat Kárášjoga nuorat oaidnán, eaige šat vuolgge sirkusii.
+
+#!! modifier of CS
+## ^ [Adv] CS * MV -> ADVL>CS
+MAP:advl>cs (@ADVL>CS) TARGET Adv (*-1 BOC BARRIER NOT-ADV)(1 CS LINK *1 MV) ; # $SMI
+	#$ Danne go .. ## therefore when ...
+MAP:advl>cs (@ADVL>CS) TARGET Adv (-1 COMMA LINK 2 CS) ; # $SJE
+	#$ ..., juo gu ... (pit080708i.012)
+
+#!! * __<advlPoPr__ (@<ADVL) for Po or Pr; if mainverb to the left.
+MAP:<advlPoPr (@<ADVL) TARGET Po OR Pr (*-1 MV BARRIER SV-BOUNDARY) ; # $SMI
+#!! * __advlPoPr>__ (@<ADVL) for Po or Pr; if mainverb to the right.
+MAP:advlPoPr> (@ADVL>) TARGET Po OR Pr (*1 MV BARRIER SV-BOUNDARY) ; # $SMI
+
+#!! * __<advlEOS__ (@<ADVL) for Po or Pr; if you are found at the very end of a sentence. A mainverb is needed to the left.
+MAP:<advlEOS (@<ADVL) TARGET Po OR Pr (*-1 MV)(*1 EOS BARRIER MV); # $SMI
+	#$ Sámediggi lea miehtan sutnje máksit 800 ruvnno juohke árgabeaivvi ovddas, muhto ii fal lávvordagaid, sotnabeivviid ja bassebeivviid ovddas.
+	# Comment: Sámi dutkan ii leat dan dihte soaittáhagas válljejuvvon dutkansuorgi. <== galggašii doaibmat dalle go 'leat' oažžu rivttes analysa.
+
+
+#!! * __<advlGen__ (@<ADVL) for (N Gen) if mainverb to the left and no noun to the right
+	#$ lä dån mannam nagin [bále] ja tjuvvum Vistekij? - have you [some time] gone to V with the others? (pit080924.630)
+MAP:<advlGen (@<ADVL) TARGET (N Gen) (*-1 MV BARRIER S-BOUNDARY OR COMMA)(NEGATE *1 N BARRIER NOT-A)(NEGATE 1 Po) ; # $SMI
+
+MAP:advl> (@ADVL>) TARGET (N Gen) (*1 MV BARRIER SV-BOUNDARY OR Po)(NEGATE *1 N BARRIER NOT-A) ; # $SMI
+
+
+#!! adverb modifying an adverbial
+# only if it is inside the phrase, not before determiners/demonstratives
+MAP:>advl (@>ADVL) TARGET Adv IF (0 MOD-ADV)(*1 ADVLCASEAdv OR ARRAT + Nom BARRIER NOT-NPMOD OR Det OR Dem); # $SJE
+	#$ åvdep bále (pit080924.045)
+
+
+#!! SJE advl> for question words with MV to the right
+MAP:advl>QwordsFMV (@ADVL>) TARGET Q_WORDS - Acc - Nom (*1 @FMV OR @IMV BARRIER S-BOUNDARY); # $SJE
+MAP:advl>QwordsIMV (@-FADVL>) TARGET Q_WORDS - Acc - Nom (*1 MV - VFIN BARRIER S-BOUNDARY); # $SJE
+
+#!! arabian numerals 
+MAP:>advl (@<ADVL) TARGET Arab IF (*-1 MV BARRIER S-BOUNDARY) ; # $SMI
+	#$ Stáhtabušeahta rámmat leat lassánan 5 % .
+
+#!! SJE @<ADVL for Ordinals right of MV if not in NP
+MAP:<advlOrd (@<ADVL) TARGET Ord (NEGATE *1 N BARRIER NOT-NPMOD)(*-1 MV BARRIER S-BOUNDARY) ; # $SJE
+#!! SJE @ADVL> for Ordinals left of MV if not in NP
+MAP:advl>Ord (@ADVL>) TARGET Ord (NEGATE *1 N BARRIER NOT-NPMOD)(*1 MV BARRIER S-BOUNDARY) ; # $SJE
+	#% men vuostas mån sidav vuosedit värijt. = but first I want to show you the mountains. (pit100404)
+	
+
+
+### Árrat and other temporal adverbials
+#!! SJE map @ADVL for árrat (=morning), iehket (=evening) etc if there is another SUBJ in the sentence OR if there is no 3.pers verb
+
+MAP:árrat<Advl (@<ADVL) TARGET ARRAT + Nom (*-1 VFIN BARRIER S-BOUNDARY)((*0 @SUBJ OR @<SUBJ OR @SUBJ> BARRIER S-BOUNDARY) OR (NEGATE *0 @FMV + THIRD BARRIER VFIN)); # $SJE
+MAP:árratAdvl (@ADVL) TARGET ARRAT + Nom (*0 @SUBJ OR @<SUBJ OR @SUBJ> BARRIER S-BOUNDARY)(NEGATE *0 @FMV + THIRD BARRIER S-BOUNDARY); # $SJE
+MAP:árratAdvl> (@ADVL>) TARGET ARRAT + Nom (*1 VFIN BARRIER S-BOUNDARY)(*0 @SUBJ OR @<SUBJ OR @SUBJ> BARRIER S-BOUNDARY)(NEGATE *0 @FMV + THIRD BARRIER S-BOUNDARY); # $SJE
+MAP:árratAdvl> (@ADVL>) TARGET ARRAT + Nom (*1 REAL-V - Sg3 BARRIER S-BOUNDARY)(NEGATE *-1 <mv> BARRIER S-BOUNDARY) ; # $SJE
+
+MAP:árrat_acc @<ADVL TARGET ARRAT ((*-1 OBJ BARRIER <mv>) OR (*-1 <mv> BARRIER S-BOUNDARY OR COMMA LINK *-1 @OBJ> BARRIER <mv>)); # $SJE
+
+#!! SJE map @ADVL for tijbma (=hour) if there is another object or it is at EOS
+MAP:temp<ADVL (@<ADVL) TARGET TEMPAcc + Acc (*-1 MAIN BARRIER S-BOUNDARY)((*0 OBJ BARRIER S-BOUNDARY) OR (NEGATE *1 WORD)); # $SJE
+MAP:tempADVL> (@ADVL>) TARGET TEMPAcc + Acc (*1 MAIN BARRIER S-BOUNDARY)(*0 OBJ BARRIER S-BOUNDARY) ; # $SJE
+
+#!! @ADVL for TEMPAcc if the head verb is not explicitly TV
+MAP:temp<ADVLnotTV @<ADVL TARGET TEMPAcc + Acc (*-1 MAIN - TV BARRIER S-BOUNDARY)(NEGATE *1 MAIN BARRIER S-BOUNDARY); # $SJE
+MAP:tempADVL>notTV @ADVL> TARGET TEMPAcc + Acc (*1 MAIN - TV BARRIER S-BOUNDARY)(NEGATE *-1 MAIN BARRIER S-BOUNDARY); # $SJE
+
+
+### CLEANUP
+
+#!! cleanup ADVL
+# for Adv, ADVLCASE, Po & Pr
+MAP:cleanupAdvl> @ADVL> TARGET ADVL (*1 MV BARRIER S-BOUNDARY); # $SJE
+MAP:cleanup<Advl @<ADVL TARGET ADVL (*-1 MV BARRIER S-BOUNDARY); # $SJE
+
+
+#!! all Po/Pr:s ADVL if they haven't gotten a tag somewhere along the way.
+MAP:cleanupPo (@ADVL) TARGET Po OR Pr ; # $SMI|SJE
+	#$ Muhto man sivas?
+	#$ Čakčageasi birra.
+
+### END_SECTION
+
+
+
+SECTION Objects ;
+
+#!! OBJ> Acc; if there is a finite mainverb to the right in the clause
+# NEGATE if there is a MV to the left and a comma to the right: tjuolast nagin räjgijt, da lä nåvte
+MAP:Obj> (@OBJ>) TARGET Acc (*1 MV - IV BARRIER SV-BOUNDARY OR @OBJ> OR @-FOBJ> LINK NEGATE *1 @<OBJ OR @-F<OBJ)(NEGATE *-1 MV BARRIER S-BOUNDARY OR OBJ) ; # $SJE
+
+# OBJ to the right if there is a TV to the left but it already has an OBJ
+MAP:Obj> (@OBJ>) TARGET Acc (*1 MV - IV BARRIER SV-BOUNDARY OR @OBJ> OR @-FOBJ> LINK NOT *1 @<OBJ OR @-F<OBJ)((*-1 MV LINK *-1 @OBJ>) OR (*-1 @<OBJ LINK *-1 MV)) ; # $SJE
+
+#MAP:obj>rel (@OBJ>) TARGET Acc (1 Rel LINK *1 MV BARRIER SV-BOUNDARY LINK *1 MV BARRIER SV-BOUNDARY) ;
+	#$ Danne sáhttá váttisvuođaid mat čuožžilit gaskasaš konvenšuvnna beaivválaš dilis, buoremusat čoavdit riikkaidgaskasaš orgánain, mas leat loahpalaš mearridanváldi.
+
+# only if there is a finite verb somewhere
+MAP:<obj (@<OBJ) TARGET NP-HEAD-ACC OR DUPRON + Acc (*-1 MV - IV BARRIER REAL-V - VAUX OR (":") OR S-BOUNDARY OR @<OBJ OR COMMA)(NEGATE 0 Rel OR Interr)(*0 VFIN) ; # $SMI|SJE
+MAP:obj> (@OBJ>) TARGET NP-HEAD-ACC OR DUPRON + Acc (*1 MV - IV BARRIER (":"))(NEGATE *-1 Interj BARRIER NOT-NPMOD)(*0 VFIN) ; # $SMI|SJE
+
+#!! -FOBJ leftovers
+MAP:f<obj (@-F<OBJ) TARGET NP-HEAD-ACC OR DUPRON + Acc (*-1 MV - IV BARRIER (":") OR S-BOUNDARY OR @<OBJ OR COMMA)(NEGATE 0 Rel)(NEGATE *0 VFIN) ; # $SJE
+MAP:fobj> (@-FOBJ>) TARGET NP-HEAD-ACC OR DUPRON + Acc (*1 MV - IV BARRIER (":"))(NEGATE *-1 Interj BARRIER NOT-NPMOD)(NEGATE *0 VFIN) ; # $SJE
+
+#!! coordinated objects
+#MAP:obj<obj (@<OBJ) TARGET Acc - Num - Rel (*-1 S-BOUNDARY BARRIER NOT-NPMOD LINK *-1 @<OBJ BARRIER WORD); # $SJE
+
+# coordinated <OBJs: CNP to the left and <OBJ to the left of that. no (possibly) TV to the right
+MAP:<ObjCoord (@<OBJ) TARGET Acc (*-1 @CNP BARRIER NOT-NPMOD LINK -1 @<OBJ)(NEGATE *1 MV - IV BARRIER S-BOUNDARY) ; # $SJE
+MAP:Obj>Coord (@OBJ>) TARGET Acc (1 @CNP LINK *1 @OBJ> BARRIER NOT-NPMOD)(NEGATE *-1 MV - IV BARRIER S-BOUNDARY) ; # $SJE
+
+
+## objects of infinite verbs
+#!! * __-f<obj__ (@-F<OBJ) for Acc if there is an infinite verb to your left and no FAUX
+MAP:f<obj (@-F<OBJ) TARGET Acc - Rel (*-1C REAL-V - VFIN - IV BARRIER REAL-V OR S-BOUNDARY)(NEGATE *0 @FAUX BARRIER S-BOUNDARY OR CS) ; # $SMI|SJE
+	#$ mana tjassket dajt ujvijt duhku - go throw these heads over there (pit080909.146)
+
+	
+	
+#!! infinite verb as object
+# only when TV is tagged
+# infinitive as subject is tagged already, no need to check for existing subjects
+# IMV -> OBJ if TV main verb next verb to right; NOT if other OBJ, NOT if an AUX (that is not in Inf itself) is present
+SUBSTITUTE:IMV_obj> (@IMV) (@OBJ>) TARGET (Inf) (*1 MAIN + TV BARRIER S-BOUNDARY OR REAL-V LINK NEGATE *0 @OBJ> OR @<OBJ BARRIER S-BOUNDARY)(NEGATE *0 VAUX - Inf BARRIER S-BOUNDARY); # $SJE
+SUBSTITUTE:IMV_<obj (@IMV) (@<OBJ) TARGET (Inf) (*-1 MAIN + TV BARRIER S-BOUNDARY OR REAL-V LINK NEGATE *0 @OBJ> OR @<OBJ BARRIER S-BOUNDARY)((NEGATE *0 VAUX - Inf BARRIER S-BOUNDARY) OR (*-1 MAIN BARRIER REAL-V LINK NEGATE *1 VAUX)); # $SJE
+
+
+
+#!! double object with bádjat = let
+# "subj lets obj (do) x" xcomp in UD
+# in GT -FSUBJ in accusative to ICL-OBJ (?)
+# OBJ is replaced with ICL-OBJ in dependency.cg3
+# cf. SMI: Sii lohket fatnasa gopmánan. - they said boat.acc keel.inf
+### TO-DO: include more verbs
+SUBSTITUTE:IMV>bádjat @IMV @OBJ> TARGET Inf (*1 ("bádjat") BARRIER S-BOUNDARY OR VFIN LINK *0 @OBJ> OR @<OBJ BARRIER S-BOUNDARY)(NEGATE *0 VAUX - Inf BARRIER S-BOUNDARY); # $SJE
+SUBSTITUTE:<IMVbádjat @IMV @<OBJ TARGET Inf (*-1 ("bádjat") BARRIER S-BOUNDARY OR VFIN LINK *0 @OBJ> OR @<OBJ BARRIER S-BOUNDARY)(NEGATE *0 VAUX - Inf BARRIER S-BOUNDARY); # $SJE
+
+#!! remove acc/obj reading if no TV and followed by noun
+REMOVE:accPersPronIV (Pron Pers Acc) IF (0 Gen)(*1 N BARRIER WORD - A)(NEGATE *0 TV) ; # $SJE
+
+### END_SECTION
+
+
+
+
+SECTION Leftovers ; 
+
+
+#!! SJE TO-DO: SUBJ for parallele constructions: dále'l luakkta ja dä dále njárrga - here is the bay and then here (is) the point
+
+
+
+
+#!! "del" to finite verb
+# too often attached to a non-finite verb as "outside the verbal"
+SUBSTITUTE:del_vfin (@-FADVL>) OR (@-F<ADVL) (@ADVL>) TARGET ("del" Adv)(*1 VFIN BARRIER S-BOUNDARY); # $SJE
+SUBSTITUTE:del_vfin_left (@-FADVL>) OR (@-F<ADVL) (@<ADVL) TARGET ("del" Adv)(*-1 VFIN BARRIER S-BOUNDARY); # $SJE
+
+
+
+#!! !!HNOUN MAPPING
+# HNOUN = stray noun in sentence fragment
+# promoted to head of fragment to which other cohorts attach
+# mostly copied from SMI
+
+#!! * __hnoun>ifV__ (@HNOUN) for NP-HEAD-NOM, DUPRON if. The counterpart of subj>ifV. You are HNOUN if there is a finite verb to your right, but NOT if there is a finite verb after a relative clause
+MAP:hnoun>ifV (@HNOUN) TARGET NP-HEAD-NOM - A OR DUPRON + Nom (*1 VFIN BARRIER (":"))(NEGATE *1 @SUBJ> BARRIER MV LINK 2* MV BARRIER EOS ) ; # $SMI
+	#$ Ávdugas dat guhte vurke dán girjji profehtalaš sániid.
+	#$ Ja ávdugas son guhte oskkui.
+	#$ Ávdugasat sii geat moraštit.
+	#$ Gonagas Agrippa ja dii buohkat geat lehpet dás minguin!
+	#$ Olbmot geat ellet náitoslágan dahje guimmešvuođalágan gaskavuođain.
+	#$ Dat geat ieža eai máhttán oppanassiige lohkat girjjiid.
+	#% Sihke son ja su viellja Paul Danielsen, gii lei ovdaolmmoš vieljas maŋis, vácciiga osiid skuvlla Haviikkas.
+
+#!!	* __NInfheadliner__	
+MAP:NInfheadliner (@HNOUN) TARGET Nom (NEGATE 0 VFIN)(1 Inf LINK NEGATE *1 WORD) ; # $SMI
+	#$ Áigi soabadit.
+
+#!!	* __Superlheadliner__	
+MAP:Superlheadliner (@HNOUN) TARGET Superl (NEGATE 0 VFIN)(*-1 BOS BARRIER WORD)(1 Rel LINK 1 VFIN LINK NEGATE *1 VFIN) ; # $SMI
+	#$ Stuorimus maid sáhttá oažžut.
+
+MAP:hnounNom (@HNOUN) TARGET NP-HEAD-NOM - A OR (Num Nom) (NEGATE *0 V BARRIER (":")) ; # $SMI
+
+MAP:hnounNomA (@HNOUN) TARGET A OR (Num Nom) (*-1 BOS BARRIER WORD)(*1 EOS BARRIER WORD) ; # $SMI
+
+#MAP:hnounAdvl (@HNOUN) TARGET ADVLCASE OR Acc (NEGATE *0 REAL-V OR @HNOUN) ; # $SMI
+	#$ Juoba ge dán áigodagas.
+MAP:hnounInterj (@HNOUN) TARGET Acc (*-1 Interj BARRIER NOT-NPMOD) ; # $SMI
+
+
+#!!	dependents of HNOUN
+
+MAP:ADVLheadliner (@ADVL>) TARGET ADVLCASE (*1 @HNOUN) ; # $SMI
+	#$ Vuosttaš geasi nissonolmmoš bajimusas.
+MAP:HNOUNn< (@N<) TARGET ADVLCASEAdv (-1 CRD LINK -1 @N<)((0 EOS) OR (1 EOS)) ; # coordinated HNOUNs as modifiers # $SMI
+MAP:HNOUN<advl (@<ADVL) TARGET ADVLCASEAdv (*-1 @HNOUN BARRIER CRD OR (":")) ; # $SMI
+MAP:advl>HNOUN (@ADVL>) TARGET ADVLCASEAdv (*1 @HNOUN BARRIER CRD OR (":")) ; # $SMI
+MAP:HNOUN<obj (@<OBJ) TARGET Acc (*-1 @HNOUN) ; # $SMI
+	#% Birasgáhttenlihkadus ja álgoálbmogat - ovttasbargit vai vuostálágaid?
+MAP:obj>HNOUN (@OBJ>) TARGET Acc (*1 @HNOUN) ; # $SMI|SJE
+MAP:HNOUN<spred1 (@<SPRED) TARGET (A Nom) (*-1 @HNOUN) ; # $SMI
+	#$ Dii guoktilaččat!
+MAP:spred>HNOUN (@SPRED>) TARGET (A Nom) (*1 @HNOUN) ; # $SMI
+MAP:HNOUN<spred2 (@<SPRED) TARGET (A Nom) OR (N Nom) (*-1 PUNCTUATION BARRIER REAL-V LINK *-1 @HNOUN) ; # $SMI
+	#$ Birasgáhttenlihkadus ja álgoálbmogat – ovttasbargit vai vuostálagaid?
+MAP:HNOUN<spred3 (@<SPRED) TARGET (N Ess) OR (N Nom) (*-1 Nom BARRIER V) ; # $SMI|SJE
+	#$ Mu dárkileamos muittut internáhttaskuvllas leat dán áigodagas; 10 vuosttaš jagi álbmot- ja joatkkaskuvlla (framhaldskuvlla) oahpaheaddjin, ja muhtin áigodagaid internáhttahoavdan, 12 maŋimus jagi nuoraidskuvlla jođiheaddjin ja eanaš oahppit orro internáhtas.
+
+
+#!! !!ADVL MAPPING - leftovers
+
+MAP:strayAdv (@ADVL) TARGET Adv (-1 BOS)(1 EOS) ; # $SMI
+#!! * __@<ADVLcoor__ (@<ADVL) for ADVLCASEAdv if @CNP to the left and ADVL to the left of it
+MAP:@<ADVLcoor (@<ADVL) TARGET ADVLCASEAdv (-1 @CNP LINK -1 ADVLCASEAdv) ; # $SMI
+	#$ Odne vai ihttin?
+	#$ Báhpaeamit, Margrethe Wiig, gii lei gasku giellamoivvi, ráhkadii iežas sárgumiiguin sámegiela Áppesa, mii lei stuorra ávkin sámegiela oahpahusas.
+
+# leftover sentence adverbs as adverbials 
+MAP:V<Adv-Leftovers (@<ADVL) TARGET Adv (*-1 V); # $SJE
+MAP:Adv>V-Leftovers (@ADVL>) TARGET Adv (*1 V); # $SJE
+
+MAP:ADVLCASE>_leftovers (@ADVL>) TARGET ADVLCASE (*1 MV)(NEGATE *-1 @FMV) ; # $SJE
+MAP:<ADVLCASE_leftovers (@<ADVL) TARGET ADVLCASE (*-1 MV)(NEGATE *1 @FMV) ; # $SJE
+
+
+#!! worst case mappings
+# adverbs
+MAP:cleanupADVL (@ADVL) TARGET (Adv);  # $SJE
+# elliptical obj
+MAP:ellipticalObj (@OBJ) TARGET Acc - Num - Rel ; # $SJE
+MAP:HNOUNleftover (@HNOUN) TARGET N OR (Pron Pers) ; # worst case # $SJE
+### END_SECTION
+
+
+
+
+
+#!! ! __missingX__ adds @X to all missings
+MAP:missingX (@X) TARGET (?) ; # $SMI
+
+AFTER-SECTIONS
+
+# remove readings that have not got any syntax tags
+REMOVE:WORD WORD - ALLSYNTAG ; # $SMI
+
+# IP
+# @X should be for leftovers / words where analysis fails
+# in order to see where problems persist, I will add a @PUNCT tag to un-tagged punctuation, ignoring the GT-customs
+MAP:PUNCT @PUNCT TARGET PUNCTUATION ; # $SJE
+
+
+#!! ! __therestX__ adds @X to all what is left, often errouneus disambiguated forms
+
+MAP:leftoversX (@X) TARGET (*); # $SMI
+
+
+      END #

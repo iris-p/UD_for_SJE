@@ -1,0 +1,930 @@
+# Divvun & Giellatekno - open source grammars for Sámi and other languages
+# Copyright © 2000-2016 The University of Tromsø & the Norwegian Sámi Parliament
+# http://giellatekno.uit.no & http://divvun.no
+#
+# This program is free software; you can redistribute and/or modify
+# this file under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version. The GNU General Public License
+# is found at http://www.gnu.org/licenses/gpl.html. It is
+# also available in the file $GTHOME/LICENSE.txt.
+#
+# Other licensing options are available upon request, please contact
+# giellatekno@hum.uit.no or feedback@divvun.no
+
+# ============================================================================= #
+#!!    CONVERTING GIELLATEKNO FUNCTIONS & DEPENDENCIES TO UNIVERSAL DEPENDENCY
+# ============================================================================= #
+# ============================================================================= #
+
+
+### SECTION SETS ;
+
+
+# ========== #
+#!! !!!DELIMITERS
+# ========== #
+
+DELIMITERS = "<.>" "<!>" "<?>" "<...>" "<¶>" "<…>" sent ;
+#!! Sentence delimiters are the following: <.> <!> <?> <...> <¶>
+
+
+#!! !!!TAGS AND SETS
+
+SETS
+
+LIST N = N ;	  #!! N
+LIST V = V ;	  #!! V
+LIST A = A ;	  #!! A
+LIST Adv = Adv ;  #!! Adv
+LIST CC = CC ;	  #!! CC
+LIST CS = CS ;	  #!! CS
+LIST Inf = Inf ;  #!! Inf
+LIST Sup = Sup ;  #!! Sup
+LIST Neg = Neg ;  #!! Neg
+LIST Num = Num ;  #!! Num
+LIST Po = Po ;	  #!! Po
+LIST Pr = Pr ;	  #!! Pr
+
+LIST Pcle = Pcle ; #!! Pcle
+LIST Prop = Prop ; #!! Prop
+
+LIST Pron = Pron ;		 #!! Pron
+LIST COMMA = "," ;		 #!! COMMA
+LIST DASH = "–" ;		 #!! DASH
+LIST CITATION = """ ;    #!! CITATION to keep colouring we add a "
+LIST HYPHEN = "-" ;		 #!! HYPHEN
+LIST QMARK = "\?" ;		 #!! QMARK
+LIST PUNCT = PUNCT ;	 #!! PUNCT
+LIST LEFT = LEFT ;		 #!! LEFT
+LIST RIGHT = RIGHT ;	 #!! RIGHT
+LIST CLB = CLB ;		 #!! CLB
+LIST Ind = Ind ;		 #!! Ind
+LIST Pot = Pot ;		 #!! Pot
+LIST Imprt = Imprt ;	 #!! Impr
+LIST ImprtII = ImprtII ; #!! ImprtII
+LIST Cond = Cond ;		 #!! Cond
+LIST ConNeg = ConNeg ;	 #!! ConNeg
+LIST VGen = VGen ;		 #!! VGen
+LIST Interj = Interj ;	 #!! Interj
+LIST ABBR = ABBR ;		 #!! ABBR
+LIST ACR = ACR ;		 #!! ACR
+LIST Prs = Prs ;		 #!! Prs
+LIST Prt = Prt ;		 #!! Prt
+LIST Cmpnd = Cmpnd ;	 #!! Cmpnd
+LIST RCmpnd = RCmpnd ;	 #!! RCmpnd
+LIST PrfPrc = PrfPrc ;	 #!! PrfPrc
+LIST PrsPrc = PrsPrc ;	 #!! PrsPrc
+LIST Vsubst = Vsubst ;	 #!! Vsubst
+LIST Actor = Actor ;	 #!! Actor
+LIST Actio = Actio ;	 #!! Actio
+LIST Ger = Ger ;		 #!! Ger
+LIST Indef = Indef ;	 #!! Indef
+LIST Nom = Nom ;		 #!! Nom
+LIST Acc = Acc ;		 #!! Acc
+LIST Ill = Ill ;		 #!! Ill
+LIST Com = Com ;		 #!! Com
+LIST Gen = Gen ;		 #!! Gen
+LIST Ess = Ess ;		 #!! Ess
+
+#!! !!POS sub-categories
+# ------------------
+
+LIST Pers = Pers ;
+LIST Dem = Dem ;
+LIST Interr = Interr ;
+
+
+LIST Recipr = Recipr ;
+LIST Refl = Refl ;
+LIST Rel = Rel ;
+
+LIST Adp = Adp ;
+LIST <ctjHead> = <ctjHead> ;
+
+
+# Derivations (needed?)
+# ---------------------
+
+LIST Der/NomAct = Der/NomAct ;
+
+
+
+LIST Cnj = Cnj ;
+LIST ConNeg = ConNeg ;
+LIST Cond = Cond ;
+LIST Def = Def ;
+LIST Del = Del ;
+LIST Dim = Dim ;
+LIST Dim/Der = Dim/Der ;
+LIST Dist = Dist ;
+LIST Fut = Fut ;
+LIST Imm = Imm ;
+LIST Imp = Imp ;
+LIST Incl = Incl ;
+LIST Ind = Ind ;
+LIST Inf = Inf ;
+LIST Int = Int ;
+LIST Loc = Loc ;
+LIST Med = Med ;
+LIST Neg = Neg ;
+LIST Num = Num ;
+LIST Obv =  Obv ;
+LIST Pos = Pos ;
+LIST Prf = Prf ;
+LIST Pron = Pron ;
+LIST Prox = Prox ;
+LIST Prs = Prs ;
+LIST Prt = Prt ;
+LIST Sbj = Sbj ;
+
+
+# Other tags
+# ----------
+
+LIST BOS = (>>>) (<s>); # beginning of sentence
+LIST EOS = (<<<) (</s>); # end of sentence
+
+
+LIST WORD = N A Adv V Pron CS CC Po Pr Interj Pcle Num ABBR ACR Det \? ;
+LIST PUNCTUATION = "," "." "?" "!" "'" ";" "¶" "..." "…" """ ; #" 
+
+
+
+# Some subsets of the VFIN sets
+# - - - - - - - - - - - - - - -
+LIST V-SG3 = (V Ind Prs Sg3)  (V Ind Prt Sg3) (V Cond Prs Sg3)
+             (V Cond Prt Sg3) (V Pot Prs Sg3) (V Neg Ind Sg3);
+
+LIST V-DU3 = (V Ind Prs Du3)  (V Ind Prt Du3) (V Cond Prs Du3)
+	         (V Cond Prt Du3) (V Pot Prs Du3) (V Neg Ind Du3);
+
+LIST V-PL3 = (V Ind Prs Pl3)  (V Ind Prt Pl3) (V Cond Prs Pl3)
+             (V Cond Prt Pl3) (V Pot Prs Pl3) (V Neg Ind Pl3);
+
+SET V-3  = V-SG3 OR V-DU3 OR V-PL3 ;
+ # Note that imperative verbs are not included in these sets!
+
+LIST COPULAS = "lä"; # used to be "sjaddat" "lä" "gallgat", but UD has a more restrictive use of copulas
+LIST MOD-ASP = "áigut" "bállet" "berrut" "dáidit" "fertet" "galgat" "gillet" "lávet" "sáhttit" "seahtit" "soaitit" "viggat" ;
+LIST AUX-OR-MAIN = "gallgat" "máhttet" "årrot" "sihtat";
+SET VAUX = COPULAS OR Neg OR MOD-ASP OR AUX-OR-MAIN ;
+
+
+# some verbs that exclude OBJ reading
+LIST IV = ("lä" @FMV) "årrot" ;
+# transitive verb tag
+LIST TV = TV;
+
+LIST XCOMP_VERBS = "pruvvut" "vassjat" "nahkat" "állget" "usjudit" "åjáldit" "åjáldahttet" "mannat" "vuällget" "sihtat" "lijjsit" "bádjat" "häjjtet"; # try, feel like, orke, start, think/mean to, forget, forget, go, go, want, be worth doing/succeed, let/cause, stop
+# itjij del [manná] årrot nåv mådde biejve - det gick inte vara där så många dagar
+# not 100% about lijjsit
+# should ådtjot = get (to) be included?
+
+
+# LIST MO-MANge-sme = ("goas" når) ("gokko" hvor) ("gos" hvor) ("gosa" hvorhen) ("govt" hvordan)  ("got" ?hvordan) ("makkár" hva slags) ("man" hvor) ("manne" hvorfor) ("mo" hvordan) ("mot" ?hvordan) ("movt" hvordan) ("nugo" (slik) som) ("dego" liksom);
+
+LIST Q-WORDS = "galle" "gallen" "galles" "gen" "gev" "gie" "giejna" "giesa" "guggu" "gukkte" "gunne" "gusa" "guse" "gusne" "gusne" "gusste" "gåbbá" "gåbbelij" "gåbbelin" "gåbbelist" "gåk" "gåk" "gåkkte" "gånne" "gåsse" "gåsste" "gässte" "maggár" "maggárijda" "majna" "majt" "maktes" "manen" "masa" "masste" "mav" "mava" "mejt" "miggir" "mij" "man";
+
+LIST MO-MANge = "galle" "gallen" "guggu" "gukkte" "gunne" "gusa" "guse" "gusne" "gåk" "gåkkte" "gånne" "gåsse" "maggár" "maktes" "manen" "mav" "mava" "mejt" "miggir" "gunnuk" "gunnik" "mah" "majt" "man";
+# hvordan/hur många, når, hvor hen, hvordan, hvor, hvor, hvor, hvor hen/hvor, hvordan, hvordan, hvor, når, hvordan/hvilken, hvordan, hvorfor, hva, hva, hva, hvordan/hvilken, hvilken, som, som hva, som hva
+
+SET ADVL-COMP = MO-MANge ;
+
+LIST OBJ-COMP = ("makkár" Pron) ("movt" CS) "ahte" "att" "at" "jut" "juhte" "galle" "gukkte" "gåk" "gåkkte" "maktes" "man";
+# these typically introduce a objectsubclause
+# Consider adding ("mo" CS) to the OBJ-COMPsmi set, cf.
+# "Mii fertet gal árvvoštallat mo mii galgat bargat"
+# where the subclause is advl without mo and object with mo in this set
+
+LIST MCL-CONJ = ("men" CC) ("vala" CC) ("val" CC) ; # these typically introduce a main clause, not coordination of subclauses
+#LIST MUHTO = ("muhto" CC) ("mohte" CC) ("men" CC) ("valla" CC) ; # these typically introduce a main clause, not coordination
+
+SET DASHHYPHEN = ("-") OR ("–") ;
+
+SET NOT-ADJ = WORD - A ;
+SET NOT-COMMA = CLB - COMMA ;
+
+LIST HALF-INTERJ = "vaj" ;
+
+#!! !!Syntactic tags and sets
+# =======================
+
+#!! !Syntactic tags in input to this file
+
+LIST @-FADVL> = @-FADVL> @-FADVL-ela> @-FADVL-ine> ; 	         # adverbial of infinite verb outside of the predicate
+LIST @-F<ADVL = @-F<ADVL @-F<ADVL-ela @-F<ADVL-ine ; 	         # adverbial of infinite verb outside of the predicate
+LIST @-FOBJ> = @-FOBJ> ;			 # object of infinite verb outside of the verbal
+LIST @-F<OBJ = @-F<OBJ ;			 # object of infinite verb outside of the verbal
+LIST @-FSUBJ> = @-FSUBJ> ;			# subject of infinite verb outside of the verbal
+LIST @-F<SUBJ = @-F<SUBJ ;			# subject of infinite verb outside of the verbal
+LIST @-FSPRED> = @-FSPRED> ;			# subject of infinite verb outside of the verbal
+LIST @-F<SPRED = @-F<SPRED ;
+LIST @-F<OPRED = @-F<OPRED ;
+
+LIST @COMP-CS< = @COMP-CS< ;
+LIST @CMPND = @CMPND ;				# not in use in sme
+LIST @ADVL>CS = @ADVL>CS ;
+
+#!! modifiers & complements
+LIST @>A = @>A ; 			 # modifier of adj
+LIST @>Adv = @>Adv ; 			 # modifier of adv, to be generalised
+LIST @>ADVL = @>ADVL ; 		         # modifier of advl
+LIST @ADVL< = @ADVL<  ; 		         # modifier of advl
+LIST @ADVL = @ADVL ;
+LIST @>N = @>N ; 			 # modifier of N
+LIST @N< = @N< ; 			 # modifier of N
+LIST @>CC = @>CC ; 			 # modifier of CC
+LIST @>Num = @>Num ; 		         # attr of numeral
+LIST @Num< = @Num< ; 		         # modifier of Num
+LIST @>Pron = @>Pron ;                   # Adverb to pron
+LIST @Pron< = @Pron< ;
+LIST @>P = @>P ; 			 # complement of P
+LIST @P< = @P< ; 			 # complement of P
+LIST @A< = @A< ; 			 # complement of A
+LIST @Adv< = @Adv< ; 			 # complement of A
+
+#!! appositions
+LIST @APP>Pron = @APP>Pron ;             # apposition of pron
+LIST @APP-ADVL< = @APP-ADVL< ;           # apposition of advl
+LIST @APP>ADVL = @APP>ADVL ;
+LIST @APP-N< = @APP-N< ; 	         # apposition of N
+LIST @APP-Num< = @APP-Num< ;             # apposition of Num
+LIST @APP-Pron< = @APP-Pron< ;           # apposition of Pron
+
+LIST @<ADVL = @<ADVL @<ADVL-ela @<ADVL-ine ;
+LIST @ADVL> = @ADVL> @ADVL-ine> @ADVL-ela>;
+
+LIST @CNP = @CNP ; 			 # conjunction between NPs
+LIST @CVP = @CVP ; 			 # conjunction between VPs
+LIST @HAB> = @HAB> ; 			 # habitive (aka advl of possessiv constr)
+LIST @<HAB = @<HAB ; 			 # habitive (aka advl of possessiv constr)
+LIST @HNOUN = @HNOUN ;
+LIST @<OBJ = @<OBJ ; 			 # object
+LIST @OBJ> = @OBJ> ; 			 # object
+LIST @PCLE = @PCLE ; 		         # particle
+LIST @SUBJ = @SUBJ ; 		         # subject
+LIST @<SUBJ = @<SUBJ ; 		         # subject
+LIST @SUBJ> = @SUBJ> ; 		         # subject
+LIST @<OPRED =  @<OPRED ;
+LIST @<SPRED =  @<SPRED ;
+LIST @OPRED> =  @OPRED> ;
+LIST @SPRED> =  @SPRED> ;
+LIST @SPRED =  @SPRED ;
+LIST @<PPRED = @<PPRED ;
+LIST @VOC = @VOC ;
+LIST @INTERJ = @INTERJ ;
+LIST @>CS = @>CS ;
+LIST @APP = @APP ;
+
+#!! !Syntactic tags
+
+LIST @FMV = @FMV ;		#!! * @FMV : finite main verb
+						#!! ** oaidná: Son oaidná ollislaš gova. - She sees the whole picture
+LIST @IMV = @IMV ;     	#!! * infinite main verb
+LIST @FAUX = @FAUX ;	#!! * @FAUX : finite auxiliary verb
+						#!! ** ferte: Son ferte oaidnit ollislaš gova. - She must see the whole picture. 
+LIST @IAUX = @IAUX ;			#!! * @IAUX : non-finite auxiliary
+LIST @FMVdic = @FMVdic ;	#!! * @FMVdic : finite main verb introducing direct speech
+LIST @IMVdic = @IMVdic ;	#!! * @IMVdic : infinite main verb introducing direct speech
+LIST @FS-IMV = @FS-IMV ;	#!! * @FS-IMV : infinite main verb of subclause 
+LIST @FS-IAUX = @FS-IAUX ;		#!! * @FS-IAUX : infinite auxiliary verb in subclause
+LIST @FS-N<IAUX = @FS-N<IAUX ;	#!! * @FS-N<IAUX : infinite auxiliary verb of a relative subclause
+LIST @FS-N<IMV = @FS-N<IMV ;	#!! * @FS-N<IMV : infinite main verb of a relative subclause
+LIST @FS-OBJ = @FS-OBJ ; 	   	#!! * @FS-OBJ : finite verb in subclause functioning as object
+LIST @FS-SUBJ = @FS-SUBJ ;     	#!! * @FS-SUBJ : finite verb in subclause functioning as subject
+LIST @FS-ADVL> = @FS-ADVL> ; 	#!! * @FS-ADVL> : finite verb in subclause functioning as adverbial to the left of the main clause
+LIST @FS-<ADVL = @FS-<ADVL ; 	#!! * @FS-<ADVL : finite verb in subclause functioning as adverbial to the right of the main clause
+LIST @S< = @S< ;       			#!! * @S< : a clause modifying a sentence to the right of it
+LIST @FS-ADVL = @FS-ADVL ; 	  	#!! * @FS-ADVL : finite verb in subclause ...
+LIST @FS-N< = @FS-N< ;         	#!! * @FS-N< : relative clause to N
+LIST @FS-VFIN< = @FS-VFIN< ; 	#!! * @FS-VFIN< : finite verb in sentence, statement
+								#!! ** eai: Idja ii leat šat, eai ge sii dárbbaš lámppá dahje beaivváža čuovgga, dasgo Hearrá Ipmil lea sin čuovga. - The night is not anymore, they do not need the lamp- or day- light either, because God the Lord is their light.
+LIST @FS-<APP = @FS-<APP ;    	#!! * @FS-<APP : finite subclause functioning as an apposition
+LIST @ICL-ADVL = @ICL-ADVL ;  	#!! * @ICL-ADVL : non-finite subclause ...
+LIST @ICL-AUX< = @ICL-AUX< ;  	#!! * @ICL-AUX< : "right" argument of auxiliary (?)
+LIST @ICL-OBJ = @ICL-OBJ ; 	  	#!! * @ICL-OBJ : infinitival clause object
+LIST @ICL-SUBJ = @ICL-SUBJ ; 	#!! * @ICL-SUBJ : infinitival clause subject
+LIST @ICL-P< = @ICL-P< ;		#!! * @ICL-P< : infinitival clause complement of preprosition
+LIST MAIN = <mv> ;				#!! * MAIN : main verb. A temporary tag omitted in the end of the file.
+LIST <aux> = <aux> ;			#!! * <aux> : auxilary verb. A temporary tag omitted in the end of the file.
+
+LIST @X = @X ;
+
+
+#!! !Syntactic set definitions
+# =========================
+
+LIST SPRED = @SPRED> @<SPRED @SPRED ;
+LIST OPRED = @OPRED> @<OPRED ;
+LIST SUBJ = @<SUBJ @SUBJ> @SUBJ @-FSUBJ> @-F<SUBJ ;
+LIST SUBJ> = @SUBJ> @tSUBJ> ;
+LIST <SUBJ = @<SUBJ @<tSUBJ  ;
+LIST OBJ = @<OBJ @OBJ> @OBJ @-FOBJ> @-F<OBJ ;
+LIST OBJ> = @OBJ> ;
+LIST <OBJ = @<OBJ ;
+LIST FOBJ> = @-FOBJ> ;
+LIST F<OBJ = @-F<OBJ ;
+LIST F<SUBJ = @-F<SUBJ ;
+LIST APP = @APP>Pron @APP-ADVL< @APP>ADVL @APP-N< @APP-Num< @APP-Pron<;
+
+LIST @<ARG = @<SUBJ @<SPRED @<OBJ @<OPRED @-F<OBJ @-F<OPRED ;
+
+LIST ADVL = @<ADVL @ADVL> @ADVL @-FADVL> @-F<ADVL ;# @APP-ADVL< @APP>ADVL @CL-<ADVL @CL-ADVL> ; # @i-<ADVL @i-ADVL> ; 		         # adverbial
+SET IMV = @IMV OR @FS-IMV OR @FS-N<IMV ;
+
+
+LIST @V = @FMV @IMV @FAUX @IAUX @FS-VFIN< @FS-ADVL @FS-<ADVL @FS-ADVL> @FS-OBJ @FS-SUBJ @FS-IMV @FS-N<IMV @FS-N< @FS-P< @FS-P<IMV @FS-IAUX @ICL-P< @ICL-P<IMV @FS-N<IAUX @ICL-OBJ @ICL-SUBJ @PRED @PRED2;
+LIST @MCLV = @FMV @IMV @FAUX @IAUX ;
+LIST @SCLV = @FS-VFIN< @FS-IMV @FS-N<IMV @FS-N< @FS-IAUX @FS-N<IAUX @FS-ADVL @FS-ADVL> @FS-<ADVL @FS-OBJ @FS-SUBJ;
+LIST @FS-FIN = @FS-N< @FS-ADVL @FS-ADVL> @FS-<ADVL @FS-OBJ @FS-SUBJ ;#@FMV;
+LIST @FV = @FMV @FAUX ;
+LIST @AUX = @IAUX @FAUX ;
+LIST @MV = @IMV @FMV @FMVdic @IMVdic ;
+LIST KONJ = CS CC <cs> ;
+
+LIST @-FARG = @-FOBJ> @-F<OBJ @-FADVL> @-F<ADVL @-F<SPRED @-F<OPRED @-FSUBJ> ;
+SET @ARG = SUBJ OR OBJ OR SPRED OR OPRED OR ADVL OR @ICL-OBJ OR @<PPRED OR @APP-N< OR @P< ;
+SET @CLAUSE = @HNOUN OR @-FARG OR @V - CC ;
+LIST @NOARROW = @ADVL @SUBJ @OBJ ;
+
+LIST COMPOUND = (".*#.*"r) ;
+
+SET S-BOUNDARY = (Pron Interr) OR Rel OR MCL-CONJ OR ADVL-COMP OR ("\;") OR (":") OR ("-") OR ("–") OR @CVP ;
+
+# all possible objects
+LIST OBJECT = @OBJ> @<OBJ @FS-OBJ ;
+# subordinating question words, adverbs and conjunctions
+SET SUB_ADV_CS = Q-WORDS OR CS ;
+
+
+
+#!! useful SETS from functions
+SET AdjOrNum = A OR Num ;
+LIST CASE = Nom Acc Gen Ill Com Ess Ine Ela Abe;
+SET PRE-AP-HEAD = Adv OR CC ;
+SET NoAP = WORD - A - PRE-AP-HEAD ; #NoAP = not possibly anywhere in AP, plus CC
+
+SET AttrAPpossible = (A Attr) OR PRE-AP-HEAD ;
+SET PRE-NP-HEAD = (Prop @>N) OR AttrAPpossible OR (ABBR Attr) OR (Pron Pers Gen) OR (N Gen) OR 
+         Num OR CC OR (Pron Dem) OR (Pron Refl Gen) OR (Pron Indef) OR 
+         (PrfPrc @>N) OR PrsPrc OR (A Ord) OR (A Sg) OR (A Pl) ;
+# pre-modifiers of nouns
+SET NOT-NPMODADV    = WORD - PRE-NP-HEAD - Adv - Pcle ;
+SET MAINVERB = V - VAUX OR @FMV OR @IMV OR @FS-IMV OR @FS-N<IMV;
+
+SET V-MOOD = Ind OR Pot OR Imprt OR Neg ;	# Moods
+SET VFIN = V-MOOD ;
+SET NONVFIN = V - VFIN ;
+
+
+LIST AHTE = "ahte" "att" "at" "jut" "juhte" ;
+
+LIST <mv> = <mv>;
+LIST <aux> = <aux>;
+
+LIST ANY_GT_MAPPING = /^(@[A-Z-<>]+?)$/r ; # regex to match any of the giellatekno mapping tags
+LIST ANY_UD_MAPPING = /^(@[a-z:]+?)$/r ; # regex to match any of the giellatekno mapping tags
+LIST ANY_MAPPING = /^(@.+?)$/r ;
+LIST ANY_WORDFORM = /^"(<.*?>)"$/r ;
+
+LIST ALL_MAPPINGS = @-F<ADVL @-F<ADVL-ela @-F<ADVL-ine @-F<OBJ @-F<OPRED @-F<SPRED @-F<SUBJ @-FADVL-ela> @-FADVL-ine> @-FADVL> @-FARG @-FOBJ> @-FSPRED> @-FSUBJ> @<ADVL @<ADVL-ela @<ADVL-ine @<ARG @<HAB @<OBJ @<OPRED @<PPRED @<SPRED @<SUBJ @<tSUBJ @>A @>ADVL @>Adv @>CC @>CS @>N @>Num @>P @>Pron @A< @ADVL @ADVL-ela> @ADVL-ine> @ADVL< @ADVL> @ADVL>CS @APP @APP-ADVL< @APP-N< @APP-Num< @APP-Pron< @APP>ADVL @APP>Pron @ARG @AUX @Adv< @CL-<ADVL @CL-ADVL> @CLAUSE @CMPND @CNP @COMP-CS< @CVP @FAUX @FMV @FMVdic @FS-<ADVL @FS-<APP @FS-ADVL @FS-ADVL> @FS-FIN @FS-IAUX @FS-IMV @FS-N< @FS-N<IAUX @FS-N<IMV @FS-OBJ @FS-P< @FS-P<IMV @FS-SUBJ @FS-VFIN< @FUNCT @FV @HAB> @HNOUN @IAUX @ICL-ADVL @ICL-AUX< @ICL-OBJ @ICL-P< @ICL-P<IMV @ICL-SUBJ @IMV @IMVdic @INTERJ @MCLV @MV @N< @NOARROW @Num< @OBJ @OBJ> @OPRED> @P< @PCLE @PRED @PRED2 @PUNCT @Pron< @S< @SCLV @SPRED @SPRED> @SUBJ @SUBJ> @V @VOC @X @acl @acl:rel @acl:relcl @advcl @advmod @amod @appos @aux @aux:neg @case @cc @cc:preconj @ccomp @compound @conj @cop @csub @csubj @csubj:cop @dep @det @discourse @dislocated @expl @fixed @flat @flat:foreign @i-<ADVL @i-ADVL> @mark @nmod @nmod:poss @nsubj @nsubj:cop @nummod @obj @obl @orphan @parataxis @punct @reparandum @root @tSUBJ> @tag @vocative @xcomp ;
+
+
+LIST <pred> = <pred>; # tag for the head of a copula in non-verbal predication
+
+LIST <cnp> = <cnp> ; # tag to mark "local coordinator" commas
+LIST <cvp> = <cvp> ; # tag for commas between VPs
+
+#!! UNIVERSAL DEPENDENCIES TAGS
+LIST @nsubj = @nsubj ;	# nominal subject
+LIST @nsubj:cop = @nsubj:cop ;	# nominal copular subject
+LIST @csubj:cop = @csubj:cop ;	# clausal copular subject
+LIST @obj = @obj ;		# nominal object
+
+LIST @csubj = @csubj ;	# clausal subject
+LIST @ccomp = @ccomp ;	# clausal object / complement
+LIST @xcomp = @xcomp ;	# open clausal complements: verbal complement without own subject, but the subject is given outside; e.g. "I consider him a [fool]"
+
+LIST @obl = @obl ;					# non-core argument
+LIST @vocative = @vocative ;		# vocative
+LIST @expl = @expl ;				# expletive
+LIST @dislocated = @dislocated ;	# dislocated or postponed elements, e.g. "Il faut pas la manger, la [plasticine]"
+
+LIST @advcl = @advcl ;			# non-core subordinate clause modifier of verb
+
+LIST @advmod = @advmod ;		# adverbial (phrase head) modifier
+LIST @discourse = @discourse ;	# discourse markers, e.g. interjections, fillers, discourse particles
+
+LIST @aux = @aux ;			# auxilary
+LIST @aux:neg = @aux:neg ;	# negation verb
+LIST @cop = @cop ;			# copula
+LIST @mark = @mark ;		# marking a subordinate clause
+
+LIST @nmod = @nmod ;		# nominal modifier
+LIST @nmod:poss = @nmod:poss ;		# possessive nominal modifier
+LIST @appos = @appos ;		# apposition
+LIST @nummod = @nummod ;	# numeral modifier
+
+LIST @acl = @acl ;			# clausal modifier of a noun
+LIST @acl:relcl = @acl:relcl ;			# relative clause
+
+LIST @amod = @amod ;		# adjectival modifier of a noun
+
+LIST @det = @det ;			# determiner
+LIST @case = @case ;		# token as case marker, e.g. postposition
+
+LIST @conj = @conj ;		# conjunct
+LIST @cc = @cc ;			# coordinating conjunction, link to @conj
+LIST @cc:preconj = @cc:preconj ;	# word bracketing conjunction, e.g. "[both] boys and girls"
+
+LIST @fixed = @fixed ;			# fixed multi-word expression
+LIST @flat = @flat ;			# multi-word expression withouth clear head, e.g. multi-part names
+LIST @flat:foreign = @flat:foreign ;	# for Swedish phrases
+LIST @compound = @compound ;	# multi-word compound (probably not used here)
+
+LIST @parataxis = @parataxis ;	# side-by-side clauses withouth clear coordination / subordination, e.g. run-on sentences, interjected clauses
+
+LIST @orphan = @orphan ;			# dependent of an omitted head
+LIST @reparandum = @reparandum ;	# false start, links to correct version
+
+LIST @punct = @punct ;		# punctuation
+LIST @root = @root ;		# link to 0
+LIST @dep = @dep ;			# unclear relation, leftovers
+
+LIST unknown = ?;
+
+LIST <swe> = <swe> ; # foreign Swedish word
+
+
+### END_SECTION
+
+#   §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+#   §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+#   §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+#   §§§§§§§§§§§§§§§§§§§§§§§§§§§                             §§§§§§§§§§§§§§§§§§§§§§§§§§
+#   §§§§§§§§§§§§§§§§§§§§§§§§§§§                             §§§§§§§§§§§§§§§§§§§§§§§§§§
+#   §§§§§§§§§§§§§§§§§§§§§§§§§§§       grammar starts        §§§§§§§§§§§§§§§§§§§§§§§§§§
+#   §§§§§§§§§§§§§§§§§§§§§§§§§§§                             §§§§§§§§§§§§§§§§§§§§§§§§§§
+#   §§§§§§§§§§§§§§§§§§§§§§§§§§§                             §§§§§§§§§§§§§§§§§§§§§§§§§§
+#   §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+#   §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+#   §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+
+
+### TO DO ###
+### dislocated
+# like GT APP-Pron etc.
+#$ attaches to clause head
+#$ Muhto diet Will Turner, son nai lea fiinna olmmái.
+#$ Il faut pas la manger, la plasticine
+
+
+
+### XCOMP ###
+#!! xcomp verbs are not AUX in UD
+SUBSTITUTE:xcomp_aux_main <aux> <mv> TARGET XCOMP_VERBS;
+
+#!! GT predicative for sjaddat = xcomp in UD!
+SUBSTITUTE:spred_xcomp_sjaddat SPRED @xcomp TARGET N OR A IF (p ("sjaddat"));
+
+# Inf = xcomp if close to xcomp verbs. exception for bádjat which gets two objects in GT, 1st = obj, 2nd = xcomp
+SUBSTITUTE:XCOMP_VERBS ANY_GT_MAPPING @xcomp TARGET Inf (*0 XCOMP_VERBS BARRIER VFIN OR S-BOUNDARY)(NEGATE *1 Inf LINK *-1 ("bádjat") BARRIER VFIN)(NEGATE p V - XCOMP_VERBS);
+SETPARENT:XCOMP_VERBS (@xcomp Inf) TO (*0 XCOMP_VERBS BARRIER <mv> OR S-BOUNDARY);
+
+
+#!! ccomp of adjectives
+# not xcomp because it the matrix does not determine the subject
+	#$ dat lä állke hållåt - that is easy to describe/say (pit100405b.069)
+SETPARENT:CCOMP_ADJ SPRED + Inf TO (*-1 SPRED + A BARRIER S-BOUNDARY);
+SUBSTITUTE:CCOMP_ADJ SPRED @ccomp TARGET Inf (*-1 SPRED + A BARRIER S-BOUNDARY);
+
+
+### AUXILIARIES ###
+# IF ONE OF THESE RULES IS NOT EXECUTED, IT PROBABLY MEANS THAT IT WOULD RESULT IN A LOOP
+
+SETPARENT:IMV_up IMV OR @IAUX + XCOMP_VERBS TO (p <aux> LINK **p (*) LINK 0 (*) - <aux>); # move main verb up to the first parent that's not an aux 
+
+# aux down: prefer IMV to the right
+	#$ mav sida galgav ienabujt ságastit? - what more do you want me to say?
+SETPARENT:AUX_down <aux> TO ((*1 IMV OR @IAUX + XCOMP_VERBS BARRIER S-BOUNDARY OR <mv>) OR (*0 IMV OR @IAUX + XCOMP_VERBS BARRIER S-BOUNDARY OR <mv>)); # move aux down
+SETPARENT:aux_children_up (*)(p <aux> LINK p ANY_GT_MAPPING OR ANY_UD_MAPPING) TO (p <aux> LINK p (*)); # move children of aux up (only if that is not @root)
+
+
+#!! don't replace FS with @aux yet, before imv got the right tag
+
+
+### PREDICATIVES ###
+# (temporal and clausal) adverbs that are not predicates
+LIST Adv_noPred = "del" "ujtu" "dä" "mudiŋ" "så";
+# temporal ADVLs that (usually) are not predicates
+LIST N_noPred = "árrat" "iehket" "bálle" "bäjjve" "dállve" "tjakktja" Com;
+SET NO_PRED = Adv_noPred OR N_noPred ;
+
+#!! tag SUBJ as copular subjects
+SUBSTITUTE:nsubj_cop (@<SUBJ) (@nsubj:cop) TARGET (@<SUBJ)(p COPULAS + <mv>);
+SUBSTITUTE:nsubj_cop (@SUBJ>) (@nsubj:cop) TARGET (@SUBJ>)(p COPULAS + <mv>);
+
+#!! ICL-SUBJ as copular subjects
+SUBSTITUTE:csubj_cop (@ICL-SUBJ) (@csubj:cop) TARGET (*)(p COPULAS + <mv>);
+SUBSTITUTE:csubj_cop (@ICL-SUBJ) (@csubj:cop) TARGET (*)(p COPULAS + <mv>);
+
+SET subj_cop = @nsubj:cop OR @csubj:cop ;
+
+#!! tag copula=main verb as @cop
+# if the copula heads a subclause, the subclause-tag should be kept!
+# if there is no nsubj, it's probably an existential 
+SUBSTITUTE:cop_fs ANY_GT_MAPPING (VSTR:$1 @cop) TARGET COPULAS + <mv> (0 @FS-FIN)((c subj_cop LINK s ADVL OR SPRED) OR (c SPRED)); # match with regex, add @cop tag
+SUBSTITUTE:cop @FMV OR @FS-IMV OR @IMV OR @FS-N<IMV (@cop) TARGET (*)(0 COPULAS + <mv>)((c subj_cop LINK s ADVL OR SPRED) OR (c SPRED - N));
+SUBSTITUTE:cop @FMV OR @FS-IMV OR @IMV OR @FS-N<IMV (@cop) TARGET (*)(0 COPULAS + <mv>)((NOT c subj_cop LINK s ADVL - Adv) OR (c SPRED)); # elliptical subject but advl (that is not just an adverb)
+
+
+#!! add a <pred> tag to non-verbal predication (spred or advl)
+# change rules to "IF (p @cop)"??
+SUBSTITUTE:<pred> ANY_GT_MAPPING (VSTR:$1 <pred>) TARGET SPRED ;
+# priority 1: nsubj ADVL> cop
+SUBSTITUTE:<pred>_advl1 ANY_GT_MAPPING (VSTR:$1 <pred>) TARGET @ADVL> (*1 @cop BARRIER <mv> OR @ADVL> - NO_PRED)(*-1 subj_cop BARRIER <mv>)(NEGATE *0 <pred> BARRIER S-BOUNDARY)(NEGATE 0 NO_PRED);
+# priority 2: nsubj cop <ADVL. IF no advl moved up yet
+SUBSTITUTE:<pred>_advl2 ANY_GT_MAPPING (VSTR:$1 <pred>) TARGET @<ADVL (*-1 @cop BARRIER <mv> OR @<ADVL - NO_PRED LINK *-1 subj_cop BARRIER <mv>)(NEGATE *0 <pred> BARRIER S-BOUNDARY)(NEGATE 0 NO_PRED);
+# priority 3: ADVL> cop nsubj. IF no advl moved up yet
+SUBSTITUTE:<pred>_advl3 ANY_GT_MAPPING (VSTR:$1 <pred>) TARGET @ADVL> (*1 @cop BARRIER <mv> OR @ADVL> - NO_PRED LINK *1 subj_cop BARRIER <mv> )(NEGATE *0 <pred> BARRIER S-BOUNDARY)(NEGATE 0 NO_PRED);
+# priority 4: ADVL> nsubj cop. IF no advl moved up yet
+SUBSTITUTE:<pred>_advl3 ANY_GT_MAPPING (VSTR:$1 <pred>) TARGET @ADVL> (*1 subj_cop BARRIER <mv> OR @ADVL> - NO_PRED LINK *1 @cop BARRIER <mv> OR @ADVL>)(NEGATE *0 <pred> BARRIER S-BOUNDARY)(NEGATE 0 NO_PRED);
+# priority 5: cop nsubj <ADVL. IF no advl moved up yet
+SUBSTITUTE:<pred>_advl3 ANY_GT_MAPPING (VSTR:$1 <pred>) TARGET @<ADVL (*-1 subj_cop BARRIER <mv> OR @<ADVL - NO_PRED LINK *-1 @cop BARRIER <mv> OR @<ADVL)(NEGATE *0 <pred> BARRIER S-BOUNDARY)(NEGATE 0 NO_PRED);
+# priority 6: no subj_cop
+SUBSTITUTE:<pred>_nosubj ANY_GT_MAPPING (VSTR:$1 <pred>) TARGET @<ADVL (*-1 @cop BARRIER <mv> OR @<ADVL - NO_PRED)(NEGATE *0 <pred> BARRIER S-BOUNDARY)(NEGATE 0 NO_PRED);
+
+
+SETPARENT:spred_up <pred> TO (p @cop LINK p (*)); # move SPRED/non-verbal predicate up: setparent of spred to parent of current parent
+
+#!! if no element has moved up, it's not a copula
+# not a simple sibling test because then you can't check for s-boundary. non-verbal predication can happen in subordinate clauses:
+# Ja dånnå gatjade muvste jus lin hárre jågån.
+SUBSTITUTE:cop_FMV_noSiblings @cop @FMV TARGET (*) (NEGATE *0 <pred> BARRIER S-BOUNDARY)(NEGATE s <pred>)(NEGATE 0 @FS-FIN)(0 VFIN);
+SUBSTITUTE:cop_IMV_noSiblings @cop @IMV TARGET (*) (NEGATE *0 <pred> BARRIER S-BOUNDARY)(NEGATE s <pred>)(NEGATE 0 @FS-FIN)(NEGATE 0 VFIN);
+SUBSTITUTE:cop_FS_noSiblings @cop (*) TARGET (*) (NEGATE *0 <pred> BARRIER S-BOUNDARY)(NEGATE s <pred>)(0 @FS-FIN OR @FS-IMV);
+
+SETPARENT:cop_down_advl @cop TO (s <pred>); # setparent of copula to sibling ADVL (= element that was moved up)
+#SETPARENT:cop_down_spred @cop TO ((*1 @<SPRED BARRIER V) OR (*-1 @SPRED> BARRIER V)); # setparent of copula to spred
+
+SETPARENT:cop_children_up (*) TO (p @cop LINK p <pred>); # setparent of children of copula to copula's parent instead
+
+
+### N subjects & objects ###
+SUBSTITUTE:subj_nsubj SUBJ (@nsubj) TARGET (*);
+SUBSTITUTE:obj_obj OBJ (@obj) TARGET (*);
+
+
+### POSTPOSITIONS ###
+SETPARENT:>P_up @>P TO (p Po LINK p (*)); # move complement up: setparent of child of postposition to parent of postposition
+SETPARENT:Po_>P Po TO (*-1 @>P); # move postposition down: set complement of postposition as parent
+SETPARENT:Po_children_up (*) TO (p Po LINK p (*)); # setparent of children of postpositon to its parent
+
+# change labels. (Po is usually ADVL in GT, can be APP-ADVL)
+# move function label from Po to complement
+SUBSTITUTE:>P_label @>P $$ALL_MAPPINGS TARGET @>P (*1 Po LINK 0 $$ALL_MAPPINGS);
+#SUBSTITUTE:>P_advl @>P (@obl) TARGET (*);
+# label Po as case
+SUBSTITUTE:Po_case ANY_GT_MAPPING (@case) TARGET (Po);
+
+# if a PP is the head of a copula, it is NOT @obl! that doesn't matter if it has root as parent, but if it is coord or a subordinate clause, it must be changed!
+	#$ Ja dä vuojnáv Tjäggelvasav, stuor jávvre mij lä [Alesgietje] guoran.
+# @obl > @acl:relcl IFF children @cop & Rel
+#SUBSTITUTE:obl_aclRelcl @obl @acl:relcl TARGET @obl (c @cop)(c Rel);
+# @obl > @advcl
+SUBSTITUTE:obl_fs (@obl) OR (@<SPRED) OR (@SPRED>) OR @<ADVL OR @ADVL> $$@FS-FIN TARGET (*) (c $$@FS-FIN LINK 0 @cop);
+
+#!! non-finite postpositions
+SUBSTITUTE:Po_-fADVL (@-FADVL>) OR (@-F<ADVL) (@obl) TARGET N OR Pron (NEGATE c Po);
+
+
+### COORDINATION ###
+#!! if a copula is <ctjHead>, move the tag up
+SUBSTITUTE:pred_ctjHead (<pred>) (<pred> <ctjHead>) TARGET (*) (c (@cop <ctjHead>));
+SUBSTITUTE:aux_ctjHead (V) (V <ctjHead>) TARGET (*) (c (<aux> <ctjHead>));
+SUBSTITUTE:cop_ctjHead <ctjHead> (*) TARGET @cop OR <aux> (p <ctjHead>);
+
+#!! coordinated clauses
+SUBSTITUTE:cvp ANY_GT_MAPPING (@conj) TARGET <mv> (c ("ja") OR ("jalá") LINK *-1 <ctjHead>);
+SETPARENT:conj (@conj <mv>) TO (c @CVP LINK *-1 <ctjHead>);
+
+SUBSTITUTE:pred ANY_GT_MAPPING (@conj) TARGET <pred> (c ("ja") LINK *-1 <ctjHead>);
+
+#!! coordination below clause-level
+# doesn't work until reparandum is mapped - in GT, repetition of the same word is coordination
+#SUBSTITUTE:cnp ANY_MAPPING (@conj) TARGET $$WORD (cl @CNP OR COMMA - <cvp>)(pl $$WORD + <ctjHead>);
+
+#!! if a word has a child @CNP and a parent with the same tag as itself, its a conj:
+SUBSTITUTE:same_tag_conj ANY_MAPPING (@conj) TARGET $$ANY_MAPPING - APP (p $$ANY_MAPPING)(c @CNP OR <cnp>) ;
+
+### NOMINAL DEPENDENTS ###
+SUBSTITUTE:>N_nmod @>N OR @N< (@nmod) TARGET N OR Pron; #!! nmod
+SUBSTITUTE:>N_amod @>N OR @N< (@amod) TARGET A; #!! amod
+SUBSTITUTE:>N_nummod @>N OR @N< (@nummod) TARGET Num; #!! nummod
+
+SUBSTITUTE:>Num_flat @>Num (@flat) TARGET Num; #!! num flat
+SUBSTITUTE:>Num_flat @Num< (@flat) TARGET Num; #!! num flat
+
+SUBSTITUTE:>N_det @>N OR @N< (@det) TARGET (Det); #!! determiner
+
+#!! possessive nmods
+SUBSTITUTE:nmod_poss @nmod @nmod:poss TARGET N OR Pron (0 Gen);
+
+SUBSTITUTE:>ADVL_advmod @>ADVL OR @-F<ADVL @advmod TARGET (*) ;
+
+#!! verb forms as nominal dependents
+# participles treated as adjectives (not in documentation but cf. UD English corpus)
+SUBSTITUTE:Vamod @>N OR @N< @amod TARGET PrfPrc;
+SUBSTITUTE:Vnmod @>N OR @N< @nmod TARGET Vsubst;
+
+#!! proper nouns:
+# in GT all parts of a name are chained with the right of two elements as the head Máhtte > Sikku > Valio
+# in UD, the first part is the head and the others are @flat
+#@reparandum (0 ("@.*"r)) TO (3 (VSTR:"<$1.*>"r)) 
+#SETPARENT:leftquotes CITATION (*1 CITATION)(NEGATE *-1 CITATION) TO (1 (*) LINK *pr (*))(*1 CITATION) ;
+
+SUBSTITUTE:Prop_head @nmod (VSTR:$1) TARGET Prop (*1 (*) - Prop BARRIER (*) - Prop LINK -1 $$ANY_MAPPING);
+SUBSTITUTE:Prop_dep ANY_MAPPING @flat TARGET Prop (-1 Prop);
+SETPARENT:Prop_head Prop - @flat TO (*1 (*) - Prop LINK -1 (*) LINK p (*));
+
+### ADVERBIALS ###
+#!! Postpositions see above
+
+SUBSTITUTE:nAdvl_obl ADVL (@obl) TARGET N OR Pron; # any N or Pron as adverbial=obl
+SUBSTITUTE:Advl_advmod ADVL (@advmod) TARGET (*); # any other advls
+SUBSTITUTE:>A>N_advmod @>A OR @>N @advmod TARGET (Adv); # adverb as modifier of noun or adjective
+		#$ buhtsu mielkest ijtjen [ber] vuostajt dága - they didn't just make cheese from reindeer milk
+
+SUBSTITUTE:advl>cs_advmod @ADVL>CS @advmod TARGET Adv; # adverb as modifier of subordinating conjunction
+
+##!! non-finite adverbials
+##SUBSTITUTE:-fADVL (@-FADVL>) OR (@-F<ADVL) (@obl) TARGET N OR Pron (NEGATE c Po);
+#
+##!! adverbials with ellipsis
+#SUBSTITUTE:advEllipsis (@ADVL) @advmod TARGET (Adv);
+#SUBSTITUTE:advlEllipsis (@ADVL) @advmod TARGET (*);
+
+
+### APPOSITIONS ###
+#!! only appositions to nominals are allowed in UDG, remove adverb appositions
+SETPARENT:app_advl_up @APP-ADVL< OR @APP>ADVL TO (p (*) LINK p (*)); # move apposition up
+SUBSTITUTE:app_adv_N @APP-ADVL< OR @APP>ADVL @obl TARGET N ;
+SUBSTITUTE:app_adv @APP-ADVL< OR @APP>ADVL @advmod TARGET Adv ;
+
+#!! APP>Pron = dislocated
+# postposed or fronted elements are called dislocated in UD and link to the head of the clause, not the pronoun
+	#$ [Diggira], mav mij båhtja, dat lä álldo. - [those] which we milk, that is "álldo".
+SETPARENT:app_pron @APP>Pron TO (p (*) LINK p (*));
+SETPARENT:app_pron< @APP-Pron< TO (p (*) LINK p (*));
+
+SUBSTITUTE:app_pron @APP>Pron OR @APP-Pron< @dislocated TARGET (*);
+
+SUBSTITUTE:app_appos APP @appos TARGET (*); # any non-clausal apposition
+
+
+### CONJUNCTIONS ###
+#!! coordinating conjunctions
+SUBSTITUTE:CC @CVP OR @CNP (@cc) TARGET CC;
+
+#!! subordinating conjunctions
+SUBSTITUTE:CS @CVP (@mark) TARGET CS;
+SUBSTITUTE:Q-WORDS @advmod @mark TARGET SUB_ADV_CS (p @SCLV) ;
+
+
+### SUBORDINATE CLAUSES ###
+LIST FS_UD = @csubj @ccomp @ccomp @xcomp @advcl @acl ;
+
+# finite subordinate clauses
+SUBSTITUTE:fs-subj (@FS-SUBJ) (@csubj) TARGET (*);
+SUBSTITUTE:fs-obj (@FS-OBJ) (@ccomp) TARGET (*);
+
+# infinite subordinate clauses
+# for the few cases these are not xcomp or similar
+SUBSTITUTE:icl-subj @ICL-SUBJ @csubj TARGET (*);
+SUBSTITUTE:icl-obj @ICL-OBJ @ccomp TARGET (*);
+
+# FS-N<
+SUBSTITUTE:fs-n< (@FS-N<) (@acl:relcl) TARGET (*);
+# FS-ADVL> # FS-<ADVL
+SUBSTITUTE:fs-advl @FS-ADVL> OR @FS-<ADVL (@advcl) TARGET (*);
+
+# FS-IAUX
+# FS-IMV
+# FS-N<IAUX
+# FS-N<IMV
+# LIST @FS-FIN = @FS-N< @FS-ADVL @FS-ADVL> @FS-<ADVL @FS-OBJ @FS-SUBJ ;
+# if the <aux> is a FS, that label must be moved up to the MV
+SET AUX_FS_LABELS = @FS-FIN OR @ccomp OR @advcl OR @acl OR @acl:relcl;
+SUBSTITUTE:mvFS IMV $$AUX_FS_LABELS TARGET (<mv>) (c <aux> LINK 0 $$AUX_FS_LABELS) ; 
+#SUBSTITUTE:mvFSccomp (@FS-IMV) @ccomp (<mv>) (c <aux> LINK 0 @ccomp) ;
+#SUBSTITUTE:mvFS (@FS-IMV) @ccomp (<mv>) (c <aux> LINK 0 @ccomp) ;
+
+
+# non-verbal predication: move subordinate clause tag up
+SUBSTITUTE:pred_fs ANY_UD_MAPPING $$FS_UD TARGET <pred> (c $$FS_UD LINK 0 @cop);
+
+
+## HNOUN ###
+#!! mark HNOUNs as orphans, looks like they miss an antecedent
+SUBSTITUTE:hnoun @HNOUN (@orphan) TARGET (*);
+
+
+### CLEAR_CASES AND CLEANUPS ###
+# remove double tags from @cop
+LIST UDG_FS = @acl @acl:relcl @advcl @csub @ccomp @xcomp @conj ;
+#SUBSTITUTE:cop UDG_FS (*) TARGET (*)(0 @cop);
+SUBSTITUTE:cop (/^\(?!@cop\)@.+?$/r) (*) TARGET (*)(0 @cop); # regex: match every @tag but @cop
+# tag all <aux> as @aux
+SUBSTITUTE:aux (/@.+?/r) (@aux) TARGET (V <aux>); # regex: match every @tag
+
+# it's possible that some nsubj:cop are wrongly tagged so
+SUBSTITUTE:nsubj_cop_re @nsubj:cop @nsubj TARGET (*) (NEGATE s @cop);
+
+SUBSTITUTE:neg (@aux) (@aux:neg) TARGET Neg;
+SUBSTITUTE:punct (@PUNCT) (@punct) TARGET (*);
+SUBSTITUTE:pcle_discourse (@PCLE) (@discourse) TARGET ("dä");
+SUBSTITUTE:pcle_discourse (@PCLE) (@discourse) TARGET WORD - ("degu") - ("dugu"); # e.g. "dal"PCLE
+SUBSTITUTE:INTERJdiscourse (@INTERJ) (@discourse) TARGET (*);
+
+# Pron< used e.g. for comitative coordination:
+	#$ måj Jåsjåjn (pit100404)
+SUBSTITUTE:Pron<nmod @Pron< @nmod TARGET (*) ;
+
+# >Num -> advmod
+	#$ bar guäkkte
+SUBSTITUTE:>Num @>Num @advmod TARGET Adv ;
+
+SUBSTITUTE:vocative (@VOC) (@vocative) TARGET (*) ;
+
+SUBSTITUTE:X @X @dep TARGET (*);
+
+
+# change every @FUNCT to root if parent is root
+# only WORDs are valid parents, so this is alright
+
+#!! HAVE TO USE UNSAFE. IF "SAFE", WORKS ONLY IF DISAMBIGUATED!!
+UNMAP:root UNSAFE (*) IF (NEGATE p ANY_WORDFORM) ;
+MAP:root (@root) TARGET (*)(NEGATE p WORD);
+
+### reparandum ###
+#!! if a word form is followed by a comma and an identical word form, set as false start
+# first change attachment of second element if analysed as "coordination" with GT
+SETPARENT:rep_coord ("<(.*)>"ir) - ("nåv") TO (-1 COMMA LINK -1 (VSTR:"<$1>"ir) LINK p (*));
+SUBSTITUTE:reparandum ANY_UD_MAPPING (@reparandum) TARGET ("<(.*)>"ir) - ("nåv") (1 COMMA LINK 1 (VSTR:"<$1>"ir)) ;
+#!! if a word ends in "-", it is a false start
+SUBSTITUTE:repara- @dep @reparandum TARGET ("<(.*-)>"r) ;
+#!! the disfluency is the dependent of the repair, most generally the next word to the right
+SETPARENT:reparandum @reparandum TO (*1 WORD) ;
+# false starts often share the first letters
+# if one of the following 3 tokens starts with the same first 2 letters, attach reparandum there
+SETPARENT:reparandum @reparandum (0 ("<(..).*->"ri)) TO (3 (VSTR:"<$1.*>"ri)) ; # can't use "<>"v here because that can contain no regex
+SETPARENT:reparandum @reparandum (0 ("<(..).*->"ri)) TO (2 (VSTR:"<$1.*>"ri)) ;
+SETPARENT:reparandum @reparandum (0 ("<(..).*->"ri)) TO (1 (VSTR:"<$1.*>"ri)) ;
+	#$ dä lij tjåskep urru-, tjåskes urrum
+
+#!! a comma between a reparandum and its head links to the reparandum
+SETPARENT:comma_rep COMMA (1 (*) LINK c @reparandum) TO (-1 @reparandum);
+
+### flat & foreign ###
+#!! if there is more than 1 unknown word => flat
+SUBSTITUTE:unknownFlat ANY_GT_MAPPING OR ANY_UD_MAPPING @flat TARGET (\?) OR <swe> (-1 (\?) OR <swe>);
+#!! if there is more than 1 Swedish word => flat:foreign
+SUBSTITUTE:sweFlat @flat @flat:foreign TARGET <swe>;
+
+#!! head of a @flat is always the cohort to the left of all words tagged @flat
+SETPARENT:flat @flat TO (*-1 (*) - @flat);
+
+### parataxis ###
+#!! if there is more than one @root node, attach the right to the next on the left with @parataxis
+SUBSTITUTE:parataxis (@root) (@parataxis) TARGET (*) (*-1 @root)(NEGATE 0 unknown) ;
+SETPARENT:parataxis @parataxis TO (*-1 @root);
+SUBSTITUTE:parataxis ANY_GT_MAPPING (@parataxis) TARGET (<mv>) (p <mv>); # MV to MV
+SUBSTITUTE:parataxis_cop ANY_GT_MAPPING (@parataxis) TARGET (*)(0 (*) LINK c @cop)(p <mv>); # predicative to MV
+SUBSTITUTE:parataxis_verb ANY_GT_MAPPING @parataxis TARGET (V) ; # if a verb is not yet UD-mapped, it's probably parataxis
+
+
+AFTER-SECTIONS
+
+# general tag replacement: if there are any leftover GT-tags -> @dep
+# that should never be necessary but can happen if there are errors in the sentence
+	#$ Da njálge idnin. -> either "they were good" OR "they had good(ones).Acc"
+SUBSTITUTE:dep ANY_GT_MAPPING @dep TARGET (*) ;
+
+#### substitutions of tags ###
+#### PARTS OF SPEECH ###
+SUBSTITUTE:NProp (Prop N) (PROPN Prop) TARGET (N Prop);
+SUBSTITUTE:N (N) (NOUN N) TARGET N - Prop;
+SUBSTITUTE:A (A) (ADJ A) TARGET (A);
+SUBSTITUTE:Vsubst V (NOUN V) TARGET Vsubst ;
+SUBSTITUTE:V (V) (VERB V) TARGET (V) - <aux> - Vsubst;
+SUBSTITUTE:AUX (V) (AUX V) TARGET (V <aux>);
+SUBSTITUTE:Adv (Adv) (ADV Adv) TARGET (Adv);
+SUBSTITUTE:Pron (Pron) (PRON Pron) TARGET (Pron);
+SUBSTITUTE:CS (CS) (SCONJ CS) TARGET (CS);
+SUBSTITUTE:CC (CC) (CCONJ CC) TARGET (CC);
+SUBSTITUTE:Po (Po) (ADP Po) TARGET (Po);
+SUBSTITUTE:Interj (Interj) (INTJ Interj) TARGET (Interj);
+SUBSTITUTE:Pcle (Pcle) (PART Pcle) TARGET (Pcle);
+SUBSTITUTE:Num (Num) (NUM Num) TARGET (Num);
+SUBSTITUTE:CLB (CLB) (PUNCT CLB) TARGET (CLB);
+SUBSTITUTE:punct (?) (PUNCT _) TARGET (PUNCTUATION);
+SUBSTITUTE:x (?) (X _) TARGET (*); # leftover ?'s (foreign words, false starts etc.)
+SUBSTITUTE:det (Det) (DET Det PronType=Art) TARGET (Det);
+
+#### tags with no equivalent in UD ###
+SUBSTITUTE:Attr (Attr) (*) TARGET (Attr);
+SUBSTITUTE:Cmp (Cmp) (*) TARGET (Cmp);
+SUBSTITUTE:Der (Der/NomAg) OR (Der/Dimin) OR (Der/State) (*) TARGET (*);
+SUBSTITUTE:TV (TV) OR (IV) (*) TARGET (V);
+
+### temporary tags
+SUBSTITUTE:<mv> (<mv>) OR (<aux>) (*) TARGET (V); # ignored in UD
+SUBSTITUTE:<temp> (<pred>) OR (<ext>) OR (<cvp>) OR (<cnp>) OR <ctjHead> (*) TARGET (*); # ignored in UD
+
+
+#### pronoun subclasses ###
+#SUBSTITUTE:Pers_poss Pers (PronType=Prs Poss=Yes) TARGET (Pers @nmod:poss);
+#SUBSTITUTE:Pers (Pers) (PronType=Prs) TARGET (Pers);
+#SUBSTITUTE:Dem (Dem) (PronType=Dem) TARGET (Dem);
+#SUBSTITUTE:Interr (Interr) (PronType=Int) TARGET (Interr);
+#SUBSTITUTE:Indef (Indef) (PronType=Ind) TARGET (Indef);
+#SUBSTITUTE:Refl (Refl) (PronType=Prs Reflex=Yes) TARGET (Refl);
+#SUBSTITUTE:Recipr (Recipr) (PronType=Rcp) TARGET (Recipr);
+#SUBSTITUTE:Rel (Rel) (PronType=Rel) TARGET (Rel);
+#
+#### adjective tags ###
+#SUBSTITUTE:Comp (Comp) (Degree=Cmp) TARGET (Comp);
+#SUBSTITUTE:Superl (Superl) (Degree=Sup) TARGET (Super);
+#
+#### morphosyntactic properties ###
+#SUBSTITUTE:Prs (Prs) (VerbForm=Fin Tense=Pres) TARGET (Prs); # UD marks VFIN!
+#SUBSTITUTE:Prt (Prt) (VerbForm=Fin Tense=Past) TARGET (Prt); # UD marks VFIN!
+#SUBSTITUTE:Ind (Ind) (Mood=Ind) TARGET (Ind);
+#SUBSTITUTE:Imprt (Imprt) (Mood=Imp) TARGET (Imprt);
+#SUBSTITUTE:Pot (Pot) (Mood=Pot) TARGET (Pot);
+#
+##!! person-number
+#SUBSTITUTE:Sg1 (Sg1) (Number=Sing Person=1) TARGET (Sg1);
+#SUBSTITUTE:Sg2 (Sg2) (Number=Sing Person=2) TARGET (Sg2);
+#SUBSTITUTE:Sg3 (Sg3) (Number=Sing Person=3) TARGET (Sg3);
+#SUBSTITUTE:Du1 (Du1) (Number=Dual Person=1) TARGET (Du1);
+#SUBSTITUTE:Du2 (Du2) (Number=Dual Person=2) TARGET (Du2);
+#SUBSTITUTE:Du3 (Du3) (Number=Dual Person=3) TARGET (Du3);
+#SUBSTITUTE:Pl1 (Pl1) (Number=Plur Person=1) TARGET (Pl1);
+#SUBSTITUTE:Pl2 (Pl2) (Number=Plur Person=2) TARGET (Pl2);
+#SUBSTITUTE:Pl3 (Pl3) (Number=Plur Person=3) TARGET (Pl3);
+#SUBSTITUTE:Sg (Sg) (Number=Sing) TARGET (Sg);
+#SUBSTITUTE:Pl (Pl) (Number=Sing) TARGET (Pl);
+#
+##!! possessive suffixes
+#SUBSTITUTE:PxSg1 (PxSg1) (Person[psor]=1 Number[psor]=Sing) TARGET (*);
+#SUBSTITUTE:PxSg2 (PxSg2) (Person[psor]=2 Number[psor]=Sing) TARGET (*);
+#SUBSTITUTE:PxSg3 (PxSg3) (Person[psor]=3 Number[psor]=Sing) TARGET (*);
+#SUBSTITUTE:PxDu1 (PxDu1) (Person[psor]=1 Number[psor]=Dual) TARGET (*);
+#SUBSTITUTE:PxDu2 (PxDu2) (Person[psor]=2 Number[psor]=Dual) TARGET (*);
+#SUBSTITUTE:PxDu3 (PxDu3) (Person[psor]=3 Number[psor]=Dual) TARGET (*);
+#SUBSTITUTE:PxPl1 (PxPl1) (Person[psor]=1 Number[psor]=Plur) TARGET (*);
+#SUBSTITUTE:PxPl2 (PxPl2) (Person[psor]=2 Number[psor]=Plur) TARGET (*);
+#SUBSTITUTE:PxPl3 (PxPl3) (Person[psor]=3 Number[psor]=Plur) TARGET (*);
+#
+### TO DO: Vsubst
+#
+##!! VerbForms
+#SUBSTITUTE:Inf (Inf) (VerbForm=Inf) TARGET (Inf);
+#SUBSTITUTE:Ger (Ger) OR (GerII) (VerbForm=Ger) TARGET (Ger) OR (GerII);
+#SUBSTITUTE:Neg (Neg) (Polarity=Neg) TARGET (Neg);
+#SUBSTITUTE:ConNeg (ConNeg) (Connegative=Yes) TARGET (ConNeg);
+#SUBSTITUTE:Inf (Inf) (VerbForm=Inf) TARGET (Inf);
+#SUBSTITUTE:PrfPrc (PrfPrc) (Aspect=Perf VerbForm=Part) TARGET (PrfPrc);
+#SUBSTITUTE:PrsPrc (PrsPrc) (Tense=Pres VerbForm=Part) TARGET (PrsPrc);
+#SUBSTITUTE:VAbess (VAbess) (Case=Abe VerbForm=Ger) TARGET (VAbess);
+#
+##!! Case
+#SUBSTITUTE:Nom (Nom) (Case=Nom) TARGET (Nom);
+#SUBSTITUTE:Acc (Acc) (Case=Acc) TARGET (Acc);
+#SUBSTITUTE:Gen (Gen) (Case=Gen) TARGET (Gen);
+#SUBSTITUTE:Ill (Ill) (Case=Ill) TARGET (Ill);
+#SUBSTITUTE:Ine (Ine) (Case=Ine) TARGET (Ine);
+#SUBSTITUTE:Ela (Ela) (Case=Ela) TARGET (Ela);
+#SUBSTITUTE:Com (Com) (Case=Com) TARGET (Com);
+#SUBSTITUTE:Ess (Ess) (Case=Ess) TARGET (Ess);
+#SUBSTITUTE:Abe (Abe) (Case=Abe) TARGET (Abe);
+#
+##!! NumType
+#SUBSTITUTE:Card (Card) (NumType=Card) TARGET (Card);
+#SUBSTITUTE:Ord (Ord) (NumType=Ord) TARGET (Ord);
+#
+##!! SpaceAfter=No
+#SUBSTITUTE:SpaceAfter ANY_UD_MAPPING (VSTR:$1 SpaceAfter=No) TARGET (*) (1 PUNCTUATION - CITATION) ;
+#SUBSTITUTE:SpaceCitRight ANY_UD_MAPPING (VSTR:$1 SpaceAfter=No) TARGET (*) (1 CITATION LINK NOT *1 CITATION);
+#SUBSTITUTE:SpaceCitLeft ANY_UD_MAPPING (VSTR:$1 SpaceAfter=No) TARGET CITATION (*1 CITATION);
+#SUBSTITUTE:SpaceParenLeft ANY_UD_MAPPING (VSTR:$1 SpaceAfter=No) TARGET ("(") OR ("[") OR ("{");
+#SUBSTITUTE:SpaceParenRight ANY_UD_MAPPING (VSTR:$1 SpaceAfter=No) TARGET (*) (1 (")") OR (")") OR (")"));
+
+
+
+
+    #=====#
+      END #
+    #=====#

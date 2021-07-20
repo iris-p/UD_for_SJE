@@ -1,0 +1,1102 @@
+# Divvun & Giellatekno - open source grammars for Sámi and other languages
+# Copyright © 2000-2016 The University of Tromsø & the Norwegian Sámi Parliament
+# http://giellatekno.uit.no & http://divvun.no
+#
+# This program is free software; you can redistribute and/or modify
+# this file under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version. The GNU General Public License
+# is found at http://www.gnu.org/licenses/gpl.html. It is
+# also available in the file $GTHOME/LICENSE.txt.
+#
+# Other licensing options are available upon request, please contact
+# giellatekno@hum.uit.no or feedback@divvun.no
+
+# ==================================================================== #
+#!!    D E P E N D E N C Y   G R A M M A R   F O R   P I T E   S Á M I
+# ==================================================================== #
+# ==================================================================== #
+
+### SECTION SETS ;
+
+
+# ========== #
+#!! !!!DELIMITERS
+# ========== #
+
+DELIMITERS = "<.>" "<!>" "<?>" "<...>" "<¶>" "<…>" sent ;
+#!! Sentence delimiters are the following: <.> <!> <?> <...> <¶>
+
+#!! !!!TAGS AND SETS
+
+SETS
+
+LIST N = N ;	  #!! N
+LIST V = V ;	  #!! V
+LIST A = A ;	  #!! A
+LIST Adv = Adv ;  #!! Adv
+LIST CC = CC ;	  #!! CC
+LIST CS = CS ;	  #!! CS
+LIST Inf = Inf ;  #!! Inf
+LIST Sup = Sup ;  #!! Sup
+LIST Neg = Neg ;  #!! Neg
+LIST Num = Num ;  #!! Num
+LIST Po = Po ;	  #!! Po
+LIST Pr = Pr ;	  #!! Pr
+
+LIST Pcle = Pcle ; #!! Pcle
+LIST Prop = Prop ; #!! Prop
+
+LIST Pron = Pron ;		 #!! Pron
+LIST COMMA = "," ;		 #!! COMMA
+LIST DASH = "–" ;		 #!! DASH
+LIST CITATION = """ ;    #!! CITATION to keep colouring we add a "
+LIST HYPHEN = "-" ;		 #!! HYPHEN
+LIST QMARK = "\?" ;		 #!! QMARK
+LIST PUNCT = PUNCT ;	 #!! PUNCT
+LIST LEFT = LEFT ;		 #!! LEFT
+LIST RIGHT = RIGHT ;	 #!! RIGHT
+LIST CLB = CLB ;		 #!! CLB
+LIST Ind = Ind ;		 #!! Ind
+LIST Pot = Pot ;		 #!! Pot
+LIST Imprt = Imprt ;	 #!! Impr
+LIST ImprtII = ImprtII ; #!! ImprtII
+LIST Cond = Cond ;		 #!! Cond
+LIST ConNeg = ConNeg ;	 #!! ConNeg
+LIST VGen = VGen ;		 #!! VGen
+LIST Interj = Interj ;	 #!! Interj
+LIST ABBR = ABBR ;		 #!! ABBR
+LIST ACR = ACR ;		 #!! ACR
+LIST Prs = Prs ;		 #!! Prs
+LIST Prt = Prt ;		 #!! Prt
+LIST Cmpnd = Cmpnd ;	 #!! Cmpnd
+LIST RCmpnd = RCmpnd ;	 #!! RCmpnd
+LIST PrfPrc = PrfPrc ;	 #!! PrfPrc
+LIST PrsPrc = PrsPrc ;	 #!! PrsPrc
+LIST Actor = Actor ;	 #!! Actor
+LIST Actio = Actio ;	 #!! Actio
+LIST Ger = Ger ;		 #!! Ger
+LIST Indef = Indef ;	 #!! Indef
+LIST Nom = Nom ;		 #!! Nom
+LIST Acc = Acc ;		 #!! Acc
+LIST Ill = Ill ;		 #!! Ill
+LIST Com = Com ;		 #!! Com
+LIST Gen = Gen ;		 #!! Gen
+LIST Ess = Ess ;		 #!! Ess
+
+#!! !!POS sub-categories
+# ------------------
+
+LIST Pers = Pers ;
+LIST Dem = Dem ;
+LIST Interr = Interr ;
+
+
+LIST Recipr = Recipr ;
+LIST Refl = Refl ;
+LIST Rel = Rel ;
+
+LIST Adp = Adp ;
+
+
+# Derivations (needed?)
+# ---------------------
+
+LIST Der/NomAct = Der/NomAct ;
+
+
+
+LIST Cnj = Cnj ;
+LIST ConNeg = ConNeg ;
+LIST Cond = Cond ;
+LIST Def = Def ;
+LIST Del = Del ;
+LIST Dim = Dim ;
+LIST Dim/Der = Dim/Der ;
+LIST Dist = Dist ;
+LIST Fut = Fut ;
+LIST Imm = Imm ;
+LIST Imp = Imp ;
+LIST Incl = Incl ;
+LIST Ind = Ind ;
+LIST Inf = Inf ;
+LIST Int = Int ;
+LIST Loc = Loc ;
+LIST Med = Med ;
+LIST Neg = Neg ;
+LIST Num = Num ;
+LIST Obv =  Obv ;
+LIST Pos = Pos ;
+LIST Prf = Prf ;
+LIST Pron = Pron ;
+LIST Prox = Prox ;
+LIST Prs = Prs ;
+LIST Prt = Prt ;
+LIST Sbj = Sbj ;
+
+
+# Other tags
+# ----------
+
+LIST BOS = (>>>) (<s>); # beginning of sentence
+LIST EOS = (<<<) (</s>); # end of sentence
+# OBS! utterances in a spoken corpus are often not marked with a separate delimiter = EOS
+# in that case the last word gets the magic tag <<<
+# therefore, instead of (1 EOS), use ((0 EOS) OR (1 EOS))
+
+LIST WORD = N A Adv V Pron CS CC Po Pr Interj Pcle Num ABBR ACR Det \? <swe>;
+
+
+# Some subsets of the VFIN sets
+# - - - - - - - - - - - - - - -
+LIST V-SG3 = (V Ind Prs Sg3)  (V Ind Prt Sg3) (V Cond Prs Sg3)
+             (V Cond Prt Sg3) (V Pot Prs Sg3) (V Neg Ind Sg3);
+
+LIST V-DU3 = (V Ind Prs Du3)  (V Ind Prt Du3) (V Cond Prs Du3)
+	         (V Cond Prt Du3) (V Pot Prs Du3) (V Neg Ind Du3);
+
+LIST V-PL3 = (V Ind Prs Pl3)  (V Ind Prt Pl3) (V Cond Prs Pl3)
+             (V Cond Prt Pl3) (V Pot Prs Pl3) (V Neg Ind Pl3);
+
+SET V-3  = V-SG3 OR V-DU3 OR V-PL3 ;
+ # Note that imperative verbs are not included in these sets!
+
+LIST COPULAS = "sjaddat" "lä";
+LIST MOD-ASP = "bällit" "berrut" "gallgat" "nahkat" "vassjat" "viggat" "ådtjot" "verrtit" "pruvvut" "dárbahit"; #"sihtat" # see functions for details
+LIST AUX-OR-MAIN = "gallgat" "máhttet" "årrot" "pruvvkut"; # "sihtat"
+SET VAUX = COPULAS OR Neg OR MOD-ASP OR AUX-OR-MAIN ;
+
+
+# some verbs that exclude OBJ reading
+LIST IV = ("lä" @FMV) "årrot" ;
+# transitive verb tag
+LIST TV = TV;
+
+
+# LIST MO-MANge-sme = ("goas" når) ("gokko" hvor) ("gos" hvor) ("gosa" hvorhen) ("govt" hvordan)  ("got" ?hvordan) ("makkár" hva slags) ("man" hvor) ("manne" hvorfor) ("mo" hvordan) ("mot" ?hvordan) ("movt" hvordan) ("nugo" (slik) som) ("dego" liksom);
+
+LIST Q-WORDS = "galle" "gallen" "galles" "gen" "gev" "gie" "giejna" "giesa" "guggu" "gukkte" "gunne" "gusa" "guse" "gusne" "gusne" "gusste" "gåbbá" "gåbbelij" "gåbbelin" "gåbbelist" "gåk" "gåk" "gåkkte" "gånne" "gåsse" "gåsste" "gässte" "maggár" "maggárijda" "majna" "majt" "maktes" "manen" "masa" "masste" "mav" "mava" "mejt" "miggir" "mij" "man";
+
+LIST MO-MANge = "galle" "gallen" "guggu" "gukkte" "gunne" "gusa" "guse" "gusne" "gåk" "gåkkte" "gånne" "gåsse" "maggár" "maktes" "manen" "mav" "mava" "mejt" "miggir" "gunnuk" "gunnik" "mah" "majt" "man";
+# hvordan/hur många, når, hvor hen, hvordan, hvor, hvor, hvor, hvor hen/hvor, hvordan, hvordan, hvor, når, hvordan/hvilken, hvordan, hvorfor, hva, hva, hva, hvordan/hvilken, hvilken, som, som hva, som hva
+
+SET ADVL-COMP = MO-MANge ;
+
+LIST OBJ-COMP = ("makkár" Pron) ("movt" CS) "ahte" "att" "at" "jut" "juhte" "galle" "gukkte" "gåk" "gåkkte" "maktes" "man";
+# these typically introduce a objectsubclause
+# Consider adding ("mo" CS) to the OBJ-COMPsmi set, cf.
+# "Mii fertet gal árvvoštallat mo mii galgat bargat"
+# where the subclause is advl without mo and object with mo in this set
+
+LIST MCL-CONJ = ("men" CC) ("vala" CC) ("val" CC) ; # these typically introduce a main clause, not coordination of subclauses
+#LIST MUHTO = ("muhto" CC) ("mohte" CC) ("men" CC) ("valla" CC) ; # these typically introduce a main clause, not coordination
+
+SET DASHHYPHEN = ("-") OR ("–") ;
+
+SET NOT-ADJ = WORD - A ;
+SET NOT-COMMA = CLB - COMMA ;
+
+#!! !!Syntactic tags and sets
+# =======================
+
+#!! !Syntactic tags in input to this file
+
+LIST @-FADVL> = @-FADVL> @-FADVL-ela> @-FADVL-ine> ; 	         # adverbial of infinite verb outside of the predicate
+LIST @-F<ADVL = @-F<ADVL @-F<ADVL-ela @-F<ADVL-ine ; 	         # adverbial of infinite verb outside of the predicate
+LIST @-FOBJ> = @-FOBJ> ;			 # object of infinite verb outside of the verbal
+LIST @-F<OBJ = @-F<OBJ ;			 # object of infinite verb outside of the verbal
+LIST @-FSUBJ> = @-FSUBJ> ;			# subject of infinite verb outside of the verbal
+LIST @-F<SUBJ = @-F<SUBJ ;			# subject of infinite verb outside of the verbal
+LIST @-FSPRED> = @-FSPRED> ;			# subject of infinite verb outside of the verbal
+LIST @COMP-CS< = @COMP-CS< ;
+LIST @CMPND = @CMPND ;				# not in use in sme
+LIST @ADVL>CS = @ADVL>CS ;
+LIST @>A = @>A ; 			 # modifier of adj
+LIST @>Adv = @>Adv ; 			 # modifier of adv, to be generalised
+LIST @>ADVL = @>ADVL ; 		         # modifier of advl
+LIST @ADVL< = @ADVL<  ; 		         # modifier of advl
+LIST @>N = @>N ; 			 # modifier of N
+LIST @>CC = @>CC ; 			 # modifier of CC
+LIST @>Num = @>Num ; 		         # attr of numeral
+LIST @>P = @>P ; 			 # complement of P
+LIST @A< = @A< ; 			 # complement of A
+LIST @Adv< = @Adv< ; 			 # complement of A
+LIST @<ADVL = @<ADVL @<ADVL-ela @<ADVL-ine ;
+LIST @ADVL> = @ADVL> @ADVL-ine> @ADVL-ela>;
+LIST @APP>Pron = @APP>Pron ;             # apposition of pron
+LIST @APP-ADVL< = @APP-ADVL< ;           # apposition of advl
+LIST @APP>ADVL = @APP>ADVL ;
+LIST @APP-N< = @APP-N< ; 	         # apposition of N
+LIST @APP-Num< = @APP-Num< ;             # apposition of Num
+LIST @APP-Pron< = @APP-Pron< ;           # apposition of Pron
+LIST @CNP = @CNP ; 			 # conjunction between NPs
+LIST @CVP = @CVP ; 			 # conjunction between VPs
+LIST @-F<SPRED = @-F<SPRED ;
+LIST @HAB> = @HAB> ; 			 # habitive (aka advl of possessiv constr)
+LIST @<HAB = @<HAB ; 			 # habitive (aka advl of possessiv constr)
+LIST @HNOUN = @HNOUN ;
+LIST @N< = @N< ; 			 # modifier of N
+LIST @Num< = @Num< ; 		         # modifier of Num
+LIST @<OBJ = @<OBJ ; 			 # object
+LIST @OBJ> = @OBJ> ; 			 # object
+LIST @OBJ = @OBJ ;				# object in elliptical clauses
+LIST @P< = @P< ; 			 # complement of P
+LIST @PCLE = @PCLE ; 		         # particle
+LIST @>Pron = @>Pron ;                   # Adverb to pron
+LIST @Pron< = @Pron< ;
+LIST @SUBJ = @SUBJ ; 		         # subject
+LIST @<SUBJ = @<SUBJ ; 		         # subject
+LIST @SUBJ> = @SUBJ> ; 		         # subject
+LIST @tSUBJ> = @tSUBJ> ; 		         # subject
+LIST @<OPRED =  @<OPRED ;
+LIST @<SPRED =  @<SPRED ;
+LIST @OPRED> =  @OPRED> ;
+LIST @-F<OPRED = @-F<OPRED ;
+LIST @SPRED> =  @SPRED> ;
+LIST @SPRED =  @SPRED ;
+LIST @<PPRED = @<PPRED ;
+LIST @VOC = @VOC ;
+LIST @INTERJ = @INTERJ ;
+LIST @>CS = @>CS ;
+LIST @APP = @APP ;
+
+#!! !Syntactic tags added in this file
+
+LIST @FMV = @FMV ;		#!! * @FMV : finite main verb
+						#!! ** oaidná: Son oaidná ollislaš gova. - She sees the whole picture
+LIST @IMV = @IMV ;     	#!! * infinite main verb
+LIST @FAUX = @FAUX ;	#!! * @FAUX : finite auxiliary verb
+						#!! ** ferte: Son ferte oaidnit ollislaš gova. - She must see the whole picture. 
+LIST @FMVdic = @FMVdic ;	#!! * @FMVdic : finite main verb introducing direct speech
+LIST @IMVdic = @IMVdic ;	#!! * @IMVdic : infinite main verb introducing direct speech
+LIST @FS-IMV = @FS-IMV ;	#!! * @FS-IMV : infinite main verb of subclause 
+LIST @FS-IAUX = @FS-IAUX ;		#!! * @FS-IAUX : infinite auxiliary verb in subclause
+LIST @FS-N<IAUX = @FS-N<IAUX ;	#!! * @FS-N<IAUX : infinite auxiliary verb of a relative subclause
+LIST @FS-N<IMV = @FS-N<IMV ;	#!! * @FS-N<IMV : infinite main verb of a relative subclause
+LIST @FS-OBJ = @FS-OBJ ; 	   	#!! * @FS-OBJ : finite verb in subclause functioning as object
+LIST @FS-SUBJ = @FS-SUBJ ;     	#!! * @FS-SUBJ : finite verb in subclause functioning as subject
+LIST @FS-ADVL> = @FS-ADVL> ; 	#!! * @FS-ADVL> : finite verb in subclause functioning as adverbial to the left of the main clause
+LIST @FS-<ADVL = @FS-<ADVL ; 	#!! * @FS-<ADVL : finite verb in subclause functioning as adverbial to the right of the main clause
+LIST @S< = @S< ;       			#!! * @S< : a clause modifying a sentence to the right of it
+LIST @FS-ADVL = @FS-ADVL ; 	  	#!! * @FS-ADVL : finite verb in subclause ...
+LIST @FS-N< = @FS-N< ;         	#!! * @FS-N< : relative clause to N
+LIST @FS-VFIN< = @FS-VFIN< ; 	#!! * @FS-VFIN< : finite verb in sentence, statement
+								#!! ** eai: Idja ii leat šat, eai ge sii dárbbaš lámppá dahje beaivváža čuovgga, dasgo Hearrá Ipmil lea sin čuovga. - The night is not anymore, they do not need the lamp- or day- light either, because God the Lord is their light.
+LIST @FS-<APP = @FS-<APP ;    	#!! * @FS-<APP : finite subclause functioning as an apposition
+LIST @ICL-ADVL = @ICL-ADVL ;  	#!! * @ICL-ADVL : non-finite subclause ...
+LIST @ICL-AUX< = @ICL-AUX< ;  	#!! * @ICL-AUX< : "right" argument of auxiliary (?)
+LIST @ICL-OBJ = @ICL-OBJ ; 	  	#!! * @ICL-OBJ : infinitival clause object
+								#!! ** boradit: Muhtinlágan Stállu cáhpá goikebierggu sudnuide ja dáhttu mánáid boradit. - 'Some-sort-of troll cuts dried meat for them and asks the children to eat.'
+LIST @ICL-SUBJ = @ICL-SUBJ ; 	#!! * @ICL-SUBJ : infinitival clause subject
+LIST @ICL-P< = @ICL-P< ;		#!! * @ICL-P< : infinitival clause complement of preprosition
+LIST @IAUX = @IAUX ;			#!! * @IAUX : non-finite auxiliary
+
+LIST @X = @X ;
+
+#!! temporary tags
+LIST <ctjHead> = <ctjHead> ; 	#!! * <ctjHead> : first conjunct
+LIST <swe> = <swe> ; 			#!! * <swe> : swedish
+LIST <mv> = <mv> ;				#!! * <mv> : main verb.
+LIST <aux> = <aux> ;			#!! * <aux> : auxilary verb.
+LIST <cnp> = <cnp> ; 			#!! "local" comma coordinating NPs etc., analogous to local coordinators
+LIST <cvp> = <cvp> ; 			#!! comma separating clauses
+LIST <ext> = <ext> ;			#!! subject of existential clause
+SET <temptags> = <ctjHead> OR <swe> OR <mv> OR <aux> OR <cnp> OR <cvp> OR <ext>;
+
+#!! !Syntactic set definitions
+# =========================
+
+LIST SPRED = @SPRED> @<SPRED @SPRED ;
+LIST OPRED = @OPRED> @<OPRED ;
+LIST SUBJ = @<SUBJ @SUBJ> @SUBJ @-FSUBJ> @-F<SUBJ ;
+LIST SUBJ> = @SUBJ> @tSUBJ> ;
+LIST <SUBJ = @<SUBJ @<tSUBJ  ;
+LIST OBJ = @<OBJ @OBJ> @OBJ @-FOBJ> @-F<OBJ ;
+LIST OBJ> = @OBJ> ;
+LIST <OBJ = @<OBJ ;
+LIST FOBJ> = @-FOBJ> ;
+LIST F<OBJ = @-F<OBJ ;
+LIST F<SUBJ = @-F<SUBJ ;
+LIST APP = @APP>Pron @APP-ADVL< @APP>ADVL @APP-N< @APP-Num< @APP-Pron< ;
+
+LIST @<ARG = @<SUBJ @<SPRED @<OBJ @<OPRED @-F<OBJ @-F<OPRED ;
+
+LIST ADVL = @<ADVL @ADVL> @ADVL @-FADVL> @-F<ADVL @APP-ADVL< @APP>ADVL @CL-<ADVL @CL-ADVL> ; # @i-<ADVL @i-ADVL> ; 		         # adverbial
+
+
+LIST @V = @FMV @IMV @FAUX @IAUX @FS-VFIN< @FS-ADVL @FS-<ADVL @FS-ADVL> @FS-OBJ @FS-SUBJ @FS-IMV @FS-N<IMV @FS-N< @FS-P< @FS-P<IMV @FS-IAUX @ICL-P< @ICL-P<IMV @FS-N<IAUX @ICL-OBJ @ICL-SUBJ @PRED @PRED2;
+LIST @MCLV = @FMV @IMV @FAUX @IAUX ;
+LIST @SCLV = @FS-VFIN< @FS-IMV @FS-N<IMV @FS-N< @FS-IAUX @FS-N<IAUX @FS-ADVL @FS-ADVL> @FS-<ADVL @FS-OBJ @FS-SUBJ;
+LIST @FS-FIN = @FS-N< @FS-ADVL @FS-ADVL> @FS-<ADVL @FS-OBJ @FS-SUBJ ;
+LIST @FV = @FMV @FAUX ;
+LIST @AUX = @IAUX @FAUX ;
+LIST @MV = @IMV @FMV @FMVdic @IMVdic ;
+LIST KONJ = CS CC <cs> ;
+
+LIST @-FARG = @-FOBJ> @-F<OBJ @-FADVL> @-F<ADVL @-F<SPRED @-F<OPRED @-FSUBJ> ;
+SET @ARG = SUBJ OR OBJ OR SPRED OR OPRED OR ADVL OR @ICL-OBJ OR @<PPRED OR @APP-N< OR @P< ;
+SET @CLAUSE = @HNOUN OR @-FARG OR @V - CC ;
+LIST @NOARROW = @ADVL @SUBJ @OBJ ;
+
+LIST COMPOUND = (".*#.*"r) ;
+
+SET S-BOUNDARY = (Pron Interr) OR Rel OR MCL-CONJ OR ADVL-COMP OR ("\;") OR (":") OR ("-") OR ("–") OR @CVP or <cvp>;
+
+# all possible objects
+LIST OBJECT = @OBJ> @<OBJ @FS-OBJ ;
+# subordinating question words, adverbs and conjunctions
+SET SUB_ADV_CS = Q-WORDS OR CS ;
+
+
+SET CONTENTWORD = N OR A - @>N OR V OR Pron OR Num - @>N OR ADVL ; # words that can be head of punctuation, conjunctions etc.
+
+
+#!! useful SETS from functions
+SET AdjOrNum = A OR Num ;
+LIST CASE = Nom Acc Gen Ill Com Ess Ine Ela Abe;
+SET PRE-AP-HEAD = Adv OR CC ;
+SET NoAP = WORD - A - PRE-AP-HEAD ; #NoAP = not possibly anywhere in AP, plus CC
+
+SET AttrAPpossible = (A Attr) OR PRE-AP-HEAD ;
+
+SET NP-HEAD        = Pron OR N ;
+
+SET PRE-NP-HEAD = (Prop @>N) OR AttrAPpossible OR (ABBR Attr) OR (Pron Pers Gen) OR (N Gen) OR 
+         Num OR CC OR (Pron Dem) OR (Pron Refl Gen) OR (Pron Indef) OR 
+         (PrfPrc @>N) OR PrsPrc OR (A Ord) OR (A Sg) OR (A Pl) ;
+# pre-modifiers of nouns
+SET NOT-NPMODADV    = WORD - PRE-NP-HEAD - Adv - Pcle ;
+SET MAINVERB = V - VAUX OR @FMV OR @IMV OR @FS-IMV OR @FS-N<IMV;
+
+# verbs as modifiers of N e.g. PrsPrc
+LIST NOT-REAL-V = PrsPrc (V @>N) ;
+
+SET REAL-V = V - NOT-REAL-V  ;
+
+SET V-MOOD = Ind OR Pot OR Imprt OR Neg ;	# Moods
+SET VFIN = V-MOOD ;
+SET NONVFIN = REAL-V - VFIN ;
+
+LIST AHTE = "ahte" "att" "at" "jut" "juhte" ;
+
+
+LIST ANY_GT_MAPPING = /^(@[A-Z-<>]+?)$/r ; # regex to match any of the giellatekno mapping tags
+##### how to attach to the closest root-attached node:
+# <target> TO (*-0 (*))(p (*) - ANY_GT_MAPPING);
+
+### END_SECTION
+
+#   §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+#   §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+#   §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+#   §§§§§§§§§§§§§§§§§§§§§§§§§§§                             §§§§§§§§§§§§§§§§§§§§§§§§§§
+#   §§§§§§§§§§§§§§§§§§§§§§§§§§§                             §§§§§§§§§§§§§§§§§§§§§§§§§§
+#   §§§§§§§§§§§§§§§§§§§§§§§§§§§     dep grammar starts      §§§§§§§§§§§§§§§§§§§§§§§§§§
+#   §§§§§§§§§§§§§§§§§§§§§§§§§§§                             §§§§§§§§§§§§§§§§§§§§§§§§§§
+#   §§§§§§§§§§§§§§§§§§§§§§§§§§§                             §§§§§§§§§§§§§§§§§§§§§§§§§§
+#   §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+#   §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+#   §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
+
+# count how many rules are not tagged SMI/SJE yet
+# ^(MAP|REMOVE|SUBST|ADD|SET).*(?<!E|I)$
+
+#!! !!!Dep grammar
+
+BEFORE-SECTIONS
+
+### FIRST: ADD <mv> / <aux> TAG
+SUBSTITUTE:FMV_mv (@FMV) (<mv> @FMV) TARGET REAL-V - <mv>; # $SJE
+SUBSTITUTE:IMV_mv (@IMV) (<mv> @IMV) TARGET REAL-V - <mv>; # $SJE
+SUBSTITUTE:FAUX_aux (@FAUX) (<aux> @FAUX) TARGET REAL-V - <mv>; # $SJE
+SUBSTITUTE:IAUX_aux (@IAUX) (<aux> @IAUX) TARGET REAL-V - <mv>; # $SJE
+
+SECTION SUBCLAUSE_SUBSTITUTES;
+
+
+### Subclause categories actually used in Korp:
+# FS-ADVL>
+# FS-IAUX
+# FS-IMV
+# FS-N<
+# FS-N<IAUX
+# FS-N<IMV
+# FS-OBJ
+# FS-P< - in dropodwn but no results!
+# FS-VFIN< - makes no sense, used for coordinated finite clauses
+# FS-<ADVL
+# FS-<SUBJ
+
+
+### @FS-SUBJ - subject-subclauses:
+# probably needs more rules... these are with SPREDs
+SUBSTITUTE:SubV=FS-SUBJmv (@FMV) OR (@FAUX)(@FS-SUBJ) TARGET REAL-V ((*-1 AHTE BARRIER S-BOUNDARY LINK *-1 SPRED BARRIER S-BOUNDARY) OR (*-1 AHTE BARRIER S-BOUNDARY LINK -1 COMMA LINK *-1 SPRED BARRIER S-BOUNDARY))(NEGATE *-1 AHTE BARRIER S-BOUNDARY LINK -1 ("så")); # $SJE
+	#$ da sjaddá färrta giesse(,) att muhtin båtsoj ij båda gärrdaj - every summer it happens that some reindeer don't come into the corral (pit080909.007)
+SUBSTITUTE:SubV=FS-SUBJmv (@FMV) OR (@FAUX)(@FS-SUBJ) TARGET REAL-V (*-1 BOS BARRIER VFIN LINK 1 AHTE)(*1 COPULAS LINK *1 (@<SPRED) BARRIER S-BOUNDARY); # $SMI|SJE
+	## Ahte don maid boađát lea dehálaš.
+SUBSTITUTE:SubV=FS-SUBJmv (@FMV) OR (@FAUX)(@FS-SUBJ) TARGET REAL-V (*-1 BOS BARRIER VFIN LINK 1 AHTE)(*1 (@SPRED>) BARRIER S-BOUNDARY LINK *1 COPULAS); # $SMI|SJE
+	## Ahte don maid boađát dehálaš lea.
+
+### @FS-N< - relative clauses:
+SUBSTITUTE:SubVmain=FS-Naux (@FAUX) (@FS-N<) TARGET REAL-V (*-1 Rel BARRIER VFIN) ; # $SMI
+SUBSTITUTE:SubV=FS-Nmv (@FMV) (@FS-N<) TARGET REAL-V (*-1 Rel BARRIER VFIN OR COMMA) ; # $SMI
+	## Ökonomihke tsiehkieh hov mieriedieh mejtie buektiehtibie daejtie ulmide illedh.
+	#$ - Maid don dainna dieđuin, vástidii Liná ja áiggui vázzát viidáseappot.
+SUBSTITUTE:SubV=FS-ADVLmv (@FMV)(@FS-N<) TARGET REAL-V (-1 CC LINK -1 @FS-N<)(NEGATE *1 (@<SUBJ) BARRIER @V) ; # careful coordination # $SMI
+SUBSTITUTE:SubV=FS-ADVLmv (@FMV)(@FS-N<) TARGET REAL-V (-1 CC LINK NOT 0 MCL-CONJ LINK *-1 @FS-N< BARRIER @V OR S-BOUNDARY)(NEGATE *1 (@<SUBJ) BARRIER @V) ; # $SMI
+
+# some relative clauses introduced by adverbs
+#!! TO DO: include more candidates!
+SUBSTITUTE:SubV=FS-N (@FMV) OR (@FAUX) (@FS-N<) TARGET REAL-V (*-1 ("gånne") OR ("gunne") OR ("degu") OR ("dugu") BARRIER VFIN OR COMMA LINK *-1 N OR Po BARRIER NOT-COMMA) ; # $SJE
+
+# infinite verbs in relative clauses
+SUBSTITUTE:SubV=FSN-IMV (@IMV) (@FS-N<IMV) TARGET REAL-V (*-1 @FS-N< BARRIER @MV LINK *-1C Rel BARRIER COMMA OR CS OR @V) ; # $SMI
+SUBSTITUTE:SubV=FSN-IMV (@IMV) (@FS-N<IMV) TARGET REAL-V (0 PrfPrc LINK *-1 Rel BARRIER @MV OR COMMA OR CS OR @V) ; # no copula # $SMI
+SUBSTITUTE:SubV=FSN-IAUX (@IAUX) (@FS-N<IAUX) TARGET REAL-V (*-1 @FS-N< BARRIER @MV LINK *-1 Rel BARRIER @MV) ; # $SMI
+
+SUBSTITUTE:FSNCoor @FMV OR @FAUX @FS-N< TARGET REAL-V (*-1 @CVP + ("ja") OR ("jala") BARRIER S-BOUNDARY LINK *-1 @FS-N< BARRIER VFIN); # $SJE
+	#$ Diggira, mav mij båhtja ja miesev adná, dat lä álldo. (pit080708b.009)
+
+### @FS-OBJ - object subclause:
+### OBJECT subclause vs. ADVERBIAL subclause:
+
+#!! FS-OBJ introduced by ahte
+# only if a TV is present, else it's ambiguous! final clause:
+	#$ Näjjda lij håhkkånam ja gájka iello láttkanam, ahte såj iebá máhttám jåhtet. - ... so that they couldn't migrate (sje19521000a.019)
+SUBSTITUTE:ahteFS-OBJ (@FMV) OR (@FAUX)(@FS-OBJ) TARGET REAL-V (*-1 AHTE BARRIER S-BOUNDARY OR VFIN LINK NOT -1 @ADVL>CS)(*0 TV BARRIER <mv> OR OBJ) ; # $SJE
+
+#!! FS-ADVL introduced by så att
+SUBSTITUTE:ahteFS-<advl (@FMV) OR (@FAUX)(@FS-<ADVL) TARGET REAL-V (*-1 AHTE BARRIER S-BOUNDARY OR VFIN LINK -1 @ADVL>CS LINK *-1 VFIN) ; # $SJE
+SUBSTITUTE:ahteFS-advl> (@FMV) OR (@FAUX)(@FS-ADVL>) TARGET REAL-V (*-1 AHTE BARRIER S-BOUNDARY OR VFIN LINK -1 @ADVL>CS)(*1 VFIN)(NEGATE *1 @CVP BARRIER VFIN) ; # $SJE
+
+
+#!! FS introduced by Adv or CS: map OBJ & ADVL
+# with finite verb = main clause to the left
+	#$ men vuojnáv gunne lä juhtusa mannam. ## but I see where animals have gone.
+SUBSTITUTE:AdvFS-OBJ-ADVL_left (@FMV) OR (@FAUX)(@FS-OBJ @FS-<ADVL) TARGET REAL-V (*-1 SUB_ADV_CS BARRIER S-BOUNDARY OR VFIN LINK *-1 VFIN) ; # $SJE
+
+# with main clause to the right. negate coordination
+# negate question
+	#$ [ja gu mån danne Stuornjárga nanne tjuodtjov] dä vuojnáv båhtá skuhter. ## and while I stand here on Stuornjárrga I see a snowmobile coming.
+SUBSTITUTE:AdvFS-OBJ-ADVL_right (@FMV) OR (@FAUX)(@FS-OBJ @FS-ADVL>) TARGET REAL-V (*-1 SUB_ADV_CS BARRIER VFIN OR S-BOUNDARY )(*1 VFIN)(NEGATE *1 CC BARRIER VFIN)(NEGATE *-1 Q-WORDS BARRIER S-BOUNDARY LINK *1 ("?")); # $SJE
+
+
+#!! FS-OBJ unintroduced after main clause ## do not move this rule!
+# only if has no FS-tag yet
+# only if not coordinated
+	#$ (ja gu mån danne Stuornjárga nanne tjuodtjov) dä vuojnáv [båhtá skuhter]. ## and while I stand here on Stuornjárrga I see [a snowmobile coming].
+SUBSTITUTE:unintroducedFS-OBJ @FMV OR @FAUX (@FS-OBJ) TARGET REAL-V (*-1 @FMV OR @FAUX BARRIER S-BOUNDARY OR @CVP OR COMMA); # $SJE
+
+#!! remove FS-OBJ reading if there is another unambiguous OBJ
+# too much VFIN instead of <mv>!!!
+# [TARGET] VFIN OBJ (not if VFIN to the left)
+REMOVE:FS-OBJ_b4_OBJ (@FS-OBJ) IF (*1 S-BOUNDARY LINK *1 <mv> LINK *1C @<OBJ OR @FS-OBJ BARRIER VFIN)(NEGATE *-1 VFIN); # $SJE
+# [TARGET] OBJ VFIN - just in case that ever happens, no case yet
+REMOVE:FS-OBJ_b4_OBJ (@FS-OBJ) IF (*1C @OBJ> OR @FS-OBJ BARRIER <mv> LINK *1 <mv> BARRIER S-BOUNDARY); # $SJE
+# VFIN OBJ [TARGET]
+REMOVE:FS-OBJ_after_OBJ (@FS-OBJ) IF (*-1C @<OBJ OR @FS-OBJ BARRIER <mv> LINK *-1 VFIN); # $SJE
+# OBJ VFIN [TARGET]
+REMOVE:FS-OBJ_after_OBJ (@FS-OBJ) IF (*-1 VFIN LINK *-1C @OBJ> OR @FS-OBJ BARRIER VFIN); # $SJE
+
+#!! remove FS-OBJ reading if the main verb of the matrix clause is definitly IV
+REMOVE:FS-OBJ_b4_IV (@FS-OBJ) IF (NEGATE *-1 VFIN)(*1 IV BARRIER <mv>); # $SJE
+REMOVE:FS-OBJ_after_IV (@FS-OBJ) IF (NEGATE *1 VFIN)(*-1 IV BARRIER <mv>); # $SJE
+
+#!! select FS-OBJ reading if the main verb of the matrix clause is TV (- leads to unavoidable errors if objects are left out and there is no other indicator for ADVL-reading)
+	#$ ja dä vuojnáv, jus dále nåv tjuodtjov [...] -> incomplete sentence, must fail!
+SELECT:FS-OBJ_b4_TV (@FS-OBJ) IF (NEGATE *-1 VFIN)(*1 TV BARRIER <mv> OR @OBJ> LINK NEGATE *1 @<OBJ BARRIER V); # $SJE
+SELECT:FS-OBJ_after_TV (@FS-OBJ) IF (NEGATE *1 @FS-OBJ)(*-1 TV BARRIER <mv>); # $SJE
+
+# the infinite mainverb of subclauses gets @FS-IMV:
+SUBSTITUTE:SubV=FS-IMVcs (@IMV) (@FS-IMV) TARGET REAL-V (*-1 @FS-OBJ OR @FS-SUBJ OR @FS-ADVL> OR @FS-<ADVL BARRIER VFIN OR S-BOUNDARY) ; # $SMI
+
+
+### END_SECTION
+
+
+### ICL-OBJ
+# infinite clauses:
+SUBSTITUTE:SubV=iclobj @<OBJ OR @OBJ> (@ICL-OBJ) TARGET NONVFIN ; # $SJE
+
+SUBSTITUTE:SubV=iclsubj @<SUBJ OR @SUBJ> (@ICL-SUBJ) TARGET NONVFIN ; # $SJE
+# lots of specific rules in the common sámi script? is an Inf as subject not always ICL-SUBJ??
+
+### <ehead> not used
+# ellipses:
+#SUBSTITUTE:V=ehead (V) (<ehead> V) TARGET VFIN (*-1 Rel BARRIER VFIN OR COMMA LINK -1 BOS)(*1 (":") BARRIER VFIN) ;
+    # cases where ":" repleaces "leat", which should be the daughter of root
+	## Man dihte mon doaivvun dan: go gávdnojit sámegielat namat várppiin dain jávrriin, gos eai dáláš sámit bivdde šahten.
+
+
+SECTION other_substitutes ;
+# replace subject>-reading after comma with APP-N, if no suitable verb follows after relative clause
+SUBSTITUTE:SUBJ_APP (@SUBJ>) (@APP-N<) TARGET (N Nom) (*-1 COMMA BARRIER NOT-NPMODADV LINK -1 N) (*1 Rel BARRIER WORD LINK *1 VFIN LINK NEGATE *1 V-3 BARRIER @SUBJ>) ; # $SJE
+#MAP:appN_Nom+Rel (@APP-N<) TARGET (N Nom) IF (*-1 COMMA BARRIER APP-BOUNDARY OR CC LINK -1 N)(*1 Rel BARRIER WORD LINK *1 EOS 
+
+
+### END_SECTION
+
+SECTION Mixed ;
+#!! section for changes to various not complex tags
+
+#!! <swe> has function @X and is linked to the nearest verb since that is most likely to be correct
+SETPARENT:sweToVerb (<swe>) TO (*0 <mv> BARRIER S-BOUNDARY) ; # $SJE
+
+### END_SECTION
+
+
+
+
+
+
+#!! !!!Mapping rules
+# =============
+
+SECTION dependencies ;
+
+### postposition / preposition - Po/Pr is the head
+SETPARENT:ComplToPo @>P TO (*1 Po OR Pr); # $SMI
+SETPARENT:ComplToPr @P< TO (*-1 Pr); # $SMI
+
+### np
+SETPARENT:SetModToNPhead @>N TO (*1 NP-HEAD) ; # $SJE
+	#$ dat lä stuorajmus daggár - the biggest such (mold) (pit080708b.017)
+SETPARENT:SetModToN @>N TO (*1 N) ; # $SMI
+SETPARENT:SetCompToN @N< TO (*-1 N) ; # $SMI
+SETPARENT:SetCompToN (V @N<) TO (*-1 @<ARG ) ; # $SMI
+SETPARENT:SetReflToN (Refl Nom @N<) TO (*-1 N) ; # $SMI
+SETPARENT:SetAppToRightPron @APP>Pron TO (*1 COMMA BARRIER @CLAUSE LINK 1 Pron) ; # $SMI
+SETPARENT:SetAppToLeftPron @APP-Pron< TO (*-1 COMMA BARRIER @CLAUSE LINK -1 Pron) ; # $SMI
+SETPARENT:CoordSetModToN @>N TO (1 CC LINK *1 @>N LINK *1 @CLAUSE) ; # $SMI
+SETPARENT @>N TO (1 COMMA LINK *1 APP BARRIER N LINK *1 COMMA BARRIER @CLAUSE LINK *1 N) ; # $SMI
+#SETPARENT:Prop>N
+
+SETPARENT:SetAppToN @APP-N< TO (*-1 @CLAUSE + N) ; # $SMI
+SETPARENT:SetAppToN @APP-N< TO (*-1 @P< + N BARRIER N) ; # $SMI
+SETPARENT:SetAppToN @APP-N< TO (*-1 COMMA BARRIER @CLAUSE LINK -1 N) ; # $SMI
+
+### adjp
+SETPARENT:SetAttrToRightA @>A TO (*1 A) ; # $SMI
+SETPARENT:SetAttrToLeftA @A< TO (*-1 A) ; # $SMI
+
+### advp
+SETPARENT:SetAttrToRightA @>Adv TO (*1 Adv) ; # $SMI
+SETPARENT:SetAttrToLeftA @Adv< TO (*-1 Adv) ; # $SMI
+
+SETPARENT:SetAttrToLeftAdvl @ADVL< OR @APP-ADVL< TO (*-1 ADVL BARRIER @CLAUSE) ; # $SMI
+SETPARENT:SetAdvlToAdvl @>ADVL TO (1 @ADVL>CS) ; # $SMI
+SETPARENT:SetAttrToRightAdvl @>ADVL OR @APP>ADVL TO (*1 Adv BARRIER @CLAUSE) ; # $SMI
+SETPARENT:SetAttrToRightAdvl @>ADVL TO (*1 ADVL BARRIER @CLAUSE) ; # $SMI
+
+#!! ADVL with ellipsis
+SETPARENT:ADVL-ellipsis (@ADVL) TO (*0 @OBJ OR @SUBJ OR @SPRED OR @HNOUN BARRIER S-BOUNDARY); # $SMI
+
+### nump
+SETPARENT:SetAttrToRightNum @>Num TO (*1 Num BARRIER @CLAUSE) ; # $SMI
+SETPARENT:SetAttrToLeftNum @Num< OR @APP-Num< TO (*-1 Num BARRIER @CLAUSE) ; # $SMI
+
+### vp
+
+# If there is no antecedent, then the mainv is the parent:
+SETPARENT:SetFS-NtoMV @FS-N< TO (*-1 <mv> BARRIER CS OR ADVL-COMP) ; ##BARRIER? # $SMI
+	## Ökonomihke tsiehkieh hov mieriedieh mejtie buektiehtibie daejtie ulmide illedh.
+
+# the antecedent is N or Pron:
+SETPARENT:SetFS-NtoN @FS-N< TO (*-1 Rel OR ("gos") OR ("gosa") OR ("degu") OR COMMA BARRIER @V LINK **-1 N OR Pron - Rel OR A OR Indef OR Num BARRIER @V - @FS-N< LINK NOT 0 (Attr)) ; # $SMI|SJE
+	## Laake galka jeatjahtovvedh jïh orre njoelkedasse båata mij edtja buerie voeresehåksoem tjirkedh.
+	## Ij migek bádes dåhku besa, ij ga aktak guhti vastev dahká jali gieles , ájnat val sij gejt Libba le iellema girjjáj tjállám.
+
+# the antecedent is an object in an SOV-clause:
+SETPARENT:SetFS-NtoN @FS-N< TO (*-1 Rel OR ("degu") LINK *-1 <mv> BARRIER WORD LINK *-1 @OBJ> OR (N @ADVL>) OR @<SPRED BARRIER @<ARG OR @V OR S-BOUNDARY) ; # $SMI
+	## Maŋemus mánojt la ådå lávllagij barggam ma CD:j båhti.
+
+# the parent of an infinite verb is the aux
+SETPARENT:SetMVtoV NONVFIN TO (*0 REAL-V ); # worst case # $SJE
+SETPARENT:SetMVtoAUX NONVFIN TO (*1 <aux> BARRIER OBJ-COMP OR ADVL-COMP OR Rel OR @CVP OR S-BOUNDARY) ; # $SMI
+SETPARENT:SetMVtoV NONVFIN TO (*-1 REAL-V BARRIER S-BOUNDARY) ;  # infinite vfin # $SMI|SJE
+SETPARENT:SetMVtoAUX NONVFIN TO (*-1 <aux>) ; # $SMI
+SETPARENT:SetMVToRoot @IMV + COPULAS (-1 COMMA LINK NOT *-1 <aux> BARRIER <mv>) TO (@0 (*)) ;  # leamaš # $SMI
+
+
+
+# if there is no finite verb in the relative clause:
+SETPARENT:SetFS-NIMVtoN @FS-N<IMV TO (NOT 0 ConNeg LINK *-1 Rel BARRIER @V LINK **-1 N OR Pron OR A OR Indef BARRIER @V LINK NOT 0 @HNOUN OR @APP-N< OR (Attr)) ; # $SMI
+	##  Jååhannesen vaarjoe lij kaamelen-goelkijste njåetsie maam garhtse-beelhtine gårrestamme.
+
+
+# ellipse - no VFIN:
+SETPARENT:SetFS-NtoMV @FS-N< TO (*-1 CS OR Rel OR ADVL-COMP BARRIER VFIN LINK *-1 NONVFIN BARRIER S-BOUNDARY OR VFIN LINK *-1 S-BOUNDARY BARRIER VFIN LINK *1 NONVFIN) ; # $SMI
+	## Son muitala ahte olmmoš galggašii álo bidjat muitui go niegada earenoamáš čielga niegu, ja de maŋit áiggiid oaidnit maid dat niehku lea viggan muitalit.
+
+### set Pcle to next finite verb. If none, set to next word
+# "degu" never to previous unit
+SETPARENT:SetPcleToWord @PCLE - ("degu") TO (-1 WORD); # $SMI
+	## Gávpoga poarttat eai goassege dahppojuvvo beaivet , ii ge idja šat leat .
+SETPARENT:SetPcleToWord @PCLE TO (1 WORD); # $SMI
+	## Dagke båateme leah mijjem mirhkedh?
+SETPARENT:SetPcleToVfin @PCLE TO (*1 VFIN); # $SMI|SJE
+SETPARENT:SetPcleToLVfin @PCLE - ("degu") TO (*-1 VFIN BARRIER S-BOUNDARY)(NEGATE *1 VFIN BARRIER S-BOUNDARY); # $SMI|SJE
+
+SETPARENT:SetModToCC @>CC TO (*1 CC) ; # $SMI
+	## - Gea, juhkki vel liema vai liegganeahppi sihke siskkáldasat ja olgguldasat.
+
+### ellipse
+SETPARENT:SetSubjtoLeftVfin @<SUBJ TO (*-1 @CVP OR COMMA BARRIER @V LINK *-1 VFIN) ; # $SMI
+	## Ovdal buorida son dálkkiidis go neavrres olmmoš dábiidis.
+	## Veahá áiggi maŋŋá Ánne lea juo oađđimin duljiid alde Muhtinlágan Stálu goađis gos nu meahcis, rátnu vel alde.
+SETPARENT:SetSubjtoRightVfin @SUBJ> TO (*1 @CVP BARRIER @V LINK *1 VFIN) ; # $SMI
+	## Mađe losit siivu, dađe njoazebut manná mátki.
+
+
+### local advls
+
+SETPARENT:ToLeftPron @>Pron TO (*1 Pron); # $SMI
+	## ... muhto dušše sii geaid namma lea čállojuvvon Lábbá eallima girjái.
+SETPARENT:ToRightPron @Pron< TO (*-1 Pron); # $SMI
+	## Ii mihkkege garuhusaid leat šat.
+
+
+### clause level
+SETPARENT:SetObjToLeftMv <OBJ TO (*-1 <mv> BARRIER @ADVL> OR @SUBJ> OR OBJ) ; # $SMI
+SETPARENT:SetObjToRightMv2 OBJ> TO (*1 S-BOUNDARY LINK *1 COMMA LINK *1 <mv> ) ; # $SMI
+SETPARENT:SetObjToRightMv3 OBJ> TO (*1 @HNOUN BARRIER <mv> ) ; # $SMI
+SETPARENT:SetObjToRightMv OBJ> TO (*1 <mv> BARRIER S-BOUNDARY OR @-FSUBJ>) ; # $SMI
+SETPARENT:Set-FObjToLeftMv F<OBJ TO (*-1 NONVFIN BARRIER S-BOUNDARY OR @-FSUBJ> OR OBJ) ; # $SMI
+SETPARENT:Set-FObjToRightMv FOBJ> TO (*1 NONVFIN BARRIER S-BOUNDARY OR @-FSUBJ>) ; # $SMI
+SETPARENT:Set-FObjToLeftMv @-F<OPRED TO (*-1 NONVFIN BARRIER S-BOUNDARY OR @-FSUBJ>) ; # $SMI
+
+SETPARENT:SetObjToRightMv OBJ> TO (*1 <mv> OR @FS-FIN - VAUX OR @FS-IMV BARRIER @-FSUBJ> OR @CVP) ; #tentative # $SMI
+	#$ Lea registreren maid ja man ollu lea borran.
+	
+SETPARENT:ellipticalOBJ @OBJ TO (*0 VFIN); # $SJE
+
+### Advl
+
+SETPARENT:SetAdvlToSubj @<ADVL TO (*-1 SUBJ) ; # $SMI
+	## Mov mænngan båata dihte gie manneste veaksahkåbpoe.
+SETPARENT:SetAdvlToLeftMv @<ADVL TO (*-1 @SCLV OR <mv> OR @HNOUN OR @SUBJ ) ; # subclause # $SJE
+SETPARENT:SetAdvlToLeftNeg @<ADVL TO (*-1 Neg BARRIER S-BOUNDARY OR @-FSUBJ> OR <mv>) ; # negation # $SMI
+SETPARENT:SetAdvlToRightMv @ADVL> TO (*1 <mv> OR @HNOUN OR @SUBJ) ; # $SMI
+SETPARENT:SetAdvlToRightMv @ADVL> TO (*1 S-BOUNDARY BARRIER <mv> LINK *1 COMMA LINK *1 <mv>) ; # adverbials before subordinate clauses # $SMI
+## problem:Eará guovlluin gos leat vel unnit sámit go Finnmárkkus, leamaš dákkár ákkain vel stuorát deaddu almmolaš ságastallamis. - guovlluin is not hit because of vfin ellipsis
+SETPARENT:SetAdvlToRightMv @ADVL> TO (*1 <mv> BARRIER @-FSUBJ> OR S-BOUNDARY) ; # $SMI
+SETPARENT:SetAdvlToRightSubj @ADVL> TO (*1 @SUBJ BARRIER @V) ; # $SMI
+# a relativeclause in between:
+SETPARENT:SetAdvlToMcMv @ADVL> TO (*1 Rel OR OBJ-COMP BARRIER @V LINK *1 COMMA OR MCL-CONJ LINK *1 <mv>) ; # $SMI
+
+SETPARENT:SetAdvlToCompCS @<ADVL TO (*-1 @COMP-CS< BARRIER S-BOUNDARY OR @V) ; # $SMI
+SETPARENT:SetAdvlToSubj @<ADVL TO (*-1 CC OR COMMA BARRIER @V LINK 1 @<SUBJ) ; # $SMI
+
+
+SETPARENT:-F<ADVL @-F<ADVL TO (*-1 NONVFIN BARRIER S-BOUNDARY) ; # $SJE
+SETPARENT:-FADVL> @-FADVL> TO (*1 NONVFIN BARRIER S-BOUNDARY) ; # $SJE
+
+
+SETPARENT:SetSubjToRightMv SUBJ> TO (*1 <mv> BARRIER S-BOUNDARY) ; # $SMI
+SETPARENT:SetSubjToRightVfin SUBJ> TO (*1 VFIN BARRIER S-BOUNDARY) ; # $SMI
+SETPARENT:SetSubjToLeftVfin <SUBJ TO (*-1 VFIN BARRIER S-BOUNDARY) ; # $SMI
+SETPARENT:SetSubjToLeftVfin F<SUBJ TO (*-1 NONVFIN BARRIER S-BOUNDARY) ; # $SMI
+SETPARENT:SetRelSubjToRight (Rel @SUBJ>) TO (*1 @FS-N< BARRIER S-BOUNDARY) ; # $SMI
+SETPARENT:SubjWithFSN @SUBJ> TO (1 COMMA LINK *1 @FS-N< LINK *1 VFIN - @FS-N<) ; # $SJE
+
+SETPARENT @<SPRED TO (*-1 @SUBJ> BARRIER @V); # $SMI
+	## Sápmelaččaid historjá álbmogin lea duháhiid jagiid boaris, muhto dálá ássanguovlluin sápmelaččat eai leat ássan nu guhká.
+SETPARENT @SPRED> TO (*1 @SUBJ> LINK NOT 0 Rel); # $SMI
+SETPARENT @<SPRED TO (*-1 COPULAS OR @HNOUN OR @SUBJ); # $SMI
+	## Mov mænngan båata dihte gie manneste veaksahkåbpoe.
+SETPARENT @SPRED> TO (*1 COPULAS OR @HNOUN BARRIER Rel OR S-BOUNDARY); # $SMI
+SETPARENT @-FSPRED> TO (*1 NONVFIN BARRIER Rel OR S-BOUNDARY); # $SMI
+SETPARENT @-F<SPRED TO (*-1 NONVFIN LINK NOT 0 @MV) ; # $SMI
+
+SETPARENT @<OPRED TO (*-1 REAL-V BARRIER S-BOUNDARY); # $SMI
+SETPARENT @OPRED> TO (*1 REAL-V BARRIER S-BOUNDARY); # $SMI
+
+SETPARENT @<OPRED TO (*-1 OBJ BARRIER S-BOUNDARY); # $SMI
+SETPARENT @OPRED> TO (*1 OBJ BARRIER S-BOUNDARY); # $SMI
+SETPARENT @<PPRED TO (*-1 SPRED OR OPRED) ; # $SMI
+
+# @COMP-CS<
+#SETPARENT:CNPToMvwhenComp-cs @CNP TO (*1 @COMP-CS< BARRIER @CLAUSE LINK *-1 @CNP LINK *-1 <mv>) ;
+SETPARENT:Comp-cs @COMP-CS< TO (*-1 CS) ; # $SMI
+SETPARENT @ADVL>CS TO (1 CS) ; # $SMI
+
+SETPARENT:toCS @>CS TO (*1 CS) ; # $SMI
+
+
+# the finite verb to the subject when there is a relative clause in between
+SETPARENT:SetSubjVfinAfterRelCl @SUBJ> TO (*1 Rel BARRIER VFIN OR S-BOUNDARY LINK *1 @FAUX OR @FMV) ; # $SMI
+	## Genadutkit geaid eamiálbmogat miehtá máilmmi leat vuosttaldan garrasit, leat dál jođus Sápmái, ja sii ohcet sámi dievdduid genadutkamii.
+
+### coordination ###
+#!! IP: like with commas, I use the UD rules for attaching CCs, because they are clearer and more regular than the giellatekno documentation & actual output from e.g. SME
+#!! CC attaches to the FOLLOWING conjunct, NOT the previous [word|conjunct]
+### subjunction
+SETPARENT:SetCCellipse KONJ + @CVP TO (1 CC LINK 1 @CVP) ; # $SMI
+SETPARENT:SetCCellipse KONJ + @CVP TO (*1 @<SUBJ BARRIER VFIN) ; # $SMI
+SETPARENT:SetCCellipse KONJ + @CVP TO (*1 KONJ + @CVP BARRIER @V LINK *-1 @SUBJ> BARRIER @CVP) ; # $SMI
+SETPARENT:SetCCToCC (CC @CVP) TO (1 CS OR CC) ; # $SMI
+SETPARENT:CCToContentWord (CC @CVP) TO (*1 CONTENTWORD BARRIER S-BOUNDARY) ; # $SJE
+SETPARENT:SetKonjToFMV KONJ + @CVP TO (*1 @FMV) ; # $SMI
+SETPARENT:SetKonjToV KONJ + @CVP TO (*1 VFIN OR NONVFIN BARRIER S-BOUNDARY) ; # $SMI
+SETPARENT:SetCCtoHighestRight KONJ + @CVP (NONE p (*)) TO (*1 CONTENTWORD) ; # still no parent: CVP to next "content word" to the right # $SJE
+SETPARENT:SetCCtoHighest KONJ + @CVP (NONE p (*)) TO (*0 CONTENTWORD) ; # still no parent: CVP to next "content word" # $SJE
+SETPARENT:CVPToRoot @CVP (NONE p (*)) TO (@0 (*)); # last resort: CVP to root # $SMI
+
+### coordinator
+SETPARENT:SetCNPToWord @CNP TO (*1 WORD) ; # $SJE
+# 1 left of CNP is a conjunct = same label as head of CNP to the right
+SETPARENT:SetCNPToConjunct @CNP TO (-1 ANY_GT_MAPPING LINK *1 (VSTR:$1)) ; # $SJE
+SETPARENT:SetCVPToVFIN @CVP + CC TO (*1 VFIN)  ; # $SMI
+SETPARENT:SetCVPToWord @CVP + CC TO (1 CS) ; # $SMI
+SETPARENT:SetCVPToHNOUN @CVP TO (*1 @HNOUN OR (@ADVL) BARRIER @V) ; # stray noun or adverbial # $SMI
+SETPARENT:SetCVPToEllip @CVP TO (*1 @SUBJ OR @OBJ BARRIER @V) ; # elliptical subject or object # $SJE
+	## Ja jos doppe livččui čoakkánbáiki soames alla vári nalde, de veajálii sápmelaš čilget oba bures su iežas áššiid.
+	## Ja go eai ožžon deinna ahte dubmeje, de sii álge cábmit ja dubmeje helvehii ja garrude ja čolge deid, geat eai álgán.
+SETPARENT:CVPToHeadCS @CVP TO (1 CS LINK p (*)); # $SJE
+
+
+LIST COORD = @SUBJ> @<SUBJ @SUBJ @<OBJ @OBJ> @OBJ @<SPRED @SPRED> @SPRED @<OPRED @OPRED> @APP-N< @ADVL<OBJ @SUBJ<ADVL @OBJ>SPRED @COMP-CS< @SPRED @>P @P< @ADVL> @<ADVL @ADVL @CL-ADVL> @CL-<ADVL  @i-ADVL> @i-<ADVL @i-ADVL @-F<OBJ ;
+LIST VERBCOORD = @FMV @FAUX @IAUX @FAUX @FS-IMV @FS-VFIN< @FS-ADVL @FS-OBJ @IMV @FS-N<IMV @FS-P< @FS-P<IMV @ICL-P< @ICL-OBJ @ICL-SUBJ;
+
+# the first part of a coordination is the head of all the coordinated parts and gets the tag <ctjHead>
+SUBSTITUTE:ctjHead (@>N) (<ctjHead> @>N) TARGET @>N (NEGATE *-1 @CNP OR COMMA BARRIER @V LINK -1 @>N)(1 COMMA OR @CNP LINK *1 @>N BARRIER @ARG OR @V LINK NEGATE *1 COMMA BARRIER @CLAUSE LINK 1 @CLAUSE) ; # $SMI
+SUBSTITUTE:ctjHead (@SUBJ>) (<ctjHead> @SUBJ>) TARGET @SUBJ> (NEGATE *-1 @CNP OR COMMA BARRIER @V LINK -1 @SUBJ>)(1 COMMA OR @CNP LINK *1 @SUBJ> BARRIER @ARG OR @V OR S-BOUNDARY LINK NOT 0 Rel) ; # $SMI
+SUBSTITUTE:ctjHead (@<SUBJ) (<ctjHead> @<SUBJ) TARGET @<SUBJ (NEGATE *-1 @CNP OR COMMA BARRIER @V OR @ARG LINK -1 @<SUBJ)(1 COMMA OR @CNP LINK *1 @<SUBJ BARRIER @ARG OR @V OR S-BOUNDARY) ; # $SMI
+SUBSTITUTE:ctjHead (@<OBJ) (<ctjHead> @<OBJ) TARGET @<OBJ (NEGATE *-1 @CNP OR COMMA BARRIER @ARG OR <mv> LINK -1 @<OBJ)(1 COMMA OR @CNP LINK *1 @<OBJ BARRIER @V OR @ARG OR S-BOUNDARY) ; # $SMI
+SUBSTITUTE:ctjHead (@<OBJ) (<ctjHead> @<OBJ) TARGET @<OBJ (NEGATE *-1 @CNP OR COMMA BARRIER @ARG OR <mv> OR S-BOUNDARY LINK *-1 @<OBJ BARRIER @V OR @ARG)(0 Num LINK *1 (N Gen) BARRIER NOT-ADJ LINK 1 COMMA OR @CNP LINK *1 @<OBJ BARRIER @V OR @ARG) ; # $SMI
+SUBSTITUTE:ctjHead (@OBJ>) (<ctjHead> @OBJ>) TARGET @OBJ> (NEGATE *-1 @CNP OR COMMA BARRIER @ARG OR <mv> OR S-BOUNDARY LINK -1 @OBJ>)(1 COMMA OR @CNP LINK *1 @OBJ> BARRIER @ARG OR @V) ; # $SMI
+SUBSTITUTE:ctjHead (@-F<OBJ) (<ctjHead> @-F<OBJ) TARGET @-F<OBJ (NEGATE *-1 @CNP OR COMMA BARRIER @ARG OR @V LINK -1 @-F<OBJ)(1 COMMA OR @CNP LINK *1 @-F<OBJ BARRIER @ARG OR @V OR S-BOUNDARY) ; # $SMI
+SUBSTITUTE:ctjHead (@OBJ) (<ctjHead> @OBJ) TARGET @OBJ (NEGATE *-1 @CNP OR COMMA BARRIER @ARG OR @V LINK -1 @OBJ)(1 COMMA OR @CNP LINK *1 @OBJ BARRIER @ARG OR @V OR S-BOUNDARY) ; # $SJE
+SUBSTITUTE:ctjHead (@APP-N<) (<ctjHead> @APP-N<) TARGET @APP-N< (NEGATE *-1 @CNP OR COMMA BARRIER @ARG OR S-BOUNDARY LINK -1 @APP-N<)(1 COMMA OR @CNP LINK *1 @APP-N< BARRIER @ARG) ; # $SMI
+SUBSTITUTE:ctjHead (@<SPRED) (<ctjHead> @<SPRED) TARGET @<SPRED (NEGATE *-1 @CNP OR COMMA BARRIER @ARG OR S-BOUNDARY LINK -1 @<SPRED)(1 COMMA OR @CNP LINK *1 @<SPRED BARRIER @ARG OR S-BOUNDARY) ; # $SMI
+SUBSTITUTE:ctjHead (@SPRED>) (<ctjHead> @SPRED>) TARGET @SPRED> (NEGATE *-1 @CNP OR COMMA BARRIER @ARG OR S-BOUNDARY LINK -1 @SPRED>)(1 COMMA OR @CNP LINK *1 @SPRED> BARRIER @ARG) ; # $SMI
+SUBSTITUTE:ctjHead (@<ADVL) (<ctjHead> @<ADVL) TARGET @<ADVL (NEGATE *-1 @CNP OR COMMA BARRIER @ARG OR S-BOUNDARY LINK -1 @<ADVL)(1 @CNP LINK *1 @<ADVL BARRIER @ARG OR @V OR S-BOUNDARY OR CC) ; # $SMI
+SUBSTITUTE:ctjHead (@ADVL>) (<ctjHead> @ADVL>) TARGET @ADVL> (NEGATE *-1 @CNP OR COMMA BARRIER @ARG OR S-BOUNDARY LINK -1 @ADVL>)(1 @CNP LINK *1 @ADVL> BARRIER  @ARG OR @V OR S-BOUNDARY OR CC) ; # $SMI
+SUBSTITUTE:ctjHead (@-F<ADVL) (<ctjHead> @-F<ADVL) TARGET @-F<ADVL (NEGATE *-1 @CNP OR COMMA BARRIER @ARG OR @V LINK -1 @-F<ADVL)(1 COMMA OR @CNP LINK *1 @-F<ADVL BARRIER @ARG OR @V OR S-BOUNDARY) ; # $SMI
+	## Muhto lei nu váttis rehkenastit tálain ja bustávain.
+SUBSTITUTE:ctjHead (@SPRED) (<ctjHead> @SPRED) TARGET @SPRED (NEGATE *-1 @CNP OR COMMA BARRIER @ARG OR S-BOUNDARY LINK -1 @SPRED)(1 COMMA OR @CNP LINK *1 @SPRED BARRIER @ARG) ; # $SMI
+SUBSTITUTE:ctjHead (@<OPRED) (<ctjHead> @<OPRED) TARGET @<OPRED (NEGATE *-1 @CNP OR COMMA BARRIER @ARG OR S-BOUNDARY LINK -1 @<OPRED)(1 COMMA OR @CNP LINK *1 @<OPRED BARRIER @ARG) ; # $SMI
+SUBSTITUTE:ctjHead (@OPRED>) (<ctjHead> @OPRED>) TARGET @OPRED> (NEGATE *-1 @CNP OR COMMA BARRIER @ARG OR S-BOUNDARY LINK -1 @OPRED>)(1 COMMA OR @CNP LINK *1 @OPRED> BARRIER @ARG) ; # $SMI
+SUBSTITUTE:ctjHead (@COMP-CS<) (<ctjHead> @COMP-CS<) TARGET @COMP-CS< (NEGATE *-1 @CNP OR COMMA BARRIER @ARG OR S-BOUNDARY LINK -1 @COMP-CS<)(1 COMMA OR KONJ + @CNP LINK *1 @COMP-CS< BARRIER @ARG OR CS) ; # $SMI
+SUBSTITUTE:ctjHead (@>P) (<ctjHead> @>P) TARGET @>P (NEGATE *-1 @CNP OR COMMA BARRIER @ARG OR S-BOUNDARY LINK -1 @>P)(1 COMMA OR @CNP LINK *1 @>P BARRIER @ARG) ; # $SMI
+SUBSTITUTE:ctjHead (@P<) (<ctjHead> @P<) TARGET @P< (NEGATE *-1 @CNP OR COMMA BARRIER @ARG OR S-BOUNDARY LINK -1 @P<)(1 COMMA OR @CNP LINK *1 @P< BARRIER @ARG) ; # $SMI
+
+
+# coordination - not verbs
+SETPARENT:Coord $$COORD TO (*-1 COMMA OR @CNP BARRIER @V OR S-BOUNDARY OR $$COORD LINK *-1 $$COORD + <ctjHead>); # $SMI
+	## Maahtoe jïh skuvle lea dellie mubpie vihkeles tsiehkiem daennie orre våaroemisnie.
+
+# coordination of @>N
+SETPARENT:>NCoord @>N TO (*-1 COMMA OR CC BARRIER @CLAUSE LINK *-1C @>N + <ctjHead> BARRIER @CLAUSE); # $SMI
+	## Dát leat luohtehahtti ja duohta sánit .
+	#$ Niegadan su birra go oainnán David Beckham ja Manchester United!
+SETPARENT:Not>NCoord @>N TO (1 (N @>N)); # $SMI
+	## Dát lea Dávveda bártni ja Abrahama bártni sohka.
+
+### verb coordination
+
+# verbcoordination - mainclauses
+#SUBSTITUTE:ctjHead (V) (<ctjHead> V) TARGET VFIN (NEGATE *-1 CC OR COMMA BARRIER CS OR ADVL-COMP OR MCL-CONJ LINK *-1 VFIN BARRIER CS OR ADVL-COMP)(0 @MCLV)(NEGATE 0 Neg LINK 1 ("ge"))(*1 COMMA OR CC BARRIER Rel OR CS OR (":") LINK **1 VFIN LINK 0 @MCLV) ; # Added (CS @CVP) barrier (next line) tt.
+SUBSTITUTE:ctjHead (V) (<ctjHead> V) TARGET VFIN (NEGATE *-1 CC OR COMMA BARRIER CS OR ADVL-COMP OR MCL-CONJ LINK *-1 VFIN BARRIER CS OR ADVL-COMP)(0 @MCLV)(NEGATE 0 Neg LINK 1 ("ge"))(*1 COMMA OR CC BARRIER Rel OR CS OR (":") LINK **1 VFIN BARRIER (CS @CVP) LINK 0 @MCLV )(NEGATE 0 <ctjHead>) ; # $SMI
+	## Muhtun geasi nieida jávkkai, ja olbmot ohce su, muhto eai gávdnan su eai gostege, eaige diehtán gosa lei šaddan.
+SUBSTITUTE:ctjHead (V) (<ctjHead> V) TARGET VFIN (NEGATE *-1 CC OR COMMA BARRIER CS OR ADVL-COMP LINK *-1 VFIN BARRIER CS OR ADVL-COMP)(0 @MCLV)(NEGATE 0 Neg LINK 1 ("ge"))(*1 Rel BARRIER @V LINK *1 COMMA OR @CVP BARRIER Rel OR CS LINK *1 @SUBJ> BARRIER @V LINK **1 VFIN LINK 0 @MCLV) ; # a relative clause in between # $SMI
+	## Lea vuosttaš CD maid Sámi Jienat almmuha ja CD galgá leat válmmas geassemánu 10. beaivvi 2005.
+
+# verbcoordination - subclauses
+SUBSTITUTE:ctjHead (V) (<ctjHead> V) TARGET VFIN (NEGATE *-1 CC OR COMMA BARRIER CS OR ADVL-COMP OR Rel LINK *-1 VFIN BARRIER CS OR ADVL-COMP)(0 @SCLV)(NEGATE *-1 CS BARRIER @V OR ADVL-COMP LINK *1 @SCLV LINK *1 ADVL-COMP BARRIER @V) (NEGATE 0 Neg LINK 1 ("ge"))(*1 COMMA OR CC LINK *1 VFIN BARRIER ADVL-COMP OR CS OR Rel LINK 0 @SCLV) ; # $SMI
+	## Go bassat lihtiid dahje málestit siiddas, de sáhttit seammás guldalit radio.
+
+
+# two subordinates:
+SUBSTITUTE:ctjHead (V) (<ctjHead> V) TARGET VFIN (NEGATE *-1 CC OR COMMA BARRIER @V LINK *-1 VFIN BARRIER CS OR ADVL-COMP OR Rel)(0 @SCLV)(NEGATE 0 Neg LINK 1 ("ge"))(*-1 ADVL-COMP OR CS OR Rel BARRIER @V LINK NOT 0 OBJ-COMP LINK *1 VFIN LINK *1 COMMA OR CC BARRIER VFIN LINK *1 VFIN BARRIER @SUBJ> OR @V LINK 0 @SCLV) ; # $SMI
+#SUBSTITUTE:ctjHead (V) (<ctjHead> V) TARGET VFIN (NEGATE *-1 CC OR COMMA BARRIER CS OR ADVL-COMP LINK *-1 VFIN BARRIER CS OR ADVL-COMP)(0 @SCLV)(NEGATE 0 Neg LINK 1 ("ge"))(*-1 ADVL-COMP OR CS BARRIER @V LINK NOT 0 OBJ-COMP LINK *1 VFIN LINK *1 COMMA OR CC BARRIER VFIN LINK *1 ADVL-COMP OR CS BARRIER @V LINK *1 VFIN BARRIER S-BOUNDARY LINK 0 @SCLV) ;
+	## Dállu lea divrras midjiide danne go dat vuosiha govt mearrasámit elle ovdal ja makkár viesut sis ledje.
+
+# two infinite verbs
+SUBSTITUTE:ctjHead (V) (<ctjHead> V) TARGET $$VERBCOORD (NEGATE 0 VFIN)(NEGATE *-1 CC OR COMMA BARRIER CS LINK *-1 $$VERBCOORD)(*1 COMMA OR CC BARRIER $$VERBCOORD LINK *1 $$VERBCOORD BARRIER CS OR @V) ; # $SMI
+	## Tjirkedh voeresgåetien-sijjieh gaajhkeside 2015den åvtelen, jïh voeresalmetji reaktide nænnoestidh.
+	## Tálat ja bustávat sáhtte jorrat girjjis ja šaddat čáhppes sáhcun.
+
+#!! no! cnps are linked according to UDG rules (which are neater), i.e. to the head of the coord that follows
+#SETPARENT:SetCNPToInf @CNP TO (*-1 <ctjHead> LINK 0 Inf) ;
+	## Tálat ja bustávat sáhtte jorrat girjjis ja šaddat čáhppes sáhcun.
+
+#SETPARENT:FSSTAtoX @FS-VFIN< TO (*-1 @X) ;
+
+# subclause to mainclause
+SETPARENT:SetFSSTAtoMV @FS-VFIN< TO (*-1 @FAUX OR @FMV BARRIER CC OR @FS-VFIN<) ; # $SMI
+	## Gávpoga poarttat eai goassege dahppojuvvo beaivet, ii ge idja šat leat .
+
+# subclause to another kind of subclause
+SETPARENT:SetFSSTAtoRelOrAdvl @FS-VFIN< TO (*-1 @FS-N< OR @FS-ADVL BARRIER VFIN OR @SUBJ>) ; # $SMI
+	## Usjudallá jus ieddne le sunnuv åhtsåmin, ja de ij sunnuv gávna gå oademin libá, ja gåktu de jus soames ádjá rádna båhti.
+
+SETPARENT @FS-VFIN< TO (*-1 ADVL-COMP BARRIER @FS-VFIN< OR CS LINK *-1 VFIN) ; # not in use # $SMI
+
+# subclause to subclause
+SETPARENT @FS-VFIN< TO (*-1 @FS-VFIN< BARRIER @MCLV OR Rel) ; # $SMI
+	## Laavloejigan jih tuhtjigan luste, jih gosse idtjigan åerieh jallh byøpmedh, die heehkigan jih beenghkigan dam baeniem guktie dihte gåetie edtja stoerre jih tjaekeds sjïdtedh.
+
+# subclause to relative clause
+SETPARENT @FS-VFIN< TO (*-1 @FS-N< BARRIER @MV) ; # $SMI
+	## Gávpoga váldogeainnu ja eanu gaskkas lea eallima muorra mii šaddada šattuid guoktenuppelot geardde ja addá šattuidis juohke mánus .
+
+SETPARENT:RelVtoVfin @FS-VFIN< (NONE p (*)) TO (*1 @FV) ; # $SMI
+	## Gå de bivvám ja bårråm libá, de máná nav nagerduvvaba.
+SETPARENT:RelVtoVfin @FS-VFIN< (NONE p (*)) TO (*-1 @FV) ; # not in use # $SMI
+#SETPARENT:RelVtoVfin @FS-VFIN< TO (*-1 @ADVL>SUBJ BARRIER VFIN LINK *1 @SUBJ) ;  # not in use
+
+
+### nonfinite clauses
+SETPARENT:InfinSubj @-FSUBJ> TO (*1 NONVFIN); # $SMI
+	## Muhtinlágan Stállu cáhpá goikebierggu sudnuide ja dáhttu mánáid boradit. # mánáid
+SETPARENT:InfinObj @ICL-OBJ TO (*-1 <mv>); # $SMI
+	## Muhtinlágan Stállu cáhpá goikebierggu sudnuide ja dáhttu mánáid boradit. # boradit
+SETPARENT:InfinObj @ICL-P< TO (*-1 Pr BARRIER @P<); # $SMI
+SETPARENT:InfinObj @ICL-SUBJ TO (*-1 <mv>); # $SMI
+
+
+
+### SJE can't check for *intransitive* MVs since they are not tagged
+# FS-OBJ are not marked for direction. standard is linking to a MV to the left
+SETPARENT:OBJsentenceToSentence @FS-OBJ TO (*-1 <mv>); # $SMI
+# if there is no MV to the left, link to MV on the right
+SETPARENT:OBJsentenceToSentence @FS-OBJ (NEGATE *-1 <mv>) TO (*1 <mv>); # $SJE
+
+SETPARENT:ADVLsentenceToSentence @FS-ADVL> TO (*1 <mv>); # $SMI
+    # the finite verb of a subclause should go to the main verb of the main clause to its right
+	## Go Liná lea boahtán ruoktot maŋŋel skuvlla, manai son njuolga Busi lusa.
+SETPARENT:ADVLsentenceToSentence @FS-<ADVL TO (*-1 <mv>); # $SMI
+    # the finite verb of a subclause should go to the main verb of the main clause to its left
+
+
+#!! infinite verbs in subclauses
+SETPARENT:FS-IAUX @FS-IAUX TO (*0 @FS-FIN BARRIER S-BOUNDARY OR VFIN); # $SJE
+SETPARENT:FS-IMV @FS-IMV TO (*0 @FS-FIN BARRIER S-BOUNDARY OR VFIN); # $SJE
+SETPARENT:FS-IMV_toIAUX @FS-IMV TO (*0 @FS-IAUX BARRIER V); # $SJE
+
+
+SETPARENT:VCoord $$VERBCOORD TO (*-1 COMMA OR CC BARRIER CS OR Rel LINK *-1 $$VERBCOORD + <ctjHead>); # $SMI
+	## Karijuse, die lean heehkeme jih heehkeme.
+
+SETPARENT:SetMVtoAUX NONVFIN TO (*-1 <aux> BARRIER @V OR S-BOUNDARY) ; # $SMI
+SETPARENT:SetMVtoIAUX NONVFIN TO (*1 <aux> BARRIER @V OR S-BOUNDARY LINK 0 NONVFIN) ; # $SMI
+SETPARENT:SetMVbeforeColon VFIN TO (*-1 (":") BARRIER @V OR S-BOUNDARY LINK *-1 <mv>) ; # $SMI
+
+#!! HNOUN
+SETPARENT @HNOUN TO (*-1 N BARRIER @V); # sme version # $SMI
+SETPARENT @HNOUN TO (*-1 V); # $SMI
+
+SETPARENT @HNOUN TO (1 (":") LINK *1 @V OR @SUBJ BARRIER S-BOUNDARY); # $SMI
+SETPARENT @HNOUN TO (-1 (":") LINK *-1 @V OR @SUBJ BARRIER S-BOUNDARY); # $SMI
+	## Karijuse: «Mij dellie?»
+
+
+# word between S-BOUNDARYs
+SETPARENT:WordRoot WORD (NONE p (*)) TO (1 S-BOUNDARY LINK -2 S-BOUNDARY LINK @0 (*)); # $SMI
+
+#!! sentence to sentence
+SETPARENT:sentenceToSentence @FV (NONE p (*)) TO (*-1 @FV + <ctjHead>); # $SMI
+	# Nordlysbearaš unnui dušše moatti olbmui ja maŋimuš vuorbi lei gesson.
+SETPARENT:MVsentenceToMVSentence @FMV (NONE p (*)) TO (*-1 @FMV OR @FAUX); # $SMI
+	# Go leaba liegganan ja boradan, de máná-guovttos nu váibaba nu váibaba.
+SETPARENT:MVsentenceToMVSentence @FAUX (NONE p (*)) TO (*-1 @FMV OR @FAUX); # $SMI
+	# Valla hæhttuji liehket gárvvása duostotjit vuosstemielav gå iehtjáda ájttsi sij e ållida rájnasvuodarávkalvisáv ja gåvåv sáme kultuvra ja identitehta birra mij le moaddásijn.
+
+
+#!! to root if no parent
+SETPARENT:objRoot @OBJ (NONE p (*)) TO (@0 (*)); # $SJE
+SETPARENT:HNOUNToVerb @HNOUN (NONE p (*)) TO ((*0 <mv> BARRIER S-BOUNDARY) OR (@0 (*) LINK cN (*))); # HNOUN that has no head to MV or else to highest-ranking element # $SJE
+SETPARENT:hnounRoot @HNOUN (NONE p (*)) TO (@0 (*)); # if all else fails: HNOUN to root # $SJE
+SETPARENT:advlRoot (@ADVL) (NONE p (*)) TO (@0 (*)); # $SJE
+SETPARENT:pcleRoot (@PCLE) (NONE p (*)) TO (@0 (*)); # $SJE
+
+#SETPARENT:@S< @S< TO (@0 (*) LINK cA (*)) ; # $SMI
+	## Ja dasa lea dát sivva: go sápmelaš boahtá moskkus gámmirii, de son ii ipmir ii báljo maidege, go ii biegga beasa bossut njuni vuostá.
+
+# direkte tale
+#SETPARENT:sentenceToUttv @FV (NONE p (*)) TO (*1 @FMVdic);
+	## Daennie aamhtesine byjjes Nöörje tjoevere åvtehkine årrodh, nov Kristin Halvorsene jeahta.
+
+# finite verb in mainclause to root
+SETPARENT:FMVToRoot @FMV (NONE p (*)) TO (@0 (*)); # $SMI
+SETPARENT:FAUXToRoot @FAUX (NONE p (*)) TO (@0 (*)); # $SMI
+	## Reerenassenbielieh leah njielje jaepiej tjïrrh vuesiehtamme ahte ektesne maehtiejibie buerie tjoevtedimmieh gaavnedh.
+SETPARENT:sentenceToSentence VFIN (NONE p (*)) TO (*-1 VFIN); # just in case... # $SMI
+
+# very elliptic mainclause
+SETPARENT:noarrow VFIN (NONE p (*)) TO (*-1 CS LINK *-1 @NOARROW BARRIER @V); # $SMI
+
+SETPARENT @V (NONE p (*)) TO (@0 (*)); # to root # $SMI
+
+
+
+#!! vocative & interjections
+SETPARENT:interjToHighest @INTERJ (NONE p (*)) TO (@0 (*) LINK c (*) - @VOC); # interjection to highest node under root (not @VOC) # $SJE
+SETPARENT:interjToRoot @INTERJ (NONE p (*)) TO (@0 (*)); # if no other candidate, interjection to root # $SMI
+SETPARENT:initialInterj @INTERJ (-1 BOS)(1 COMMA) TO (1 COMMA LINK *1 (*))(p (*) - ANY_GT_MAPPING); # initial interjection to next root-attached node # $SJE
+	#$ Nå, buris, Henning!
+
+SETPARENT:vocToLeftHighest @VOC (NONE p (*)) TO (*-0 (*))(p (*) - ANY_GT_MAPPING); # @voc to closest node on the left that attaches to root # $SJE
+	## Karijuse, die lean heehkeme jih heehkeme.
+SETPARENT:vocCoord @VOC TO (-1 CC LINK -1 @VOC); # Per ja Kari, ...... # $SMI
+SETPARENT:vocToRoot @VOC (NONE p (*)) TO (@0 (*)); # $SMI
+
+	## Jaa jaa, nåå giehtelien vij.
+	## Ja dan seammá bártni láveje nieiddatnai juoiggadit: Ovttain sániin gávnnai váimmu, voja voja voja.
+SETPARENT:ELLspredNext @SPRED TO (*1 VFIN) ; # @SPRED - there is no mainv for the spred # $SMI
+	## Die maa onterligksh nommh, ih goh tuhtjh, men die ligan onterligksh nierretjh aaj.
+SETPARENT:ELLspredPrev @SPRED TO (*-1 VFIN) ; # @SPRED - there is no mainv for the spred # $SMI
+	## Reerenasse bæjkohte ahte ektiebarkoereforme galka tjïrrehtovvedh, jïjnjebe sjïeremaahtoe skïemhtjegåetiesektovresne, nynnehkåbpoe tjïerveshåksoe, jïh jïjnjebh voeresgåetieh tseegkedh ...
+SETPARENT:ELLsubjNext @SUBJ TO (*1 VFIN) ; # @SUBJ - there is no vfin for the subj - no cases in our gollecorpora # $SMI
+SETPARENT:ELLsubjPrev @SUBJ TO (*-1 VFIN) ; # @SUBJ - there is no vfin for the subj # $SMI
+	## Men Jensen aktene baenesne lij raejkie, jih desnie lin gøøkte nierretjh årroeminie maj nomme Karijuse jih Baktuse. # $SMI
+SETPARENT:ELLsubjRel @SUBJ TO (-1 Rel LINK *-1 N OR Indef OR A OR Num) ; # @SPRED - there is no mainv for the spred # $SMI
+SETPARENT:RelSubjPrev (Rel @SUBJ) TO (*-1 N OR Pers OR Indef OR A) ; # @SUBJ - there is no vfin for the subj # $SMI
+	## Mov mænngan båata dihte gie manneste veaksahkåbpoe.
+SETPARENT:subjLeftover SUBJ (NONE p (*)) TO (@0 (*)); # $SMI
+	## Dennie synnagovgesne jis akte ålma maam doenh-aajmoe doerelamme.
+SETPARENT:spredLeftover SPRED (NONE p (*)) TO (@0 (*)); # $SMI
+	## Sálugin guhti dán girje åvddålijsárnnoma bágojt vuorkki .
+
+# appositions
+SETPARENT:appPron @APP-Pron< TO (*-1 Pron); # $SMI
+	## Ja sii dolle dán lága juohkehaš.
+
+### punctuation
+### CLB
+SETPARENT:CLB CLB TO (*-0 (*))(p (*) - ANY_GT_MAPPING) ; # CLB to closest root-attached node # $SJE
+SETPARENT:CLB CLB TO (@0 (*) LINK c REAL-V) ; # CLB to first V node under Root # $SJE
+SETPARENT:MISSING_CLB_TO_left CLB (NONE p (*)) TO (-1 (*)) ; # $SJE
+SETPARENT:PUNCTL (PUNCT LEFT) TO (1 (*)) ; # $SMI
+SETPARENT:PUNCTR (PUNCT RIGHT) TO (-1 (*)) ; # $SMI
+#SETPARENT:CLB CLB TO (1**A (*) LINK p (>>>)) ;
+    # goes to @FAUX if there is one, if not to @FMV, if not to @SUBJ> in ellipsis
+    # in any case to the first child of root
+	## Ávdugas dat guhte vurke dán girjji profehtalaš sániid.
+SETPARENT:QMARK QMARK TO (*-1 CITATION LINK *1 VFIN) ; # $SMI
+
+
+### COMMAS
+# GT-style comma attachment is not well documented and rather weird
+# therefore the punctuation attachment rules for UDG are used:
+# A punctuation mark separating coordinated units is attached to the following conjunct.
+# A punctuation mark preceding or following a dependent unit is attached to that unit.
+# Within the relevant unit, a punctuation mark is attached at the highest possible node that preserves projectivity.
+# Paired punctuation marks ("[]") should be attached to the same word unless that would create non-projectivity.
+
+#!! simplest case: COMMA to next WORD
+SETPARENT:COMMA COMMA TO (1 WORD) ; # $SJE
+
+#!! comma to next infinite verb if no finite verb present
+SETPARENT:COMMA_VINF COMMA TO (*1 NONVFIN BARRIER S-BOUNDARY)(NEGATE *0 VFIN) ; # $SJE
+
+#!! COMMA to VFIN
+# first to left, since that is rarer, mostly gets overwritten
+SETPARENT:COMMA_VFIN COMMA TO (*-1 VFIN BARRIER COMMA); # $SJE
+# then to right, default case
+SETPARENT:COMMA_VFIN COMMA TO (*1 VFIN BARRIER COMMA); # $SJE
+
+#!! subclauses
+SETPARENT:COMMA_FS COMMA TO (*-1 @FS-FIN BARRIER VFIN OR S-BOUNDARY); # $SJE
+# subordinate clause to the right of comma. barrier finite verb. S-BOUNDARY can occur directly after comma (, mii lä ...) but not afterwards before finite verb.
+SETPARENT:COMMA_FS COMMA TO (*1 @FS-FIN BARRIER VFIN OR COMMA)(NEGATE *2 S-BOUNDARY BARRIER VFIN); # $SJE
+	#$ Ja dä vuojnáv Tjäggelvasav, stuor jávvre mij lä Tjä...[,] mij [lä] Alesgietje guoran ## And I see Tjäggelvas, a big lake which is ..., which is close to Alesgiehtje.
+
+#!! appositions
+SETPARENT:COMMA_APP COMMA TO (1 APP) ; # $SMI
+#	## Mun, Johanas, lean dat guhte lean gullan ja oaidnán buot dán.
+SETPARENT:COMMA_APP COMMA TO (-1 APP) ; # $SMI
+SETPARENT:COMMA_APP-N COMMA TO (*1 @APP-N< BARRIER NOT-NPMODADV OR N - Gen OR V); # $SJE
+SETPARENT:COMMA_APP-ADVL COMMA TO (*1 @APP-ADVL< BARRIER NOT-NPMODADV OR V); # $SJE
+
+#!! between coordinated ADVLs with same direction
+SETPARENT:COMMA_<ADVLs COMMA TO (*1 @<ADVL BARRIER @V)(*-1 COMMA LINK -1 @<ADVL); # $SJE
+
+#!! between coordinated NPs
+# link to noun to the right if in same case as directly preceding noun
+SETPARENT:COMMA_coordNP COMMA TO (*1 N + $$CASE BARRIER NOT-NPMODADV) (-2 N + $$CASE); # $SJE
+#!! between coordinated A's
+SETPARENT:COMMA_coordAP COMMA TO (*1 AdjOrNum BARRIER NoAP) (-2 AdjOrNum); # $SJE
+#!! between coordinated PPs
+SETPARENT:COMMA_coordPP COMMA TO (*1 Po BARRIER NOT-NPMODADV) (*-1 COMMA BARRIER NOT-NPMODADV LINK -1 Po); # $SJE
+
+#!! any single word at end of sentence
+# for *some reason*, sometimes (1 WORD)(1 EOS) does not work???
+# adding *1 _ BARRIER WORD for cases like:
+# Gukkte lin dä del namma, "tarmar"?
+SETPARENT:COMMA_WORD_EOS COMMA TO (1* WORD BARRIER WORD)(*1 EOS BARRIER WORD); # $SJE
+#!! any single word at start of sentence
+SETPARENT:BOS_WORD_COMMA COMMA TO (*-1 WORD BARRIER WORD)(*-1 BOS BARRIER WORD) ; # $SJE
+#!! any single word between commas
+SETPARENT:COMMA_WORD_COMMA COMMA TO (1* WORD BARRIER WORD)(*1 COMMA BARRIER WORD); # $SJE
+
+#!! followed by "ja": set to parent of "ja"
+SETPARENT:COMMA_ja.parent COMMA TO (1 ("ja") LINK p (*)); # $SJE
+
+SETPARENT:PUNCT PUNCT TO (**1A (*) LINK p (>>>)) ; #Funker denne? # $SMI
+SETPARENT:DASHHYPHEN DASHHYPHEN TO (*1A VFIN LINK p V) ; # $SMI
+SETPARENT:PUNCT PUNCT TO (1 WORD - CLB) ; # $SMI
+SETPARENT:PUNCT PUNCT TO (1 CLB LINK -2 WORD) ; # $SMI
+	## Muhto go lassánedje olbmot, de bohte čáhppesbivttasolbmot fas dohko, gosa ledje sámit vuohččan ballán, ja dahke orohagaid jur dasa gos sámit ledje orrume, dan dihte go sii oidne, ahte das leai čáppa gieddi, maid ledje bohccot dutken, gožžan ja baikán — gos ledje sámit orron mánga olmmošbuolvva.
+	## Eai olbmot gale jáhke daid rokkiid, ahte dat leat leamaš olbmuid dahkan rokkit daihe goađit; muhto dat leat gávdnojuvvon mánga mearkka dasa - dollasajit, suovvamuorra ja okta njiskun.
+SETPARENT:CITATION CITATION TO (-1 VFIN)(*-1 CITATION) ; # $SMI
+SETPARENT:CITATION CITATION TO (1 VFIN)(*1 CITATION) ; # $SMI
+	## Ja jiehtanas dadjá: "Mon lean juo addán čalmmi."
+# quotes around single word
+SETPARENT:CITATIONsingle_word CITATION TO (2 CITATION LINK -1 WORD); # $SJE
+SETPARENT:CITATIONsingle_word CITATION TO (-2 CITATION LINK 1 WORD); # $SJE
+
+#!! quotes around longer phrases
+# these only work if there is just one set of quotes in the input
+# set left double quotes to the highest right ancestor of the next word that still has quotes on the right
+SETPARENT:leftquotes CITATION (*1 CITATION)(NEGATE *-1 CITATION) TO (1 (*) LINK *pr (*))(*1 CITATION) ; # $SJE
+# set right double quotes to the highest left ancestor of the previous word that still has quotes on the left
+SETPARENT:rightquotes CITATION (*-1 CITATION)(NEGATE *1 CITATION) TO (-1 (*) LINK *pl (*))(*-1 CITATION) ; # $SJE
+
+#!! quotes around Swedish phrases
+# first word is the head
+SETPARENT:sweLeftquotes CITATION (1 <swe> LINK *1 CITATION BARRIER (*) - <swe>) TO (1 <swe>) ; # $SJE
+SETPARENT:sweRightquotes CITATION (-1 <swe> LINK *-1 CITATION BARRIER (*) - <swe>) TO (*-1 CITATION LINK 1 <swe>) ; # $SJE
+
+SETPARENT:RIGHT RIGHT TO (-1 VFIN) ; # $SMI
+SETPARENT:LEFT LEFT TO (1 VFIN) ; # $SMI
+
+
+#### SJE 'l: set l as parent of '
+#SETPARENT:Apostrophe ("'") TO (1 ("lä"));
+
+
+### (future) reparandums / fragments
+# a word ending in "-" is incomplete and should be linked to the repair (if possible) or the next word
+# often the reparandum and the repair start with the same letters
+SETPARENT:reparandum ("<(..).*->"r) TO (*1 WORD) ; # $SJE
+SETPARENT:reparandum ("<(..).*->"r) TO (3 (VSTR:"<$1.*>"r)) ; # can't use "<>"v here because that can contain no regex # $SJE
+SETPARENT:reparandum ("<(..).*->"r) TO (2 (VSTR:"<$1.*>"r)) ; # $SJE
+SETPARENT:reparandum ("<(..).*->"r) TO (1 (VSTR:"<$1.*>"r)) ; # $SJE
+
+### END_SECTION
+
+
+
+
+AFTER-SECTIONS
+#!! options to deal with @X
+#!! also used for anything that has no parent yet
+#SETPARENT:missingToHighest @X (NONE p (*)) TO (@0 (*) LINK c (*)); # missing to highest-ranking element (= child of root)
+SETPARENT:missingToVerb (*) (NONE p (*)) TO ((*0 <mv> BARRIER S-BOUNDARY) OR (@0 (*) LINK c (*))); # missing to MV or else to highest-ranking element # $SJE
+SETPARENT:missingToRoot (*) (NONE p (*)) TO (@0 (*)); # if all else fails: missing to root # $SJE
+SETPARENT:missingToLeftMissing @X TO (*-1 @X BARRIER (*) - @X)(-1 (*) - @X); # $SJE
+
+
+SETPARENT:tomissingVerb (@ADVL)(NONE p (*)) TO (*1 @X) ; # $SJE
+SETPARENT:tomissingVerb (@ADVL)(NONE p (*)) TO (*-1 @X) ; # $SJE
+
+
+#Removing tags for output
+#SUBSTITUTE <temptags> (*) TARGET <temptags> ;
+
+
+    #=====#
+      END #
+    #=====#
