@@ -1,17 +1,3 @@
-# Divvun & Giellatekno - open source grammars for Sámi and other languages
-# Copyright © 2000-2016 The University of Tromsø & the Norwegian Sámi Parliament
-# http://giellatekno.uit.no & http://divvun.no
-#
-# This program is free software; you can redistribute and/or modify
-# this file under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version. The GNU General Public License
-# is found at http://www.gnu.org/licenses/gpl.html. It is
-# also available in the file $GTHOME/LICENSE.txt.
-#
-# Other licensing options are available upon request, please contact
-# giellatekno@hum.uit.no or feedback@divvun.no
-
 # ============================================================================= #
 #!!    CONVERTING GIELLATEKNO FUNCTIONS & DEPENDENCIES TO UNIVERSAL DEPENDENCY
 # ============================================================================= #
@@ -843,84 +829,84 @@ SUBSTITUTE:<mv> (<mv>) OR (<aux>) (*) TARGET (V); # ignored in UD
 SUBSTITUTE:<temp> (<pred>) OR (<ext>) OR (<cvp>) OR (<cnp>) OR <ctjHead> (*) TARGET (*); # ignored in UD
 
 
-#### pronoun subclasses ###
-#SUBSTITUTE:Pers_poss Pers (PronType=Prs Poss=Yes) TARGET (Pers @nmod:poss);
-#SUBSTITUTE:Pers (Pers) (PronType=Prs) TARGET (Pers);
-#SUBSTITUTE:Dem (Dem) (PronType=Dem) TARGET (Dem);
-#SUBSTITUTE:Interr (Interr) (PronType=Int) TARGET (Interr);
-#SUBSTITUTE:Indef (Indef) (PronType=Ind) TARGET (Indef);
-#SUBSTITUTE:Refl (Refl) (PronType=Prs Reflex=Yes) TARGET (Refl);
-#SUBSTITUTE:Recipr (Recipr) (PronType=Rcp) TARGET (Recipr);
-#SUBSTITUTE:Rel (Rel) (PronType=Rel) TARGET (Rel);
-#
-#### adjective tags ###
-#SUBSTITUTE:Comp (Comp) (Degree=Cmp) TARGET (Comp);
-#SUBSTITUTE:Superl (Superl) (Degree=Sup) TARGET (Super);
-#
-#### morphosyntactic properties ###
-#SUBSTITUTE:Prs (Prs) (VerbForm=Fin Tense=Pres) TARGET (Prs); # UD marks VFIN!
-#SUBSTITUTE:Prt (Prt) (VerbForm=Fin Tense=Past) TARGET (Prt); # UD marks VFIN!
-#SUBSTITUTE:Ind (Ind) (Mood=Ind) TARGET (Ind);
-#SUBSTITUTE:Imprt (Imprt) (Mood=Imp) TARGET (Imprt);
-#SUBSTITUTE:Pot (Pot) (Mood=Pot) TARGET (Pot);
-#
-##!! person-number
-#SUBSTITUTE:Sg1 (Sg1) (Number=Sing Person=1) TARGET (Sg1);
-#SUBSTITUTE:Sg2 (Sg2) (Number=Sing Person=2) TARGET (Sg2);
-#SUBSTITUTE:Sg3 (Sg3) (Number=Sing Person=3) TARGET (Sg3);
-#SUBSTITUTE:Du1 (Du1) (Number=Dual Person=1) TARGET (Du1);
-#SUBSTITUTE:Du2 (Du2) (Number=Dual Person=2) TARGET (Du2);
-#SUBSTITUTE:Du3 (Du3) (Number=Dual Person=3) TARGET (Du3);
-#SUBSTITUTE:Pl1 (Pl1) (Number=Plur Person=1) TARGET (Pl1);
-#SUBSTITUTE:Pl2 (Pl2) (Number=Plur Person=2) TARGET (Pl2);
-#SUBSTITUTE:Pl3 (Pl3) (Number=Plur Person=3) TARGET (Pl3);
-#SUBSTITUTE:Sg (Sg) (Number=Sing) TARGET (Sg);
-#SUBSTITUTE:Pl (Pl) (Number=Sing) TARGET (Pl);
-#
-##!! possessive suffixes
-#SUBSTITUTE:PxSg1 (PxSg1) (Person[psor]=1 Number[psor]=Sing) TARGET (*);
-#SUBSTITUTE:PxSg2 (PxSg2) (Person[psor]=2 Number[psor]=Sing) TARGET (*);
-#SUBSTITUTE:PxSg3 (PxSg3) (Person[psor]=3 Number[psor]=Sing) TARGET (*);
-#SUBSTITUTE:PxDu1 (PxDu1) (Person[psor]=1 Number[psor]=Dual) TARGET (*);
-#SUBSTITUTE:PxDu2 (PxDu2) (Person[psor]=2 Number[psor]=Dual) TARGET (*);
-#SUBSTITUTE:PxDu3 (PxDu3) (Person[psor]=3 Number[psor]=Dual) TARGET (*);
-#SUBSTITUTE:PxPl1 (PxPl1) (Person[psor]=1 Number[psor]=Plur) TARGET (*);
-#SUBSTITUTE:PxPl2 (PxPl2) (Person[psor]=2 Number[psor]=Plur) TARGET (*);
-#SUBSTITUTE:PxPl3 (PxPl3) (Person[psor]=3 Number[psor]=Plur) TARGET (*);
-#
-### TO DO: Vsubst
-#
-##!! VerbForms
-#SUBSTITUTE:Inf (Inf) (VerbForm=Inf) TARGET (Inf);
-#SUBSTITUTE:Ger (Ger) OR (GerII) (VerbForm=Ger) TARGET (Ger) OR (GerII);
-#SUBSTITUTE:Neg (Neg) (Polarity=Neg) TARGET (Neg);
-#SUBSTITUTE:ConNeg (ConNeg) (Connegative=Yes) TARGET (ConNeg);
-#SUBSTITUTE:Inf (Inf) (VerbForm=Inf) TARGET (Inf);
-#SUBSTITUTE:PrfPrc (PrfPrc) (Aspect=Perf VerbForm=Part) TARGET (PrfPrc);
-#SUBSTITUTE:PrsPrc (PrsPrc) (Tense=Pres VerbForm=Part) TARGET (PrsPrc);
-#SUBSTITUTE:VAbess (VAbess) (Case=Abe VerbForm=Ger) TARGET (VAbess);
-#
-##!! Case
-#SUBSTITUTE:Nom (Nom) (Case=Nom) TARGET (Nom);
-#SUBSTITUTE:Acc (Acc) (Case=Acc) TARGET (Acc);
-#SUBSTITUTE:Gen (Gen) (Case=Gen) TARGET (Gen);
-#SUBSTITUTE:Ill (Ill) (Case=Ill) TARGET (Ill);
-#SUBSTITUTE:Ine (Ine) (Case=Ine) TARGET (Ine);
-#SUBSTITUTE:Ela (Ela) (Case=Ela) TARGET (Ela);
-#SUBSTITUTE:Com (Com) (Case=Com) TARGET (Com);
-#SUBSTITUTE:Ess (Ess) (Case=Ess) TARGET (Ess);
-#SUBSTITUTE:Abe (Abe) (Case=Abe) TARGET (Abe);
-#
-##!! NumType
-#SUBSTITUTE:Card (Card) (NumType=Card) TARGET (Card);
-#SUBSTITUTE:Ord (Ord) (NumType=Ord) TARGET (Ord);
-#
-##!! SpaceAfter=No
-#SUBSTITUTE:SpaceAfter ANY_UD_MAPPING (VSTR:$1 SpaceAfter=No) TARGET (*) (1 PUNCTUATION - CITATION) ;
-#SUBSTITUTE:SpaceCitRight ANY_UD_MAPPING (VSTR:$1 SpaceAfter=No) TARGET (*) (1 CITATION LINK NOT *1 CITATION);
-#SUBSTITUTE:SpaceCitLeft ANY_UD_MAPPING (VSTR:$1 SpaceAfter=No) TARGET CITATION (*1 CITATION);
-#SUBSTITUTE:SpaceParenLeft ANY_UD_MAPPING (VSTR:$1 SpaceAfter=No) TARGET ("(") OR ("[") OR ("{");
-#SUBSTITUTE:SpaceParenRight ANY_UD_MAPPING (VSTR:$1 SpaceAfter=No) TARGET (*) (1 (")") OR (")") OR (")"));
+### pronoun subclasses ###
+SUBSTITUTE:Pers_poss Pers (PronType=Prs Poss=Yes) TARGET (Pers @nmod:poss);
+SUBSTITUTE:Pers (Pers) (PronType=Prs) TARGET (Pers);
+SUBSTITUTE:Dem (Dem) (PronType=Dem) TARGET (Dem);
+SUBSTITUTE:Interr (Interr) (PronType=Int) TARGET (Interr);
+SUBSTITUTE:Indef (Indef) (PronType=Ind) TARGET (Indef);
+SUBSTITUTE:Refl (Refl) (PronType=Prs Reflex=Yes) TARGET (Refl);
+SUBSTITUTE:Recipr (Recipr) (PronType=Rcp) TARGET (Recipr);
+SUBSTITUTE:Rel (Rel) (PronType=Rel) TARGET (Rel);
+
+### adjective tags ###
+SUBSTITUTE:Comp (Comp) (Degree=Cmp) TARGET (Comp);
+SUBSTITUTE:Superl (Superl) (Degree=Sup) TARGET (Super);
+
+### morphosyntactic properties ###
+SUBSTITUTE:Prs (Prs) (VerbForm=Fin Tense=Pres) TARGET (Prs); # UD marks VFIN!
+SUBSTITUTE:Prt (Prt) (VerbForm=Fin Tense=Past) TARGET (Prt); # UD marks VFIN!
+SUBSTITUTE:Ind (Ind) (Mood=Ind) TARGET (Ind);
+SUBSTITUTE:Imprt (Imprt) (Mood=Imp) TARGET (Imprt);
+SUBSTITUTE:Pot (Pot) (Mood=Pot) TARGET (Pot);
+
+#!! person-number
+SUBSTITUTE:Sg1 (Sg1) (Number=Sing Person=1) TARGET (Sg1);
+SUBSTITUTE:Sg2 (Sg2) (Number=Sing Person=2) TARGET (Sg2);
+SUBSTITUTE:Sg3 (Sg3) (Number=Sing Person=3) TARGET (Sg3);
+SUBSTITUTE:Du1 (Du1) (Number=Dual Person=1) TARGET (Du1);
+SUBSTITUTE:Du2 (Du2) (Number=Dual Person=2) TARGET (Du2);
+SUBSTITUTE:Du3 (Du3) (Number=Dual Person=3) TARGET (Du3);
+SUBSTITUTE:Pl1 (Pl1) (Number=Plur Person=1) TARGET (Pl1);
+SUBSTITUTE:Pl2 (Pl2) (Number=Plur Person=2) TARGET (Pl2);
+SUBSTITUTE:Pl3 (Pl3) (Number=Plur Person=3) TARGET (Pl3);
+SUBSTITUTE:Sg (Sg) (Number=Sing) TARGET (Sg);
+SUBSTITUTE:Pl (Pl) (Number=Sing) TARGET (Pl);
+
+#!! possessive suffixes
+SUBSTITUTE:PxSg1 (PxSg1) (Person[psor]=1 Number[psor]=Sing) TARGET (*);
+SUBSTITUTE:PxSg2 (PxSg2) (Person[psor]=2 Number[psor]=Sing) TARGET (*);
+SUBSTITUTE:PxSg3 (PxSg3) (Person[psor]=3 Number[psor]=Sing) TARGET (*);
+SUBSTITUTE:PxDu1 (PxDu1) (Person[psor]=1 Number[psor]=Dual) TARGET (*);
+SUBSTITUTE:PxDu2 (PxDu2) (Person[psor]=2 Number[psor]=Dual) TARGET (*);
+SUBSTITUTE:PxDu3 (PxDu3) (Person[psor]=3 Number[psor]=Dual) TARGET (*);
+SUBSTITUTE:PxPl1 (PxPl1) (Person[psor]=1 Number[psor]=Plur) TARGET (*);
+SUBSTITUTE:PxPl2 (PxPl2) (Person[psor]=2 Number[psor]=Plur) TARGET (*);
+SUBSTITUTE:PxPl3 (PxPl3) (Person[psor]=3 Number[psor]=Plur) TARGET (*);
+
+## TO DO: Vsubst
+
+#!! VerbForms
+SUBSTITUTE:Inf (Inf) (VerbForm=Inf) TARGET (Inf);
+SUBSTITUTE:Ger (Ger) OR (GerII) (VerbForm=Ger) TARGET (Ger) OR (GerII);
+SUBSTITUTE:Neg (Neg) (Polarity=Neg) TARGET (Neg);
+SUBSTITUTE:ConNeg (ConNeg) (Connegative=Yes) TARGET (ConNeg);
+SUBSTITUTE:Inf (Inf) (VerbForm=Inf) TARGET (Inf);
+SUBSTITUTE:PrfPrc (PrfPrc) (Aspect=Perf VerbForm=Part) TARGET (PrfPrc);
+SUBSTITUTE:PrsPrc (PrsPrc) (Tense=Pres VerbForm=Part) TARGET (PrsPrc);
+SUBSTITUTE:VAbess (VAbess) (Case=Abe VerbForm=Ger) TARGET (VAbess);
+
+#!! Case
+SUBSTITUTE:Nom (Nom) (Case=Nom) TARGET (Nom);
+SUBSTITUTE:Acc (Acc) (Case=Acc) TARGET (Acc);
+SUBSTITUTE:Gen (Gen) (Case=Gen) TARGET (Gen);
+SUBSTITUTE:Ill (Ill) (Case=Ill) TARGET (Ill);
+SUBSTITUTE:Ine (Ine) (Case=Ine) TARGET (Ine);
+SUBSTITUTE:Ela (Ela) (Case=Ela) TARGET (Ela);
+SUBSTITUTE:Com (Com) (Case=Com) TARGET (Com);
+SUBSTITUTE:Ess (Ess) (Case=Ess) TARGET (Ess);
+SUBSTITUTE:Abe (Abe) (Case=Abe) TARGET (Abe);
+
+#!! NumType
+SUBSTITUTE:Card (Card) (NumType=Card) TARGET (Card);
+SUBSTITUTE:Ord (Ord) (NumType=Ord) TARGET (Ord);
+
+#!! SpaceAfter=No
+SUBSTITUTE:SpaceAfter ANY_UD_MAPPING (VSTR:$1 SpaceAfter=No) TARGET (*) (1 PUNCTUATION - CITATION) ;
+SUBSTITUTE:SpaceCitRight ANY_UD_MAPPING (VSTR:$1 SpaceAfter=No) TARGET (*) (1 CITATION LINK NOT *1 CITATION);
+SUBSTITUTE:SpaceCitLeft ANY_UD_MAPPING (VSTR:$1 SpaceAfter=No) TARGET CITATION (*1 CITATION);
+SUBSTITUTE:SpaceParenLeft ANY_UD_MAPPING (VSTR:$1 SpaceAfter=No) TARGET ("(") OR ("[") OR ("{");
+SUBSTITUTE:SpaceParenRight ANY_UD_MAPPING (VSTR:$1 SpaceAfter=No) TARGET (*) (1 (")") OR (")") OR (")"));
 
 
 
