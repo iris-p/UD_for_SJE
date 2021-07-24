@@ -1,0 +1,1923 @@
+### Universal Dependencies results of the syntactic analyser in CoNLL-U format ###
+
+# sent_id = pit080708b.001
+# text = Ja dä galgav vuosedit.
+# text_en = And now I'll show you
+1	Ja	ja	CCONJ	CC	_	4	cc	_	_
+2	dä	dä	ADV	Adv	_	4	advmod	_	_
+3	galgav	gallgat	AUX	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=1	4	aux	_	_
+4	vuosedit	vuosedit	VERB	V	VerbForm=Inf	0	root	_	SpaceAfter=No
+5	.	.	PUNCT	CLB	_	4	punct	_	_
+
+# sent_id = pit080708b.002/003
+# text = Dat lä náhppe, gusne- man sisa buhtjin buhtsujt.
+# text_en = This is a milking bowl which they milked reindeer into
+1	Dat	dat	PRON	Pron	PronType=Dem|Number=Sing|Case=Nom	3	nsubj:cop	_	_
+2	lä	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=3	3	cop	_	_
+3	náhppe	náhppe	NOUN	N	Number=Sing|Case=Nom	0	root	_	SpaceAfter=No
+4	,	,	PUNCT	CLB	_	8	punct	_	_
+5	gusne-	gusne-	X	_	_	6	reparandum	_	_
+6	man	mij	PRON	Pron	PronType=Rel|Number=Sing|Case=Gen	8	obl	_	_
+7	sisa	sisa	ADP	Po	_	6	case	_	_
+8	buhtjin	båhtjet	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=3	3	acl:relcl	_	_
+9	buhtsujt	båtsoj	NOUN	N	Number=Sing|Case=Acc	8	obj	_	SpaceAfter=No
+10	.	.	PUNCT	CLB	_	3	punct	_	_
+
+# sent_id = pit080708b.004
+# text = Vuäjdne dále gu miesse njammá.
+# text_en = You see, when the calf suckles
+1	Vuäjdne	vuäjdnet	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=2	0	root	_	_
+2	dále	dále	ADV	Adv	_	1	advmod	_	_
+3	gu	gu	SCONJ	CS	_	5	mark	_	_
+4	miesse	miesse	NOUN	N	Number=Sing|Case=Nom	5	nsubj	_	_
+5	njammá	njammat	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=3	1	advcl	_	SpaceAfter=No
+6	.	.	PUNCT	CLB	_	1	punct	_	_
+
+# sent_id = pit080708b.005
+# text = Ja mudiŋ del dä verrtijin ådtjot njammat.
+# text_en = Sometimes they had to be forced to suckle
+1	Ja	ja	CCONJ	CC	_	7	cc	_	_
+2	mudiŋ	mudiŋ	ADV	Adv	_	7	advmod	_	_
+3	del	del	ADV	Adv	_	7	advmod	_	_
+4	dä	dä	ADV	Adv	_	7	advmod	_	_
+5	verrtijin	verrtit	AUX	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=3	7	aux	_	_
+6	ådtjot	ådtjot	AUX	V	VerbForm=Inf	7	aux	_	_
+7	njammat	njammat	VERB	V	VerbForm=Inf	0	root	_	SpaceAfter=No
+8	.	.	PUNCT	CLB	_	7	punct	_	_
+
+# sent_id = pit080708b.006
+# text = Men gu idtjin dä njama, gu lin da gallánam, dä buhtjin diggira sisa.
+# text_en = But if they didn't suckle, once they were full, they were milked into this here.
+1	Men	men	CCONJ	CC	_	5	cc	_	_
+2	gu	gu	SCONJ	CS	_	5	mark	_	_
+3	idtjin	ij	AUX	V	Polarity=Neg|VerbForm=Fin|Tense=Past|Number=Plur|Person=3	5	aux:neg	_	_
+4	dä	dä	ADV	Adv	_	5	advmod	_	_
+5	njama	njammat	VERB	V	Connegative=Yes	13	advcl	_	SpaceAfter=No
+6	,	,	PUNCT	CLB	_	5	punct	_	_
+7	gu	gu	SCONJ	CS	_	10	mark	_	_
+8	lin	lä	AUX	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=3	10	aux	_	_
+9	da	dat	PRON	Pron	PronType=Dem|Number=Sing|Case=Nom	10	nsubj	_	_
+10	gallánam	gallánit	VERB	V	Aspect=Perf|VerbForm=Part	13	advcl	_	SpaceAfter=No
+11	,	,	PUNCT	CLB	_	10	punct	_	_
+12	dä	dä	ADV	Adv	_	13	advmod	_	_
+13	buhtjin	båhtjet	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=3	0	root	_	_
+14	diggira	daggár	PRON	Pron	PronType=Ind|Number=Sing|Case=Gen	13	obl	_	_
+15	sisa	sisa	ADP	Po	_	14	case	_	SpaceAfter=No
+16	.	.	PUNCT	CLB	_	13	punct	_	_
+
+# sent_id = pit080708b.007
+# text = Áldo mielkev, álldo lä namma.
+# text_en = Reindeer-milk - "aldo" is the name...
+1	Áldo	álldo	NOUN	N	Number=Sing|Case=Gen	2	nmod:poss	_	_
+2	mielkev	mällke	NOUN	N	Number=Sing|Case=Acc	6	obj	_	SpaceAfter=No
+3	,	,	PUNCT	CLB	_	6	punct	_	_
+4	álldo	álldo	NOUN	N	Number=Sing|Case=Nom	6	nsubj:cop	_	_
+5	lä	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=3	6	cop	_	_
+6	namma	namma	NOUN	N	Number=Sing|Case=Nom	0	root	_	SpaceAfter=No
+7	.	.	PUNCT	CLB	_	6	punct	_	_
+
+# sent_id = pit080708b.009
+# text = Diggira, mav mij båhtja ja miesev adná, dat lä álldo.
+# text_en = The kind which we milk and has a calf - that's "alddå"
+1	Diggira	daggár	PRON	Pron	PronType=Ind|Number=Sing|Case=Nom	12	dislocated	_	SpaceAfter=No
+2	,	,	PUNCT	CLB	_	5	punct	_	_
+3	mav	mij	PRON	Pron	PronType=Rel|Number=Sing|Case=Acc	5	obj	_	_
+4	mij	mij	PRON	Pron	PronType=Prs|Number=Plur|Person=1|Case=Nom	5	nsubj	_	_
+5	båhtja	båhtjet	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Plur|Person=1	1	acl:relcl	_	_
+6	ja	ja	CCONJ	CC	_	8	cc	_	_
+7	miesev	miesse	NOUN	N	Number=Sing|Case=Acc	8	obj	_	_
+8	adná	adnet	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=3	5	parataxis	_	SpaceAfter=No
+9	,	,	PUNCT	CLB	_	5	punct	_	_
+10	dat	dat	PRON	Pron	PronType=Dem|Number=Sing|Case=Nom	12	nsubj:cop	_	_
+11	lä	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=3	12	cop	_	_
+12	álldo	álldo	NOUN	N	Number=Sing|Case=Nom	0	root	_	SpaceAfter=No
+13	.	.	PUNCT	CLB	_	12	punct	_	_
+
+# sent_id = pit080708b.010
+# text = Ja dä, gu dä lij dát dievas, dä dihkin vuostájt.
+# text_en = And then, when this was full, cheeses were made
+1	Ja	ja	CCONJ	CC	_	11	cc	_	_
+2	dä	dä	ADV	Adv	_	11	advmod	_	SpaceAfter=No
+3	,	,	PUNCT	CLB	_	8	punct	_	_
+4	gu	gu	SCONJ	CS	_	8	mark	_	_
+5	dä	dä	ADV	Adv	_	8	advmod	_	_
+6	lij	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	8	cop	_	_
+7	dát	dát	PRON	Pron	PronType=Dem|Number=Sing|Case=Nom	8	nsubj:cop	_	_
+8	dievas	dievas	ADJ	A	Number=Sing|Case=Nom	11	advcl	_	SpaceAfter=No
+9	,	,	PUNCT	CLB	_	8	punct	_	_
+10	dä	dä	ADV	Adv	_	11	advmod	_	_
+11	dihkin	dahkat	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=3	0	root	_	_
+12	vuostájt	vuasstá	NOUN	N	Number=Sing|Case=Acc	11	obj	_	SpaceAfter=No
+13	.	.	PUNCT	CLB	_	11	punct	_	_
+
+# sent_id = pit080708b.011
+# text = Dä läppedijen ja dihkin vuostájt.
+# text_en = And they made cheeses
+1	Dä	dä	ADV	Adv	_	2	advmod	_	_
+2	läppedijen	lähppit	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=3	0	root	_	_
+3	ja	ja	CCONJ	CC	_	4	cc	_	_
+4	dihkin	dahkat	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=3	2	conj	_	_
+5	vuostájt	vuasstá	NOUN	N	Number=Sing|Case=Acc	4	obj	_	SpaceAfter=No
+6	.	.	PUNCT	CLB	_	2	punct	_	_
+
+# sent_id = pit080708b.012
+# text = Ja dä bejjin vuostájt diggira sisa.
+# text_en = And they put the cheeses in one of these
+1	Ja	ja	CCONJ	CC	_	3	cc	_	_
+2	dä	dä	ADV	Adv	_	3	advmod	_	_
+3	bejjin	biedjat	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=3	0	root	_	_
+4	vuostájt	vuasstá	NOUN	N	Number=Sing|Case=Acc	3	obj	_	_
+5	diggira	daggár	PRON	Pron	PronType=Ind|Number=Sing|Case=Gen	3	obl	_	_
+6	sisa	sisa	ADP	Po	_	5	case	_	SpaceAfter=No
+7	.	.	PUNCT	CLB	_	3	punct	_	_
+
+# sent_id = pit080708b.013
+# text = Dat lä skáhppo, dan namma, mij lä muorast dahkaduvvum.
+# text_en = This is a "skáhpå"-cheese-mold, the name is for one made of wood
+1	Dat	dat	PRON	Pron	PronType=Dem|Number=Sing|Case=Nom	3	nsubj:cop	_	_
+2	lä	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=3	3	cop	_	_
+3	skáhppo	skáhppo	NOUN	N	Number=Sing|Case=Nom	0	root	_	SpaceAfter=No
+4	,	,	PUNCT	CLB	_	6	punct	_	_
+5	dan	dat	PRON	Pron	PronType=Dem|Number=Sing|Case=Gen	6	nmod:poss	_	_
+6	namma	namma	NOUN	N	Number=Sing|Case=Nom	3	appos	_	SpaceAfter=No
+7	,	,	PUNCT	CLB	_	6	punct	_	_
+8	mij	mij	PRON	Pron	PronType=Rel|Number=Sing|Case=Nom	11	nsubj	_	_
+9	lä	lä	AUX	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=3	11	aux	_	_
+10	muorast	muorra	NOUN	N	Number=Sing|Case=Ela	11	obl	_	_
+11	dahkaduvvum	dahkaduvvut	VERB	V	Aspect=Perf|VerbForm=Part	6	acl:relcl	_	SpaceAfter=No
+12	.	.	PUNCT	CLB	_	3	punct	_	_
+
+# sent_id = pit080708b.014
+# text = Ja dat lä däjjvo.
+# text_en = And this is a "däjjvo"-cheese-mold
+1	Ja	ja	CCONJ	CC	_	4	cc	_	_
+2	dat	dat	PRON	Pron	PronType=Dem|Number=Sing|Case=Nom	4	nsubj:cop	_	_
+3	lä	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=3	4	cop	_	_
+4	däjjvo	däjjvo	NOUN	N	Number=Sing|Case=Nom	0	root	_	SpaceAfter=No
+5	.	.	PUNCT	CLB	_	4	punct	_	_
+
+# sent_id = pit080708b.015
+# text = Dan namma, mij lä dahkaduvvum ruahttasijst.
+# text_en = That's the name for those made of roots
+1	Dan	dat	PRON	Pron	PronType=Dem|Number=Sing|Case=Gen	2	nmod:poss	_	_
+2	namma	namma	NOUN	N	Number=Sing|Case=Nom	0	root	_	SpaceAfter=No
+3	,	,	PUNCT	CLB	_	6	punct	_	_
+4	mij	mij	PRON	Pron	PronType=Rel|Number=Sing|Case=Nom	6	nsubj	_	_
+5	lä	lä	AUX	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=3	6	aux	_	_
+6	dahkaduvvum	dahkaduvvut	VERB	V	Aspect=Perf|VerbForm=Part	2	acl:relcl	_	_
+7	ruahttasijst	ruohtas	NOUN	N	Number=Sing|Case=Ela	6	obl	_	SpaceAfter=No
+8	.	.	PUNCT	CLB	_	2	punct	_	_
+
+# sent_id = pit080708b.017
+# text = Dále navte, dat lä stuorajmus daggár.
+# text_en = And this here is the biggest one
+1	Dále	dále	ADV	Adv	_	7	advmod	_	_
+2	navte	navte	ADV	Adv	_	7	advmod	_	SpaceAfter=No
+3	,	,	PUNCT	CLB	_	7	punct	_	_
+4	dat	dat	PRON	Pron	PronType=Dem|Number=Sing|Case=Nom	7	nsubj:cop	_	_
+5	lä	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=3	7	cop	_	_
+6	stuorajmus	stuorak	ADJ	A	Superl	7	amod	_	_
+7	daggár	daggár	PRON	Pron	PronType=Ind|Number=Sing|Case=Nom	0	root	_	SpaceAfter=No
+8	.	.	PUNCT	CLB	_	7	punct	_	_
+
+# sent_id = pit080708b.023
+# text = Ja dasa bejjin ja suovvaden dajt vuostájt.
+# text_en = And these cheeses sat and smoked on that
+1	Ja	ja	CCONJ	CC	_	3	cc	_	_
+2	dasa	dat	PRON	Pron	PronType=Dem|Number=Sing|Case=Ill	3	obl	_	_
+3	bejjin	biedjat	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=3	0	root	_	_
+4	ja	ja	CCONJ	CC	_	5	cc	_	_
+5	suovvaden	suovastit	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=3	3	conj	_	_
+6	dajt	dat	DET	Det	PronType=Art|Number=Sing|Case=Acc	7	det	_	_
+7	vuostájt	vuasstá	NOUN	N	Number=Sing|Case=Acc	5	obj	_	SpaceAfter=No
+8	.	.	PUNCT	CLB	_	3	punct	_	_
+
+# sent_id = pit080708b.024
+# text = Ja gu lin dä suovvadam, dä mähttin bájjat gåjjkåt.
+# text_en = And once they were smoked, then they could be dried
+1	Ja	ja	CCONJ	CC	_	5	cc	_	_
+2	gu	gu	SCONJ	CS	_	5	mark	_	_
+3	lin	lä	AUX	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=3	5	aux	_	_
+4	dä	dä	ADV	Adv	_	5	advmod	_	_
+5	suovvadam	suovastit	VERB	V	Aspect=Perf|VerbForm=Part	9	advcl	_	SpaceAfter=No
+6	,	,	PUNCT	CLB	_	5	punct	_	_
+7	dä	dä	ADV	Adv	_	9	advmod	_	_
+8	mähttin	máhttet	AUX	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=3	9	aux	_	_
+9	bájjat	bádjat	VERB	V	VerbForm=Inf	0	root	_	_
+10	gåjjkåt	gåjjkåt	VERB	V	VerbForm=Inf	9	xcomp	_	SpaceAfter=No
+11	.	.	PUNCT	CLB	_	9	punct	_	_
+
+# sent_id = pit080708b.025/026
+# text = Ja mudiŋ dä duhkin Vuodnaj aj.
+# text_en = And sometimes they sold to Norway, too
+1	Ja	ja	CCONJ	CC	_	4	cc	_	_
+2	mudiŋ	mudiŋ	ADV	Adv	_	4	advmod	_	_
+3	dä	dä	ADV	Adv	_	4	advmod	_	_
+4	duhkin	duohkat	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=3	0	root	_	_
+5	Vuodnaj	Vuodna	PROPN	Prop	Number=Sing|Case=Ill	4	obl	_	_
+6	aj	aj	ADV	Adv	_	4	advmod	_	SpaceAfter=No
+7	.	.	PUNCT	CLB	_	4	punct	_	_
+
+# sent_id = pit080708b.027/028/029
+# text = Jala mullsun umas varov, iv mån diede, jáffojt, káfajt ja diggirijt.
+# text_en = Or traded all kinds of goods, I don't know, flour, coffee and such
+1	Jala	jalá	CCONJ	CC	_	2	cc	_	_
+2	mullsun	mållsot	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=3	0	root	_	_
+3	umas	umasse	ADJ	A	_	4	amod	_	_
+4	varov	varov	NOUN	N	Number=Sing|Case=Acc	2	obj	_	SpaceAfter=No
+5	,	,	PUNCT	CLB	_	8	punct	_	_
+6	iv	ij	AUX	V	Polarity=Neg|VerbForm=Fin|Tense=Pres|Number=Sing|Person=1	8	aux:neg	_	_
+7	mån	mån	PRON	Pron	PronType=Prs|Number=Sing|Person=1|Case=Nom	8	nsubj	_	_
+8	diede	diehtet	VERB	V	Connegative=Yes	2	parataxis	_	SpaceAfter=No
+9	,	,	PUNCT	CLB	_	10	punct	_	_
+10	jáffojt	jáffo	NOUN	N	Number=Sing|Case=Acc	4	obj	_	SpaceAfter=No
+11	,	,	PUNCT	CLB	_	12	punct	_	_
+12	káfajt	káffa	NOUN	N	Number=Sing|Case=Acc	10	obj	_	_
+13	ja	ja	CCONJ	CC	_	14	cc	_	_
+14	diggirijt	daggár	PRON	Pron	PronType=Ind|Number=Sing|Case=Acc	10	conj	_	SpaceAfter=No
+15	.	.	PUNCT	CLB	_	2	punct	_	_
+
+# sent_id = pit080708b.031
+# text = Dä navte dihkin.
+# text_en = So they then did
+1	Dä	dä	ADV	Adv	_	3	advmod	_	_
+2	navte	navte	ADV	Adv	_	3	advmod	_	_
+3	dihkin	dahkat	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=3	0	root	_	SpaceAfter=No
+4	.	.	PUNCT	CLB	_	3	punct	_	_
+
+# sent_id = pit080708b.033
+# text = Ja ietja diedon idnin mielkev ja vuostáv ja ...
+# text_en = And they themselves of course had milk and cheese and
+1	Ja	ja	CCONJ	CC	_	4	cc	_	_
+2	ietja	ietj	PRON	Pron	PronType=Prs|Reflex=Yes|Number=Sing|Case=Nom	4	nsubj	_	_
+3	diedon	diedon	ADV	Adv	_	4	advmod	_	_
+4	idnin	adnet	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=3	0	root	_	_
+5	mielkev	mällke	NOUN	N	Number=Sing|Case=Acc	4	obj	_	_
+6	ja	ja	CCONJ	CC	_	7	cc	_	_
+7	vuostáv	vuasstá	NOUN	N	Number=Sing|Case=Acc	5	conj	_	_
+8	ja	ja	CCONJ	CC	_	7	cc	_	SpaceAfter=No
+9	...	...	PUNCT	CLB	_	4	punct	_	_
+
+# sent_id = pit080708b.035
+# text = Men Vuonaga lin buoraga åsstet diggir vuostájt.
+# text_en = But the Norwegians were good at buying such cheeses
+1	Men	men	CCONJ	CC	_	4	cc	_	_
+2	Vuonaga	vuonak	NOUN	N	Number=Sing|Case=Nom	4	nsubj:cop	_	_
+3	lin	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=3	4	cop	_	_
+4	buoraga	buorak	ADJ	A	Number=Sing|Case=Nom	0	root	_	_
+5	åsstet	åsstet	VERB	V	VerbForm=Inf	4	advmod	_	_
+6	diggir	daggár	DET	Det	PronType=Art	7	det	_	_
+7	vuostájt	vuasstá	NOUN	N	Number=Sing|Case=Acc	5	obj	_	SpaceAfter=No
+8	.	.	PUNCT	CLB	_	4	punct	_	_
+
+# sent_id = pit080708b.036
+# text = Da njálge idnin.
+# text_en = They ?had good
+1	Da	dat	PRON	Pron	PronType=Dem|Number=Sing|Case=Nom	3	nsubj	_	_
+2	njálge	njállge	ADJ	A	Number=Sing|Case=Nom	3	dep	_	_
+3	idnin	adnet	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=3	0	root	_	SpaceAfter=No
+4	.	.	PUNCT	CLB	_	3	punct	_	_
+
+# sent_id = pit080708b.037
+# text = Ja dále vuäjdnep, gu suhppu sjuohpanav adná.
+# text_en = And there we see how one is throwing the lasso he has
+1	Ja	ja	CCONJ	CC	_	3	cc	_	_
+2	dále	dále	ADV	Adv	_	3	advmod	_	_
+3	vuäjdnep	vuäjdnet	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Plur|Person=1	0	root	_	SpaceAfter=No
+4	,	,	PUNCT	CLB	_	6	punct	_	_
+5	gu	gu	SCONJ	CS	_	6	mark	_	_
+6	suhppu	suahppot	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=3	3	ccomp	_	_
+7	sjuohpanav	sjuohpan	NOUN	N	Number=Sing|Case=Acc	6	obj	_	_
+8	adná	adnet	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=3	7	acl:relcl	_	SpaceAfter=No
+9	.	.	PUNCT	CLB	_	3	punct	_	_
+
+# sent_id = pit080708b.038
+# text = Ja suhppu dále buhtsuv.
+# text_en = And throws it at a reindeer
+1	Ja	ja	CCONJ	CC	_	2	cc	_	_
+2	suhppu	suahppot	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=3	0	root	_	_
+3	dále	dále	ADV	Adv	_	2	advmod	_	_
+4	buhtsuv	båtsoj	NOUN	N	Number=Sing|Case=Acc	2	obj	_	SpaceAfter=No
+5	.	.	PUNCT	CLB	_	2	punct	_	_
+
+# sent_id = pit080708b.039
+# text = Jo, dä navte sjaddá daj.
+# text_en = So that's how it is with these here
+1	Jo	Jo	INTJ	Interj	_	5	discourse	_	SpaceAfter=No
+2	,	,	PUNCT	CLB	_	1	punct	_	_
+3	dä	dä	ADV	Adv	_	5	advmod	_	_
+4	navte	navte	ADV	Adv	_	5	advmod	_	_
+5	sjaddá	sjaddat	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=3	0	root	_	_
+6	daj	dat	PRON	Pron	PronType=Dem|Number=Sing|Case=Com	5	obl	_	SpaceAfter=No
+7	.	.	PUNCT	CLB	_	5	punct	_	_
+
+# sent_id = pit080924.001
+# text = Nå, buris, H!
+# text_en = Well hello, H
+1	Nå	nå	INTJ	Interj	_	3	discourse	_	SpaceAfter=No
+2	,	,	PUNCT	CLB	_	3	punct	_	_
+3	buris	burist	INTJ	Interj	_	0	root	_	SpaceAfter=No
+4	,	,	PUNCT	CLB	_	5	punct	_	_
+5	H	H	PROPN	Prop	Number=Sing|Case=Nom	3	vocative	_	SpaceAfter=No
+6	!	!	PUNCT	CLB	_	3	punct	_	_
+
+# sent_id = pit080924.003
+# text = Nå, gusste dån bådá?
+# text_en = where have you come here from?
+1	Nå	nå	INTJ	Interj	_	5	discourse	_	SpaceAfter=No
+2	,	,	PUNCT	CLB	_	1	punct	_	_
+3	gusste	gusste	ADV	Adv	_	5	advmod	_	_
+4	dån	dån	PRON	Pron	PronType=Prs|Number=Sing|Person=2|Case=Nom	5	nsubj	_	_
+5	bådá	båhtet	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=2	0	root	_	SpaceAfter=No
+6	?	?	PUNCT	CLB	_	5	punct	_	_
+
+# sent_id = pit080924.005
+# text = Nå, mav lä Áhkábákten dahkam?
+# text_en = oh, what did you do in Áhkapakte?
+1	Nå	nå	INTJ	Interj	_	6	discourse	_	SpaceAfter=No
+2	,	,	PUNCT	CLB	_	1	punct	_	_
+3	mav	mij	PRON	Pron	PronType=Int|Number=Sing|Case=Acc	6	obj	_	_
+4	lä	lä	AUX	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=2	6	aux	_	_
+5	Áhkábákten	Áhkábákkte	PROPN	Prop	Number=Sing|Case=Ine	6	obl	_	_
+6	dahkam	dahkat	VERB	V	Aspect=Perf|VerbForm=Part	0	root	_	SpaceAfter=No
+7	?	?	PUNCT	CLB	_	6	punct	_	_
+
+# sent_id = pit080924.007
+# text = Vujdni iedna guhka juolgagijt?
+# text_en = did you see a lot of moose?
+1	Vujdni	vuäjdnet	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=2	0	root	_	_
+2	iedna	iednak	ADJ	A	_	4	amod	_	_
+3	guhka	guhkke	ADJ	A	_	4	amod	_	_
+4	juolgagijt	juolgagijt	NOUN	N	Number=Sing|Case=Acc	1	obj	_	SpaceAfter=No
+5	?	?	PUNCT	CLB	_	1	punct	_	_
+
+# sent_id = pit080924.009
+# text = Dån vuhtji aktav.
+# text_en = you shot one
+1	Dån	dån	PRON	Pron	PronType=Prs|Number=Sing|Person=2|Case=Nom	2	nsubj	_	_
+2	vuhtji	vuohtjet	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=2	0	root	_	_
+3	aktav	akkta	NUM	Num	Number=Sing|Case=Acc	2	obj	_	SpaceAfter=No
+4	.	.	PUNCT	CLB	_	2	punct	_	_
+
+# sent_id = pit080924.011
+# text = Så dä lä guäkkte.
+# text_en = so there are two
+1	Så	så	ADV	Adv	_	3	advmod	_	_
+2	dä	dä	ADV	Adv	_	3	advmod	_	_
+3	lä	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Plur|Person=3	0	root	_	_
+4	guäkkte	guäkkte	NUM	Num	_	3	nsubj	_	SpaceAfter=No
+5	.	.	PUNCT	CLB	_	3	punct	_	_
+
+# sent_id = pit080924.014
+# text = Vujdnin nagin bierdnav?
+# text_en = Did you two see a bear?
+1	Vujdnin	vuäjdnet	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Dual|Person=1	0	root	_	_
+2	nagin	nágan	ADJ	A	_	3	amod	_	_
+3	bierdnav	bärdna	NOUN	N	Number=Sing|Case=Acc	1	obj	_	SpaceAfter=No
+4	?	?	PUNCT	CLB	_	1	punct	_	_
+
+# sent_id = pit080924.016
+# text = Men dä lä buorak vuäjdnet.
+# text_en = but it's good to see that
+1	Men	men	CCONJ	CC	_	4	cc	_	_
+2	dä	dä	ADV	Adv	_	4	advmod	_	_
+3	lä	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=3	4	cop	_	_
+4	buorak	buorak	ADJ	A	Number=Sing|Case=Nom	0	root	_	_
+5	vuäjdnet	vuäjdnet	VERB	V	VerbForm=Inf	4	csubj:cop	_	SpaceAfter=No
+6	.	.	PUNCT	CLB	_	4	punct	_	_
+
+# sent_id = pit080924.018
+# text = Jáhká lä iedna bierdna danne?
+# text_en = do you think there are a lot of bears there?
+1	Jáhká	jáhkket	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=2	0	root	_	_
+2	lä	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Plur|Person=3	5	cop	_	_
+3	iedna	iednak	ADJ	A	_	4	amod	_	_
+4	bierdna	bärdna	NOUN	N	Number=Sing|Case=Nom	5	nsubj:cop	_	_
+5	danne	danne	ADV	Adv	_	1	ccomp	_	SpaceAfter=No
+6	?	?	PUNCT	CLB	_	1	punct	_	_
+
+# sent_id = pit080924.021 ### double object?? error?
+# text = Nå, mav ienabuv dihki Áhkábákten?
+# text_en = well what else did you do in Áhkabakte?
+1	Nå	nå	INTJ	Interj	_	5	discourse	_	SpaceAfter=No
+2	,	,	PUNCT	CLB	_	1	punct	_	_
+3	mav	mij	PRON	Pron	PronType=Int|Number=Sing|Case=Acc	5	obj	_	_
+4	ienabuv	ienabuv	ADV	Adv	_	5	advmod	_	_
+5	dihki	dahkat	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=2	0	root	_	_
+6	Áhkábákten	Áhkábákkte	PROPN	Prop	Number=Sing|Case=Ine	5	obl	_	SpaceAfter=No
+7	?	?	PUNCT	CLB	_	5	punct	_	_
+
+# sent_id = pit080924.025
+# text = Miggir gulijt ådtjojdä?
+# text_en = what kind of fish did you catch?
+1	Miggir	maggár	DET	Det	PronType=Art|PronType=Int	2	det	_	_
+2	gulijt	guolle	NOUN	N	Number=Sing|Case=Acc	3	obj	_	_
+3	ådtjojdä	ådtjot	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=2	0	root	_	SpaceAfter=No
+4	?	?	PUNCT	CLB	_	3	punct	_	_
+
+# sent_id = pit080924.032
+# text = Nå, miggira lidjin dan Áhkábákten?
+# text_en = and who was there in Áhkapakte?
+1	Nå	nå	INTJ	Interj	_	6	discourse	_	SpaceAfter=No
+2	,	,	PUNCT	CLB	_	1	punct	_	_
+3	miggira	miggár	PRON	Pron	PronType=Int|Number=Sing|Case=Nom	6	nsubj:cop	_	_
+4	lidjin	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=3	6	cop	_	_
+5	dan	dat	DET	Det	PronType=Art|Number=Sing|Case=Ine	6	det	_	_
+6	Áhkábákten	Áhkábákkte	PROPN	Prop	Number=Sing|Case=Ine	0	root	_	SpaceAfter=No
+7	?	?	PUNCT	CLB	_	6	punct	_	_
+
+# sent_id = pit080924.038
+# text = Nå, duv biena aj.
+# text_en = oh, your dog, too
+1	Nå	nå	INTJ	Interj	_	4	discourse	_	SpaceAfter=No
+2	,	,	PUNCT	CLB	_	1	punct	_	_
+3	duv	dån	PRON	Pron	PronType=Prs|Poss=Yes|Number=Sing|Person=2|Case=Gen	4	nmod:poss	_	_
+4	biena	biena	NOUN	N	Number=Sing|Case=Nom	0	root	_	_
+5	aj	aj	ADV	Adv	_	4	advmod	_	SpaceAfter=No
+6	.	.	PUNCT	CLB	_	4	punct	_	_
+
+# sent_id = pit080924.040
+# text = Ja mån vujdniv duv biednagav bijlan.
+# text_en = yes I saw your dog in the car
+1	Ja	ja	CCONJ	CC	_	3	cc	_	_
+2	mån	mån	PRON	Pron	PronType=Prs|Number=Sing|Person=1|Case=Nom	3	nsubj	_	_
+3	vujdniv	vuäjdnet	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=1	0	root	_	_
+4	duv	dån	PRON	Pron	PronType=Prs|Poss=Yes|Number=Sing|Person=2|Case=Gen	5	nmod:poss	_	_
+5	biednagav	biena	NOUN	N	Number=Sing|Case=Acc	3	obj	_	_
+6	bijlan	bijjla	NOUN	N	Number=Sing|Case=Ine	3	obl	_	SpaceAfter=No
+7	.	.	PUNCT	CLB	_	3	punct	_	_
+
+# sent_id = pit080924.045
+# text = Gåsse lidji Áhkábákten åvdep bále?
+# text_en = when were you in Áhkabakte in the past?
+1	Gåsse	gåsse	ADV	Adv	_	3	advmod	_	_
+2	lidji	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=2	3	cop	_	_
+3	Áhkábákten	Áhkábákkte	PROPN	Prop	Number=Sing|Case=Ine	0	root	_	_
+4	åvdep	åvdep	ADV	Adv	_	5	advmod	_	_
+5	bále	bálle	NOUN	N	Number=Sing|Case=Nom	3	obl	_	SpaceAfter=No
+6	?	?	PUNCT	CLB	_	3	punct	_	_
+
+# sent_id = pit080924.052
+# text = Nå, dä ij del almatj sida nagin sadjáj vuällget.
+# text_en = yes, one doesn't really want to go anywhere
+1	Nå	nå	INTJ	Interj	_	7	discourse	_	SpaceAfter=No
+2	,	,	PUNCT	CLB	_	1	punct	_	_
+3	dä	dä	ADV	Adv	_	7	advmod	_	_
+4	ij	ij	AUX	V	Polarity=Neg|VerbForm=Fin|Tense=Pres|Number=Sing|Person=3	7	aux:neg	_	_
+5	del	del	ADV	Adv	_	7	advmod	_	_
+6	almatj	almatj	NOUN	N	Number=Sing|Case=Nom	7	nsubj	_	_
+7	sida	sihtat	VERB	V	Connegative=Yes	0	root	_	_
+8	nagin	nágan	ADJ	A	_	9	amod	_	_
+9	sadjáj	sadje	NOUN	N	Number=Sing|Case=Ill	10	obl	_	_
+10	vuällget	vuällget	VERB	V	VerbForm=Inf	7	xcomp	_	SpaceAfter=No
+11	.	.	PUNCT	CLB	_	7	punct	_	_
+
+# sent_id = pit080924.057
+# text = Nå, buorak lä dále?
+# text_en = now it's ok?
+1	Nå	nå	INTJ	Interj	_	3	discourse	_	SpaceAfter=No
+2	,	,	PUNCT	CLB	_	1	punct	_	_
+3	buorak	buorak	ADJ	A	Number=Sing|Case=Nom	0	root	_	_
+4	lä	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=3	3	cop	_	_
+5	dále	dále	ADV	Adv	_	3	advmod	_	SpaceAfter=No
+6	?	?	PUNCT	CLB	_	3	punct	_	_
+
+# sent_id = pit080924.059
+# text = Ij lä?
+# text_en = no?
+1	Ij	ij	AUX	V	Polarity=Neg|VerbForm=Fin|Tense=Pres|Number=Sing|Person=3	2	aux:neg	_	_
+2	lä	lä	VERB	V	Connegative=Yes	0	root	_	SpaceAfter=No
+3	?	?	PUNCT	CLB	_	2	punct	_	_
+
+# sent_id = pit080924.063
+# text = Nå, gåkkte lij Áhkábákten gu dånnå lidji mánná?
+# text_en = yes, what was Áhkabákkte like when you were a child?
+1	Nå	nå	INTJ	Interj	_	3	discourse	_	SpaceAfter=No
+2	,	,	PUNCT	CLB	_	1	punct	_	_
+3	gåkkte	gukkte	ADV	Adv	_	0	root	_	_
+4	lij	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	3	cop	_	_
+5	Áhkábákten	Áhkábákkte	PROPN	Prop	Number=Sing|Case=Ine	3	obl	_	_
+6	gu	gu	SCONJ	CS	_	9	mark	_	_
+7	dånnå	dån	PRON	Pron	PronType=Prs|Number=Sing|Person=2|Case=Nom	9	nsubj:cop	_	_
+8	lidji	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=2	9	cop	_	_
+9	mánná	mánná	NOUN	N	Number=Sing|Case=Nom	3	advcl	_	SpaceAfter=No
+10	?	?	PUNCT	CLB	_	3	punct	_	_
+
+# sent_id = pit080924.071
+# text = Nå, giejna dä tjuvvut?
+# text_en = yes, who did you go with?
+1	Nå	nå	INTJ	Interj	_	5	discourse	_	SpaceAfter=No
+2	,	,	PUNCT	CLB	_	1	punct	_	_
+3	giejna	gie	PRON	Pron	PronType=Int|Number=Sing|Case=Com	5	obl	_	_
+4	dä	dä	ADV	Adv	_	5	advmod	_	_
+5	tjuvvut	tjuovvot	VERB	V	Mood=Imp|Number=Plur|Person=2	0	root	_	SpaceAfter=No
+6	?	?	PUNCT	CLB	_	5	punct	_	_
+
+# sent_id = pit080924.078
+# text = Ah, dä guldaliv.
+# text_en = ah, I heard that
+1	Ah	ah	INTJ	Interj	_	4	discourse	_	SpaceAfter=No
+2	,	,	PUNCT	CLB	_	1	punct	_	_
+3	dä	dä	ADV	Adv	_	4	advmod	_	_
+4	guldaliv	guldaliv	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=1	0	root	_	SpaceAfter=No
+5	.	.	PUNCT	CLB	_	4	punct	_	_
+
+# sent_id = pit080924.089
+# text = Mån gillgiv daj gusaj birra ságastit, men idtjiv diede gåk gillgiv gatjádit.
+# text_en = I wanted to say something about the cows but I didn't know how to ask
+1	Mån	mån	PRON	Pron	PronType=Prs|Number=Sing|Person=1|Case=Nom	6	nsubj	_	_
+2	gillgiv	gallgat	AUX	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=1	6	aux	_	_
+3	daj	dat	DET	Det	PronType=Art|Number=Sing|Case=Gen	4	det	_	_
+4	gusaj	gussa	NOUN	N	Number=Sing|Case=Gen	6	obl	_	_
+5	birra	birra	ADP	Po	_	4	case	_	_
+6	ságastit	ságastit	VERB	V	VerbForm=Inf	0	root	_	SpaceAfter=No
+7	,	,	PUNCT	CLB	_	10	punct	_	_
+8	men	men	CCONJ	CC	_	10	cc	_	_
+9	idtjiv	ij	AUX	V	Polarity=Neg|VerbForm=Fin|Tense=Past|Number=Sing|Person=1	10	aux:neg	_	_
+10	diede	diehtet	VERB	V	Connegative=Yes	6	parataxis	_	_
+11	gåk	gukkte	ADV	Adv	_	13	mark	_	_
+12	gillgiv	gallgat	AUX	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=1	13	aux	_	_
+13	gatjádit	gatjadit	VERB	V	VerbForm=Inf	10	ccomp	_	SpaceAfter=No
+14	.	.	PUNCT	CLB	_	6	punct	_	_
+
+# sent_id = pit080924.103
+# text = Da, dá gájtsa lidjin dálven dijá lunne.
+# text_en = that, those goats were at your place in the winter
+1	Da	dat	DET	Det	PronType=Art|Number=Sing|Case=Nom	3	reparandum	_	SpaceAfter=No
+2	,	,	PUNCT	CLB	_	1	punct	_	_
+3	da	dat	DET	Det	PronType=Art|Number=Sing|Case=Nom	4	det	_	_
+4	gájtsa	gájjtsa	NOUN	N	Number=Sing|Case=Nom	7	nsubj:cop	_	_
+5	lidjin	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=3	7	cop	_	_
+6	dálven	dállve	NOUN	N	Number=Sing|Case=Ine	7	obl	_	_
+7	dijá	dån	PRON	Pron	PronType=Prs|Number=Plur|Person=2|Case=Gen	0	root	_	_
+8	lunne	lunne	ADP	Po	_	7	case	_	SpaceAfter=No
+9	.	.	PUNCT	CLB	_	7	punct	_	_
+
+# sent_id = pit080924.105
+# text = Ja gåsse buhtin dajt vedtjin?
+# text_en = and when did they come and get them?
+1	Ja	ja	CCONJ	CC	_	3	cc	_	_
+2	gåsse	gåsse	ADV	Adv	_	3	advmod	_	_
+3	buhtin	båhtet	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=3	0	root	_	_
+4	dajt	dat	PRON	Pron	PronType=Dem|Number=Sing|Case=Acc	5	obj	_	_
+5	vedtjin	vädtjat	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=3	3	advcl	_	SpaceAfter=No
+6	?	?	PUNCT	CLB	_	3	punct	_	_
+
+# sent_id = pit080924.110/111
+# text = Ja Alesgietjen aj mija inijmä jåhtem sáme gájtsajt aj.
+# text_en = and in Västerfjäll we also had a migratory Saami's goats also
+1	Ja	ja	CCONJ	CC	_	5	cc	_	_
+2	Alesgietjen	Alesgiehtje	PROPN	Prop	Number=Sing|Case=Ine	5	obl	_	_
+3	aj	aj	ADV	Adv	_	5	advmod	_	_
+4	mija	mån	PRON	Pron	PronType=Prs|Number=Plur|Person=1|Case=Nom	5	nsubj	_	_
+5	inijmä	adnet	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=1	0	root	_	_
+6	jåhtem	jåhtet	NOUN	V	Vsubst	7	nmod	_	_
+7	sáme	sábme	NOUN	N	Number=Sing|Case=Gen	8	nmod:poss	_	_
+8	gájtsajt	gájjtsa	NOUN	N	Number=Sing|Case=Acc	5	obj	_	_
+9	aj	aj	ADV	Adv	_	5	advmod	_	SpaceAfter=No
+10	.	.	PUNCT	CLB	_	5	punct	_	_
+
+# sent_id = pit080924.119
+# text = Gåkkte lij dat?
+# text_en = how was that?
+1	Gåkkte	gukkte	ADV	Adv	_	0	root	_	_
+2	lij	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	1	cop	_	_
+3	dat	dat	PRON	Pron	PronType=Dem|Number=Sing|Case=Nom	1	nsubj:cop	_	SpaceAfter=No
+4	?	?	PUNCT	CLB	_	1	punct	_	_
+
+# sent_id = pit080924.123
+# text = Gu gájtsajt inijdä.
+# text_en = when you had goats
+1	Gu	gu	SCONJ	CS	_	3	mark	_	_
+2	gájtsajt	gájjtsa	NOUN	N	Number=Sing|Case=Acc	3	obj	_	_
+3	inijdä	adnet	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=2	0	root	_	SpaceAfter=No
+4	.	.	PUNCT	CLB	_	3	punct	_	_
+
+# sent_id = pit080924.125
+# text = Mav dä dajste ådtjojdä?
+# text_en = what did you all get from them?
+1	Mav	mij	PRON	Pron	PronType=Int|Number=Sing|Case=Acc	4	obj	_	_
+2	dä	dä	ADV	Adv	_	4	advmod	_	_
+3	dajste	dat	PRON	Pron	PronType=Dem|Number=Sing|Case=Ela	4	obl	_	_
+4	ådtjojdä	ådtjot	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=2	0	root	_	SpaceAfter=No
+5	?	?	PUNCT	CLB	_	4	punct	_	_
+
+# sent_id = pit080924.128
+# text = Nå, juhkam lä gájtsa mielkev?
+# text_en = well, have you drunk goat milk?
+1	Nå	nå	INTJ	Interj	_	3	discourse	_	SpaceAfter=No
+2	,	,	PUNCT	CLB	_	1	punct	_	_
+3	juhkam	juhkat	VERB	V	Aspect=Perf|VerbForm=Part	0	root	_	_
+4	lä	lä	AUX	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Plur|Person=3	3	aux	_	_
+5	gájtsa	gájjtsa	NOUN	N	Number=Sing|Case=Gen	6	nmod:poss	_	_
+6	mielkev	mällke	NOUN	N	Number=Sing|Case=Acc	3	obj	_	SpaceAfter=No
+7	?	?	PUNCT	CLB	_	3	punct	_	_
+
+# sent_id = pit080924.130
+# text = Na gukkte lä dát?
+# text_en = and how is it?
+1	Na	na	INTJ	Interj	_	2	discourse	_	_
+2	gukkte	gukkte	ADV	Adv	_	0	root	_	_
+3	lä	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=3	2	cop	_	_
+4	dát	dát	PRON	Pron	PronType=Dem|Number=Sing|Case=Nom	2	nsubj:cop	_	SpaceAfter=No
+5	?	?	PUNCT	CLB	_	2	punct	_	_
+
+# sent_id = pit080924.132
+# text = Lä garras.
+# text_en = it's strong
+1	Lä	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=3	2	cop	_	_
+2	garras	garras	ADJ	A	Number=Sing|Case=Nom	0	root	_	SpaceAfter=No
+3	.	.	PUNCT	CLB	_	2	punct	_	_
+
+# sent_id = pit080924.143
+# text = Pruvvkujdä dä suovastit vuostáv aj?
+# text_en = Did you use to smoke the cheese, too?
+1	Pruvvkujdä	pruvvkut	AUX	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=2	3	aux	_	_
+2	dä	dä	ADV	Adv	_	3	advmod	_	_
+3	suovastit	suovastit	VERB	V	VerbForm=Inf	0	root	_	_
+4	vuostáv	vuasstá	NOUN	N	Number=Sing|Case=Acc	3	obj	_	_
+5	aj	aj	ADV	Adv	_	3	advmod	_	SpaceAfter=No
+6	?	?	PUNCT	CLB	_	3	punct	_	_
+
+# sent_id = pit080924.151
+# text = Mav dajste dagajdä?
+# text_en = what did you do with them?
+1	Mav	mij	PRON	Pron	PronType=Int|Number=Sing|Case=Acc	3	obj	_	_
+2	dajste	dat	PRON	Pron	PronType=Dem|Number=Sing|Case=Ela	3	obl	_	_
+3	dagajdä	dahkat	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=2	0	root	_	SpaceAfter=No
+4	?	?	PUNCT	CLB	_	3	punct	_	_
+
+# sent_id = pit080924.153/155
+# text = Ja vuojav aj, duggir häjbmavuojav.
+# text_en = and butter, too, that home-made butter
+1	Ja	ja	CCONJ	CC	_	2	cc	_	_
+2	vuojav	vuodja	NOUN	N	Number=Sing|Case=Acc	0	root	_	_
+3	aj	aj	ADV	Adv	_	2	advmod	_	SpaceAfter=No
+4	,	,	PUNCT	CLB	_	6	punct	_	_
+5	duggir	duggir	DET	Det	PronType=Art	6	det	_	_
+6	häjbmavuojav	häjbma#vuodja	NOUN	N	Number=Sing|Case=Acc	2	obj	_	SpaceAfter=No
+7	.	.	PUNCT	CLB	_	6	punct	_	_
+
+# sent_id = pit080924.064
+# text = Dä lij suohtas gu lidjiv mánná.
+# text_en = it was fun when I was a child
+1	Dä	dä	ADV	Adv	_	3	advmod	_	_
+2	lij	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	3	cop	_	_
+3	suohtas	suohtas	ADJ	A	Number=Sing|Case=Nom	0	root	_	_
+4	gu	gu	SCONJ	CS	_	6	mark	_	_
+5	lidjiv	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=1	6	cop	_	_
+6	mánná	mánná	NOUN	N	Number=Sing|Case=Nom	3	advcl	_	SpaceAfter=No
+7	.	.	PUNCT	CLB	_	3	punct	_	_
+
+# sent_id = pit080924.065/066
+# text = Iednagijt ådtjojmä miehtsen ståhkåt ja dagajmä lastbijlajt ja dággárijt.
+# text_en = We got to play in the forest a lot and we made trucks as such things
+1	Iednagijt	iednak	ADJ	A	Number=Sing|Case=Acc	4	obj	_	_
+2	ådtjojmä	ådtjot	AUX	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=1	4	aux	_	_
+3	miehtsen	mähttse	NOUN	N	Number=Sing|Case=Ine	4	obl	_	_
+4	ståhkåt	ståhkåt	VERB	V	VerbForm=Inf	0	root	_	_
+5	ja	ja	CCONJ	CC	_	6	cc	_	_
+6	dagajmä	dahkat	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=1	4	conj	_	_
+7	lastbijlajt	lastbijlajt	NOUN	N	Number=Sing|Case=Acc	6	obj	_	_
+8	ja	ja	CCONJ	CC	_	9	cc	_	_
+9	dággárijt	dággár	PRON	Pron	PronType=Ind|Number=Sing|Case=Acc	7	conj	_	SpaceAfter=No
+10	.	.	PUNCT	CLB	_	4	punct	_	_
+
+# sent_id = pit080924.068/069
+# text = Ja så, gu dä almatj dä vuorrasabåj, dä ällgiv skuvvgit gu lidjiv, galla, akkta låk guäkkte jage.
+# text_en = and when one gets older, then I started to hunt when I was, how old, twelve years old
+1	Ja	ja	CCONJ	CC	_	11	cc	_	_
+2	så	så	ADV	Adv	_	11	advmod	_	SpaceAfter=No
+3	,	,	PUNCT	CLB	_	8	punct	_	_
+4	gu	gu	SCONJ	CS	_	8	mark	_	_
+5	dä	dä	ADV	Adv	_	8	advmod	_	_
+6	almatj	almatj	NOUN	N	Number=Sing|Case=Nom	8	nsubj	_	_
+7	dä	dä	ADV	Adv	_	8	advmod	_	_
+8	vuorrasabåj	vuorrasabåj	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	11	advcl	_	SpaceAfter=No
+9	,	,	PUNCT	CLB	_	8	punct	_	_
+10	dä	dä	ADV	Adv	_	11	advmod	_	_
+11	ällgiv	állget	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=1	0	root	_	_
+12	skuvvgit	skuvvgit	VERB	V	VerbForm=Inf	11	xcomp	_	_
+13	gu	gu	SCONJ	CS	_	21	mark	_	_
+14	lidjiv	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=1	21	_	_	_
+15	,	,	PUNCT	CLB	_	16	punct	_	_
+16	galla	galla	PRON	Pron	PronType=Int|Number=Sing|Case=Nom	21	dep	_	SpaceAfter=No
+17	,	,	PUNCT	CLB	_	16	punct	_	_
+18	akkta	akkta	NUM	Num	_	21	nummod	_	_
+19	låk	lågev	NUM	Num	_	18	flat	_	_
+20	guäkkte	guäkkte	NUM	Num	_	18	flat	_	_
+21	jage	jahke	NOUN	N	Number=Sing|Case=Nom	12	advcl	_	SpaceAfter=No
+22	.	.	PUNCT	CLB	_	11	punct	_	_
+
+# sent_id = pit080924.072/073
+# text = Tjuvudiv mån áhtjev men, men gu lidjiv akkta låk gålbmå dä lidjiv uktuk.
+# text_en = I followed (my) father but when I was 13 I was alone
+1	Tjuvudiv	tjuvudit	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=1	0	root	_	_
+2	mån	mån	PRON	Pron	PronType=Prs|Number=Sing|Person=1|Case=Nom	1	nsubj	_	_
+3	áhtjev	áhttje	NOUN	N	Number=Sing|Case=Acc	1	obj	_	_
+4	men	men	CCONJ	CC	_	6	reparandum	_	SpaceAfter=No
+5	,	,	PUNCT	CLB	_	4	punct	_	_
+6	men	men	CCONJ	CC	_	9	cc	_	_
+7	gu	gu	SCONJ	CS	_	9	mark	_	_
+8	lidjiv	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=1	9	cop	_	_
+9	akkta	akkta	NUM	Num	_	14	advcl	_	_
+10	låk	lågev	NUM	Num	_	9	flat	_	_
+11	gålbmå	gålbmå	NUM	Num	_	9	flat	_	SpaceAfter=No
+12	,	,	PUNCT	CLB	_	9	punct	_	_
+13	dä	dä	ADV	Adv	_	14	advmod	_	_
+14	lidjiv	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=1	1	parataxis	_	_
+15	uktuk	iktuk	ADV	Adv	_	14	advmod	_	SpaceAfter=No
+16	.	.	PUNCT	CLB	_	1	punct	_	_
+
+# sent_id = pit080924.079/080
+# text = Diedá, mån vuhtjiv vuostamos guhka jualgagav lidjiv, nå, akkta låk gietjav jage.
+# text_en = you know I shot my very first moose (when) I was 17 years old
+1	Diedá	diehtet	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=2	0	root	_	SpaceAfter=No
+2	,	,	PUNCT	CLB	_	1	punct	_	_
+3	mån	mån	PRON	Pron	PronType=Prs|Number=Sing|Person=1|Case=Nom	4	nsubj	_	_
+4	vuhtjiv	vuohtjet	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=1	1	parataxis	_	_
+5	vuostamos	vuostamos	ADJ	A	Superl	7	amod	_	_
+6	guhka	guhkke	ADJ	A	_	7	amod	_	_
+7	jualgagav	jualgagav	NOUN	N	Number=Sing|Case=Acc	4	obj	_	SpaceAfter=No
+8	,	,	PUNCT	CLB	_	16	punct	_	_
+9	lidjiv	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=1	16	cop	_	SpaceAfter=No
+10	,	,	PUNCT	CLB	_	11	punct	_	_
+11	nå	nå	INTJ	Interj	_	1	discourse	_	SpaceAfter=No
+12	,	,	PUNCT	CLB	_	11	punct	_	_
+13	akkta	akkta	NUM	Num	_	16	nummod	_	_
+14	låk	lågev	NUM	Num	_	13	flat	_	_
+15	gietjav	gietjav	NUM	Num	_	13	flat	_	_
+16	jage	jahke	NOUN	N	Number=Sing|Case=Nom	1	parataxis	_	SpaceAfter=No
+17	.	.	PUNCT	CLB	_	1	punct	_	_
+
+# sent_id = pit080924.087
+# text = Ja gusajt inijmä.
+# text_en = and we had cows
+1	Ja	ja	CCONJ	CC	_	3	cc	_	_
+2	gusajt	gussa	NOUN	N	Number=Sing|Case=Acc	3	obj	_	_
+3	inijmä	adnet	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=1	0	root	_	SpaceAfter=No
+4	.	.	PUNCT	CLB	_	3	punct	_	_
+
+# sent_id = pit080924.091/093
+# text = Ja dä inijmä gusajt, gålbmå gusa ja akkta, akkta hiestav ja gájtsajt inijmä ja sávtsajt.
+# text_en = and we had cows, 3 cows and one, one horse and we had goats and sheep
+1	Ja	ja	CCONJ	CC	_	3	cc	_	_
+2	dä	dä	ADV	Adv	_	3	advmod	_	_
+3	inijmä	adnet	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=1	0	root	_	_
+4	gusajt	gussa	NOUN	N	Number=Sing|Case=Acc	3	obj	_	SpaceAfter=No
+5	,	,	PUNCT	CLB	_	7	punct	_	_
+6	gålbmå	gålbmå	NUM	Num	_	7	nummod	_	_
+7	gusa	gussa	NOUN	N	Number=Sing|Case=Nom	4	appos	_	SpaceAfter=No
+8	,	,	PUNCT	CLB	_	7	punct	_	_
+9	ja	ja	CCONJ	CC	_	16	cc	_	_
+10	akkta	akkta	NUM	Num	_	12	reparandum	_	SpaceAfter=No
+11	,	,	PUNCT	CLB	_	10	punct	_	_
+12	akkta	akkta	NUM	Num	_	13	conj	_	_
+13	hiestav	hässta	NOUN	N	Number=Sing|Case=Acc	16	obj	_	_
+14	ja	ja	CCONJ	CC	_	15	cc	_	_
+15	gájtsajt	gájjtsa	NOUN	N	Number=Sing|Case=Acc	13	conj	_	_
+16	inijmä	adnet	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=1	3	conj	_	_
+17	ja	ja	CCONJ	CC	_	18	cc	_	_
+18	sávtsajt	sávvtsa	NOUN	N	Number=Sing|Case=Acc	16	obj	_	SpaceAfter=No
+19	.	.	PUNCT	CLB	_	3	punct	_	_
+
+# sent_id = pit080924.136
+# text = Ij lä nav njállge.
+# text_en = that is not so tasty
+1	Ij	ij	AUX	V	Polarity=Neg|VerbForm=Fin|Tense=Pres|Number=Sing|Person=3	4	aux:neg	_	_
+2	lä	lä	VERB	V	Connegative=Yes	4	cop	_	_
+3	nav	nav	ADV	Adv	_	4	advmod	_	_
+4	njállge	njállge	ADJ	A	Number=Sing|Case=Nom	0	root	_	SpaceAfter=No
+5	.	.	PUNCT	CLB	_	4	punct	_	_
+
+# sent_id = pit080924.139
+# text = Men vuässta'l káfan njállge.
+# text_en = but cheese is definitely good in coffee
+1	Men	men	CCONJ	CC	_	6	cc	_	_
+2	vuässta	vuasstá	NOUN	N	Number=Sing|Case=Nom	6	nsubj:cop	_	_
+3	dä	dä	ADV	Adv	_	6	advmod	_	_
+4	'l	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=3	6	cop	_	_
+5	káfan	káffa	NOUN	N	Number=Sing|Case=Ine	6	obl	_	_
+6	njállge	njállge	ADJ	A	Number=Sing|Case=Nom	0	root	_	SpaceAfter=No
+7	.	.	PUNCT	CLB	_	6	punct	_	_
+
+# sent_id = pit080924.145/146/148
+# text = Suovastijme mija ja ustijmä iedna buhtsu biergov, majt suovastij ja gåjkådij.
+# text_en = we smoked it and we bought a lot of reindeer meat  which we smoked and dried
+1	Suovastijme	suovastit	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=1	0	root	_	_
+2	mija	mån	PRON	Pron	PronType=Prs|Number=Plur|Person=1|Case=Nom	1	nsubj	_	_
+3	ja	ja	CCONJ	CC	_	4	cc	_	_
+4	ustijmä	åsstet	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=1	1	conj	_	_
+5	iedna	iednak	ADJ	A	_	7	amod	_	_
+6	buhtsu	båtsoj	NOUN	N	Number=Sing|Case=Gen	7	nmod:poss	_	_
+7	biergov	bärrgo	NOUN	N	Number=Sing|Case=Acc	4	obj	_	SpaceAfter=No
+8	,	,	PUNCT	CLB	_	10	punct	_	_
+9	majt	mij	PRON	Pron	PronType=Rel|Number=Sing|Case=Acc	10	obj	_	_
+10	suovastij	suovastit	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	7	acl:relcl	_	_
+11	ja	ja	CCONJ	CC	_	12	cc	_	_
+12	gåjkådij	gåjkådit	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	10	conj	_	SpaceAfter=No
+13	.	.	PUNCT	CLB	_	1	punct	_	_
+
+# sent_id = pit080924.159
+# text = Gu lij giesse dä juomojt tjuggijmä.
+# text_en = we picked sorrel during the summer
+1	Gu	gu	SCONJ	CS	_	2	mark	_	_
+2	lij	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	7	advcl	_	_
+3	giesse	giesse	NOUN	N	Number=Sing|Case=Nom	2	nsubj	_	SpaceAfter=No
+4	,	,	PUNCT	CLB	_	2	punct	_	_
+5	dä	dä	ADV	Adv	_	7	advmod	_	_
+6	juomojt	juobmo	NOUN	N	Number=Sing|Case=Acc	7	obj	_	_
+7	tjuggijmä	tjuggit	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=1	0	root	_	SpaceAfter=No
+8	.	.	PUNCT	CLB	_	7	punct	_	_
+
+# sent_id = pit080924.161
+# text = Dä båråjmä degu krema melkijn.
+# text_en = then we ate it as a cream with milk
+1	Dä	dä	ADV	Adv	_	2	advmod	_	_
+2	båråjmä	bårråt	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=1	0	root	_	_
+3	degu	degu	CCONJ	CC	_	4	cc	_	_
+4	krema	krema	NOUN	N	Number=Sing|Case=Nom	2	advcl	_	_
+5	melkijn	mällke	NOUN	N	Number=Sing|Case=Com	2	obl	_	SpaceAfter=No
+6	.	.	PUNCT	CLB	_	2	punct	_	_
+
+# sent_id = pit080924.169
+# text = Ja dä lä válen nanne.
+# text_en = and that is in a meadow
+1	Ja	ja	CCONJ	CC	_	4	cc	_	_
+2	dä	dä	ADV	Adv	_	4	advmod	_	_
+3	lä	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=3	4	cop	_	_
+4	válen	válle	NOUN	N	Number=Sing|Case=Ine	0	root	_	_
+5	nanne	nanne	ADV	Adv	_	4	advmod	_	SpaceAfter=No
+6	.	.	PUNCT	CLB	_	4	punct	_	_
+
+# sent_id = pit080924.171
+# text = Gånne, sujnij, sujnij sinne da sjiddin.
+# text_en = where, in hay, in hay they (plants) grew
+1	Gånne	gånne	ADV	Adv	_	8	advmod	_	SpaceAfter=No
+2	,	,	PUNCT	CLB	_	3	punct	_	_
+3	sujnij	suäjdne	NOUN	N	Number=Sing|Case=Gen	5	reparandum	_	SpaceAfter=No
+4	,	,	PUNCT	CLB	_	3	punct	_	_
+5	sujnij	suäjdne	NOUN	N	Number=Sing|Case=Gen	8	obl	_	_
+6	sinne	sinne	ADP	Po	_	5	case	_	_
+7	da	dat	PRON	Pron	PronType=Dem|Number=Sing|Case=Nom	8	dep	_	_
+8	sjiddin	sjaddat	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=3	0	root	_	SpaceAfter=No
+9	.	.	PUNCT	CLB	_	8	punct	_	_
+
+# sent_id = pit080924.173
+# text = Gu lä, gu lidjin sladjim dä buhtin da bajás.
+# text_en = after they had harvested, then they came up
+1	Gu	gu	SCONJ	CS	_	2	mark	_	_
+2	lä	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=3	9	advcl	_	SpaceAfter=No
+3	,	,	PUNCT	CLB	_	2	punct	_	_
+4	gu	gu	SCONJ	CS	_	5	mark	_	_
+5	lidjin	lä	AUX	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=3	6	aux	_	SpaceAfter=No
+6	sládjim	?	VERB	V	Aspect=Perf|VerbForm=Part	6	root	_	SpaceAfter=No
+7	,	,	PUNCT	CLB	_	5	punct	_	_
+8	dä	dä	ADV	Adv	_	9	advmod	_	_
+9	buhtin	båhtet	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=3	6	parataxis	_	_
+10	da	dat	PRON	Pron	PronType=Dem|Number=Sing|Case=Nom	9	nsubj	_	_
+11	bajás	bajás	ADV	Adv	_	9	advmod	_	SpaceAfter=No
+12	.	.	PUNCT	CLB	_	9	punct	_	_
+
+# sent_id = pit080924.177
+# text = Ja gävdnuji du, ma lä váren.
+# text_en = and there are some in the mountains
+1	Ja	ja	CCONJ	CC	_	2	cc	_	_
+2	gävdnuji	gävdnut	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Plur|Person=3	0	root	_	_
+3	du	dut	PRON	Pron	PronType=Dem|Number=Sing|Case=Nom	2	nsubj	_	SpaceAfter=No
+4	,	,	PUNCT	CLB	_	7	punct	_	_
+5	ma	mij	PRON	Pron	PronType=Rel|Number=Sing|Case=Nom	7	nsubj:cop	_	_
+6	lä	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Plur|Person=3	7	cop	_	_
+7	váren	várre	NOUN	N	Number=Sing|Case=Ine	3	acl:relcl	_	SpaceAfter=No
+8	.	.	PUNCT	CLB	_	2	punct	_	_
+
+# sent_id = pit080924.178
+# text = Váren gävdnuji aj juomo, men dä idtjin da, dä gävdnujin da vuälijn.
+# text_en = in the mountains there are also sorrels, but those are not those found lower down
+1	Váren	várre	NOUN	N	Number=Sing|Case=Ine	2	obl	_	_
+2	gävdnuji	gävdnut	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Plur|Person=3	0	root	_	_
+3	aj	aj	ADV	Adv	_	2	advmod	_	_
+4	juomo	juobmo	NOUN	N	Number=Sing|Case=Nom	2	nsubj	_	SpaceAfter=No
+5	,	,	PUNCT	CLB	_	8	punct	_	_
+6	men	men	CCONJ	CC	_	8	cc	_	_
+7	dä	dä	ADV	Adv	_	8	advmod	_	_
+8	idtjin	ij	VERB	V	Polarity=Neg|VerbForm=Fin|Tense=Past|Number=Plur|Person=3	2	parataxis	_	_
+9	da	dat	PRON	Pron	PronType=Dem|Number=Sing|Case=Nom	8	nsubj	_	SpaceAfter=No
+10	,	,	PUNCT	CLB	_	12	punct	_	_
+11	dä	dä	ADV	Adv	_	12	advmod	_	_
+12	gävdnujin	gävdnut	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=3	2	parataxis	_	_
+13	da	dat	PRON	Pron	PronType=Dem|Number=Sing|Case=Nom	12	nsubj	_	_
+14	vuällen	vuällen	ADV	Adv	_	12	advmod	_	SpaceAfter=No
+15	.	.	PUNCT	CLB	_	2	punct	_	_
+
+# sent_id = pit080924.196/197
+# text = Ja så muhtin dä tjaktjan, gu dä, gu dä sládjo lij fierok, dä lij gámasujnijt tjuålat.
+# text_en = and then sometimes when it was autumn and when the harvest was finished, then it was time for shoe-hay-cutting
+1	Ja	ja	CCONJ	CC	_	16	cc	_	_
+2	så	så	ADV	Adv	_	16	advmod	_	_
+3	muhtin	mudiŋ	ADV	Adv	_	16	advmod	_	_
+4	dä	dä	ADV	Adv	_	16	advmod	_	_
+5	tjaktjan	tjakktja	NOUN	N	Number=Sing|Case=Ine	16	obl	_	SpaceAfter=No
+6	,	,	PUNCT	CLB	_	13	punct	_	_
+7	gu	gu	SCONJ	CS	_	13	mark	_	_
+8	dä	dä	ADV	Adv	_	13	advmod	_	_
+9	gu	gu	SCONJ	CS	_	13	mark	_	_
+10	dä	dä	ADV	Adv	_	13	advmod	_	_
+11	sládjo	sládjo	NOUN	N	Number=Sing|Case=Nom	13	nsubj:cop	_	_
+12	lij	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	13	cop	_	_
+13	fierok	fierok	ADJ	A	Number=Sing|Case=Nom	16	advcl	_	SpaceAfter=No
+14	,	,	PUNCT	CLB	_	13	punct	_	_
+15	dä	dä	ADV	Adv	_	16	advmod	_	_
+16	lij	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	0	root	_	_
+17	gámasujnijt	gámasuäjdne	NOUN	N	Number=Sing|Case=Acc	18	obj	_	_
+18	tjuollat	tjuollat	VERB	V	VerbForm=Inf	16	csubj:cop	_	SpaceAfter=No
+19	.	.	PUNCT	CLB	_	16	punct	_	_
+
+# sent_id = pit080924.203/204
+# text = Rådojn sjiddi da suojne, ma gilgij gabma-suojne stadigare.
+# text_en = the hay grows in the willow brush, which makes the shoe-hay more sturdy
+1	Rådojn	råhto	NOUN	N	Number=Sing|Case=Ine	2	obl	_	_
+2	sjiddi	sjaddat	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Plur|Person=3	0	root	_	_
+3	da	dat	DET	Det	PronType=Art|Number=Sing|Case=Nom	4	det	_	_
+4	suojne	suäjdne	NOUN	N	Number=Sing|Case=Nom	2	xcomp	_	SpaceAfter=No
+5	,	,	PUNCT	CLB	_	7	punct	_	_
+6	ma	mij	PRON	Pron	PronType=Rel|Number=Sing|Case=Nom	7	nsubj	_	_
+7	gilgij	gallgat	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	4	acl:relcl	_	_
+8	suojne	suäjdne	NOUN	N	Number=Sing|Case=Nom	7	orphan	_	_
+9	stadigare	stadigare	ADJ	A	Degree=Cmp|Number=Sing|Case=Nom	7	dep	_	SpaceAfter=No
+10	.	.	PUNCT	CLB	_	2	punct	_	_
+
+# sent_id = pit080924.217/220
+# text = Gatsostij dä vädtjaj, jut ie guosa åle.
+# text_en = you hung (it) up on the wall so that the cows don't reach (it)
+1	Gatsostij	gatsostit	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	0	root	_	_
+2	dä	dä	ADV	Adv	_	1	advmod	_	_
+3	vädtjaj	vädtja	NOUN	N	Number=Sing|Case=Ill	1	obl	_	SpaceAfter=No
+4	,	,	PUNCT	CLB	_	8	punct	_	_
+5	jut	juhte	SCONJ	CS	_	8	mark	_	_
+6	ie	ij	AUX	V	Polarity=Neg|VerbForm=Fin|Tense=Pres|Number=Plur|Person=3	8	aux:neg	_	_
+7	guosa	guossa	NOUN	N	Number=Sing|Case=Nom	8	nsubj	_	_
+8	åle	ållet	VERB	V	Connegative=Yes	1	advcl	_	SpaceAfter=No
+9	.	.	PUNCT	CLB	_	1	punct	_	_
+
+# sent_id = pit100404.307
+# Gukkte'l dan namma?
+# what's it called
+1	Gukkte	gukkte	ADV	Adv	_	0	root	_	_
+2	'l	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=3	1	cop	_	_
+3	dan	dat	PRON	Pron	PronType=Dem|Number=Sing|Case=Gen	4	nmod:poss	_	_
+4	namma	namma	NOUN	N	Number=Sing|Case=Nom	1	nsubj:cop	_	SpaceAfter=No
+5	?	?	PUNCT	CLB	_	1	punct	_	_
+
+# sent_id = pit100404.310
+# Jáhkáv almatj aj hålåj "duällje" disi.
+# I believe one also says "duällje" for that
+1	Jáhkáv	jáhkket	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=1	0	root	_	_
+2	almatj	almatj	NOUN	N	Number=Sing|Case=Nom	4	nsubj	_	_
+3	aj	aj	ADV	Adv	_	4	advmod	_	_
+4	hålåj	hållåt	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	1	ccomp	_	_
+5	"	"	PUNCT	_	_	6	punct	_	SpaceAfter=No
+6	duällje	duällje	NOUN	N	Number=Sing|Case=Nom	4	orphan	_	SpaceAfter=No
+7	"	"	PUNCT	_	_	6	punct	_	_
+8	disi	dat	PRON	Pron	PronType=Dem|Number=Sing|Case=Ill	4	obl	_	SpaceAfter=No
+9	.	.	PUNCT	CLB	_	1	parataxis	_	_
+
+# sent_id = pit100404.311
+# text = Men dat, dat duällje lij sávtsa duällje.
+# text_en = but that skin was a sheep skin
+1	Men	men	CCONJ	CC	_	8	cc	_	_
+2	dat	dat	DET	Det	PronType=Art|Number=Sing|Case=Nom	4	reparandum	_	SpaceAfter=No
+3	,	,	PUNCT	CLB	_	2	punct	_	_
+4	dat	dat	DET	Det	PronType=Art|Number=Sing|Case=Nom	5	det	_	_
+5	duällje	duällje	NOUN	N	Number=Sing|Case=Nom	8	nsubj:cop	_	_
+6	lij	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	8	cop	_	_
+7	sávtsa	sávvtsa	NOUN	N	Number=Sing|Case=Gen	8	nmod:poss	_	_
+8	duällje	duällje	NOUN	N	Number=Sing|Case=Nom	0	root	_	SpaceAfter=No
+9	.	.	PUNCT	CLB	_	8	punct	_	_
+
+# sent_id = pit100404.312
+# text = Ja dä idniv stuor gábmagijt.
+# text_en = and then I had big shoes
+1	Ja	ja	CCONJ	CC	_	3	cc	_	_
+2	dä	dä	ADV	Adv	_	3	advmod	_	_
+3	idniv	adnet	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=1	0	root	_	_
+4	stuor	stuorra	ADJ	A	_	5	amod	_	_
+5	gábmagijt	gáma	NOUN	N	Number=Sing|Case=Acc	3	obj	_	SpaceAfter=No
+6	.	.	PUNCT	CLB	_	3	punct	_	_
+
+# sent_id = pit100404.315
+# text = Ja dä dan sinne dä tjåhkkåhiv dan tjielka nanne.
+# text_en = and it was in that I sat on the sled
+1	Ja	ja	CCONJ	CC	_	6	cc	_	_
+2	dä	dä	ADV	Adv	_	6	advmod	_	_
+3	dan	dat	PRON	Pron	PronType=Dem|Number=Sing|Case=Gen	6	obl	_	_
+4	sinne	sinne	ADP	Po	_	3	case	_	_
+5	dä	dä	ADV	Adv	_	6	advmod	_	_
+6	tjåhkkåhiv	tjåhkkåhit	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=1	0	root	_	_
+7	dan	dat	DET	Det	PronType=Art|Number=Sing|Case=Gen	8	det	_	_
+8	tjielka	tjällka	NOUN	N	Number=Sing|Case=Gen	6	obl	_	_
+9	nanne	nanne	ADP	Po	_	8	case	_	SpaceAfter=No
+10	.	.	PUNCT	CLB	_	6	punct	_	_
+
+# sent_id = pit100404.316
+# text = Iv mån diede, man mällgat, men kan ...
+# text_en = I don't know how far but maybe
+1	Iv	ij	AUX	V	Polarity=Neg|VerbForm=Fin|Tense=Pres|Number=Sing|Person=1	3	aux:neg	_	_
+2	mån	mån	PRON	Pron	PronType=Prs|Number=Sing|Person=1|Case=Nom	3	nsubj	_	_
+3	diede	diehtet	VERB	V	Connegative=Yes	0	root	_	SpaceAfter=No
+4	,	,	PUNCT	CLB	_	6	punct	_	_
+5	man	man	ADV	Adv	_	6	advmod	_	_
+6	mällgat	mällgat	ADJ	A	Number=Sing|Case=Nom	3	dep	_	SpaceAfter=No
+7	,	,	PUNCT	CLB	_	9	punct	_	_
+8	men	men	CCONJ	CC	_	9	cc	_	_
+9	kan	kano	ADV	Adv	_	3	advmod	_	SpaceAfter=No
+10	...	...	PUNCT	CLB	_	3	punct	_	_
+
+# sent_id = pit100404.317
+# text = Man mällgat lij, gu lij hiejman, iv mån diede, man iedna tijma dä.
+# text_en = how long it was when it was home, I don't know how many hours
+1	Man	man	ADV	Adv	_	2	mark	_	_
+2	mällgat	mällgat	ADJ	A	Number=Sing|Case=Nom	11	ccomp	_	_
+3	lij	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	2	_	_	_
+4	,	,	PUNCT	CLB	_	2	punct	_	_
+5	gu	gu	SCONJ	CS	_	6	mark	_	_
+6	lij	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	2	advcl	_	_
+7	hiejman	häjbma	NOUN	N	Number=Sing|Case=Ine	6	obl	_	SpaceAfter=No
+8	,	,	PUNCT	CLB	_	6	punct	_	_
+9	iv	ij	AUX	V	Polarity=Neg|VerbForm=Fin|Tense=Pres|Number=Sing|Person=1	11	aux:neg	_	_
+10	mån	mån	PRON	Pron	PronType=Prs|Number=Sing|Person=1|Case=Nom	11	nsubj	_	_
+11	diede	diehtet	VERB	V	Connegative=Yes	0	root	_	SpaceAfter=No
+12	,	,	PUNCT	CLB	_	15	punct	_	_
+13	man	man	ADV	Adv	_	14	advmod	_	_
+14	iedna	iednak	ADJ	A	_	15	amod	_	_
+15	tijma	tijbma	NOUN	N	Number=Sing|Case=Nom	11	orphan	_	_
+16	dä	dä	ADV	Adv	_	15	advmod	_	SpaceAfter=No
+17	.	.	PUNCT	CLB	_	11	punct	_	_
+
+# sent_id = pit100404.320
+# text = Eller Oskar dä vujij dajn skuhtterijn.
+# text_en = or Oskar drove the snowmobile
+1	Eller	eller	CCONJ	CC	_	4	cc	_	_
+2	Oskar	Oskar	NOUN	N	Number=Sing|Case=Nom	4	nsubj	_	_
+3	dä	dä	ADV	Adv	_	4	advmod	_	_
+4	vujij	vuodjet	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	0	root	_	_
+5	dajn	dat	DET	Det	PronType=Art|Number=Sing|Case=Ine	6	det	_	_
+6	skuhtterijn	skuhter	NOUN	N	Number=Sing|Case=Ine	4	obl	_	SpaceAfter=No
+7	.	.	PUNCT	CLB	_	4	punct	_	_
+
+# sent_id = pit100404.323
+# text = Dat lij dálven.
+# text_en = that was in the winter
+1	Dat	dat	PRON	Pron	PronType=Dem|Number=Sing|Case=Nom	2	nsubj	_	_
+2	lij	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	0	root	_	_
+3	dálven	dállve	NOUN	N	Number=Sing|Case=Ine	2	obl	_	SpaceAfter=No
+4	.	.	PUNCT	CLB	_	2	punct	_	_
+
+# sent_id = pit100404.324
+# text = Sida mån galgav hållåt, gu gävdniv ájten dajt gábmagijt.
+# text_en = you want me to talk about when I found these shoes in the shed
+1	Sida	sihtat	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=2	0	root	_	_
+2	mån	mån	PRON	Pron	PronType=Prs|Number=Sing|Person=1|Case=Nom	4	nsubj	_	_
+3	galgav	gallgat	AUX	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=1	4	aux	_	_
+4	hållåt	hållåt	VERB	V	VerbForm=Inf	1	ccomp	_	SpaceAfter=No
+5	,	,	PUNCT	CLB	_	7	punct	_	_
+6	gu	gu	SCONJ	CS	_	7	mark	_	_
+7	gävdniv	gávdnat	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=1	4	ccomp	_	_
+8	ájten	ájjte	NOUN	N	Number=Sing|Case=Ine	7	obl	_	_
+9	dajt	dat	DET	Det	PronType=Art|Number=Sing|Case=Acc	10	det	_	_
+10	gábmagijt	gáma	NOUN	N	Number=Sing|Case=Acc	7	obj	_	SpaceAfter=No
+11	.	.	PUNCT	CLB	_	1	punct	_	_
+
+# sent_id = pit100404.326
+# text = Gien gábmaga lä dá?
+# text_en = whose shoes are these
+1	Gien	gie	PRON	Pron	PronType=Int|Number=Sing|Case=Gen	2	nmod:poss	_	_
+2	gábmaga	gáma	NOUN	N	Number=Sing|Case=Nom	0	root	_	_
+3	lä	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Plur|Person=3	2	cop	_	_
+4	dá	dát	PRON	Pron	PronType=Dem|Number=Sing|Case=Nom	2	nsubj:cop	_	SpaceAfter=No
+5	?	?	PUNCT	CLB	_	2	punct	_	_
+
+# sent_id = pit100404.331
+# text = Da lä sabekgábmaga.
+# text_en = these are ski shoes
+1	Da	dat	PRON	Pron	PronType=Dem|Number=Sing|Case=Nom	3	nsubj:cop	_	_
+2	lä	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Plur|Person=3	3	cop	_	_
+3	sabekgábmaga	sabek#gáma	NOUN	N	Number=Sing|Case=Nom	0	root	_	SpaceAfter=No
+4	.	.	PUNCT	CLB	_	3	punct	_	_
+
+# sent_id = pit100404.332
+# text = Da lä muv iedne.
+# text_en = they are my mother's
+1	Da	dat	PRON	Pron	PronType=Dem|Number=Sing|Case=Nom	4	nsubj:cop	_	_
+2	lä	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Plur|Person=3	4	cop	_	_
+3	muv	mån	PRON	Pron	PronType=Prs|Poss=Yes|Number=Sing|Person=1|Case=Gen	4	nmod:poss	_	_
+4	iedne	äddne	NOUN	N	Number=Sing|Case=Gen	0	root	_	SpaceAfter=No
+5	.	.	PUNCT	CLB	_	4	punct	_	_
+
+# sent_id = pit100404.333
+# text = Ja ikktu Jåssjå vulgij ájte gugu ja ...
+# text_en = and yesterday Josh went to the shed
+1	Ja	ja	CCONJ	CC	_	4	cc	_	_
+2	ikktu	ikktu	ADV	Adv	_	4	advmod	_	_
+3	Jåssjå	Jåssjå	NOUN	N	Number=Sing|Case=Nom	4	nsubj	_	_
+4	vulgij	vuällget	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	0	root	_	_
+5	ájte	ájjte	NOUN	N	Number=Sing|Case=Gen	4	obl	_	_
+6	gugu	gugu	ADP	Po	_	5	case	_	_
+7	ja	ja	CCONJ	CC	_	4	cc	_	SpaceAfter=No
+8	...	...	PUNCT	CLB	_	4	punct	_	_
+
+# sent_id = pit100404.335
+# text = Väldij spádanav maŋen, jalá guäj- gåjjvom.
+# text_en = (he) took the shovel with him, or scooper
+1	Väldij	válldet	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	0	root	_	_
+2	spádanav	spádan	NOUN	N	Number=Sing|Case=Acc	1	obj	_	_
+3	maŋen	maŋen	ADV	Adv	_	1	advmod	_	SpaceAfter=No
+4	,	,	PUNCT	CLB	_	1	punct	_	_
+5	jalá	jalá	CCONJ	CC	_	7	cc	_	_
+6	guäj-	guäj-	X	_	_	7	reparandum	_	_
+7	gåjjvon	gåjjvon	NOUN	N	Number=Sing|Case=Nom	1	orphan	_	SpaceAfter=No
+8	.	.	PUNCT	CLB	_	1	punct	_	_
+
+# sent_id = pit100404.337
+# text = Gåk almatj hållá gåjvov?
+# text_en = how does one say... shovel
+1	Gåk	gukkte	ADV	Adv	_	3	advmod	_	_
+2	almatj	almatj	NOUN	N	Number=Sing|Case=Nom	3	nsubj	_	_
+3	hållá	hållåt	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=3	0	root	_	_
+4	gåjvov	gåjjvon	NOUN	N	Number=Sing|Case=Acc	3	obj	_	SpaceAfter=No
+5	?	?	PUNCT	CLB	_	3	punct	_	_
+
+# sent_id = pit100404.339
+# text = Ja dä sån gåjvoj dä muahttagav ukksa, uksa guoran.
+# text_en = and then he shoveled the snow next-to the door
+1	Ja	ja	CCONJ	CC	_	4	cc	_	_
+2	dä	dä	ADV	Adv	_	4	advmod	_	_
+3	sån	sån	PRON	Pron	PronType=Prs|Number=Sing|Person=3|Case=Nom	4	nsubj	_	_
+4	gåjvoj	gåjjvot	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	0	root	_	_
+5	dä	dä	ADV	Adv	_	4	advmod	_	_
+6	muahttagav	muohta	NOUN	N	Number=Sing|Case=Acc	4	obj	_	_
+7	uksa	ukksa	NOUN	N	Number=Sing|Case=Gen	9	reparandum	_	SpaceAfter=No
+8	,	,	PUNCT	CLB	_	7	punct	_	_
+9	uksa	ukksa	NOUN	N	Number=Sing|Case=Gen	4	obl	_	_
+10	guoran	guoran	ADP	Po	_	9	case	_	SpaceAfter=No
+11	.	.	PUNCT	CLB	_	4	punct	_	_
+
+# sent_id = pit100404.345
+# text = Så Jåssjå gåjvoj dä muahttagijt dasste så.
+# text_en = so Josh shoveld the snow(pl) from there
+1	Så	så	ADV	Adv	_	3	advmod	_	_
+2	Jåssjå	Jåssjå	NOUN	N	Number=Sing|Case=Nom	3	nsubj	_	_
+3	gåjvoj	gåjjvot	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	0	root	_	_
+4	dä	dä	ADV	Adv	_	3	advmod	_	_
+5	muahttagijt	muohta	NOUN	N	Number=Sing|Case=Acc	3	obj	_	_
+6	dasste	dat	PRON	Pron	PronType=Dem|Number=Sing|Case=Ela	3	obl	_	_
+7	så	så	ADV	Adv	_	3	advmod	_	SpaceAfter=No
+8	.	.	PUNCT	CLB	_	3	punct	_	_
+
+# sent_id = pit100404.347
+# text = Mån mähttiv rahpat uksav, ájte uksav, ja dä danne lidjin dá gábmaga.
+# text_en = I could open the door, the door of the shed, and there were these shoes
+1	Mån	mån	PRON	Pron	PronType=Prs|Number=Sing|Person=1|Case=Nom	3	nsubj	_	_
+2	mähttiv	máhttet	AUX	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=1	3	aux	_	_
+3	rahpat	rahpat	VERB	V	VerbForm=Inf	0	root	_	_
+4	uksav	ukksa	NOUN	N	Number=Sing|Case=Acc	3	obj	_	SpaceAfter=No
+5	,	,	PUNCT	CLB	_	7	punct	_	_
+6	ájte	ájjte	NOUN	N	Number=Sing|Case=Gen	7	nmod:poss	_	_
+7	uksav	ukksa	NOUN	N	Number=Sing|Case=Acc	4	appos	_	SpaceAfter=No
+8	,	,	PUNCT	CLB	_	11	punct	_	_
+9	ja	ja	CCONJ	CC	_	11	cc	_	_
+10	dä	dä	ADV	Adv	_	11	advmod	_	_
+11	danne	danne	ADV	Adv	_	3	conj	_	_
+12	lidjin	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=3	11	cop	_	_
+13	dá	dát	DET	Det	PronType=Art|Number=Sing|Case=Nom	14	det	_	_
+14	gábmaga	gáma	NOUN	N	Number=Sing|Case=Nom	11	nsubj:cop	_	SpaceAfter=No
+15	.	.	PUNCT	CLB	_	3	punct	_	_
+
+# sent_id = pit100404.350
+# text = Så dä lij, mån lev dajt vädtjam uddni dasste.
+# text_en = so then I got them from there today
+1	Så	så	ADV	Adv	_	3	advmod	_	_
+2	dä	dä	ADV	Adv	_	3	advmod	_	_
+3	lij	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	0	root	_	SpaceAfter=No
+4	,	,	PUNCT	CLB	_	8	punct	_	_
+5	mån	mån	PRON	Pron	PronType=Prs|Number=Sing|Person=1|Case=Nom	8	nsubj	_	_
+6	lev	lä	AUX	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=1	8	aux	_	_
+7	dajt	dat	PRON	Pron	PronType=Dem|Number=Sing|Case=Acc	8	obj	_	_
+8	vädtjam	vädtjat	VERB	V	Aspect=Perf|VerbForm=Part	3	parataxis	_	_
+9	uddni	uddni	ADV	Adv	_	8	advmod	_	_
+10	dasste	dat	PRON	Pron	PronType=Dem|Number=Sing|Case=Ela	8	obl	_	SpaceAfter=No
+11	.	.	PUNCT	CLB	_	3	punct	_	_
+
+# sent_id = pit100404.351
+# text = Men gu gillgiv gähttjat gábmagij sisa.
+# text_en = but when I was going to look in the shoes
+1	Men	men	CCONJ	CC	_	4	cc	_	_
+2	gu	gu	SCONJ	CS	_	4	mark	_	_
+3	gillgiv	gallgat	AUX	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=1	4	aux	_	_
+4	gähttjat	gähttjat	VERB	V	VerbForm=Inf	0	root	_	_
+5	gábmagij	gáma	NOUN	N	Number=Sing|Case=Gen	4	obl	_	_
+6	sisa	sisa	ADP	Po	_	5	case	_	SpaceAfter=No
+7	...	...	PUNCT	CLB	_	4	punct	_	_
+
+# sent_id = pit100404.352a
+# text = Ja dä lij snjierra danne.
+# text_en = and there was a mouse there
+1	Ja	ja	CCONJ	CC	_	5	cc	_	_
+2	dä	dä	ADV	Adv	_	5	advmod	_	_
+3	lij	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	5	cop	_	_
+4	snjierra	sjnjierra	NOUN	N	Number=Sing|Case=Nom	5	nsubj:cop	_	_
+5	danne	danne	ADV	Adv	_	0	root	_	SpaceAfter=No
+6	.	.	PUNCT	CLB	_	5	punct	_	_
+
+# sent_id = pit100404.352b
+# text = Jáhkáv skáfferijav lä adnám aktan, aktan gábmagin.
+# text_en = I believe it has had its pantry in one shoe
+1	Jáhkáv	jáhkket	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=1	0	root	_	_
+2	skáfferijav	skáfferidja	NOUN	N	Number=Sing|Case=Acc	4	obj	_	_
+3	lä	lä	AUX	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=3	4	aux	_	_
+4	adnám	adnet	VERB	V	Aspect=Perf|VerbForm=Part	1	ccomp	_	_
+5	aktan	akkta	NUM	Num	_	7	reparandum	_	SpaceAfter=No
+6	,	,	PUNCT	CLB	_	5	punct	_	_
+7	aktan	akkta	NUM	Num	_	8	conj	_	_
+8	gábmagin	gáma	NOUN	N	Number=Sing|Case=Ine	4	obl	_	SpaceAfter=No
+9	.	.	PUNCT	CLB	_	1	punct	_	_
+
+# sent_id = pit100404.353
+# text = Ja, ja danne vujdniv unna jåŋåtjav.
+# text_en = and there I saw a little lingonberry
+1	Ja	ja	CCONJ	CC	_	3	reparandum	_	SpaceAfter=No
+2	,	,	PUNCT	CLB	_	1	punct	_	_
+3	ja	ja	CCONJ	CC	_	5	cc	_	_
+4	danne	danne	ADV	Adv	_	5	advmod	_	_
+5	vujdniv	vuäjdnet	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=1	0	root	_	_
+6	unna	unne	ADJ	A	_	7	amod	_	_
+7	jåŋåtjav	jågŋå	NOUN	N	NOUN|N|Number=Sing|Case=Acc	5	obj	_	SpaceAfter=No
+8	.	.	PUNCT	CLB	_	5	punct	_	_
+
+# sent_id = pit100404.354
+# text = Jáhkáv skáfferijav lä danne adnám.
+# text_en = I believe (it?) had a pantry there
+1	Jáhkáv	jáhkket	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=1	0	root	_	_
+2	skáfferijav	skáfferidja	NOUN	N	Number=Sing|Case=Acc	5	obj	_	_
+3	lä	lä	AUX	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=3	5	aux	_	_
+4	danne	danne	ADV	Adv	_	5	advmod	_	_
+5	adnám	adnet	VERB	V	Aspect=Perf|VerbForm=Part	1	ccomp	_	SpaceAfter=No
+6	.	.	PUNCT	CLB	_	1	punct	_	_
+
+# sent_id = pit100404.355
+# text = Ja dä bajjkám iedne gábmagij sisa.
+# text_en = and it had pooped in mom's shoe
+1	Ja	ja	CCONJ	CC	_	3	cc	_	_
+2	dä	dä	ADV	Adv	_	3	advmod	_	_
+3	bajjkám	bajjket	VERB	V	Aspect=Perf|VerbForm=Part	0	root	_	_
+4	iedne	äddne	NOUN	N	Number=Sing|Case=Gen	5	nmod:poss	_	_
+5	gábmagij	gáma	NOUN	N	Number=Sing|Case=Gen	3	advmod	_	_
+6	sisa	sisa	ADP	Po	_	5	case	_	SpaceAfter=No
+7	.	.	PUNCT	CLB	_	3	punct	_	_
+
+# sent_id = pit100404.356
+# text = Ja nubbe gábmaga sisa aj binnátjijt.
+# text_en = and a little bit in the other shoe too
+1	Ja	ja	CCONJ	CC	_	6	cc	_	_
+2	nubbe	mubbe	ADJ	A	NumType=Ord	3	amod	_	_
+3	gábmaga	gáma	NOUN	N	Number=Sing|Case=Gen	6	obl	_	_
+4	sisa	sisa	ADP	Po	_	3	case	_	_
+5	aj	aj	ADV	Adv	_	6	advmod	_	_
+6	binnátjijt	binnátj	NOUN	N	Number=Sing|Case=Acc	0	root	_	SpaceAfter=No
+7	.	.	PUNCT	CLB	_	6	punct	_	_
+
+# sent_id = pit100404.357
+# text = Så mån verrtijiv dä dajt ráj... rájdnodit.
+# text_en = so I had to clean them
+1	Så	så	ADV	Adv	_	7	advmod	_	_
+2	mån	mån	PRON	Pron	PronType=Prs|Number=Sing|Person=1|Case=Nom	7	nsubj	_	_
+3	verrtijiv	verrtit	AUX	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=1	7	aux	_	_
+4	dä	dä	ADV	Adv	_	7	advmod	_	_
+5	dajt	dat	PRON	Pron	PronType=Dem|Number=Sing|Case=Acc	7	obj	_	_
+6	ráj-	ráj-	X	_	_	7	reparandum	_	_
+7	rájdnodit	rájdnodit	VERB	V	VerbForm=Inf	0	root	_	SpaceAfter=No
+8	.	.	PUNCT	CLB	_	7	punct	_	_
+
+# sent_id = pit100404.358
+# text = Så dä välldiv såpa-tjátsev ja dä sagerdiv gábmagijt.
+# text_en = and so I got some soap and water and then I dried the shoes
+1	Så	så	ADV	Adv	_	3	advmod	_	_
+2	dä	dä	ADV	Adv	_	3	advmod	_	_
+3	välldiv	válldet	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=1	0	root	_	_
+4	såpa-tjátsev	såpa-tjátsev	NOUN	N	Number=Sing|Case=Acc	3	obj	_	SpaceAfter=No
+5	,	,	PUNCT	CLB	_	8	punct	_	_
+6	ja	ja	CCONJ	CC	_	8	cc	_	_
+7	dä	dä	ADV	Adv	_	8	advmod	_	_
+8	sagerdiv	sagerdit	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=1	3	conj	_	_
+9	gábmagijt	gáma	NOUN	N	Number=Sing|Case=Acc	8	obj	_	SpaceAfter=No
+10	.	.	PUNCT	CLB	_	3	punct	_	_
+
+# sent_id = pit100404.359
+# text = Ja dä dale anáv dajt julgij nan.
+# text_en = and now I have them on my feet
+1	Ja	ja	CCONJ	CC	_	4	cc	_	_
+2	dä	dä	ADV	Adv	_	4	advmod	_	_
+3	dale	dale	ADV	Adv	_	4	advmod	_	_
+4	anáv	adnet	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=1	0	root	_	_
+5	dajt	dat	PRON	Pron	PronType=Dem|Number=Sing|Case=Acc	4	obj	_	_
+6	julgij	juällge	NOUN	N	Number=Sing|Case=Gen	4	obl	_	_
+7	nan	nanne	ADP	Po	_	6	case	_	SpaceAfter=No
+8	.	.	PUNCT	CLB	_	4	punct	_	_
+
+# sent_id = pit100404.360
+# text = Så dä måj mehttijmin, måj Jåsjåjn mehttijmin dä tjuajjgat dán Stuornjárga nalá.
+# text_en = so then we could, Josh and I could ski here, up on Stuornjárrga
+1	Så	så	ADV	Adv	_	4	advmod	_	_
+2	dä	dä	ADV	Adv	_	4	advmod	_	_
+3	måj	mån	PRON	Pron	PronType=Prs|Number=Dual|Person=1|Case=Nom	4	nsubj	_	_
+4	mähttijmin	máhttet	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Dual|Person=1	0	root	_	SpaceAfter=No
+5	,	,	PUNCT	CLB	_	10	punct	_	_
+6	måj	mån	PRON	Pron	PronType=Prs|Number=Dual|Person=1|Case=Nom	10	nsubj	_	_
+7	Jåsjåjn	Jåssjå	NOUN	N	Number=Sing|Case=Com	6	nmod	_	_
+8	mähttijmin	máhttet	AUX	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Dual|Person=1	10	aux	_	_
+9	dä	dä	ADV	Adv	_	10	advmod	_	_
+10	tjuajjgat	tjuajjgat	VERB	V	VerbForm=Inf	4	parataxis	_	_
+11	dán	dát	PRON	Pron	PronType=Dem|Number=Sing|Case=Gen	12	nmod:poss	_	_
+12	Stuornjárga	Stuornjárrga	NOUN	N	Number=Sing|Case=Gen	10	obl	_	_
+13	nalá	nala	ADP	Po	_	12	case	_	SpaceAfter=No
+14	.	.	PUNCT	CLB	_	4	punct	_	_
+
+# sent_id = pit100404.363
+# text = Nå, mav gillgiv del vit ságastit?
+# text_en = yes what else shall we talk about
+1	Nå	nå	INTJ	Interj	_	7	discourse	_	SpaceAfter=No
+2	,	,	PUNCT	CLB	_	1	punct	_	_
+3	mav	mij	PRON	Pron	PronType=Int|Number=Sing|Case=Acc	7	obj	_	_
+4	gillgiv	gallgat	AUX	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=1	7	aux	_	_
+5	del	del	ADV	Adv	_	7	advmod	_	_
+6	vit	vide	ADV	Adv	_	7	advmod	_	_
+7	ságastit	ságastit	VERB	V	VerbForm=Inf	0	root	_	SpaceAfter=No
+8	?	?	PUNCT	CLB	_	7	punct	_	_
+
+# sent_id = pit100404.365
+# text = Iv mån åbbå diede.
+# text_en = I have no idea
+1	Iv	ij	AUX	V	Polarity=Neg|VerbForm=Fin|Tense=Pres|Number=Sing|Person=1	4	aux:neg	_	_
+2	mån	mån	PRON	Pron	PronType=Prs|Number=Sing|Person=1|Case=Nom	4	nsubj	_	_
+3	åbbå	åbbå	ADV	Adv	_	4	advmod	_	_
+4	diede	diehtet	VERB	V	Connegative=Yes	0	root	_	SpaceAfter=No
+5	.	.	PUNCT	CLB	_	4	punct	_	_
+
+# sent_id = pit100404.369
+# text = Tuhttjij ij lij, tuhttjij lij, tuhttjiji att lij buorak?
+# text_en = don't you think, did you think so, that that was good?
+1	Tuhttjij	tuhttjit	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	0	root	_	_
+2	ij	ij	AUX	V	Polarity=Neg|VerbForm=Fin|Tense=Pres|Number=Sing|Person=3	1	aux:neg	_	_
+3	lij	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	1	ccomp	_	SpaceAfter=No
+4	,	,	PUNCT	CLB	_	3	punct	_	_
+5	tuhttjij	tuhttjit	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	1	parataxis	_	_
+6	lij	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	5	ccomp	_	SpaceAfter=No
+7	,	,	PUNCT	CLB	_	6	punct	_	_
+8	tuhttjiji	tuhttjit	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=2	1	parataxis	_	_
+9	att	ahte	SCONJ	CS	_	11	mark	_	_
+10	lij	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	11	cop	_	_
+11	buorak	buorak	ADJ	A	Number=Sing|Case=Nom	8	ccomp	_	SpaceAfter=No
+12	?	?	PUNCT	CLB	_	1	punct	_	_
+
+# sent_id = pit100404.375
+# text = Gu mån dunje gehtudiv Alesgietje birra ja värij birra ja muv viessomájge birra ja dale nåvte?
+# text_en = when I told you about Västerfjäll and about mountains and about my life and such things
+1	Gu	gu	SCONJ	CS	_	4	mark	_	_
+2	mån	mån	PRON	Pron	PronType=Prs|Number=Sing|Person=1|Case=Nom	4	nsubj	_	_
+3	dunje	dån	PRON	Pron	PronType=Prs|Number=Sing|Person=2|Case=Ill	4	obl	_	_
+4	gehtudiv	gehtudit	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=1	0	root	_	_
+5	Alesgietje	Alesgiehtje	NOUN	N	Number=Sing|Case=Gen	4	obl	_	_
+6	birra	birra	ADP	Po	_	5	case	_	_
+7	ja	ja	CCONJ	CC	_	8	cc	_	_
+8	värij	várre	NOUN	N	Number=Sing|Case=Gen	5	conj	_	_
+9	birra	birra	ADP	Po	_	8	case	_	_
+10	ja	ja	CCONJ	CC	_	11	cc	_	_
+11	muv	mån	PRON	Pron	PronType=Prs|Number=Sing|Person=1|Case=Gen	12	conj	_	_
+12	viessomájge	viessomájjge	NOUN	N	Number=Sing|Case=Gen	5	obl	_	_
+13	birra	birra	ADP	Po	_	12	case	_	_
+14	ja	ja	CCONJ	CC	_	15	cc	_	_
+15	dale	dale	ADV	Adv	_	5	advmod	_	_
+16	nåvte	navte	ADV	Adv	_	5	advmod	_	SpaceAfter=No
+17	?	?	PUNCT	CLB	_	4	punct	_	_
+
+# sent_id = pit100404.381
+# text = Nå gillgin del häjjtet.
+# text_en = well we should stop then
+1	Nå	nå	INTJ	Interj	_	5	discourse	_	SpaceAfter=No
+2	,	,	PUNCT	CLB	_	1	punct	_	_
+3	gillgin	gallgat	AUX	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Dual|Person=1	5	aux	_	_
+4	del	del	ADV	Adv	_	5	advmod	_	_
+5	häjjtet	häjjtet	VERB	V	VerbForm=Inf	0	root	_	SpaceAfter=No
+6	.	.	PUNCT	CLB	_	5	punct	_	_
+
+# sent_id = sje20150329b.008
+# text = Mav sida diehtet dä?
+# text_en = what do you want to know?
+1	Mav	mij	PRON	Pron	PronType=Int|Number=Sing|Case=Acc	2	obj	_	_
+2	sida	sihtat	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=2	0	root	_	_
+3	diehtet	diehtet	VERB	V	VerbForm=Inf	2	xcomp	_	_
+4	dä	dä	ADV	Adv	_	3	advmod	_	SpaceAfter=No
+5	?	?	PUNCT	CLB	_	2	punct	_	_
+
+# sent_id = sje20150329b.013/015
+# text = Sida diehtet guohtoma birra eller dálve guohtoma birra.
+# text_en = you want to know about the grazing situation or about the winter grazing situation
+1	Sida	sihtat	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=2	0	root	_	_
+2	diehtet	diehtet	VERB	V	VerbForm=Inf	1	xcomp	_	_
+3	guohtoma	guohtom	NOUN	N	Number=Sing|Case=Gen	2	advmod	_	_
+4	birra	birra	ADP	Po	_	3	case	_	_
+5	eller	eller	CCONJ	CC	_	7	cc	_	_
+6	dálve	dállve	NOUN	N	Number=Sing|Case=Gen	7	nmod:poss	_	_
+7	guohtoma	guohtom	NOUN	N	Number=Sing|Case=Gen	3	conj	_	_
+8	birra	birra	ADP	Po	_	7	case	_	SpaceAfter=No
+9	.	.	PUNCT	CLB	_	1	punct	_	_
+
+# sent_id = sje20150329b.018/019
+# text = Mån pruvvkuv tjállet, eller mån lev tjállám máŋga jage girje sisa.
+# text_en = I usually write or I have been writing things in books for many years
+1	Mån	mån	PRON	Pron	PronType=Prs|Number=Sing|Person=1|Case=Nom	3	nsubj	_	_
+2	pruvvkuv	pruvvkut	AUX	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=1	3	aux	_	_
+3	tjállet	tjállet	VERB	V	VerbForm=Inf	0	root	_	SpaceAfter=No
+4	,	,	PUNCT	CLB	_	8	punct	_	_
+5	eller	eller	CCONJ	CC	_	8	cc	_	_
+6	mån	mån	PRON	Pron	PronType=Prs|Number=Sing|Person=1|Case=Nom	8	nsubj	_	_
+7	lev	lä	AUX	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=1	8	aux	_	_
+8	tjállám	tjállet	VERB	V	Aspect=Perf|VerbForm=Part	3	parataxis	_	_
+9	máŋga	máŋga	ADJ	A	_	10	amod	_	_
+10	jage	jahke	NOUN	N	Number=Sing|Case=Nom	8	obl	_	_
+11	girje	girrje	NOUN	N	Number=Sing|Case=Gen	8	obl	_	_
+12	sisa	sisa	ADP	Po	_	11	case	_	SpaceAfter=No
+13	.	.	PUNCT	CLB	_	3	punct	_	_
+
+# sent_id = sje20150329b.025/026
+# text = Jus galga guohtoma birra ságastit, dä verrti dálke birra aj ság-, ságastit.
+# text_en = if you want to talk about the grazing situation then you have to talk about the weather, too
+1	Jus	jus	SCONJ	CS	_	5	mark	_	_
+2	galga	gallgat	AUX	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=2	5	aux	_	_
+3	guohtoma	guohtom	NOUN	N	Number=Sing|Case=Gen	5	obl	_	_
+4	birra	birra	ADP	Po	_	3	case	_	_
+5	ságastit	ságastit	VERB	V	VerbForm=Inf	14	advcl	_	SpaceAfter=No
+6	,	,	PUNCT	CLB	_	5	punct	_	_
+7	dä	dä	ADV	Adv	_	14	advmod	_	_
+8	verrti	verrtit	AUX	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=2	14	aux	_	_
+9	dálke	dállke	NOUN	N	Number=Sing|Case=Gen	14	obl	_	_
+10	birra	birra	ADP	Po	_	9	case	_	_
+11	aj	aj	ADV	Adv	_	14	advmod	_	_
+12	ság-	ság-	X	_	_	14	reparandum	_	SpaceAfter=No
+13	,	,	PUNCT	CLB	_	12	punct	_	_
+14	ságastit	ságastit	VERB	V	VerbForm=Inf	0	root	_	SpaceAfter=No
+15	.	.	PUNCT	CLB	_	14	punct	_	_
+
+# sent_id = sje20150329b.029/030
+# text = Ju-, jus lä bivval ja huj rássjodam, ja vaj jus lä gåjkes ja muohta.
+# text_en = if it is warm and has rained a lot or if it's dry with snow
+1	Ju-	ju-	SCONJ	CS	_	3	mark	_	SpaceAfter=No
+2	,	,	PUNCT	CLB	_	1	punct	_	_
+3	jus	jus	SCONJ	CS	_	5	mark	_	_
+4	lä	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=3	5	cop	_	_
+5	bivval	bivval	ADJ	A	Number=Sing|Case=Nom	0	root	_	_
+6	ja	ja	CCONJ	CC	_	8	cc	_	_
+7	huj	huj	ADV	Adv	_	8	advmod	_	_
+8	rássjodam	rássjodit	VERB	V	Aspect=Perf|VerbForm=Part	5	parataxis	_	SpaceAfter=No
+9	,	,	PUNCT	CLB	_	14	punct	_	_
+10	ja	ja	CCONJ	CC	_	14	cc	_	_
+11	vaj	vaj	CCONJ	CC	_	14	cc	_	_
+12	jus	jus	SCONJ	CS	_	14	mark	_	_
+13	lä	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=3	14	cop	_	_
+14	gåjkes	gåjkes	ADJ	A	Number=Sing|Case=Nom	5	advcl	_	_
+15	ja	ja	CCONJ	CC	_	16	cc	_	_
+16	muohta	muohta	NOUN	N	Number=Sing|Case=Nom	14	conj	_	SpaceAfter=No
+17	.	.	PUNCT	CLB	_	5	punct	_	_
+
+# sent_id = sje20150329b.034
+# text = Dä jus galga dav jagev gähttjat, dat, dat lä ragatmánon älgij.
+# text_en = if you look at this year, then it started way back in October
+1	Dä	dä	ADV	Adv	_	2	advmod	_	_
+2	jus	jus	SCONJ	CS	_	6	mark	_	_
+3	galga	gallgat	AUX	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=2	6	aux	_	_
+4	dav	dat	DET	Det	PronType=Art|Number=Sing|Case=Acc	5	det	_	_
+5	jagev	jahke	NOUN	N	Number=Sing|Case=Acc	6	obj	_	_
+6	gähttjat	gähttjat	VERB	V	VerbForm=Inf	12	advcl	_	SpaceAfter=No
+7	,	,	PUNCT	CLB	_	8	punct	_	_
+8	dat	dat	PRON	Pron	PronType=Dem|Number=Sing|Case=Nom	10	reparandum	_	SpaceAfter=No
+9	,	,	PUNCT	CLB	_	8	punct	_	_
+10	dat	dat	PRON	Pron	PronType=Dem|Number=Sing|Case=Nom	12	nsubj	_	_
+11	lä	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=3	12	cop	_	_
+12	ragatmánon	ragatmánno	NOUN	N	Number=Sing|Case=Ine	0	root	_	_
+13	älgij	állget	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	12	csubj	_	SpaceAfter=No
+14	.	.	PUNCT	CLB	_	12	punct	_	_
+
+# sent_id = sje20150329b.035
+# text = Årrot sláhte ja rássjo ja daggára.
+# text_en = there was wet snow and rain and stuff
+1	Årrot	lä	VERB	V	VerbForm=Inf	0	root	_	_
+2	sláhte	sláhte	NOUN	N	Number=Sing|Case=Nom	1	nsubj	_	_
+3	ja	ja	CCONJ	CC	_	4	cc	_	_
+4	rássjo	rássjo	NOUN	N	Number=Sing|Case=Nom	2	conj	_	_
+5	ja	ja	CCONJ	CC	_	6	cc	_	_
+6	daggára	daggár	PRON	Pron	PronType=Ind|Number=Sing|Case=Nom	2	conj	_	SpaceAfter=No
+7	.	.	PUNCT	CLB	_	1	punct	_	_
+
+# sent_id = sje20150329b.036
+# text = Nievres dálke, jus galga guohtoma nala gähttjat.
+# text_en = bad weather if you're looking at the grazing conditions
+1	Nievres	nävvre	ADJ	A	_	2	amod	_	_
+2	dálke	dállke	NOUN	N	Number=Sing|Case=Nom	0	root	_	SpaceAfter=No
+3	,	,	PUNCT	CLB	_	8	punct	_	_
+4	jus	jus	SCONJ	CS	_	8	mark	_	_
+5	galga	gallgat	AUX	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=2	8	aux	_	_
+6	guohtoma	guohtom	NOUN	N	Number=Sing|Case=Gen	8	obl	_	_
+7	nala	nala	ADP	Po	_	6	case	_	_
+8	gähttjat	gähttjat	VERB	V	VerbForm=Inf	2	parataxis	_	SpaceAfter=No
+9	.	.	PUNCT	CLB	_	8	punct	_	_
+
+# sent_id = sje20150329b.037
+# text = Ja dä älgij galbmet.
+# text_en = and then it started to freeze
+1	Ja	ja	CCONJ	CC	_	3	cc	_	_
+2	dä	dä	ADV	Adv	_	3	advmod	_	_
+3	älgij	állget	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	0	root	_	_
+4	galbmet	galbmet	VERB	V	VerbForm=Inf	3	xcomp	_	SpaceAfter=No
+5	.	.	PUNCT	CLB	_	3	punct	_	_
+
+# sent_id = sje20150329b.045
+# text = Tjuhkkijmin, ja válldám årjátjbielest viegast jåhtám nuortas.
+# text_en = we were busy rounding up the reindeer, taking them from south of the road, moving them north
+1	Tjuhkkijmin	tjuhkkit	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Dual|Person=1	0	root	_	SpaceAfter=No
+2	,	,	PUNCT	CLB	_	4	punct	_	_
+3	ja	ja	CCONJ	CC	_	4	cc	_	_
+4	válldám	válldet	VERB	V	Aspect=Perf|VerbForm=Part	1	parataxis	_	_
+5	årjátjbielest	årjátjbielle	NOUN	N	Number=Sing|Case=Ela	4	obl	_	_
+6	viegast	viega	NOUN	N	Number=Sing|Case=Ela	4	obl	_	_
+7	jåhtám	jåhtet	VERB	V	Aspect=Perf|VerbForm=Part	4	parataxis	_	_
+8	nuortas	nuortas	ADV	Adv	_	7	advmod	_	SpaceAfter=No
+9	.	.	PUNCT	CLB	_	1	punct	_	_
+
+# sent_id = sje20150329b.046/047
+# text = Muhtemav lijme Vilstuganin gierdastam ja vuabbdám muhtemav, vuabbdám mesijt ja gáskegijt ja daggarijt.
+# text_en = we had some of them in the corral next to Vilstugan and had sold some, had sold calves and bulls and such
+1	Muhtemav	muhtem	PRON	Pron	PronType=Ind|Number=Sing|Case=Acc	4	obj	_	_
+2	lijme	lä	AUX	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=1	4	aux	_	_
+3	Vilstuganin	Vilstugan	PROPN	Prop	Number=Sing|Case=Ine	4	obl	_	_
+4	gierdastam	gierdastit	VERB	V	Aspect=Perf|VerbForm=Part	0	root	_	_
+5	ja	ja	CCONJ	CC	_	6	cc	_	_
+6	vuabbdám	vuäbbdet	VERB	V	Aspect=Perf|VerbForm=Part	4	conj	_	_
+7	muhtemav	muhtem	PRON	Pron	PronType=Ind|Number=Sing|Case=Acc	6	obj	_	SpaceAfter=No
+8	,	,	PUNCT	CLB	_	9	punct	_	_
+9	vuabbdám	vuäbbdet	VERB	V	Aspect=Perf|VerbForm=Part	4	parataxis	_	_
+10	mesijt	miesse	NOUN	N	Number=Sing|Case=Acc	9	obj	_	_
+11	ja	ja	CCONJ	CC	_	12	cc	_	_
+12	gáskegijt	gáskek	NOUN	N	Number=Sing|Case=Acc	10	conj	_	_
+13	ja	ja	CCONJ	CC	_	14	cc	_	_
+14	daggárijt	daggár	PRON	Pron	PronType=Ind|Number=Sing|Case=Acc	10	conj	_	SpaceAfter=No
+15	.	.	PUNCT	CLB	_	4	punct	_	_
+
+# sent_id = sje20150329b.048
+# text = Ja dä lij-, lijmen nuortas jåhtemin.
+# text_en = and then we moved north
+1	Ja	ja	CCONJ	CC	_	3	cc	_	_
+2	dä	dä	ADV	Adv	_	3	advmod	_	_
+3	lij-	lij-	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Dual|Person=1	0	root	_	SpaceAfter=No
+4	,	,	PUNCT	CLB	_	7	punct	_	_
+5	lijmen	lä	AUX	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Dual|Person=1	7	aux	_	_
+6	nuortas	nuortas	ADV	Adv	_	7	advmod	_	_
+7	jåhtemin	jåhtet	VERB	V	VerbForm=Ger	3	parataxis	_	SpaceAfter=No
+8	.	.	PUNCT	CLB	_	3	punct	_	_
+
+# sent_id = sje20150329b.049
+# text = Dalloj lij binná muohta.
+# text_en = at that point there was little snow
+1	Dalloj	dalloj	ADV	Adv	_	0	root	_	_
+2	lij	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	1	cop	_	_
+3	binná	binná	ADJ	A	_	4	amod	_	_
+4	muohta	muohta	NOUN	N	Number=Sing|Case=Nom	1	nsubj:cop	_	SpaceAfter=No
+5	.	.	PUNCT	CLB	_	1	punct	_	_
+
+# sent_id = sje20150329b.050
+# text = Dalloj ij lä nåv nievres guohtom, ij gujt váren.
+# text_en = the grazing conditions weren't that bad, at least not in the mountains
+1	Dalloj	dalloj	ADV	Adv	_	0	root	_	_
+2	ij	ij	AUX	V	Polarity=Neg|VerbForm=Fin|Tense=Pres|Number=Sing|Person=3	1	aux:neg	_	_
+3	lä	lä	VERB	V	Connegative=Yes	1	cop	_	_
+4	nåv	nav	ADV	Adv	_	5	advmod	_	_
+5	nievres	nävvre	ADJ	A	_	6	amod	_	_
+6	guohtom	guohtom	NOUN	N	Number=Sing|Case=Nom	1	nsubj:cop	_	SpaceAfter=No
+7	,	,	PUNCT	CLB	_	8	punct	_	_
+8	ij	ij	VERB	V	Polarity=Neg|VerbForm=Fin|Tense=Pres|Number=Sing|Person=3	1	parataxis	_	_
+9	gujt	gujt	ADV	Adv	_	10	advmod	_	_
+10	váren	várre	NOUN	N	Number=Sing|Case=Ine	8	obl	_	SpaceAfter=No
+11	.	.	PUNCT	CLB	_	1	punct	_	_
+
+# sent_id = sje20150329b.051
+# text = Dä váren, dä lij tjåskep urru-, tjåskes urrum, ja ...
+# text_en = in the mountains it had been colder, cold, and
+1	Dä	dä	ADV	Adv	_	9	advmod	_	_
+2	váren	várre	NOUN	N	Number=Sing|Case=Ine	9	obl	_	SpaceAfter=No
+3	,	,	PUNCT	CLB	_	2	punct	_	_
+4	dä	dä	ADV	Adv	_	9	advmod	_	_
+5	lij	lä	AUX	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	9	aux	_	_
+6	tjåskep	tjåskep	X	_	_	9	dep	_	_
+7	urru-	urru-	X	_	_	10	reparandum	_	SpaceAfter=No
+8	,	,	PUNCT	CLB	_	7	punct	_	_
+9	tjåskes	tjåskes	ADJ	A	Number=Sing|Case=Nom	0	root	_	_
+10	urrum	lä	VERB	V	Aspect=Perf|VerbForm=Part	9	cop	_	SpaceAfter=No
+11	,	,	PUNCT	CLB	_	9	punct	_	_
+12	ja	ja	CCONJ	CC	_	9	cc	_	SpaceAfter=No
+13	...	...	PUNCT	CLB	_	9	punct	_	_
+
+# sent_id = sje20150329b.052/053
+# text = Lij ujtu gåjjke muaht-, gåjjke muohta dalloj, så att manaj gujt huj buoragijt jåhtet lukksa dajn ielojn.
+# text_en = and of course the snow was dry at that point, so that it went really quite well moving with the reindeer herd east
+1	Lij	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	7	cop	_	_
+2	ujtu	ujtu	ADV	Adv	_	7	advmod	_	_
+3	gåjjke	gåjkes	ADJ	A	_	4	amod	_	_
+4	muaht-	muaht-	X	_	_	6	reparandum	_	_
+5	gåjjke	gåjkes	ADJ	A	_	6	amod	_	_
+6	muahta	muohta	NOUN	N	Number=Sing|Case=Nom	7	nsubj:cop	_	_
+7	dalloj	dalloj	ADV	Adv	_	0	root	_	SpaceAfter=No
+8	,	,	PUNCT	CLB	_	11	punct	_	_
+9	så	så	ADV	Adv	_	10	advmod	_	_
+10	att	ahte	SCONJ	CS	_	11	mark	_	_
+11	manaj	mannat	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	7	advcl	_	_
+12	gujt	gujt	ADV	Adv	_	14	advmod	_	_
+13	huj	huj	ADV	Adv	_	14	advmod	_	_
+14	buoragijt	buoragijt	ADV	Adv	_	11	advmod	_	_
+15	jåhtet	jåhtet	VERB	V	VerbForm=Inf	11	xcomp	_	_
+16	lukksa	lukksa	ADV	Adv	_	15	advmod	_	_
+17	dajn	dat	DET	Det	PronType=Art|Number=Sing|Case=Ine	18	det	_	_
+18	ielojn	iello	NOUN	N	Number=Sing|Case=Ine	15	obl	_	SpaceAfter=No
+19	.	.	PUNCT	CLB	_	7	punct	_	_
+
+# sent_id = sje20150329b.054
+# text = Muhto dä mån lev tjállám dále att dat lä bivval urrum vuällen sieva gádde vuässte eller dállveiednamijt.
+# text_en = but then I wrote here that it had been warm down toward the sea shore, or in our winter grazing lands
+1	Muhto	men	CCONJ	CC	_	5	cc	_	_
+2	dä	dä	ADV	Adv	_	5	advmod	_	_
+3	mån	mån	PRON	Pron	PronType=Prs|Number=Sing|Person=1|Case=Nom	5	nsubj	_	_
+4	lev	lä	AUX	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=1	5	aux	_	_
+5	tjállám	tjállet	VERB	V	Aspect=Perf|VerbForm=Part	0	root	_	_
+6	dále	dále	ADV	Adv	_	5	advmod	_	_
+7	att	ahte	SCONJ	CS	_	10	mark	_	_
+8	dat	dat	PRON	Pron	PronType=Dem|Number=Sing|Case=Nom	10	nsubj:cop	_	_
+9	lä	lä	AUX	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=3	10	aux	_	_
+10	bivval	bivval	ADJ	A	Number=Sing|Case=Nom	5	parataxis	_	_
+11	urrum	lä	VERB	V	Aspect=Perf|VerbForm=Part	10	cop	_	_
+12	vuällen	vuällen	ADV	Adv	_	10	advmod	_	_
+13	sieva	sievva	NOUN	N	Number=Sing|Case=Gen	14	nmod:poss	_	_
+14	gádde	gádde	NOUN	N	Number=Sing|Case=Gen	10	obl	_	_
+15	vuässte	vuässte	ADP	Po	_	14	case	_	_
+16	eller	eller	CCONJ	CC	_	17	cc	_	_
+17	dállveiednamijt	dállveiednam	NOUN	N	Number=Sing|Case=Acc	14	conj	_	SpaceAfter=No
+18	.	.	PUNCT	CLB	_	5	punct	_	_
+
+# sent_id = sje20150329b.056/057
+# text = Men dä lij gu buhtin jåvlå, jåvlå vuässte, dä älgij nevvrut huj spájjta.
+# text_en = but then as we got closer to Christmas, then it started to get bad really fast
+1	Men	men	CCONJ	CC	_	3	cc	_	_
+2	dä	dä	ADV	Adv	_	3	advmod	_	_
+3	lij	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	0	root	_	_
+4	gu	gu	SCONJ	CS	_	5	mark	_	_
+5	buhtin	båhtet	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Dual|Person=1	3	advcl	_	_
+6	jåvlå	jåvvlå	NOUN	N	Number=Sing|Case=Gen	8	reparandum	_	SpaceAfter=No
+7	,	,	PUNCT	CLB	_	6	punct	_	_
+8	jåvlå	jåvvlå	NOUN	N	Number=Sing|Case=Gen	5	obl	_	_
+9	vuässte	vuässte	ADP	Po	_	8	case	_	SpaceAfter=No
+10	,	,	PUNCT	CLB	_	12	punct	_	_
+11	dä	dä	ADV	Adv	_	12	advmod	_	_
+12	älgij	állget	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	3	parataxis	_	_
+13	nevvrut	nevvrut	VERB	V	VerbForm=Inf	12	xcomp	_	_
+14	huj	huj	ADV	Adv	_	15	advmod	_	_
+15	spájjta	spájjta	ADV	Adv	_	13	advmod	_	SpaceAfter=No
+16	.	.	PUNCT	CLB	_	3	punct	_	_
+
+# sent_id = sje20150329b.059
+# text = Ja dä huj garra bivval budij.
+# text_en = and then a strong warming phase came
+1	Ja	ja	CCONJ	CC	_	6	cc	_	_
+2	dä	dä	ADV	Adv	_	6	advmod	_	_
+3	huj	huj	ADV	Adv	_	4	advmod	_	_
+4	garra	garras	ADJ	A	_	5	dep	_	_
+5	bivval	bivval	ADJ	A	Number=Sing|Case=Nom	6	dep	_	_
+6	budij	båhtet	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	0	root	_	SpaceAfter=No
+7	.	.	PUNCT	CLB	_	6	punct	_	_
+
+# sent_id = sje20150329b.063/064
+# text = Dalloj suddaj nåv vastet, ja luvaj dav mua-, muahttagav.
+# text_en = at that point everything melted so horribly, and it made it, the snow, wet
+1	Dalloj	dalloj	ADV	Adv	_	2	advmod	_	_
+2	suddaj	suddat	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	0	root	_	_
+3	nåv	nav	ADV	Adv	_	4	advmod	_	_
+4	vastet	vastet	ADV	Adv	_	2	advmod	_	SpaceAfter=No
+5	,	,	PUNCT	CLB	_	7	punct	_	_
+6	ja	ja	CCONJ	CC	_	7	cc	_	_
+7	luvaj	luvvat	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	2	conj	_	_
+8	dav	dat	DET	Det	PronType=Art|Number=Sing|Case=Acc	11	det	_	_
+9	mua-	mua-	X	_	_	11	reparandum	_	SpaceAfter=No
+10	,	,	PUNCT	CLB	_	9	punct	_	_
+11	muahttagav	muohta	NOUN	N	Number=Sing|Case=Acc	7	obj	_	SpaceAfter=No
+12	.	.	PUNCT	CLB	_	2	punct	_	_
+
+# sent_id = sje20150329b.065
+# text = Ja dä maŋŋel gilmij.
+# text_en = and then it froze
+1	Ja	ja	CCONJ	CC	_	4	cc	_	_
+2	dä	dä	ADV	Adv	_	4	advmod	_	_
+3	maŋŋel	maŋŋel	ADV	Adv	_	4	advmod	_	_
+4	gilmij	galbmet	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	0	root	_	SpaceAfter=No
+5	.	.	PUNCT	CLB	_	4	punct	_	_
+
+# sent_id = sje20150329b.066
+# text = Dal verrtija årrot nag vige dälkijgum.
+# text_en = something must have been wrong with the weather at that point
+1	Dal	dal	PART	Pcle	_	3	discourse	_	_
+2	verrtija	verrtit	AUX	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=3	3	aux	_	_
+3	årrot	lä	VERB	V	VerbForm=Inf	0	root	_	_
+4	nag	nágan	ADJ	A	_	5	amod	_	_
+5	vige	vihke	NOUN	N	Number=Sing|Case=Nom	3	nsubj	_	_
+6	dälkijgum	dállke	NOUN	N	Number=Sing|Case=Com	3	obl	_	SpaceAfter=No
+7	.	.	PUNCT	CLB	_	3	punct	_	_
+
+# sent_id = sje20150329b.067/068RED
+# text = Årrå jage bäjjve lä bivvalup dä gu gasskagiese bäjjve.
+# text_en = New Years Day was warmer than Midsummer Day
+1	Årrå	årås	ADJ	A	_	2	amod	_	_
+2	jage	jahke	NOUN	N	Number=Sing|Case=Gen	3	nmod:poss	_	_
+3	bäjjve	bäjjve	NOUN	N	Number=Sing|Case=Nom	5	nsubj:cop	_	_
+4	lä	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=3	5	cop	_	_
+5	bivvalup	bivval	ADJ	A	Degree=Cmp|Number=Sing|Case=Nom	0	root	_	_
+6	dä	dä	ADV	Adv	_	5	advmod	_	_
+7	gu	gu	SCONJ	CS	_	9	mark	_	_
+8	gasskagiese	gasskagiesse	NOUN	N	Number=Sing|Case=Gen	9	nmod:poss	_	_
+9	bäjjve	bäjjve	NOUN	N	Number=Sing|Case=Nom	5	orphan	_	SpaceAfter=No
+10	.	.	PUNCT	CLB	_	5	punct	_	_
+
+# sent_id = sje20150329b.069
+# text = Dalloj lij, mån jáhkáv mån lev tjállám att dat muhtij.
+# text_en = at that point it had, I think I wrote here that it snowed
+1	Dalloj	dalloj	ADV	Adv	_	2	advmod	_	_
+2	lij	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	0	root	_	SpaceAfter=No
+3	,	,	PUNCT	CLB	_	5	punct	_	_
+4	mån	mån	PRON	Pron	PronType=Prs|Number=Sing|Person=1|Case=Nom	5	nsubj	_	_
+5	jáhkáv	jáhkket	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=1	2	parataxis	_	_
+6	mån	mån	PRON	Pron	PronType=Prs|Number=Sing|Person=1|Case=Nom	8	nsubj	_	_
+7	lev	lä	AUX	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=1	8	aux	_	_
+8	tjállám	tjállet	VERB	V	Aspect=Perf|VerbForm=Part	5	ccomp	_	_
+9	att	ahte	SCONJ	CS	_	11	mark	_	_
+10	dat	dat	PRON	Pron	PronType=Dem|Number=Sing|Case=Nom	11	nsubj	_	_
+11	muhtij	muähttet	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	8	ccomp	_	SpaceAfter=No
+12	.	.	PUNCT	CLB	_	2	punct	_	_
+
+# sent_id = sje20150329b.070
+# text = Muhtij ja lij bar guäkkte vaj gålbmå grader.
+# text_en = it snowed and was only 2 or 3 degrees above freezing
+1	Muhtij	muähttet	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	0	root	_	_
+2	ja	ja	CCONJ	CC	_	3	cc	_	_
+3	lij	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	1	conj	_	_
+4	bar	bär	ADV	Adv	_	5	advmod	_	_
+5	guäkkte	guäkkte	NUM	Num	_	8	nummod	_	_
+6	vaj	vaj	CCONJ	CC	_	7	cc	_	_
+7	gålbmå	gålbmå	NUM	Num	_	5	conj	_	_
+8	grader	grader	NOUN	N	Number=Sing|Case=Nom	3	nsubj	_	SpaceAfter=No
+9	.	.	PUNCT	CLB	_	1	punct	_	_
+
+# sent_id = sje20150329b.071
+# text = Diedá mij lä "gasskogiese bäjjve"?
+# text_en = do you know what 'gasska giese bäjjve' means?
+1	Diedá	diehtet	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=2	0	root	_	_
+2	mij	mij	PRON	Pron	PronType=Int|Number=Sing|Case=Nom	6	nsubj:cop	_	_
+3	lä	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=3	6	cop	_	_
+4	"	"	PUNCT	_	_	6	punct	_	SpaceAfter=No
+5	gasskogiese	gassko#giesse	NOUN	N	Number=Sing|Case=Gen	6	nmod:poss	_	_
+6	bäjjve	bäjjve	NOUN	N	Number=Sing|Case=Nom	1	ccomp	_	SpaceAfter=No
+7	"	"	PUNCT	_	_	6	punct	_	SpaceAfter=No
+8	?	?	PUNCT	CLB	_	1	punct	_	_
+
+# sent_id = sje20150329b.073
+# text = Jus mån galgav jårrgålit njuallga.
+# text_en = whether I translated that directly
+1	Jus	jus	SCONJ	CS	_	4	mark	_	_
+2	mån	mån	PRON	Pron	PronType=Prs|Number=Sing|Person=1|Case=Nom	4	nsubj	_	_
+3	galgav	gallgat	AUX	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=1	4	aux	_	_
+4	jårrgålit	jårrgålit	VERB	V	VerbForm=Inf	0	root	_	_
+5	njuallga	njuallga	ADV	Adv	_	4	advmod	_	SpaceAfter=No
+6	.	.	PUNCT	CLB	_	4	punct	_	_
+
+# sent_id = sje20150329b.076
+# text = Ja verrtij nag, nag, nag vihke verrtij årrot, gu dat lä nåvt.
+# text_en = something must have been wrong, if it is like that
+1	Ja	ja	CCONJ	CC	_	2	cc	_	_
+2	verrtij	verrtit	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	0	root	_	SpaceAfter=No
+3	,	,	PUNCT	CLB	_	4	punct	_	_
+4	nag	nágan	ADJ	A	_	6	reparandum	_	SpaceAfter=No
+5	,	,	PUNCT	CLB	_	4	punct	_	_
+6	nag	nágan	ADJ	A	_	8	reparandum	_	SpaceAfter=No
+7	,	,	PUNCT	CLB	_	6	punct	_	_
+8	nag	nágan	ADJ	A	_	9	conj	_	_
+9	vihke	vihke	NOUN	N	Number=Sing|Case=Nom	11	nsubj	_	_
+10	verrtij	verrtit	AUX	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	11	aux	_	_
+11	årrot	lä	VERB	V	VerbForm=Inf	2	parataxis	_	SpaceAfter=No
+12	,	,	PUNCT	CLB	_	16	punct	_	_
+13	gu	gu	SCONJ	CS	_	16	mark	_	_
+14	dat	dat	PRON	Pron	PronType=Dem|Number=Sing|Case=Nom	16	nsubj:cop	_	_
+15	lä	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=3	16	cop	_	_
+16	nåvt	navte	ADV	Adv	_	11	advcl	_	SpaceAfter=No
+17	.	.	PUNCT	CLB	_	2	punct	_	_
+
+# sent_id = sje20150329b.077/078
+# text = Ja dä mij ráskatjijme Vuoldan vuällen dabben Tjårvega nuarrtalin.
+# text_en = and then we divided up (the reindeer) in Vuoldan, down there over to the north of Lake Hornavan
+1	Ja	ja	CCONJ	CC	_	4	cc	_	_
+2	dä	dä	ADV	Adv	_	4	advmod	_	_
+3	mij	mån	PRON	Pron	PronType=Prs|Number=Plur|Person=1|Case=Nom	4	nsubj	_	_
+4	ráskatjijme	rátkátjit	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=1	0	root	_	_
+5	Vuoldan	Vuallda	PROPN	Prop	Number=Sing|Case=Ine	4	obl	_	_
+6	vuällen	vuällen	ADV	Adv	_	4	advmod	_	_
+7	dabben	dabben	ADV	Adv	_	4	advmod	_	_
+8	Tjårvega	Tjårvek	PROPN	Prop	Number=Sing|Case=Gen	4	obl	_	_
+9	nuarrtalin	nuarrtalin	ADP	Po	_	8	case	_	SpaceAfter=No
+10	.	.	PUNCT	CLB	_	4	punct	_	_
+
+# sent_id = sje20150329b.079
+# text = Ja judijme vulus, dállveiednamijda.
+# text_en = and we moved down to the winter lands
+1	Ja	ja	CCONJ	CC	_	2	cc	_	_
+2	judijme	jåhtet	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Plur|Person=1	0	root	_	_
+3	vulus	vulus	ADV	Adv	_	2	advmod	_	SpaceAfter=No
+4	,	,	PUNCT	CLB	_	5	punct	_	_
+5	dállveiednamijda	dállveiednam	NOUN	N	Number=Sing|Case=Ill	2	obl	_	SpaceAfter=No
+6	.	.	PUNCT	CLB	_	2	punct	_	_
+
+# sent_id = sje20150329b.080
+# text = Dåbben gal lij väha guohtom.
+# text_en = down there, the grazing was decent
+1	Dåbben	dåbben	ADV	Adv	_	0	root	_	_
+2	gal	gal	PART	Pcle	_	1	discourse	_	_
+3	lij	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	1	cop	_	_
+4	väha	väha	ADV	Adv	_	1	advmod	_	_
+5	guohtom	guohtom	NOUN	N	Number=Sing|Case=Nom	1	nsubj:cop	_	SpaceAfter=No
+6	.	.	PUNCT	CLB	_	1	punct	_	_
+
+# sent_id = sje20150329b.082
+# text = Várátjajda ja itkabiele iednamijda ja smáva bietsastaga sinne, dä dåbben lä huj buorre guohtom.
+# text_en = to the little mountains and the lands behind the mountain and into the small dense pine forests, there the grazing was quite good
+1	Várátjajda	várre	NOUN	N	NOUN|N|Number=Sing|Case=Ill	11	obl	_	_
+2	ja	ja	CCONJ	CC	_	3	cc	_	_
+3	itkabiele	itkabielle	NOUN	N	Number=Sing|Case=Gen	4	conj	_	_
+4	iednamijda	iednam	NOUN	N	Number=Sing|Case=Ill	1	obl	_	_
+5	ja	ja	CCONJ	CC	_	7	cc	_	_
+6	smáva	smávve	ADJ	A	_	7	amod	_	_
+7	bietsastaga	bietsastak	NOUN	N	Number=Sing|Case=Gen	1	conj	_	_
+8	sinne	sinne	ADP	Po	_	7	case	_	SpaceAfter=No
+9	,	,	PUNCT	CLB	_	10	punct	_	_
+10	dä	dä	ADV	Adv	_	11	advmod	_	_
+11	dåbben	dåbben	ADV	Adv	_	0	root	_	_
+12	lä	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Pres|Number=Sing|Person=3	11	cop	_	_
+13	huj	huj	ADV	Adv	_	14	advmod	_	_
+14	buorre	buorre	ADJ	A	_	15	amod	_	_
+15	guohtom	guohtom	NOUN	N	Number=Sing|Case=Nom	11	nsubj:cop	_	SpaceAfter=No
+16	.	.	PUNCT	CLB	_	11	punct	_	_
+
+# sent_id = sje20150329b.083
+# text = Rent guallbanijt ja vualladagajt, dasste lij nievres guohtom.
+# text_en = pure flat pine heath and low-lands, there it was bad grazing land
+1	Rent	rent	ADJ	A	_	2	amod	_	_
+2	guallbanijt	guolban	NOUN	N	Number=Sing|Case=Acc	6	obj	_	_
+3	ja	ja	CCONJ	CC	_	4	cc	_	_
+4	vualladagajt	vualladagajt	NOUN	N	Number=Sing|Case=Acc	2	conj	_	SpaceAfter=No
+5	,	,	PUNCT	CLB	_	6	punct	_	_
+6	dasste	dat	PRON	Pron	PronType=Dem|Number=Sing|Case=Ela	0	root	_	_
+7	lij	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	6	cop	_	_
+8	nievres	nävvre	ADJ	A	_	9	amod	_	_
+9	guohtom	guohtom	NOUN	N	Number=Sing|Case=Nom	6	nsubj:cop	_	SpaceAfter=No
+10	.	.	PUNCT	CLB	_	6	punct	_	_
+
+# sent_id = sje20150329b.084
+# text = Dat lij, jiegŋa lij båhtám bådne vuässte ja ...
+# text_en = that was, ice formed towards the bottom and
+1	Dat	dat	PRON	Pron	PronType=Dem|Number=Sing|Case=Nom	2	nsubj	_	_
+2	lij	lä	VERB	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	0	root	_	SpaceAfter=No
+3	,	,	PUNCT	CLB	_	6	punct	_	_
+4	jiegŋa	jiegŋa	NOUN	N	Number=Sing|Case=Nom	6	nsubj	_	_
+5	lij	lä	AUX	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	6	aux	_	_
+6	båhtám	båhtet	VERB	V	Aspect=Perf|VerbForm=Part	2	parataxis	_	_
+7	bådne	båddne	NOUN	N	Number=Sing|Case=Gen	6	obl	_	_
+8	vuässte	vuässte	ADP	Po	_	7	case	_	_
+9	ja	ja	CCONJ	CC	_	7	cc	_	SpaceAfter=No
+10	...	...	PUNCT	CLB	_	2	punct	_	_
+
+# sent_id = sje20150329b.085
+# text = Rent i muhtem sajen lä dabbránam, jiegŋa lij rent dabbránam iednamijt.
+# text_en = directly into som places, it formed, ice formed on the ground
+1	Rent	rent	X	_	_	6	dep	_	_
+2	i	i	X	_	_	1	flat	_	_
+3	muhtem	muhtem	PRON	Pron	PronType=Ind|Number=Sing|Case=Nom	4	nmod	_	_
+4	sajen	sadje	NOUN	N	Number=Sing|Case=Ine	6	obl	_	_
+5	lä	lä	AUX	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	6	aux	_	_
+6	dabbránam	dabbránit	VERB	V	Aspect=Perf|VerbForm=Part	0	root	_	SpaceAfter=No
+7	,	,	PUNCT	CLB	_	11	punct	_	_
+8	jiegŋa	jiegŋa	NOUN	N	Number=Sing|Case=Nom	11	nsubj	_	_
+9	lij	lä	AUX	V	Mood=Ind|VerbForm=Fin|Tense=Past|Number=Sing|Person=3	11	aux	_	_
+10	rent	rent	ADV	Adv	_	11	advmod	_	_
+11	dabbránam	dabbránit	VERB	V	Aspect=Perf|VerbForm=Part	6	parataxis	_	_
+12	iednamijt	iednam	NOUN	N	Number=Sing|Case=Acc	11	obj	_	SpaceAfter=No
+13	.	.	PUNCT	CLB	_	6	punct	_	_
