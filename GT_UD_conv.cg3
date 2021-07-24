@@ -790,8 +790,6 @@ SUBSTITUTE:parataxis_cop ANY_GT_MAPPING (@parataxis) TARGET (*)(0 (*) LINK c @co
 SUBSTITUTE:parataxis_verb ANY_GT_MAPPING @parataxis TARGET (V) ; # if a verb is not yet UD-mapped, it's probably parataxis
 
 
-AFTER-SECTIONS
-
 # general tag replacement: if there are any leftover GT-tags -> @dep
 # that should never be necessary but can happen if there are errors in the sentence
 	#$ Da njálge idnin. -> either "they were good" OR "they had good(ones).Acc"
@@ -828,6 +826,8 @@ SUBSTITUTE:TV (TV) OR (IV) (*) TARGET (V);
 SUBSTITUTE:<mv> (<mv>) OR (<aux>) (*) TARGET (V); # ignored in UD
 SUBSTITUTE:<temp> (<pred>) OR (<ext>) OR (<cvp>) OR (<cnp>) OR <ctjHead> (*) TARGET (*); # ignored in UD
 
+
+AFTER-SECTIONS feature_substitution;
 
 ### pronoun subclasses ###
 SUBSTITUTE:Pers_poss Pers (PronType=Prs Poss=Yes) TARGET (Pers @nmod:poss);
