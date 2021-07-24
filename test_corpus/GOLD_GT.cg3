@@ -1,0 +1,3245 @@
+### gold standard syntactic annotations according to the GiellaLT annotation scheme ###
+
+# sent_id = pit080708b.001
+# text = Ja dä galgav vuosedit.
+# text_en = And now I'll show you
+"<Ja>"
+	"ja" CC @CVP #1->3
+"<dä>"
+	"dä" Adv @ADVL> #2->4
+"<galgav>"
+	"gallgat" V Ind Prs Sg1 <aux> @FAUX #3->0
+"<vuosedit>"
+	"vuosedit" V Inf <mv> @IMV #4->3
+"<.>"
+	"." CLB @PUNCT #5->3
+
+# sent_id = pit080708b.002/003
+# text = Dat lä náhppe, gusne- man sisa buhtjin buhtsujt.
+# text_en = This is a milking bowl which they milked reindeer into
+"<Dat>"
+	"dat" Pron Dem Sg Nom @SUBJ> #1->2
+"<lä>"
+	"lä" V Ind Prs Sg3 <mv> @FMV #2->0
+"<náhppe>"
+	"náhppe" N Sg Nom @<SPRED #3->2
+"<,>"
+	"," CLB <cvp> @PUNCT #4->8
+"<gusne->"
+	"gusne-" ? @X #5->6
+"<man>"
+	"mij" Pron Rel Sg Gen @>P #6->7
+"<sisa>"
+	"sisa" Po @ADVL> #7->8
+"<buhtjin>"
+	"båhtjet" V Ind Prt Pl3 <mv> @FS-N< #8->3
+"<buhtsujt>"
+	"båtsoj" N Pl Acc @<OBJ #9->8
+"<.>"
+	"." CLB @PUNCT #10->2
+
+# sent_id = pit080708b.004
+# text = Vuäjdne dále gu miesse njammá.
+# text_en = You see, when the calf suckles
+"<Vuäjdne>"
+	"vuäjdnet" V TV Ind Prs Sg2 <mv> @FMV #1->0
+"<dále>"
+	"dále" Adv @<ADVL #2->1
+"<gu>"
+	"gu" CS @CVP #3->5
+"<miesse>"
+	"miesse" N Sg Nom @SUBJ> #4->5
+"<njammá>"
+	"njammat" V Ind Prs Sg3 <mv> @FS-<ADVL #5->1
+"<.>"
+	"." CLB @PUNCT #6->1
+
+# sent_id = pit080708b.005
+# text = Ja mudiŋ del dä verrtijin ådtjot njammat.
+# text_en = Sometimes they had to be forced to suckle
+"<Ja>"
+	"ja" CC @CVP #1->5
+"<mudiŋ>"
+	"mudiŋ" Adv @ADVL> #2->7
+"<del>"
+	"del" Adv @ADVL> #3->7
+"<dä>"
+	"dä" Adv @ADVL> #4->7
+"<verrtijin>"
+	"verrtit" V IV Ind Prt Pl3 <aux> @FAUX #5->0
+"<ådtjot>"
+	"ådtjot" V TV Inf <aux> @IAUX #6->5
+"<njammat>"
+	"njammat" V Inf <mv> @IMV #7->6
+"<.>"
+	"." CLB @PUNCT #8->5
+
+# sent_id = pit080708b.006
+# text = Men gu idtjin dä njama, gu lin da gallánam, dä buhtjin diggira sisa.
+# text_en = But if they didn't suckle, once they were full, they were milked into this here.
+"<Men>"
+	"men" CC @CVP #1->3
+"<gu>"
+	"gu" CS @CVP #2->3
+"<idtjin>"
+	"ij" <ctjHead> V Neg Prt Pl3 <aux> @FS-ADVL> #3->13
+"<dä>"
+	"dä" Adv @ADVL> #4->5
+"<njama>"
+	"njammat" V ConNeg <mv> @FS-IMV #5->3
+"<,>"
+	"," CLB <cvp> @PUNCT #6->3
+"<gu>"
+	"gu" CS @CVP #7->8
+"<lin>"
+	"lä" V Ind Prt Pl3 <aux> @FS-ADVL> #8->13
+"<da>"
+	"dat" Pron Dem Pl Nom @<SUBJ #9->8
+"<gallánam>"
+	"gallánit" V PrfPrc <mv> @FS-IMV #10->8
+"<,>"
+	"," CLB <cvp> @PUNCT #11->8
+"<dä>"
+	"dä" Adv @ADVL> #12->13
+"<buhtjin>"
+	"båhtjet" V Ind Prt Pl3 <mv> @FMV #13->0
+"<diggira>"
+	"daggár" Pron Indef Sg Gen @>P #14->15
+"<sisa>"
+	"sisa" Po @<ADVL #15->13
+"<.>"
+	"." CLB @PUNCT #16->13
+
+# sent_id = pit080708b.007
+# text = Áldo mielkev, álldo lä namma.
+# text_en = Reindeer-milk - "aldo" is the name...
+"<Áldo>"
+	"álldo" N Sg Gen @>N #1->2
+"<mielkev>"
+	"mällke" N Sg Acc @OBJ #2->5
+"<,>"
+	"," CLB @PUNCT #3->5
+"<álldo>"
+	"álldo" N Sg Nom @SUBJ> #4->5
+"<lä>"
+	"lä" V Ind Prs Sg3 <mv> @FMV #5->0
+"<namma>"
+	"namma" N Sg Nom @<SPRED #6->5
+"<.>"
+	"." CLB @PUNCT #7->5
+
+# sent_id = pit080708b.009
+# text = Diggira, mav mij båhtja ja miesev adná, dat lä álldo.
+# text_en = The kind which we milk and has a calf - that's "alddå"
+"<Diggira>"
+	"daggár" Pron Indef Pl Nom @APP>Pron #1->10
+"<,>"
+	"," CLB @PUNCT #2->5
+"<mav>"
+	"mij" Pron Rel Sg Acc @OBJ> #3->5
+"<mij>"
+	"mij" Pron Pers Pl1 Nom @SUBJ> #4->5
+"<båhtja>"
+	"båhtjet" V TV Ind Prs Pl1 <mv> @FS-N< #5->1
+"<ja>"
+	"ja" CC @CVP #6->8
+"<miesev>"
+	"miesse" N Sg Acc @OBJ> #7->8
+"<adná>"
+	"adnet" V TV Ind Prs Sg3 <mv> @FMV #8->5
+"<,>"
+	"," CLB <cvp> @PUNCT #9->5
+"<dat>"
+	"dat" Pron Dem Sg Nom @SUBJ> #10->11
+"<lä>"
+	"lä" V Ind Prs Sg3 <mv> @FMV #11->0
+"<álldo>"
+	"álldo" N Sg Nom @<SPRED #12->11
+"<.>"
+	"." CLB @PUNCT #13->11
+
+# sent_id = pit080708b.010
+# text = Ja dä, gu dä lij dát dievas, dä dihkin vuostájt.
+# text_en = And then, when this was full, cheeses were made
+"<Ja>"
+	"ja" CC @CVP #1->11
+"<dä>"
+	"dä" Adv @ADVL> #2->11
+"<,>"
+	"," CLB @PUNCT #3->6
+"<gu>"
+	"gu" CS @CVP #4->6
+"<dä>"
+	"dä" Adv @ADVL> #5->6
+"<lij>"
+	"lä" V Ind Prt Sg3 <mv> @FS-ADVL> #6->11
+"<dát>"
+	"dát" Pron Dem Sg Nom @<SUBJ #7->6
+"<dievas>"
+	"dievas" A Sg Nom @<SPRED #8->6
+"<,>"
+	"," CLB <cvp> @PUNCT #9->6
+"<dä>"
+	"dä" Adv @ADVL> #10->11
+"<dihkin>"
+	"dahkat" V TV Ind Prt Pl3 <mv> @FMV #11->0
+"<vuostájt>"
+	"vuasstá" N Pl Acc @<OBJ #12->11
+"<.>"
+	"." CLB @PUNCT #13->11
+
+# sent_id = pit080708b.011
+# text = Dä läppedijen ja dihkin vuostájt.
+# text_en = And they made cheeses
+"<Dä>"
+	"dä" Adv @ADVL> #1->2
+"<läppedijen>"
+	"lähppit" <ctjHead> V Ind Prt Pl3 <mv> @FMV #2->0
+"<ja>"
+	"ja" CC @CVP #3->4
+"<dihkin>"
+	"dahkat" V TV Ind Prt Pl3 <mv> @FMV #4->2
+"<vuostájt>"
+	"vuasstá" N Pl Acc @<OBJ #5->4
+"<.>"
+	"." CLB @PUNCT #6->2
+
+# sent_id = pit080708b.012
+# text = Ja dä bejjin vuostájt diggira sisa.
+# text_en = And they put the cheeses in one of these
+"<Ja>"
+	"ja" CC @CVP #1->3
+"<dä>"
+	"dä" Adv @ADVL> #2->3
+"<bejjin>"
+	"biedjat" V TV Ind Prt Pl3 <mv> @FMV #3->0
+"<vuostájt>"
+	"vuasstá" N Pl Acc @<OBJ #4->3
+"<diggira>"
+	"daggár" Pron Indef Sg Gen @>P #5->6
+"<sisa>"
+	"sisa" Po @<ADVL #6->3
+"<.>"
+	"." CLB @PUNCT #7->3
+
+# sent_id = pit080708b.013
+# text = Dat lä skáhppo, dan namma, mij lä muorast dahkaduvvum.
+# text_en = This is a "skáhpå"-cheese-mold, the name is for one made of wood
+"<Dat>"
+	"dat" Pron Dem Sg Nom @SUBJ> #1->2
+"<lä>"
+	"lä" V Ind Prs Sg3 <mv> @FMV #2->0
+"<skáhppo>"
+	"skáhppo" N Sg Nom @<SPRED #3->2
+"<,>"
+	"," CLB <cvp> @PUNCT #4->6
+"<dan>"
+	"dat" Pron Dem Sg Gen @>N #5->6
+"<namma>"
+	"namma" N Sg Nom @APP-N< #6->3
+"<,>"
+	"," CLB <cvp> @PUNCT #7->6
+"<mij>"
+	"mij" Pron Rel Sg Nom @SUBJ> #8->9
+"<lä>"
+	"lä" V Ind Prs Sg3 <aux> @FS-N< #9->6
+"<muorast>"
+	"muorra" N Sg Ela @ADVL> #10->11
+"<dahkaduvvum>"
+	"dahkaduvvut" V PrfPrc <mv> @FS-N<IMV #11->9
+"<.>"
+	"." CLB @PUNCT #12->2
+
+# sent_id = pit080708b.014
+# text = Ja dat lä däjjvo.
+# text_en = And this is a "däjjvo"-cheese-mold
+"<Ja>"
+	"ja" CC @CVP #1->3
+"<dat>"
+	"dat" Pron Dem Sg Nom @SUBJ> #2->3
+"<lä>"
+	"lä" V Ind Prs Sg3 <mv> @FMV #3->0
+"<däjjvo>"
+	"däjjvo" N Sg Nom @<SPRED #4->3
+"<.>"
+	"." CLB @PUNCT #5->3
+
+# sent_id = pit080708b.015
+# text = Dan namma, mij lä dahkaduvvum ruahttasijst.
+# text_en = That's the name for those made of roots
+"<Dan>"
+	"dat" Pron Dem Sg Gen @>N #1->2
+"<namma>"
+	"namma" N Sg Nom @HNOUN #2->0
+"<,>"
+	"," CLB @PUNCT #3->5
+"<mij>"
+	"mij" Pron Rel Sg Nom @SUBJ> #4->5
+"<lä>"
+	"lä" V Ind Prs Sg3 <aux> @FS-N< #5->2
+"<dahkaduvvum>"
+	"dahkaduvvut" V PrfPrc <mv> @FS-N<IMV #6->5
+"<ruahttasijst>"
+	"ruohtas" N Pl Ela @<ADVL #7->6
+"<.>"
+	"." CLB @PUNCT #8->2
+
+# sent_id = pit080708b.017
+# text = Dále navte, dat lä stuorajmus daggár.
+# text_en = And this here is the biggest one
+"<Dále>"
+	"dále" Adv @ADVL> #1->5
+"<navte>"
+	"navte" Adv @ADVL> #2->5
+"<,>"
+	"," CLB @PUNCT #3->5
+"<dat>"
+	"dat" Pron Dem Sg Nom @SUBJ> #4->5
+"<lä>"
+	"lä" V Ind Prs Sg3 <mv> @FMV #5->0
+"<stuorajmus>"
+	"stuorak" A Superl Attr @>N #6->7
+"<daggár>"
+	"daggár" Pron Indef Sg Nom @<SPRED #7->5
+"<.>"
+	"." CLB @PUNCT #8->5
+
+# sent_id = pit080708b.023
+# text = Ja dasa bejjin ja suovvaden dajt vuostájt.
+# text_en = And these cheeses sat and smoked on that
+"<Ja>"
+	"ja" CC @CVP #1->3
+"<dasa>"
+	"dat" Pron Dem Sg Ill @ADVL> #2->3
+"<bejjin>"
+	"biedjat" <ctjHead> V TV Ind Prt Pl3 <mv> @FMV #3->0
+"<ja>"
+	"ja" CC @CVP #4->5
+"<suovvaden>"
+	"suovastit" V Ind Prt Pl3 <mv> @FMV #5->3
+"<dajt>"
+	"dat" Det Pl Acc @>N #6->7
+"<vuostájt>"
+	"vuasstá" N Pl Acc @<OBJ #7->5
+"<.>"
+	"." CLB @PUNCT #8->3
+
+# sent_id = pit080708b.024
+# text = Ja gu lin dä suovvadam, dä mähttin bájjat gåjjkåt.
+# text_en = And once they were smoked, then they could be dried
+"<Ja>"
+	"ja" CC @CVP #1->3
+"<gu>"
+	"gu" CS @CVP #2->3
+"<lin>"
+	"lä" V Ind Prt Pl3 <aux> @FS-ADVL> #3->9
+"<dä>"
+	"dä" Adv @ADVL> #4->5
+"<suovvadam>"
+	"suovastit" V PrfPrc <mv> @FS-IMV #5->3
+"<,>"
+	"," CLB <cvp> @PUNCT #6->3
+"<dä>"
+	"dä" Adv @ADVL> #7->9
+"<mähttin>"
+	"máhttet" V Ind Prt Pl3 <aux> @FAUX #8->0
+"<bájjat>"
+	"bádjat" V TV Inf <mv> @IMV #9->8
+"<gåjjkåt>"
+	"gåjjkåt" V Inf <mv> @ICL-OBJ #10->9
+"<.>"
+	"." CLB @PUNCT #11->8
+
+# sent_id = pit080708b.025/026
+# text = Ja mudiŋ dä duhkin Vuodnaj aj.
+# text_en = And sometimes they sold to Norway, too
+"<Ja>"
+	"ja" CC @CVP #1->4
+"<mudiŋ>"
+	"mudiŋ" Adv @ADVL> #2->4
+"<dä>"
+	"dä" Adv @ADVL> #3->4
+"<duhkin>"
+	"duohkat" V Ind Prt Pl3 <mv> @FMV #4->0
+"<Vuodnaj>"
+	"Vuodna" Prop N Sg Ill @<ADVL #5->4
+"<aj>"
+	"aj" Adv @<ADVL #6->4
+"<.>"
+	"." CLB @PUNCT #7->4
+
+# sent_id = pit080708b.027/028/029
+# text = Jala mullsun umas varov, iv mån diede, jáffojt, káfajt ja diggirijt.
+# text_en = Or traded all kinds of goods, I don't know, flour, coffee and such
+"<Jala>"
+	"jalá" CC @CVP #1->2
+"<mullsun>"
+	"mållsot" <ctjHead> V TV Ind Prt Pl3 <mv> @FMV #2->0
+"<umas>"
+	"umasse" A Attr @>N #3->4
+"<varov>"
+	"varov" N Pl Acc @<OBJ #4->2
+"<,>"
+	"," CLB <cvp> @PUNCT #5->6
+"<iv>"
+	"ij" V Neg Prs Sg1 <aux> @FAUX #6->2
+"<mån>"
+	"mån" Pron Pers Sg1 Nom @<SUBJ #7->6
+"<diede>"
+	"diehtet" V TV ConNeg <mv> @IMV #8->6
+"<,>"
+	"," CLB @PUNCT #9->10
+"<jáffojt>"
+	"jáffo" N Pl Acc <ctjHead> @OBJ #10->4
+"<,>"
+	"," CLB @PUNCT #11->12
+"<káfajt>"
+	"káffa" N Pl Acc @OBJ #12->10
+"<ja>"
+	"ja" CC @CNP #13->14
+"<diggirijt>"
+	"daggár" Pron Indef Pl Acc @OBJ #14->10
+"<.>"
+	"." CLB @PUNCT #15->2
+
+# sent_id = pit080708b.031
+# text = Dä navte dihkin.
+# text_en = So they then did
+"<Dä>"
+	"dä" Adv @ADVL> #1->3
+"<navte>"
+	"navte" Adv @ADVL> #2->3
+"<dihkin>"
+	"dahkat" V TV Ind Prt Pl3 @FMV #3->0
+"<.>"
+	"." CLB @PUNCT #4->3
+
+# sent_id = pit080708b.033
+# text = Ja ietja diedon idnin mielkev ja vuostáv ja ...
+# text_en = And they themselves of course had milk and cheese and
+"<Ja>"
+	"ja" CC @CVP #1->4
+"<ietja>"
+	"ietj" Pron Refl Pl Nom @SUBJ> #2->4
+"<diedon>"
+	"diedon" Adv @ADVL> #3->4
+"<idnin>"
+	"adnet" V TV Ind Prt Pl3 <mv> @FMV #4->0
+"<mielkev>"
+	"mällke" N Sg Acc @<OBJ #5->4
+"<ja>"
+	"ja" CC @CNP #6->7
+"<vuostáv>"
+	"vuasstá" N Sg Acc @<OBJ #7->5
+"<ja>"
+	"ja" CC @CVP #8->7
+"<...>"
+	"..." CLB @PUNCT #9->4
+
+# sent_id = pit080708b.035
+# text = Men Vuonaga lin buoraga åsstet diggir vuostájt.
+# text_en = But the Norwegians were good at buying such cheeses
+"<Men>"
+	"men" CC @CVP #1->3
+"<Vuonaga>"
+	"vuonak" N Pl Nom @SUBJ> #2->3
+"<lin>"
+	"lä" V Ind Prt Pl3 <mv> @FMV #3->0
+"<buoraga>"
+	"buorak" A Pl Nom @<SPRED #4->3
+"<åsstet>"
+	"åsstet" V TV Inf <mv> @<ADVL #5->3
+"<diggir>"
+	"daggár" Det Attr @>N #6->7
+"<vuostájt>"
+	"vuasstá" N Pl Acc @-F<OBJ #7->5
+"<.>"
+	"." CLB @PUNCT #8->3
+
+# sent_id = pit080708b.036
+# text = Da njálge idnin.
+# text_en = They ?had good
+"<Da>"
+	"dat" Pron Dem Pl Nom @SUBJ> #1->3
+"<njálge>"
+	"njállge" A Pl Nom @SPRED> #2->3
+"<idnin>"
+	"adnet" V TV Ind Prt Pl3 <mv> @FMV #3->0
+"<.>"
+	"." CLB @PUNCT #4->3
+
+# sent_id = pit080708b.037
+# text = Ja dále vuäjdnep, gu suhppu sjuohpanav adná.
+# text_en = And there we see how one is throwing the lasso he has
+"<Ja>"
+	"ja" CC @CVP #1->3
+"<dále>"
+	"dále" Adv @ADVL> #2->3
+"<vuäjdnep>"
+	"vuäjdnet" V TV Ind Prs Pl1 <mv> @FMV #3->0
+"<,>"
+	"," CLB <cvp> @PUNCT #4->6
+"<gu>"
+	"gu" CS @CVP #5->6
+"<suhppu>"
+	"suahppot" V Ind Prs Sg3 <mv> @FS-OBJ #6->3
+"<sjuohpanav>"
+	"sjuohpan" N Sg Acc @<OBJ #7->6
+"<adná>"
+	"adnet" V TV Ind Prs Sg3 <mv> @FS-N< #8->7
+"<.>"
+	"." CLB @PUNCT #9->3
+
+# sent_id = pit080708b.038
+# text = Ja suhppu dále buhtsuv.
+# text_en = And throws it at a reindeer
+"<Ja>"
+	"ja" CC @CVP #1->2
+"<suhppu>"
+	"suahppot" V Ind Prs Sg3 <mv> @FMV #2->0
+"<dále>"
+	"dále" Adv @<ADVL #3->2
+"<buhtsuv>"
+	"båtsoj" N Sg Acc @<OBJ #4->2
+"<.>"
+	"." CLB @PUNCT #5->2
+
+# sent_id = pit080708b.039
+# text = Jo, dä navte sjaddá daj.
+# text_en = So that's how it is with these here
+"<Jo>"
+	"Jo" Interj @INTERJ #1->5
+"<,>"
+	"," CLB @PUNCT #2->1
+"<dä>"
+	"dä" Adv @ADVL> #3->5
+"<navte>"
+	"navte" Adv @ADVL> #4->5
+"<sjaddá>"
+	"sjaddat" V Ind Prs Sg3 <mv> @FMV #5->0
+"<daj>"
+	"dat" Pron Dem Pl Com @<ADVL #6->5
+"<.>"
+	"." CLB @PUNCT #7->5
+
+# sent_id = pit080924.001
+# text = Nå, buris, H!
+# text_en = Well hello, H
+"<Nå>"
+	"nå" Interj @INTERJ #1->3
+"<,>"
+	"," CLB @PUNCT #2->3
+"<buris>"
+	"burist" Interj @INTERJ #3->0
+"<,>"
+	"," CLB @PUNCT #4->5
+"<H>"
+	"H" Prop N Sg Nom @VOC #5->3
+"<!>"
+	"!" CLB @PUNCT #6->3
+
+# sent_id = pit080924.003
+# text = Nå, gusste dån bådá?
+# text_en = where have you come here from?
+"<Nå>"
+	"nå" Interj @INTERJ #1->5
+"<,>"
+	"," CLB @PUNCT #2->1
+"<gusste>"
+	"gusste" Adv @ADVL> #3->5
+"<dån>"
+	"dån" Pron Pers Sg2 Nom @SUBJ> #4->5
+"<bådá>"
+	"båhtet" V Ind Prs Sg2 <mv> @FMV #5->0
+"<?>"
+	"?" CLB @PUNCT #6->5
+
+# sent_id = pit080924.005
+# text = Nå, mav lä Áhkábákten dahkam?
+# text_en = oh, what did you do in Áhkapakte?
+"<Nå>"
+	"nå" Interj @INTERJ #1->4
+"<,>"
+	"," CLB @PUNCT #2->1
+"<mav>"
+	"mij" Pron Interr Sg Acc @OBJ> #3->6
+"<lä>"
+	"lä" V Ind Prs Sg2 <aux> @FAUX #4->0
+"<Áhkábákten>"
+	"Áhkábákkte" Prop N Sg Ine @ADVL> #5->6
+"<dahkam>"
+	"dahkat" V TV PrfPrc <mv> @IMV #6->4
+"<?>"
+	"?" CLB @PUNCT #7->4
+
+# sent_id = pit080924.007
+# text = Vujdni iedna guhka juolgagijt?
+# text_en = did you see a lot of moose?
+"<Vujdni>"
+	"vuäjdnet" V TV Ind Prt Sg2 <mv> @FMV #1->0
+"<iedna>"
+	"iednak" A Attr @>N #2->4
+"<guhka>"
+	"guhkke" A Attr @>N #3->4
+"<juolgagijt>"
+	"juolgagijt" N Pl Acc @<OBJ #4->1
+"<?>"
+	"?" CLB @PUNCT #5->1
+
+# sent_id = pit080924.009
+# text = Dån vuhtji aktav.
+# text_en = you shot one
+"<Dån>"
+	"dån" Pron Pers Sg2 Nom @SUBJ> #1->2
+"<vuhtji>"
+	"vuohtjet" V Ind Prt Sg2 <mv> @FMV #2->0
+"<aktav>"
+	"akkta" Num Sg Acc @<OBJ #3->2
+"<.>"
+	"." CLB @PUNCT #4->2
+
+# sent_id = pit080924.011
+# text = Så dä lä guäkkte.
+# text_en = so there are two
+"<Så>"
+	"så" Adv @ADVL> #1->3
+"<dä>"
+	"dä" Adv @ADVL> #2->3
+"<lä>"
+	"lä" V Ind Prs Pl3 <mv> @FMV #3->0
+"<guäkkte>"
+	"guäkkte" Num @<SUBJ #4->3
+"<.>"
+	"." CLB @PUNCT #5->3
+
+# sent_id = pit080924.014
+# text = Vujdnin nagin bierdnav?
+# text_en = Did you two see a bear?
+"<Vujdnin>"
+	"vuäjdnet" V TV Ind Prs Du1 <mv> @FMV #1->0
+"<nagin>"
+	"nágan" A Attr @>N #2->3
+"<bierdnav>"
+	"bärdna" N Sg Acc @<OBJ #3->1
+"<?>"
+	"?" CLB @PUNCT #4->1
+
+# sent_id = pit080924.016
+# text = Men dä lä buorak vuäjdnet.
+# text_en = but it's good to see that
+"<Men>"
+	"men" CC @CVP #1->3
+"<dä>"
+	"dä" Adv @ADVL> #2->3
+"<lä>"
+	"lä" V Ind Prs Sg3 <mv> @FMV #3->0
+"<buorak>"
+	"buorak" A Sg Nom @<SPRED #4->3
+"<vuäjdnet>"
+	"vuäjdnet" V TV Inf <mv> @ICL-SUBJ #5->3
+"<.>"
+	"." CLB @PUNCT #6->3
+
+# sent_id = pit080924.018
+# text = Jáhká lä iedna bierdna danne?
+# text_en = do you think there are a lot of bears there?
+"<Jáhká>"
+	"jáhkket" V TV Ind Prs Sg2 <mv> @FMV #1->0
+"<lä>"
+	"lä" V Ind Prs Pl3 <mv> @FS-OBJ #2->1
+"<iedna>"
+	"iednak" A Attr @>N #3->4
+"<bierdna>"
+	"bärdna" N Pl Nom @<SUBJ #4->2
+"<danne>"
+	"danne" Adv @<ADVL #5->2
+"<?>"
+	"?" CLB @PUNCT #6->1
+
+# sent_id = pit080924.021 ### double object?? error?
+# text = Nå, mav ienabuv dihki Áhkábákten?
+# text_en = well what else did you do in Áhkabakte?
+"<Nå>"
+	"nå" Interj @INTERJ #1->5
+"<,>"
+	"," CLB @PUNCT #2->1
+"<mav>"
+	"mij" Pron Interr Sg Acc @OBJ> #3->5
+"<ienabuv>"
+	"ienabuv" Adv @ADVL> #4->5
+"<dihki>"
+	"dahkat" V TV Ind Prt Sg2 <mv> @FMV #5->0
+"<Áhkábákten>"
+	"Áhkábákkte" Prop N Sg Ine @<ADVL #6->5
+"<?>"
+	"?" CLB @PUNCT #7->5
+
+# sent_id = pit080924.025
+# text = Miggir gulijt ådtjojdä?
+# text_en = what kind of fish did you catch?
+"<Miggir>"
+	"maggár" Det Interr Attr @>N #1->2
+"<gulijt>"
+	"guolle" N Pl Acc @OBJ> #2->3
+"<ådtjojdä>"
+	"ådtjot" V TV Ind Prt Pl2 <mv> @FMV #3->0
+"<?>"
+	"?" CLB @PUNCT #4->3
+
+# sent_id = pit080924.032
+# text = Nå, miggira lidjin dan Áhkábákten?
+# text_en = and who was there in Áhkapakte?
+"<Nå>"
+	"nå" Interj @INTERJ #1->4
+"<,>"
+	"," CLB @PUNCT #2->1
+"<miggira>"
+	"miggár" Pron Interr Pl Nom @SUBJ> #3->4
+"<lidjin>"
+	"lä" V Ind Prt Pl3 <mv> @FMV #4->0
+"<dan>"
+	"dat" Det Sg Ine @>N #5->6
+"<Áhkábákten>"
+	"Áhkábákkte" Prop N Sg Ine @<ADVL #6->4
+"<?>"
+	"?" CLB @PUNCT #7->4
+
+# sent_id = pit080924.038
+# text = Nå, duv biena aj.
+# text_en = oh, your dog, too
+"<Nå>"
+	"nå" Interj @INTERJ #1->4
+"<,>"
+	"," CLB @PUNCT #2->1
+"<duv>"
+	"dån" Pron Pers Sg2 Gen @>N #3->4
+"<biena>"
+	"biena" N Sg Nom @HNOUN #4->0
+"<aj>"
+	"aj" Adv @<ADVL #5->4
+"<.>"
+	"." CLB @PUNCT #6->4
+
+# sent_id = pit080924.040
+# text = Ja mån vujdniv duv biednagav bijlan.
+# text_en = yes I saw your dog in the car
+"<Ja>"
+	"ja" CC @CVP #1->3
+"<mån>"
+	"mån" Pron Pers Sg1 Nom @SUBJ> #2->3
+"<vujdniv>"
+	"vuäjdnet" V TV Ind Prt Sg1 <mv> @FMV #3->0
+"<duv>"
+	"dån" Pron Pers Sg2 Gen @>N #4->5
+"<biednagav>"
+	"biena" N Sg Acc @<OBJ #5->3
+"<bijlan>"
+	"bijjla" N Sg Ine @<ADVL #6->3
+"<.>"
+	"." CLB @PUNCT #7->3
+
+# sent_id = pit080924.045
+# text = Gåsse lidji Áhkábákten åvdep bále?
+# text_en = when were you in Áhkabakte in the past?
+"<Gåsse>"
+	"gåsse" Adv @ADVL> #1->2
+"<lidji>"
+	"lä" V Ind Prt Sg2 <mv> @FMV #2->0
+"<Áhkábákten>"
+	"Áhkábákkte" Prop N Sg Ine @<ADVL #3->2
+"<åvdep>"
+	"åvdep" Adv @>ADVL #4->5
+"<bále>"
+	"bálle" N Pl Nom @<ADVL #5->2
+"<?>"
+	"?" CLB @PUNCT #6->2
+
+# sent_id = pit080924.052
+# text = Nå, dä ij del almatj sida nagin sadjáj vuällget.
+# text_en = yes, one doesn't really want to go anywhere
+"<Nå>"
+	"nå" Interj @INTERJ #1->4
+"<,>"
+	"," CLB @PUNCT #2->1
+"<dä>"
+	"dä" Adv @ADVL> #3->7
+"<ij>"
+	"ij" V Neg Prs Sg3 <aux> @FAUX #4->0
+"<del>"
+	"del" Adv @ADVL> #5->7
+"<almatj>"
+	"almatj" N Sg Nom @<SUBJ #6->4
+"<sida>"
+	"sihtat" V TV ConNeg <mv> @IMV #7->4
+"<nagin>"
+	"nágan" A Attr @>N #8->9
+"<sadjáj>"
+	"sadje" N Sg Ill @ADVL> #9->10
+"<vuällget>"
+	"vuällget" V Inf <mv> @ICL-OBJ #10->7
+"<.>"
+	"." CLB @PUNCT #11->4
+
+# sent_id = pit080924.057
+# text = Nå, buorak lä dále?
+# text_en = now it's ok?
+"<Nå>"
+	"nå" Interj @INTERJ #1->4
+"<,>"
+	"," CLB @PUNCT #2->1
+"<buorak>"
+	"buorak" A Sg Nom @SPRED> #3->4
+"<lä>"
+	"lä" V Ind Prs Sg3 <mv> @FMV #4->0
+"<dále>"
+	"dále" Adv @<ADVL #5->4
+"<?>"
+	"?" CLB @PUNCT #6->4
+
+# sent_id = pit080924.059
+# text = Ij lä?
+# text_en = no?
+"<Ij>"
+	"ij" V Neg Prs Sg3 <aux> @FAUX #1->0
+"<lä>"
+	"lä" V ConNeg <mv> @IMV #2->1
+"<?>"
+	"?" CLB @PUNCT #3->1
+
+# sent_id = pit080924.063
+# text = Nå, gåkkte lij Áhkábákten gu dånnå lidji mánná?
+# text_en = yes, what was Áhkabákkte like when you were a child?
+"<Nå>"
+	"nå" Interj @INTERJ #1->4
+"<,>"
+	"," CLB @PUNCT #2->1
+"<gåkkte>"
+	"gukkte" Adv @ADVL> #3->4
+"<lij>"
+	"lä" V Ind Prt Sg3 <mv> @FMV #4->0
+"<Áhkábákten>"
+	"Áhkábákkte" Prop N Sg Ine @<ADVL #5->4
+"<gu>"
+	"gu" CS @CVP #6->8
+"<dånnå>"
+	"dån" Pron Pers Sg2 Nom @SUBJ> #7->8
+"<lidji>"
+	"lä" V Ind Prt Sg2 <mv> @FS-<ADVL #8->4
+"<mánná>"
+	"mánná" N Sg Nom @<SPRED #9->8
+"<?>"
+	"?" CLB @PUNCT #10->4
+
+# sent_id = pit080924.071
+# text = Nå, giejna dä tjuvvut?
+# text_en = yes, who did you go with?
+"<Nå>"
+	"nå" Interj @INTERJ #1->5
+"<,>"
+	"," CLB @PUNCT #2->1
+"<giejna>"
+	"gie" Pron Interr Sg Com @ADVL> #3->5
+"<dä>"
+	"dä" Adv @ADVL> #4->5
+"<tjuvvut>"
+	"tjuovvot" V Imprt Pl2 <mv> @FMV #5->0
+"<?>"
+	"?" CLB @PUNCT #6->5
+
+# sent_id = pit080924.078
+# text = Ah, dä guldaliv.
+# text_en = ah, I heard that
+"<Ah>"
+	"ah" Interj @INTERJ #1->4
+"<,>"
+	"," CLB @PUNCT #2->1
+"<dä>"
+	"dä" Adv @ADVL> #3->4
+"<guldaliv>"
+	"guldaliv" V Ind Prt Sg1 <mv> @FMV #4->0
+"<.>"
+	"." CLB @PUNCT #5->4
+
+# sent_id = pit080924.089
+# text = Mån gillgiv daj gusaj birra ságastit, men idtjiv diede gåk gillgiv gatjádit.
+# text_en = I wanted to say something about the cows but I didn't know how to ask
+"<Mån>"
+	"mån" Pron Pers Sg1 Nom @SUBJ> #1->2
+"<gillgiv>"
+	"gallgat" <ctjHead> V Ind Prt Sg1 <aux> @FAUX #2->0
+"<daj>"
+	"dat" Det Pl Gen @>N #3->4
+"<gusaj>"
+	"gussa" N Pl Gen @>P #4->5
+"<birra>"
+	"birra" Po @ADVL> #5->6
+"<ságastit>"
+	"ságastit" V TV Inf <mv> @IMV #6->2
+"<,>"
+	"," CLB <cvp> @PUNCT #7->9
+"<men>"
+	"men" CC @CVP #8->9
+"<idtjiv>"
+	"ij" V Neg Prt Sg1 <aux> @FAUX #9->2
+"<diede>"
+	"diehtet" V TV ConNeg <mv> @IMV #10->9
+"<gåk>"
+	"gukkte" Adv @ADVL> #11->13
+"<gillgiv>"
+	"gallgat" V Ind Prt Sg1 <aux> @FS-OBJ #12->10
+"<gatjádit>"
+	"gatjadit" V Inf <mv> @FS-IMV #13->12
+"<.>"
+	"." CLB @PUNCT #14->2
+
+# sent_id = pit080924.103
+# text = Da, dá gájtsa lidjin dálven dijá lunne.
+# text_en = that, those goats were at your place in the winter
+"<Da>"
+	"dat" Det Pl Nom <ctjHead> @>N #1->4
+"<,>"
+	"," CLB @PUNCT #2->1
+"<da>"
+	"dat" Det Pl Nom @>N #3->1
+"<gájtsa>"
+	"gájjtsa" N Pl Nom @SUBJ> #4->5
+"<lidjin>"
+	"lä" V Ind Prt Pl3 <mv> @FMV #5->0
+"<dálven>"
+	"dállve" N Sg Ine @<ADVL #6->5
+"<dijá>"
+	"dån" Pron Pers Pl2 Gen @>P #7->8
+"<lunne>"
+	"lunne" Po @<ADVL #8->5
+"<.>"
+	"." CLB @PUNCT #9->5
+
+# sent_id = pit080924.105
+# text = Ja gåsse buhtin dajt vedtjin?
+# text_en = and when did they come and get them?
+"<Ja>"
+	"ja" CC @CVP #1->3
+"<gåsse>"
+	"gåsse" Adv @ADVL> #2->3
+"<buhtin>"
+	"båhtet" V Ind Prt Pl3 <mv> @FMV #3->0
+"<dajt>"
+	"dat" Pron Dem Pl Acc @OBJ> #4->5
+"<vedtjin>"
+	"vädtjat" V TV Ind Prt Pl3 <mv> @FS-<ADVL #5->3
+"<?>"
+	"?" CLB @PUNCT #6->3
+
+# sent_id = pit080924.110/111
+# text = Ja Alesgietjen aj mija inijmä jåhtem sáme gájtsajt aj.
+# text_en = and in Västerfjäll we also had a migratory Saami's goats also
+"<Ja>"
+	"ja" CC @CVP #1->5
+"<Alesgietjen>"
+	"Alesgiehtje" Prop N Sg Ine @ADVL> #2->5
+"<aj>"
+	"aj" Adv @ADVL> #3->5
+"<mija>"
+	"mån" Pron Pers Pl1 Nom @SUBJ> #4->5
+"<inijmä>"
+	"adnet" V TV Ind Prt Pl1 <mv> @FMV #5->0
+"<jåhtem>"
+	"jåhtet" V Vsubst @>N #6->7
+"<sáme>"
+	"sábme" N Sg Gen @>N #7->8
+"<gájtsajt>"
+	"gájjtsa" N Pl Acc @<OBJ #8->5
+"<aj>"
+	"aj" Adv @<ADVL #9->5
+"<.>"
+	"." CLB @PUNCT #10->5
+
+# sent_id = pit080924.119
+# text = Gåkkte lij dat?
+# text_en = how was that?
+"<Gåkkte>"
+	"gukkte" Adv @ADVL> #1->2
+"<lij>"
+	"lä" V Ind Prt Sg3 <mv> @FMV #2->0
+"<dat>"
+	"dat" Pron Dem Sg Nom @<SUBJ #3->2
+"<?>"
+	"?" CLB @PUNCT #4->2
+
+# sent_id = pit080924.123
+# text = Gu gájtsajt inijdä.
+# text_en = when you had goats
+"<Gu>"
+	"gu" CS @CVP #1->3
+"<gájtsajt>"
+	"gájjtsa" N Pl Acc @OBJ> #2->3
+"<inijdä>"
+	"adnet" V TV Ind Prt Pl2 <mv> @FMV #3->0
+"<.>"
+	"." CLB @PUNCT #4->3
+
+# sent_id = pit080924.125
+# text = Mav dä dajste ådtjojdä?
+# text_en = what did you all get from them?
+"<Mav>"
+	"mij" Pron Interr Sg Acc @OBJ> #1->4
+"<dä>"
+	"dä" Adv @ADVL> #2->4
+"<dajste>"
+	"dat" Pron Dem Pl Ela @ADVL> #3->4
+"<ådtjojdä>"
+	"ådtjot" V TV Ind Prt Pl2 <mv> @FMV #4->0
+"<?>"
+	"?" CLB @PUNCT #5->4
+
+# sent_id = pit080924.128
+# text = Nå, juhkam lä gájtsa mielkev?
+# text_en = well, have you drunk goat milk?
+"<Nå>"
+	"nå" Interj @INTERJ #1->4
+"<,>"
+	"," CLB @PUNCT #2->1
+"<juhkam>"
+	"juhkat" V TV PrfPrc <mv> @IMV #3->4
+"<lä>"
+	"lä" V Ind Prs Pl3 <aux> @FAUX #4->0
+"<gájtsa>"
+	"gájjtsa" N Sg Gen @>N #5->6
+"<mielkev>"
+	"mällke" N Sg Acc @<OBJ #6->3
+"<?>"
+	"?" CLB @PUNCT #7->4
+
+# sent_id = pit080924.130
+# text = Na gukkte lä dát?
+# text_en = and how is it?
+"<Na>"
+	"na" Interj @INTERJ #1->3
+"<gukkte>"
+	"gukkte" Adv @ADVL> #2->3
+"<lä>"
+	"lä" V Ind Prs Sg3 <mv> @FMV #3->0
+"<dát>"
+	"dát" Pron Dem Sg Nom @<SUBJ #4->3
+"<?>"
+	"?" CLB @PUNCT #5->3
+
+# sent_id = pit080924.132
+# text = Lä garras.
+# text_en = it's strong
+"<Lä>"
+	"lä" V Ind Prs Sg3 <mv> @FMV #1->0
+"<garras>"
+	"garras" A Sg Nom @<SPRED #2->1
+"<.>"
+	"." CLB @PUNCT #3->1
+
+# sent_id = pit080924.143
+# text = Pruvvkujdä dä suovastit vuostáv aj?
+# text_en = Did you use to smoke the cheese, too?
+"<Pruvvkujdä>"
+	"pruvvkut" V TV Ind Prt Pl2 <aux> @FAUX #1->0
+"<dä>"
+	"dä" Adv @ADVL> #2->3
+"<suovastit>"
+	"suovastit" V Inf <mv> @IMV #3->1
+"<vuostáv>"
+	"vuasstá" N Sg Acc @<OBJ #4->3
+"<aj>"
+	"aj" Adv @<ADVL #5->3
+"<?>"
+	"?" CLB @PUNCT #6->1
+
+# sent_id = pit080924.151
+# text = Mav dajste dagajdä?
+# text_en = what did you do with them?
+"<Mav>"
+	"mij" Pron Interr Sg Acc @OBJ> #1->3
+"<dajste>"
+	"dat" Pron Dem Pl Ela @ADVL> #2->3
+"<dagajdä>"
+	"dahkat" V TV Ind Prt Pl2 <mv> @FMV #3->0
+"<?>"
+	"?" CLB @PUNCT #4->3
+
+# sent_id = pit080924.153/155
+# text = Ja vuojav aj, duggir häjbmavuojav.
+# text_en = and butter, too, that home-made butter
+"<Ja>"
+	"ja" CC @CVP #1->2
+"<vuojav>"
+	"vuodja" N Sg Acc @OBJ #2->0
+"<aj>"
+	"aj" Adv @ADVL #3->2
+"<,>"
+	"," CLB @PUNCT #4->6
+"<duggir>"
+	"duggir" Det Attr @>N #5->6
+"<häjbmavuojav>"
+	"häjbma#vuodja" N Sg Acc @OBJ #6->2
+"<.>"
+	"." CLB @PUNCT #7->6
+
+# sent_id = pit080924.064
+# text = Dä lij suohtas gu lidjiv mánná.
+# text_en = it was fun when I was a child
+"<Dä>"
+	"dä" Adv @ADVL> #1->2
+"<lij>"
+	"lä" V Ind Prt Sg3 <mv> @FMV #2->0
+"<suohtas>"
+	"suohtas" A Sg Nom @<SPRED #3->2
+"<gu>"
+	"gu" CS @CVP #4->5
+"<lidjiv>"
+	"lä" V Ind Prt Sg1 <mv> @FS-<ADVL #5->2
+"<mánná>"
+	"mánná" N Sg Nom @<SPRED #6->5
+"<.>"
+	"." CLB @PUNCT #7->2
+
+# sent_id = pit080924.065/066
+# text = Iednagijt ådtjojmä miehtsen ståhkåt ja dagajmä lastbijlajt ja dággárijt.
+# text_en = We got to play in the forest a lot and we made trucks as such things
+"<Iednagijt>"
+	"iednak" A Pl Acc @OBJ> #1->4
+"<ådtjojmä>"
+	"ådtjot" <ctjHead> V TV Ind Prt Pl1 <aux> @FAUX #2->0
+"<miehtsen>"
+	"mähttse" N Sg Ine @ADVL> #3->4
+"<ståhkåt>"
+	"ståhkåt" V Inf <mv> @IMV #4->2
+"<ja>"
+	"ja" CC @CVP #5->6
+"<dagajmä>"
+	"dahkat" V TV Ind Prt Pl1 <mv> @FMV #6->2
+"<lastbijlajt>"
+	"lastbijlajt" N Pl Acc @<OBJ #7->6
+"<ja>"
+	"ja" CC @CNP #8->9
+"<dággárijt>"
+	"dággár" Pron Indef Pl Acc @<OBJ #9->7
+"<.>"
+	"." CLB @PUNCT #10->2
+
+# sent_id = pit080924.068/069
+# text = Ja så, gu dä almatj dä vuorrasabåj, dä ällgiv skuvvgit gu lidjiv, galla, akkta låk guäkkte jage.
+# text_en = and when one gets older, then I started to hunt when I was, how old, twelve years old
+"<Ja>"
+	"ja" CC @CVP #1->11
+"<så>"
+	"så" Adv @ADVL> #2->11
+"<,>"
+	"," CLB @PUNCT #3->8
+"<gu>"
+	"gu" CS @CVP #4->8
+"<dä>"
+	"dä" Adv @ADVL> #5->8
+"<almatj>"
+	"almatj" N Sg Nom @SUBJ> #6->8
+"<dä>"
+	"dä" Adv @ADVL> #7->8
+"<vuorrasabåj>"
+	"vuorrasabåj" V Ind Prt Sg3 <mv> @FS-ADVL> #8->11
+"<,>"
+	"," CLB <cvp> @PUNCT #9->8
+"<dä>"
+	"dä" Adv @ADVL> #10->11
+"<ällgiv>"
+	"állget" V TV Ind Prt Sg1 <mv> @FMV #11->0
+"<skuvvgit>"
+	"skuvvgit" V TV Inf <mv> @ICL-OBJ #12->11
+"<gu>"
+	"gu" CS @CVP #13->14
+"<lidjiv>"
+	"lä" V Ind Prt Sg1 <mv> @FS-<ADVL #14->12
+"<,>"
+	"," CLB @PUNCT #15->16
+"<galla>"
+	"galla" Pron Interr Sg Nom @<HNOUN #16->14
+"<,>"
+	"," CLB @PUNCT #17->16
+"<akkta>"
+	"akkta" Num @>N #18->21
+"<låk>"
+	"lågev" Num @Num< #19->18
+"<guäkkte>"
+	"guäkkte" Num @Num< #20->18
+"<jage>"
+	"jahke" N Pl Nom @<SPRED #21->14
+"<.>"
+	"." CLB @PUNCT #22->11
+
+# sent_id = pit080924.072/073
+# text = Tjuvudiv mån áhtjev men, men gu lidjiv akkta låk gålbmå dä lidjiv uktuk.
+# text_en = I followed (my) father but when I was 13 I was alone
+"<Tjuvudiv>"
+	"tjuvudit" V Ind Prt Sg1 <mv> @FMV #1->0
+"<mån>"
+	"mån" Pron Pers Sg1 Nom @<SUBJ #2->1
+"<áhtjev>"
+	"áhttje" N Sg Acc @<OBJ #3->1
+"<men>"
+	"men" CC @CVP #4->8
+"<,>"
+	"," CLB @PUNCT #5->8
+"<men>"
+	"men" CC @CVP #6->8
+"<gu>"
+	"gu" CS @CVP #7->8
+"<lidjiv>"
+	"lä" V Ind Prt Sg1 <mv> @FS-ADVL> #8->14
+"<akkta>"
+	"akkta" Num @<SPRED #9->8
+"<låk>"
+	"lågev" Num @Num< #10->9
+"<gålbmå>"
+	"gålbmå" Num @Num< #11->9
+"<,>"
+	"," CLB <cvp> @PUNCT #12->8
+"<dä>"
+	"dä" Adv @ADVL> #13->14
+"<lidjiv>"
+	"lä" V Ind Prt Sg1 <mv> @FMV #14->1
+"<uktuk>"
+	"iktuk" Adv @<ADVL #15->14
+"<.>"
+	"." CLB @PUNCT #16->1
+
+# sent_id = pit080924.079/080
+# text = Diedá, mån vuhtjiv vuostamos guhka jualgagav lidjiv, nå, akkta låk gietjav jage.
+# text_en = you know I shot my very first moose (when) I was 17 years old
+"<Diedá>"
+	"diehtet" <ctjHead> V TV Ind Prs Sg2 <mv> @FMV #1->0
+"<,>"
+	"," CLB <cvp> @PUNCT #2->1
+"<mån>"
+	"mån" Pron Pers Sg1 Nom @SUBJ> #3->4
+"<vuhtjiv>"
+	"vuohtjet" V Ind Prt Sg1 <mv> @FMV #4->1
+"<vuostamos>"
+	"vuostamos" A Superl Attr @>N #5->7
+"<guhka>"
+	"guhkke" A Attr @>N #6->7
+"<jualgagav>"
+	"jualgagav" N Sg Acc @<OBJ #7->4
+"<,>"
+	"," CLB <cvp> @PUNCT #8->9
+"<lidjiv>"
+	"lä" V Ind Prt Sg1 <mv> @FMV #9->1
+"<,>"
+	"," CLB @PUNCT #10->11
+"<nå>"
+	"nå" Interj @INTERJ #11->1
+"<,>"
+	"," CLB @PUNCT #12->11
+"<akkta>"
+	"akkta" Num @>N #13->16
+"<låk>"
+	"lågev" Num @Num< #14->13
+"<gietjav>"
+	"gietjav" Num @Num< #15->13
+"<jage>"
+	"jahke" N Pl Nom @<SPRED #16->9
+"<.>"
+	"." CLB @PUNCT #17->1
+
+# sent_id = pit080924.087
+# text = Ja gusajt inijmä.
+# text_en = and we had cows
+"<Ja>"
+	"ja" CC @CVP #1->3
+"<gusajt>"
+	"gussa" N Pl Acc @OBJ> #2->3
+"<inijmä>"
+	"adnet" V TV Ind Prt Pl1 <mv> @FMV #3->0
+"<.>"
+	"." CLB @PUNCT #4->3
+
+# sent_id = pit080924.091/093
+# text = Ja dä inijmä gusajt, gålbmå gusa ja akkta, akkta hiestav ja gájtsajt inijmä ja sávtsajt.
+# text_en = and we had cows, 3 cows and one, one horse and we had goats and sheep
+"<Ja>"
+	"ja" CC @CVP #1->3
+"<dä>"
+	"dä" Adv @ADVL> #2->3
+"<inijmä>"
+	"adnet" <ctjHead> V TV Ind Prt Pl1 <mv> @FMV #3->0
+"<gusajt>"
+	"gussa" N Pl Acc @<OBJ #4->3
+"<,>"
+	"," CLB <cvp> @PUNCT #5->7
+"<gålbmå>"
+	"gålbmå" Num @>N #6->7
+"<gusa>"
+	"gussa" N Pl Nom @APP-N< #7->4
+"<,>"
+	"," CLB @PUNCT #8->7
+"<ja>"
+	"ja" CC @CVP #9->16
+"<akkta>"
+	"akkta" Num <ctjHead> @>N #10->13
+"<,>"
+	"," CLB <cnp> @PUNCT #11->12
+"<akkta>"
+	"akkta" Num @>N #12->10
+"<hiestav>"
+	"hässta" N Sg Acc <ctjHead> @OBJ> #13->16
+"<ja>"
+	"ja" CC @CNP #14->15
+"<gájtsajt>"
+	"gájjtsa" N Pl Acc @OBJ> #15->13
+"<inijmä>"
+	"adnet" V TV Ind Prt Pl1 <mv> @FMV #16->3
+"<ja>"
+	"ja" CC @CVP #17->18
+"<sávtsajt>"
+	"sávvtsa" N Pl Acc @<OBJ #18->16
+"<.>"
+	"." CLB @PUNCT #19->3
+
+# sent_id = pit080924.136
+# text = Ij lä nav njállge.
+# text_en = that is not so tasty
+"<Ij>"
+	"ij" V Neg Prs Sg3 <aux> @FAUX #1->0
+"<lä>"
+	"lä" V ConNeg <mv> @IMV #2->1
+"<nav>"
+	"nav" Adv @>A #3->4
+"<njállge>"
+	"njállge" A Sg Nom @<SPRED #4->1
+"<.>"
+	"." CLB @PUNCT #5->1
+
+# sent_id = pit080924.139
+# text = Men vuässta'l káfan njállge.
+# text_en = but cheese is definitely good in coffee
+"<Men>"
+	"men" CC @CVP #1->4
+"<vuässta>"
+	"vuasstá" N Sg Nom @SUBJ> #2->4
+"<dä>"
+	"dä" Adv @ADVL> #3->4
+"<'l>"
+	"lä" V Ind Prs Sg3 <mv> @FMV #4->0
+"<káfan>"
+	"káffa" N Sg Ine @<ADVL #5->4
+"<njállge>"
+	"njállge" A Sg Nom @<SPRED #6->4
+"<.>"
+	"." CLB @PUNCT #7->4
+
+# sent_id = pit080924.145/146/148
+# text = Suovastijme mija ja ustijmä iedna buhtsu biergov, majt suovastij ja gåjkådij.
+# text_en = we smoked it and we bought a lot of reindeer meat  which we smoked and dried
+"<Suovastijme>"
+	"suovastit" <ctjHead> V Ind Prt Pl1 <mv> @FMV #1->0
+"<mija>"
+	"mån" Pron Pers Pl1 Nom @<SUBJ #2->1
+"<ja>"
+	"ja" CC @CVP #3->4
+"<ustijmä>"
+	"åsstet" V Ind Prt Pl1 <mv> @FMV #4->1
+"<iedna>"
+	"iednak" A Attr @>N #5->7
+"<buhtsu>"
+	"båtsoj" N Sg Gen @>N #6->7
+"<biergov>"
+	"bärrgo" N Sg Acc @<OBJ #7->4
+"<,>"
+	"," CLB <cvp> @PUNCT #8->10
+"<majt>"
+	"mij" Pron Rel Pl Acc @OBJ> #9->10
+"<suovastij>"
+	"suovastit" <ctjHead> V Ind Prt Sg3 <mv> @FS-N< #10->7
+"<ja>"
+	"ja" CC @CVP #11->12
+"<gåjkådij>"
+	"gåjkådit" V Ind Prt Sg3 <mv> @FS-N< #12->10
+"<.>"
+	"." CLB @PUNCT #13->1
+
+# sent_id = pit080924.159
+# text = Gu lij giesse dä juomojt tjuggijmä.
+# text_en = we picked sorrel during the summer
+"<Gu>"
+	"gu" CS @CVP #1->2
+"<lij>"
+	"lä" V Ind Prt Sg3 <mv> @FS-ADVL> #2->7
+"<giesse>"
+	"giesse" N Sg Nom <ext> @<SUBJ #3->2
+"<,>"
+	"," CLB <cvp> @PUNCT #4->2
+"<dä>"
+	"dä" Adv @ADVL> #5->7
+"<juomojt>"
+	"juobmo" N Pl Acc @OBJ> #6->7
+"<tjuggijmä>"
+	"tjuggit" V TV Ind Prt Pl1 <mv> @FMV #7->0
+"<.>"
+	"." CLB @PUNCT #8->7
+
+# sent_id = pit080924.161
+# text = Dä båråjmä degu krema melkijn.
+# text_en = then we ate it as a cream with milk
+"<Dä>"
+	"dä" Adv @ADVL> #1->2
+"<båråjmä>"
+	"bårråt" V Ind Prt Pl1 <mv> @FMV #2->0
+"<degu>"
+	"degu" CC @CVP #3->4
+"<krema>"
+	"krema" N Sg Nom @FS-<ADVL #4->2
+"<melkijn>"
+	"mällke" N Sg Com @<ADVL #5->2
+"<.>"
+	"." CLB @PUNCT #6->2
+
+# sent_id = pit080924.169
+# text = Ja dä lä válen nanne.
+# text_en = and that is in a meadow
+"<Ja>"
+	"ja" CC @CVP #1->3
+"<dä>"
+	"dä" Adv @ADVL> #2->3
+"<lä>"
+	"lä" V Ind Prs Sg3 <mv> @FMV #3->0
+"<válen>"
+	"válle" N Sg Ine @<ADVL #4->3
+"<nanne>"
+	"nanne" Adv @<ADVL #5->3
+"<.>"
+	"." CLB @PUNCT #6->3
+
+# sent_id = pit080924.171
+# text = Gånne, sujnij, sujnij sinne da sjiddin.
+# text_en = where, in hay, in hay they (plants) grew
+"<Gånne>"
+	"gånne" Adv @ADVL> #1->8
+"<,>"
+	"," CLB @PUNCT #2->3
+"<sujnij>"
+	"suäjdne" N Pl Gen <ctjHead> @>P #3->6
+"<,>"
+	"," CLB @PUNCT #4->5
+"<sujnij>"
+	"suäjdne" N Pl Gen @>P #5->3
+"<sinne>"
+	"sinne" Po @ADVL> #6->8
+"<da>"
+	"dat" Pron Dem Pl Nom @SPRED> #7->8
+"<sjiddin>"
+	"sjaddat" V Ind Prt Pl3 <mv> @FMV #8->0
+"<.>"
+	"." CLB @PUNCT #9->8
+
+# sent_id = pit080924.173
+# text = Gu lä, gu lidjin sladjim dä buhtin da bajás.
+# text_en = after they had harvested, then they came up
+"<Gu>"
+	"gu" CS @CVP #1->2
+"<lä>"
+	"lä" <ctjHead> V Ind Prs Sg3 <mv> @FS-ADVL> #2->9
+"<,>"
+	"," CLB <cvp> @PUNCT #3->2
+"<gu>"
+	"gu" CS @CVP #4->5
+"<lidjin>"
+	"lä" V Ind Prt Pl3 <aux> @FS-ADVL>#5->2
+"<sládjim>"
+	"?" V PrfPrc <mv> @FS-IMV #6->5
+"<,>"
+	"," CLB <cvp> @PUNCT #7->5
+"<dä>"
+	"dä" Adv @ADVL> #8->9
+"<buhtin>"
+	"båhtet" V Ind Prt Pl3 <mv> @FMV #9->0
+"<da>"
+	"dat" Pron Dem Pl Nom @<SUBJ #10->9
+"<bajás>"
+	"bajás" Adv @<ADVL #11->9
+"<.>"
+	"." CLB @PUNCT #12->9
+
+# sent_id = pit080924.177
+# text = Ja gävdnuji du, ma lä váren.
+# text_en = and there are some in the mountains
+"<Ja>"
+	"ja" CC @CVP #1->2
+"<gävdnuji>"
+	"gävdnut" V IV Ind Prs Pl3 <mv> @FMV #2->0
+"<du>"
+	"dut" Pron Dem Pl Nom @<SUBJ #3->2
+"<,>"
+	"," CLB <cvp> @PUNCT #4->6
+"<ma>"
+	"mij" Pron Rel Pl Nom @SUBJ> #5->6
+"<lä>"
+	"lä" V Ind Prs Pl3 <mv> @FS-N< #6->3
+"<váren>"
+	"várre" N Sg Ine @<ADVL #7->6
+"<.>"
+	"." CLB @PUNCT #8->2
+
+# sent_id = pit080924.178
+# text = Váren gävdnuji aj juomo, men dä idtjin da, dä gävdnujin da vuälijn.
+# text_en = in the mountains there are also sorrels, but those are not those found lower down
+"<Váren>"
+	"várre" N Sg Ine @ADVL> #1->2
+"<gävdnuji>"
+	"gävdnut" <ctjHead> V IV Ind Prs Pl3 <mv> @FMV #2->0
+"<aj>"
+	"aj" Adv @<ADVL #3->2
+"<juomo>"
+	"juobmo" N Pl Nom @<SUBJ #4->2
+"<,>"
+	"," CLB <cvp> @PUNCT #5->8
+"<men>"
+	"men" CC @CVP #6->8
+"<dä>"
+	"dä" Adv @ADVL> #7->8
+"<idtjin>"
+	"ij" V Neg Prt Pl3 <mv> @FMV #8->2
+"<da>"
+	"dat" Pron Dem Pl Nom @<SUBJ #9->8
+"<,>"
+	"," CLB <cvp> @PUNCT #10->12
+"<dä>"
+	"dä" Adv @ADVL> #11->12
+"<gävdnujin>"
+	"gävdnut" V IV Ind Prt Pl3 <mv> @FMV #12->2
+"<da>"
+	"dat" Pron Dem Pl Nom @<SUBJ #13->12
+"<vuällen>"
+	"vuällen" Adv @<ADVL #14->12
+"<.>"
+	"." CLB @PUNCT #15->2
+
+# sent_id = pit080924.196/197
+# text = Ja så muhtin dä tjaktjan, gu dä, gu dä sládjo lij fierok, dä lij gámasujnijt tjuålat.
+# text_en = and then sometimes when it was autumn and when the harvest was finished, then it was time for shoe-hay-cutting
+"<Ja>"
+	"ja" CC @CVP #1->16
+"<så>"
+	"så" Adv @ADVL> #2->16
+"<muhtin>"
+	"mudiŋ" Adv @ADVL> #3->16
+"<dä>"
+	"dä" Adv @ADVL> #4->16
+"<tjaktjan>"
+	"tjakktja" N Sg Ine @ADVL> #5->16
+"<,>"
+	"," CLB @PUNCT #6->12
+"<gu>"
+	"gu" CS @CVP #7->12
+"<dä>"
+	"dä" Adv @ADVL #8->12
+"<gu>"
+	"gu" CS @CVP #9->12
+"<dä>"
+	"dä" Adv @ADVL> #10->12
+"<sládjo>"
+	"sládjo" N Sg Nom @SUBJ> #11->12
+"<lij>"
+	"lä" V Ind Prt Sg3 <mv> @FS-ADVL> #12->16
+"<fierok>"
+	"fierok" A Sg Nom @<SPRED #13->12
+"<,>"
+	"," CLB <cvp> @PUNCT #14->12
+"<dä>"
+	"dä" Adv @ADVL> #15->16
+"<lij>"
+	"lä" V Ind Prt Sg3 <mv> @FMV #16->0
+"<gámasujnijt>"
+	"gámasuäjdne" N Pl Acc @-FOBJ> #17->18
+"<tjuollat>"
+	"tjuollat" V TV Inf <mv> @ICL-SUBJ #18->16
+"<.>"
+	"." CLB @PUNCT #19->16
+
+# sent_id = pit080924.203/204
+# text = Rådojn sjiddi da suojne, ma gilgij gabma-suojne stadigare.
+# text_en = the hay grows in the willow brush, which makes the shoe-hay more sturdy
+"<Rådojn>"
+	"råhto" N Pl Ine @ADVL> #1->2
+"<sjiddi>"
+	"sjaddat" V Ind Prs Pl3 <mv> @FMV #2->0
+"<da>"
+	"dat" Det Pl Nom @>N #3->4
+"<suojne>"
+	"suäjdne" N Pl Nom @<SPRED #4->2
+"<,>"
+	"," CLB <cvp> @PUNCT #5->7
+"<ma>"
+	"mij" Pron Rel Pl Nom @SUBJ> #6->7
+"<gilgij>"
+	"gallgat" V Ind Prt Sg3 <mv> @FS-N< #7->4
+"<suojne>"
+	"suäjdne" N Pl Nom @HNOUN #8->7
+"<stadigare>"
+	"stadigare" A Comp Sg Nom @SPRED #9->7
+"<.>"
+	"." CLB @PUNCT #10->2
+
+# sent_id = pit080924.217/220
+# text = Gatsostij dä vädtjaj, jut ie guosa åle.
+# text_en = you hung (it) up on the wall so that the cows don't reach (it)
+"<Gatsostij>"
+	"gatsostit" V Ind Prt Sg3 <mv> @FMV #1->0
+"<dä>"
+	"dä" Adv @<ADVL #2->1
+"<vädtjaj>"
+	"vädtja" N Sg Ill @<ADVL #3->1
+"<,>"
+	"," CLB <cvp> @PUNCT #4->6
+"<jut>"
+	"juhte" CS @CVP #5->6
+"<ie>"
+	"ij" V Neg Prs Pl3 <aux> @FS-<ADVL #6->1
+"<guosa>"
+	"guossa" N Pl Nom @<SUBJ #7->6
+"<åle>"
+	"ållet" V ConNeg <mv> @FS-IMV #8->6
+"<.>"
+	"." CLB @PUNCT #9->1
+
+# sent_id = pit100404.307
+# Gukkte'l dan namma?
+# what's it called
+"<Gukkte>"
+	"gukkte" Adv @ADVL> #1->2
+"<'l>"
+	"lä" V Ind Prs Sg3 <mv> @FMV #2->0
+"<dan>"
+	"dat" Pron Dem Sg Gen @>N #3->4
+"<namma>"
+	"namma" N Sg Nom <ext> @<SUBJ #4->2
+"<?>"
+	"?" CLB @PUNCT #5->2
+
+# sent_id = pit100404.310
+# Jáhkáv almatj aj hålåj "duällje" disi.
+# I believe one also says "duällje" for that
+"<Jáhkáv>"
+	"jáhkket" V TV Ind Prs Sg1 <mv> @FMV #1->0
+"<almatj>"
+	"almatj" N Sg Nom @SUBJ> #2->4
+"<aj>"
+	"aj" Adv @ADVL> #3->4
+"<hålåj>"
+	"hållåt" V TV Ind Prt Sg3 <mv> @FS-OBJ #4->1
+"<">"
+	""" PUNCT @PUNCT #5->6
+"<duällje>"
+	"duällje" N Sg Nom @HNOUN #6->4
+"<">"
+	""" PUNCT @PUNCT #7->6
+"<disi>"
+	"dat" Pron Dem Sg Ill @<ADVL #8->4
+"<.>"
+	"." CLB
+
+# sent_id = pit100404.311
+# text = Men dat, dat duällje lij sávtsa duällje.
+# text_en = but that skin was a sheep skin
+"<Men>"
+	"men" CC @CVP #1->6
+"<dat>"
+	"dat" Det Sg Nom <ctjHead> @>N #2->5
+"<,>"
+	"," CLB @PUNCT #3->4
+"<dat>"
+	"dat" Det Sg Nom @>N #4->2
+"<duällje>"
+	"duällje" N Sg Nom @SUBJ> #5->6
+"<lij>"
+	"lä" V Ind Prt Sg3 <mv> @FMV #6->0
+"<sávtsa>"
+	"sávvtsa" N Sg Gen @>N #7->8
+"<duällje>"
+	"duällje" N Sg Nom @<SPRED #8->6
+"<.>"
+	"." CLB @PUNCT #9->6
+
+# sent_id = pit100404.312
+# text = Ja dä idniv stuor gábmagijt.
+# text_en = and then I had big shoes
+"<Ja>"
+	"ja" CC @CVP #1->3
+"<dä>"
+	"dä" Adv @ADVL> #2->3
+"<idniv>"
+	"adnet" V TV Ind Prt Sg1 <mv> @FMV #3->0
+"<stuor>"
+	"stuorra" A Attr @>N #4->5
+"<gábmagijt>"
+	"gáma" N Pl Acc @<OBJ #5->3
+"<.>"
+	"." CLB @PUNCT #6->3
+
+# sent_id = pit100404.315
+# text = Ja dä dan sinne dä tjåhkkåhiv dan tjielka nanne.
+# text_en = and it was in that I sat on the sled
+"<Ja>"
+	"ja" CC @CVP #1->6
+"<dä>"
+	"dä" Adv @ADVL> #2->6
+"<dan>"
+	"dat" Pron Dem Sg Gen @>P #3->4
+"<sinne>"
+	"sinne" Po @ADVL> #4->6
+"<dä>"
+	"dä" Adv @ADVL> #5->6
+"<tjåhkkåhiv>"
+	"tjåhkkåhit" V Ind Prt Sg1 <mv> @FMV #6->0
+"<dan>"
+	"dat" Det Sg Gen @>N #7->8
+"<tjielka>"
+	"tjällka" N Sg Gen @>P #8->9
+"<nanne>"
+	"nanne" Po @<ADVL #9->6
+"<.>"
+	"." CLB @PUNCT #10->6
+
+# sent_id = pit100404.316
+# text = Iv mån diede, man mällgat, men kan ...
+# text_en = I don't know how far but maybe
+"<Iv>"
+	"ij" V Neg Prs Sg1 <aux> @FAUX #1->0
+"<mån>"
+	"mån" Pron Pers Sg1 Nom @<SUBJ #2->1
+"<diede>"
+	"diehtet" V TV ConNeg <mv> @IMV #3->1
+"<,>"
+	"," CLB @PUNCT #4->6
+"<man>"
+	"man" Adv @>A #5->6
+"<mällgat>"
+	"mällgat" A Sg Nom @SPRED #6->3
+"<,>"
+	"," CLB @PUNCT #7->9
+"<men>"
+	"men" CC @CVP #8->9
+"<kan>"
+	"kano" Adv @ADVL #9->1
+"<...>"
+	"..." CLB @PUNCT #10->1
+
+# sent_id = pit100404.317
+# text = Man mällgat lij, gu lij hiejman, iv mån diede, man iedna tijma dä.
+# text_en = how long it was when it was home, I don't know how many hours
+"<Man>"
+	"man" Adv @>A #1->2
+"<mällgat>"
+	"mällgat" A Sg Nom @SPRED> #2->3
+"<lij>"
+	"lä" V Ind Prt Sg3 <mv> @FS-OBJ #3->11
+"<,>"
+	"," CLB <cvp> @PUNCT #4->3
+"<gu>"
+	"gu" CS @CVP #5->6
+"<lij>"
+	"lä" V Ind Prt Sg3 <mv> @FS-<ADVL #6->3
+"<hiejman>"
+	"häjbma" N Sg Ine @<ADVL #7->6
+"<,>"
+	"," CLB <cvp> @PUNCT #8->6
+"<iv>"
+	"ij" V Neg Prs Sg1 <aux> @FAUX #9->0
+"<mån>"
+	"mån" Pron Pers Sg1 Nom @<SUBJ #10->9
+"<diede>"
+	"diehtet" V TV ConNeg <mv> @IMV #11->9
+"<,>"
+	"," CLB @PUNCT #12->15
+"<man>"
+	"man" Adv @>A #13->14
+"<iedna>"
+	"iednak" A Attr @>N #14->15
+"<tijma>"
+	"tijbma" N Pl Nom @HNOUN #15->9
+"<dä>"
+	"dä" Adv @ADVL #16->15
+"<.>"
+	"." CLB @PUNCT #17->9
+
+# sent_id = pit100404.320
+# text = Eller Oskar dä vujij dajn skuhtterijn.
+# text_en = or Oskar drove the snowmobile
+"<Eller>"
+	"eller" CC @CVP #1->4
+"<Oskar>"
+	"Oskar" N Sg Nom @SUBJ> #2->4
+"<dä>"
+	"dä" Adv @ADVL> #3->4
+"<vujij>"
+	"vuodjet" V Ind Prt Sg3 <mv> @FMV #4->0
+"<dajn>"
+	"dat" Det Pl Ine @>N #5->6
+"<skuhtterijn>"
+	"skuhter" N Pl Ine @<ADVL #6->4
+"<.>"
+	"." CLB @PUNCT #7->4
+
+# sent_id = pit100404.323
+# text = Dat lij dálven.
+# text_en = that was in the winter
+"<Dat>"
+	"dat" Pron Dem Sg Nom @SUBJ> #1->2
+"<lij>"
+	"lä" V Ind Prt Sg3 <mv> @FMV #2->0
+"<dálven>"
+	"dállve" N Sg Ine @<ADVL #3->2
+"<.>"
+	"." CLB @PUNCT #4->2
+
+# sent_id = pit100404.324
+# text = Sida mån galgav hållåt, gu gävdniv ájten dajt gábmagijt.
+# text_en = you want me to talk about when I found these shoes in the shed
+"<Sida>"
+	"sihtat" V TV Ind Prs Sg2 <mv> @FMV #1->0
+"<mån>"
+	"mån" Pron Pers Sg1 Nom @SUBJ> #2->3
+"<galgav>"
+	"gallgat" V Ind Prs Sg1 <aux> @FS-OBJ #3->1
+"<hållåt>"
+	"hållåt" V TV Inf <mv> @FS-IMV #4->3
+"<,>"
+	"," CLB <cvp> @PUNCT #5->7
+"<gu>"
+	"gu" CS @CVP #6->7
+"<gävdniv>"
+	"gávdnat" V Ind Prt Sg1 <mv> @FS-OBJ #7->4
+"<ájten>"
+	"ájjte" N Sg Ine @<ADVL #8->7
+"<dajt>"
+	"dat" Det Pl Acc @>N #9->10
+"<gábmagijt>"
+	"gáma" N Pl Acc @<OBJ #10->7
+"<.>"
+	"." CLB @PUNCT #11->1
+
+# sent_id = pit100404.326
+# text = Gien gábmaga lä dá?
+# text_en = whose shoes are these
+"<Gien>"
+	"gie" Pron Interr Sg Gen @>N #1->2
+"<gábmaga>"
+	"gáma" N Pl Nom @SPRED> #2->3
+"<lä>"
+	"lä" V Ind Prs Pl3 <mv> @FMV #3->0
+"<dá>"
+	"dát" Pron Dem Pl Nom @<SUBJ #4->3
+"<?>"
+	"?" CLB @PUNCT #5->3
+
+# sent_id = pit100404.331
+# text = Da lä sabekgábmaga.
+# text_en = these are ski shoes
+"<Da>"
+	"dat" Pron Dem Pl Nom @SUBJ> #1->2
+"<lä>"
+	"lä" V Ind Prs Pl3 <mv> @FMV #2->0
+"<sabekgábmaga>"
+	"sabek#gáma" N Pl Nom @<SPRED #3->2
+"<.>"
+	"." CLB @PUNCT #4->2
+
+# sent_id = pit100404.332
+# text = Da lä muv iedne.
+# text_en = they are my mother's
+"<Da>"
+	"dat" Pron Dem Pl Nom @SUBJ> #1->2
+"<lä>"
+	"lä" V Ind Prs Pl3 <mv> @FMV #2->0
+"<muv>"
+	"mån" Pron Pers Sg1 Gen @>N #3->4
+"<iedne>"
+	"äddne" N Sg Gen @<ADVL #4->2
+"<.>"
+	"." CLB @PUNCT #5->2
+
+# sent_id = pit100404.333
+# text = Ja ikktu Jåssjå vulgij ájte gugu ja ...
+# text_en = and yesterday Josh went to the shed
+"<Ja>"
+	"ja" CC @CVP #1->4
+"<ikktu>"
+	"ikktu" Adv @ADVL> #2->4
+"<Jåssjå>"
+	"Jåssjå" N Sg Nom @SUBJ> #3->4
+"<vulgij>"
+	"vuällget" V Ind Prt Sg3 <mv> @FMV #4->0
+"<ájte>"
+	"ájjte" N Sg Gen @>P #5->6
+"<gugu>"
+	"gugu" Po @<ADVL #6->4
+"<ja>"
+	"ja" CC @CVP #7->4
+"<...>"
+	"..." CLB @PUNCT #8->4
+
+# sent_id = pit100404.335
+# text = Väldij spádanav maŋen, jalá guäj- gåjjvom.
+# text_en = (he) took the shovel with him, or scooper
+"<Väldij>"
+	"válldet" V TV Ind Prt Sg3 <mv> @FMV #1->0
+"<spádanav>"
+	"spádan" N Sg Acc @<OBJ #2->1
+"<maŋen>"
+	"maŋen" Adv @<ADVL #3->1
+"<,>"
+	"," CLB @PUNCT #4->1
+"<jalá>"
+	"jalá" CC @CVP #5->7
+"<guäj->"
+	"guäj-" ? @X #6->7
+"<gåjjvon>"
+	"gåjjvon" N Sg Nom @HNOUN #7->1
+"<.>"
+	"." CLB @PUNCT #8->1
+
+# sent_id = pit100404.337
+# text = Gåk almatj hållá gåjvov?
+# text_en = how does one say... shovel
+"<Gåk>"
+	"gukkte" Adv @ADVL> #1->3
+"<almatj>"
+	"almatj" N Sg Nom @SUBJ> #2->3
+"<hållá>"
+	"hållåt" V Ind Prs Sg3 <mv> @FMV #3->0
+"<gåjvov>"
+	"gåjjvon" N Sg Acc @<OBJ #4->3
+"<?>"
+	"?" CLB @PUNCT #5->3
+
+# sent_id = pit100404.339
+# text = Ja dä sån gåjvoj dä muahttagav ukksa, uksa guoran.
+# text_en = and then he shoveled the snow next-to the door
+"<Ja>"
+	"ja" CC @CVP #1->4
+"<dä>"
+	"dä" Adv @ADVL> #2->4
+"<sån>"
+	"sån" Pron Pers Sg3 Nom @SUBJ> #3->4
+"<gåjvoj>"
+	"gåjjvot" V Ind Prt Sg3 <mv> @FMV #4->0
+"<dä>"
+	"dä" Adv @<ADVL #5->4
+"<muahttagav>"
+	"muohta" N Sg Acc @<OBJ #6->4
+"<uksa>"
+	"ukksa" N Sg Gen <ctjHead> @>P #7->10
+"<,>"
+	"," CLB @PUNCT #8->9
+"<uksa>"
+	"ukksa" N Sg Gen @>P #9->7
+"<guoran>"
+	"guoran" Po @<ADVL #10->4
+"<.>"
+	"." CLB @PUNCT #11->4
+
+# sent_id = pit100404.345
+# text = Så Jåssjå gåjvoj dä muahttagijt dasste så.
+# text_en = so Josh shoveld the snow(pl) from there
+"<Så>"
+	"så" Adv @ADVL> #1->3
+"<Jåssjå>"
+	"Jåssjå" N Sg Nom @SUBJ> #2->3
+"<gåjvoj>"
+	"gåjjvot" V Ind Prt Sg3 <mv> @FMV #3->0
+"<dä>"
+	"dä" Adv @<ADVL #4->3
+"<muahttagijt>"
+	"muohta" N Pl Acc @<OBJ #5->3
+"<dasste>"
+	"dat" Pron Dem Sg Ela @<ADVL #6->3
+"<så>"
+	"så" Adv @<ADVL #7->3
+"<.>"
+	"." CLB @PUNCT #8->3
+
+# sent_id = pit100404.347
+# text = Mån mähttiv rahpat uksav, ájte uksav, ja dä danne lidjin dá gábmaga.
+# text_en = I could open the door, the door of the shed, and there were these shoes
+"<Mån>"
+	"mån" Pron Pers Sg1 Nom @SUBJ> #1->2
+"<mähttiv>"
+	"máhttet" <ctjHead> V Ind Prt Sg1 <aux> @FAUX #2->0
+"<rahpat>"
+	"rahpat" V Inf <mv> @IMV #3->2
+"<uksav>"
+	"ukksa" N Sg Acc @<OBJ #4->3
+"<,>"
+	"," CLB <cvp> @PUNCT #5->7
+"<ájte>"
+	"ájjte" N Sg Gen @>N #6->7
+"<uksav>"
+	"ukksa" N Sg Acc @APP-N< #7->4
+"<,>"
+	"," CLB @PUNCT #8->12
+"<ja>"
+	"ja" CC @CVP #9->12
+"<dä>"
+	"dä" Adv @ADVL> #10->12
+"<danne>"
+	"danne" Adv @ADVL> #11->12
+"<lidjin>"
+	"lä" V Ind Prt Pl3 <mv> @FMV #12->2
+"<dá>"
+	"dát" Det Pl Nom @>N #13->14
+"<gábmaga>"
+	"gáma" N Pl Nom <ext> @<SUBJ #14->12
+"<.>"
+	"." CLB @PUNCT #15->2
+
+# sent_id = pit100404.350
+# text = Så dä lij, mån lev dajt vädtjam uddni dasste.
+# text_en = so then I got them from there today
+"<Så>"
+	"så" Adv @ADVL> #1->3
+"<dä>"
+	"dä" Adv @ADVL> #2->3
+"<lij>"
+	"lä" <ctjHead> V Ind Prt Sg3 <mv> @FMV #3->0
+"<,>"
+	"," CLB <cvp> @PUNCT #4->6
+"<mån>"
+	"mån" Pron Pers Sg1 Nom @SUBJ> #5->6
+"<lev>"
+	"lä" V Ind Prs Sg1 <aux> @FAUX #6->3
+"<dajt>"
+	"dat" Pron Dem Pl Acc @OBJ> #7->8
+"<vädtjam>"
+	"vädtjat" V PrfPrc <mv> @IMV #8->6
+"<uddni>"
+	"uddni" Adv @<ADVL #9->8
+"<dasste>"
+	"dat" Pron Dem Sg Ela @<ADVL #10->8
+"<.>"
+	"." CLB @PUNCT #11->3
+
+# sent_id = pit100404.351
+# text = Men gu gillgiv gähttjat gábmagij sisa.
+# text_en = but when I was going to look in the shoes
+"<Men>"
+	"men" CC @CVP #1->3
+"<gu>"
+	"gu" CS @CVP #2->3
+"<gillgiv>"
+	"gallgat" V Ind Prt Sg1 <aux> @FAUX #3->0
+"<gähttjat>"
+	"gähttjat" V Inf <mv> @IMV #4->3
+"<gábmagij>"
+	"gáma" N Pl Gen @>P #5->6
+"<sisa>"
+	"sisa" Po @<ADVL #6->4
+"<...>"
+	"..." CLB @PUNCT #7->3
+
+# sent_id = pit100404.352a
+# text = Ja dä lij snjierra danne.
+# text_en = and there was a mouse there
+"<Ja>"
+	"ja" CC @CVP #1->3
+"<dä>"
+	"dä" Adv @ADVL> #2->3
+"<lij>"
+	"lä" V Ind Prt Sg3 <mv> @FMV #3->0
+"<snjierra>"
+	"sjnjierra" N Sg Nom <ext> @<SUBJ #4->3
+"<danne>"
+	"danne" Adv @<ADVL #5->3
+"<.>"
+	"." CLB @PUNCT #6->3
+
+# sent_id = pit100404.352b
+# text = Jáhkáv skáfferijav lä adnám aktan, aktan gábmagin.
+# text_en = I believe it has had its pantry in one shoe
+"<Jáhkáv>"
+	"jáhkket" V TV Ind Prs Sg1 <mv> @FMV #1->0
+"<skáfferijav>"
+	"skáfferidja" N Sg Acc @OBJ> #2->4
+"<lä>"
+	"lä" V Ind Prs Sg3 <aux> @FS-OBJ #3->1
+"<adnám>"
+	"adnet" V TV PrfPrc <mv> @FS-IMV #4->3
+"<aktan>"
+	"akkta" Num <ctjHead> @>N #5->8
+"<,>"
+	"," CLB <cnp> @PUNCT #6->7
+"<aktan>"
+	"akkta" Num @>N #7->5
+"<gábmagin>"
+	"gáma" N Sg Ine @<ADVL #8->4
+"<.>"
+	"." CLB @PUNCT #9->1
+
+# sent_id = pit100404.353
+# text = Ja, ja danne vujdniv unna jåŋåtjav.
+# text_en = and there I saw a little lingonberry
+"<Ja>"
+	"ja" CC @CVP #1->5
+"<,>"
+	"," CLB @PUNCT #2->5
+"<ja>"
+	"ja" CC @CVP #3->5
+"<danne>"
+	"danne" Adv @ADVL> #4->5
+"<vujdniv>"
+	"vuäjdnet" V TV Ind Prt Sg1 <mv> @FMV #5->0
+"<unna>"
+	"unne" A Attr @>N #6->7
+"<jåŋåtjav>"
+	"jågŋå" N Der/Dimin N Sg Acc @<OBJ #7->5
+"<.>"
+	"." CLB @PUNCT #8->5
+
+# sent_id = pit100404.354
+# text = Jáhkáv skáfferijav lä danne adnám.
+# text_en = I believe (it?) had a pantry there
+"<Jáhkáv>"
+	"jáhkket" V TV Ind Prs Sg1 <mv> @FMV #1->0
+"<skáfferijav>"
+	"skáfferidja" N Sg Acc @OBJ> #2->5
+"<lä>"
+	"lä" V Ind Prs Sg3 <aux> @FS-OBJ #3->1
+"<danne>"
+	"danne" Adv @<ADVL #4->3
+"<adnám>"
+	"adnet" V TV PrfPrc <mv> @FS-IMV #5->3
+"<.>"
+	"." CLB @PUNCT #6->1
+
+# sent_id = pit100404.355
+# text = Ja dä bajjkám iedne gábmagij sisa.
+# text_en = and it had pooped in mom's shoe
+"<Ja>"
+	"ja" CC @CVP #1->3
+"<dä>"
+	"dä" Adv @-FADVL> #2->3
+"<bajjkám>"
+	"bajjket" V PrfPrc <mv> @IMV #3->0
+"<iedne>"
+	"äddne" N Sg Gen @>N #4->5
+"<gábmagij>"
+	"gáma" N Pl Gen @>P #5->6
+"<sisa>"
+	"sisa" Po @-F<ADVL #6->3
+"<.>"
+	"." CLB @PUNCT #7->3
+
+# sent_id = pit100404.356
+# text = Ja nubbe gábmaga sisa aj binnátjijt.
+# text_en = and a little bit in the other shoe too
+"<Ja>"
+	"ja" CC @CVP #1->6
+"<nubbe>"
+	"mubbe" A Ord @>N #2->3
+"<gábmaga>"
+	"gáma" N Sg Gen @>P #3->4
+"<sisa>"
+	"sisa" Po @ADVL #4->6
+"<aj>"
+	"aj" Adv @ADVL #5->6
+"<binnátjijt>"
+	"binnátj" N Pl Acc @OBJ #6->0
+"<.>"
+	"." CLB @PUNCT #7->6
+
+# sent_id = pit100404.357
+# text = Så mån verrtijiv dä dajt ráj... rájdnodit.
+# text_en = so I had to clean them
+"<Så>"
+	"så" Adv @ADVL> #1->7
+"<mån>"
+	"mån" Pron Pers Sg1 Nom @SUBJ> #2->3
+"<verrtijiv>"
+	"verrtit" V IV Ind Prt Sg1 <aux> @FAUX #3->0
+"<dä>"
+	"dä" Adv @ADVL> #4->7
+"<dajt>"
+	"dat" Pron Dem Pl Acc @OBJ> #5->7
+"<ráj->"
+	"ráj-" ? @X #6->7
+"<rájdnodit>"
+	"rájdnodit" V Inf <mv> @IMV #7->3
+"<.>"
+	"." CLB @PUNCT #8->3
+
+# sent_id = pit100404.358
+# text = Så dä välldiv såpa-tjátsev ja dä sagerdiv gábmagijt.
+# text_en = and so I got some soap and water and then I dried the shoes
+"<Så>"
+	"så" Adv @ADVL> #1->3
+"<dä>"
+	"dä" Adv @ADVL> #2->3
+"<välldiv>"
+	"válldet" <ctjHead> V TV Ind Prt Sg1 <mv> @FMV #3->0
+"<såpa-tjátsev>"
+	"såpa-tjátsev" N Sg Acc @<OBJ #4->3
+"<,>"
+	"," CLB <cvp> @PUNCT #5->8
+"<ja>"
+	"ja" CC @CVP #6->8
+"<dä>"
+	"dä" Adv @ADVL> #7->8
+"<sagerdiv>"
+	"sagerdit" V Ind Prt Sg1 <mv> @FMV #8->3
+"<gábmagijt>"
+	"gáma" N Pl Acc @<OBJ #9->8
+"<.>"
+	"." CLB @PUNCT #10->3
+
+# sent_id = pit100404.359
+# text = Ja dä dale anáv dajt julgij nan.
+# text_en = and now I have them on my feet
+"<Ja>"
+	"ja" CC @CVP #1->4
+"<dä>"
+	"dä" Adv @ADVL> #2->4
+"<dale>"
+	"dale" Adv @ADVL> #3->4
+"<anáv>"
+	"adnet" V TV Ind Prs Sg1 <mv> @FMV #4->0
+"<dajt>"
+	"dat" Pron Dem Pl Acc @<OBJ #5->4
+"<julgij>"
+	"juällge" N Pl Gen @>P #6->7
+"<nan>"
+	"nanne" Po @<ADVL #7->4
+"<.>"
+	"." CLB @PUNCT #8->4
+
+# sent_id = pit100404.360
+# text = Så dä måj mehttijmin, måj Jåsjåjn mehttijmin dä tjuajjgat dán Stuornjárga nalá.
+# text_en = so then we could, Josh and I could ski here, up on Stuornjárrga
+"<Så>"
+	"så" Adv @ADVL> #1->4
+"<dä>"
+	"dä" Adv @ADVL> #2->4
+"<måj>"
+	"mån" Pron Pers Du1 Nom @SUBJ> #3->4
+"<mähttijmin>"
+	"máhttet" <ctjHead> V TV Ind Prt Du1 <mv> @FMV #4->0
+"<,>"
+	"," CLB <cvp> @PUNCT #5->8
+"<måj>"
+	"mån" Pron Pers Du1 Nom @SUBJ> #6->8
+"<Jåsjåjn>"
+	"Jåssjå" N Sg Com @Pron< #7->6
+"<mähttijmin>"
+	"máhttet" V TV Ind Prt Du1 <aux> @FAUX #8->4
+"<dä>"
+	"dä" Adv @ADVL> #9->10
+"<tjuajjgat>"
+	"tjuajjgat" V Inf <mv> @IMV #10->8
+"<dán>"
+	"dát" Pron Dem Sg Gen @>N #11->12
+"<Stuornjárga>"
+	"Stuornjárrga" N Sg Gen @>P #12->13
+"<nalá>"
+	"nala" Po @<ADVL #13->10
+"<.>"
+	"." CLB @PUNCT #14->4
+
+# sent_id = pit100404.363
+# text = Nå, mav gillgiv del vit ságastit?
+# text_en = yes what else shall we talk about
+"<Nå>"
+	"nå" Interj @INTERJ #1->4
+"<,>"
+	"," CLB @PUNCT #2->1
+"<mav>"
+	"mij" Pron Interr Sg Acc @OBJ> #3->7
+"<gillgiv>"
+	"gallgat" V Ind Prt Sg1 <aux> @FAUX #4->0
+"<del>"
+	"del" Adv @ADVL> #5->7
+"<vit>"
+	"vide" Adv @ADVL> #6->7
+"<ságastit>"
+	"ságastit" V TV Inf <mv> @IMV #7->4
+"<?>"
+	"?" CLB @PUNCT #8->4
+
+# sent_id = pit100404.365
+# text = Iv mån åbbå diede.
+# text_en = I have no idea
+"<Iv>"
+	"ij" V Neg Prs Sg1 <aux> @FAUX #1->0
+"<mån>"
+	"mån" Pron Pers Sg1 Nom @<SUBJ #2->1
+"<åbbå>"
+	"åbbå" Adv @ADVL> #3->4
+"<diede>"
+	"diehtet" V TV ConNeg <mv> @IMV #4->1
+"<.>"
+	"." CLB @PUNCT #5->1
+
+# sent_id = pit100404.369
+# text = Tuhttjij ij lij, tuhttjij lij, tuhttjiji att lij buorak?
+# text_en = don't you think, did you think so, that that was good?
+"<Tuhttjij>"
+	"tuhttjit" <ctjHead> V TV Ind Prt Sg3 <mv> @FMV #1->0
+"<ij>"
+	"ij" V Neg Prs Sg3 <aux> @FS-OBJ #2->1
+"<lij>"
+	"lä" V Ind Prt Sg3 <mv> @FS-OBJ #3->1
+"<,>"
+	"," CLB <cvp> @PUNCT #4->3
+"<tuhttjij>"
+	"tuhttjit" V TV Ind Prt Sg3 <mv> @FMV #5->1
+"<lij>"
+	"lä" V Ind Prt Sg3 <mv> @FS-OBJ #6->5
+"<,>"
+	"," CLB <cvp> @PUNCT #7->6
+"<tuhttjiji>"
+	"tuhttjit" V TV Ind Prt Sg2 <mv> @FMV #8->1
+"<att>"
+	"ahte" CS @CVP #9->10
+"<lij>"
+	"lä" V Ind Prt Sg3 <mv> @FS-OBJ #10->8
+"<buorak>"
+	"buorak" A Sg Nom @<SPRED #11->10
+"<?>"
+	"?" CLB @PUNCT #12->1
+
+# sent_id = pit100404.375
+# text = Gu mån dunje gehtudiv Alesgietje birra ja värij birra ja muv viessomájge birra ja dale nåvte?
+# text_en = when I told you about Västerfjäll and about mountains and about my life and such things
+"<Gu>"
+	"gu" CS @CVP #1->4
+"<mån>"
+	"mån" Pron Pers Sg1 Nom @SUBJ> #2->4
+"<dunje>"
+	"dån" Pron Pers Sg2 Ill @ADVL> #3->4
+"<gehtudiv>"
+	"gehtudit" V Ind Prt Sg1 <mv> @FMV #4->0
+"<Alesgietje>"
+	"Alesgiehtje" N Sg Gen @>P #5->6
+"<birra>"
+	"birra" Po <ctjHead> @<ADVL #6->4
+"<ja>"
+	"ja" CC @CNP #7->8
+"<värij>"
+	"várre" N Pl Gen @>P #8->9
+"<birra>"
+	"birra" Po @<ADVL #9->6
+"<ja>"
+	"ja" CC @CNP #10->11
+"<muv>"
+	"mån" Pron Pers Sg1 Gen @>N #11->12
+"<viessomájge>"
+	"viessomájjge" N Sg Gen @>P #12->13
+"<birra>"
+	"birra" Po @<ADVL #13->6
+"<ja>"
+	"ja" CC @CVP #14->15
+"<dale>"
+	"dale" Adv @<ADVL #15->6
+"<nåvte>"
+	"navte" Adv @<ADVL #16->6
+"<?>"
+	"?" CLB @PUNCT #17->4
+
+# sent_id = pit100404.381
+# text = Nå gillgin del häjjtet.
+# text_en = well we should stop then
+"<Nå>"
+	"nå" Interj @INTERJ #1->3
+"<,>"
+	"," CLB @PUNCT #2->1
+"<gillgin>"
+	"gallgat" V Ind Prs Du1 <aux> @FAUX #3->0
+"<del>"
+	"del" Adv @ADVL> #4->5
+"<häjjtet>"
+	"häjjtet" V Inf <mv> @IMV #5->3
+"<.>"
+	"." CLB @PUNCT #6->3
+
+# sent_id = sje20150329b.008
+# text = Mav sida diehtet dä?
+# text_en = what do you want to know?
+"<Mav>"
+	"mij" Pron Interr Sg Acc @OBJ> #1->2
+"<sida>"
+	"sihtat" V TV Ind Prs Sg2 <mv> @FMV #2->0
+"<diehtet>"
+	"diehtet" V TV Inf <mv> @IMV #3->2
+"<dä>"
+	"dä" Adv @-F<ADVL #4->3
+"<?>"
+	"?" CLB @PUNCT #5->2
+
+# sent_id = sje20150329b.013/015
+# text = Sida diehtet guohtoma birra eller dálve guohtoma birra.
+# text_en = you want to know about the grazing situation or about the winter grazing situation
+"<Sida>"
+	"sihtat" V TV Ind Prs Sg2 <mv> @FMV #1->0
+"<diehtet>"
+	"diehtet" V TV Inf <mv> @ICL-OBJ #2->1
+"<guohtoma>"
+	"guohtom" N Sg Gen @>P #3->4
+"<birra>"
+	"birra" Po @-F<ADVL #4->2
+"<eller>"
+	"eller" CC @CNP #5->8
+"<dálve>"
+	"dállve" N Sg Gen @>N #6->7
+"<guohtoma>"
+	"guohtom" N Sg Gen @>P #7->8
+"<birra>"
+	"birra" Po @-F<ADVL #8->4
+"<.>"
+	"." CLB @PUNCT #9->1
+
+# sent_id = sje20150329b.018/019
+# text = Mån pruvvkuv tjállet, eller mån lev tjállám máŋga jage girje sisa.
+# text_en = I usually write or I have been writing things in books for many years
+"<Mån>"
+	"mån" Pron Pers Sg1 Nom @SUBJ> #1->2
+"<pruvvkuv>"
+	"pruvvkut" <ctjHead> V TV Ind Prs Sg1 <aux> @FAUX #2->0
+"<tjállet>"
+	"tjállet" V Inf <mv> @IMV #3->2
+"<,>"
+	"," CLB <cvp> @PUNCT #4->7
+"<eller>"
+	"eller" CC @CVP #5->7
+"<mån>"
+	"mån" Pron Pers Sg1 Nom @SUBJ> #6->7
+"<lev>"
+	"lä" V Ind Prs Sg1 <aux> @FAUX #7->2
+"<tjállám>"
+	"tjállet" V PrfPrc <mv> @IMV #8->7
+"<máŋga>"
+	"máŋga" A Attr @>N #9->10
+"<jage>"
+	"jahke" N Pl Nom @<ADVL #10->8
+"<girje>"
+	"girrje" N Sg Gen @>P #11->12
+"<sisa>"
+	"sisa" Po @<ADVL #12->8
+"<.>"
+	"." CLB @PUNCT #13->2
+
+# sent_id = sje20150329b.025/026
+# text = Jus galga guohtoma birra ságastit, dä verrti dálke birra aj ság-, ságastit.
+# text_en = if you want to talk about the grazing situation then you have to talk about the weather, too
+"<Jus>"
+	"jus" CS @CVP #1->2
+"<galga>"
+	"gallgat" V Ind Prs Sg2 <aux> @FS-ADVL> #2->14
+"<guohtoma>"
+	"guohtom" N Sg Gen @>P #3->4
+"<birra>"
+	"birra" Po @ADVL> #4->5
+"<ságastit>"
+	"ságastit" V TV Inf <mv> @FS-IMV #5->2
+"<,>"
+	"," CLB <cvp> @PUNCT #6->2
+"<dä>"
+	"dä" Adv @ADVL> #7->14
+"<verrti>"
+	"verrtit" V IV Ind Prs Sg2 <aux> @FAUX #8->0
+"<dálke>"
+	"dállke" N Sg Gen @>P #9->10
+"<birra>"
+	"birra" Po @ADVL> #10->14
+"<aj>"
+	"aj" Adv @ADVL> #11->14
+"<ság->"
+	"ság-" X @X #12->14
+"<,>"
+	"," CLB @PUNCT #13->14
+"<ságastit>"
+	"ságastit" V TV Inf <mv> @IMV #14->8
+"<.>"
+	"." CLB @PUNCT #15->8
+
+# sent_id = sje20150329b.029/030
+# text = Ju-, jus lä bivval ja huj rássjodam, ja vaj jus lä gåjkes ja muohta.
+# text_en = if it is warm and has rained a lot or if it's dry with snow
+"<Ju->"
+	"ju-" CS @CVP #1->3
+"<,>"
+	"," CLB @PUNCT #2->1
+"<jus>"
+	"jus" CS @CVP #3->4
+"<lä>"
+	"lä" V Ind Prs Sg3 <mv> @FMV #4->0
+"<bivval>"
+	"bivval" A Sg Nom @<SPRED #5->4
+"<ja>"
+	"ja" CC @CVP #6->8
+"<huj>"
+	"huj" Adv @-FADVL> #7->8
+"<rássjodam>"
+	"rássjodit" V PrfPrc <mv> @IMV #8->4
+"<,>"
+	"," CLB @PUNCT #9->13
+"<ja>"
+	"ja" CC @CVP #10->13
+"<vaj>"
+	"vaj" CC @CVP #11->13
+"<jus>"
+	"jus" CS @CVP #12->13
+"<lä>"
+	"lä" V Ind Prs Sg3 <mv> @FS-<ADVL #13->4
+"<gåjkes>"
+	"gåjkes" A Sg Nom @<SPRED #14->13
+"<ja>"
+	"ja" CC @CNP #15->16
+"<muohta>"
+	"muohta" N Sg Nom @<SPRED #16->14
+"<.>"
+	"." CLB @PUNCT #17->4
+
+# sent_id = sje20150329b.034
+# text = Dä jus galga dav jagev gähttjat, dat, dat lä ragatmánon älgij.
+# text_en = if you look at this year, then it started way back in October
+"<Dä>"
+	"dä" Adv @ADVL>CS #1->2
+"<jus>"
+	"jus" CS @CVP #2->3
+"<galga>"
+	"gallgat" V Ind Prs Sg2 <aux> @FS-ADVL> #3->11
+"<dav>"
+	"dat" Det Sg Acc @>N #4->5
+"<jagev>"
+	"jahke" N Sg Acc @OBJ> #5->6
+"<gähttjat>"
+	"gähttjat" V Inf <mv> @FS-IMV #6->3
+"<,>"
+	"," CLB <cvp> @PUNCT #7->8
+"<dat>"
+	"dat" Pron Dem Sg Nom @SUBJ> #8->11
+"<,>"
+	"," CLB @PUNCT #9->10
+"<dat>"
+	"dat" Pron Dem Sg Nom @SUBJ> #10->8
+"<lä>"
+	"lä" V Ind Prs Sg3 <mv> @FMV #11->0
+"<ragatmánon>"
+	"ragatmánno" N Sg Ine @<ADVL #12->11
+"<älgij>"
+	"állget" V TV Ind Prt Sg3 <mv> @FS-SUBJ #13->11
+"<.>"
+	"." CLB @PUNCT #14->11
+
+# sent_id = sje20150329b.035
+# text = Årrot sláhte ja rássjo ja daggára.
+# text_en = there was wet snow and rain and stuff
+"<Årrot>"
+	"lä" V Inf <mv> @IMV #1->0
+"<sláhte>"
+	"sláhte" N Sg Nom <ext> <ctjHead> @-F<SUBJ #2->1
+"<ja>"
+	"ja" CC @CNP #3->4
+"<rássjo>"
+	"rássjo" N Sg Nom <ext> @<SUBJ #4->2
+"<ja>"
+	"ja" CC @CNP #5->6
+"<daggára>"
+	"daggár" Pron Indef Pl Nom @<SUBJ #6->2
+"<.>"
+	"." CLB @PUNCT #7->1
+
+# sent_id = sje20150329b.036
+# text = Nievres dálke, jus galga guohtoma nala gähttjat.
+# text_en = bad weather if you're looking at the grazing conditions
+"<Nievres>"
+	"nävvre" A Attr @>N #1->2
+"<dálke>"
+	"dállke" N Pl Nom @HNOUN #2->0
+"<,>"
+	"," CLB @PUNCT #3->5
+"<jus>"
+	"jus" CS @CVP #4->5
+"<galga>"
+	"gallgat" V Ind Prs Sg2 <aux> @FAUX #5->2
+"<guohtoma>"
+	"guohtom" N Sg Gen @>P #6->7
+"<nala>"
+	"nala" Po @ADVL> #7->8
+"<gähttjat>"
+	"gähttjat" V Inf <mv> @IMV #8->5
+"<.>"
+	"." CLB @PUNCT #9->5
+
+# sent_id = sje20150329b.037
+# text = Ja dä älgij galbmet.
+# text_en = and then it started to freeze
+"<Ja>"
+	"ja" CC @CVP #1->3
+"<dä>"
+	"dä" Adv @ADVL> #2->3
+"<älgij>"
+	"állget" V TV Ind Prt Sg3 <mv> @FMV #3->0
+"<galbmet>"
+	"galbmet" V Inf <mv> @ICL-OBJ #4->3
+"<.>"
+	"." CLB @PUNCT #5->3
+
+# sent_id = sje20150329b.045
+# text = Tjuhkkijmin, ja válldám årjátjbielest viegast jåhtám nuortas.
+# text_en = we were busy rounding up the reindeer, taking them from south of the road, moving them north
+"<Tjuhkkijmin>"
+	"tjuhkkit" V TV Ind Prt Du1 <mv> @FMV #1->0
+"<,>"
+	"," CLB @PUNCT #2->4
+"<ja>"
+	"ja" CC @CVP #3->4
+"<válldám>"
+	"válldet" V TV PrfPrc <mv> @IMV #4->1
+"<årjátjbielest>"
+	"årjátjbielle" N Sg Ela @<ADVL #5->4
+"<viegast>"
+	"viega" N Sg Ela @<ADVL #6->4
+"<jåhtám>"
+	"jåhtet" V PrfPrc <mv> @IMV #7->4
+"<nuortas>"
+	"nuortas" Adv @-F<ADVL #8->7
+"<.>"
+	"." CLB @PUNCT #9->1
+
+# sent_id = sje20150329b.046/047
+# text = Muhtemav lijme Vilstuganin gierdastam ja vuabbdám muhtemav, vuabbdám mesijt ja gáskegijt ja daggarijt.
+# text_en = we had some of them in the corral next to Vilstugan and had sold some, had sold calves and bulls and such
+"<Muhtemav>"
+	"muhtem" Pron Indef Sg Acc @OBJ> #1->4
+"<lijme>"
+	"lä" V Ind Prt Pl1 <aux> @FAUX #2->0
+"<Vilstuganin>"
+	"Vilstugan" Prop N Sg Ine @ADVL> #3->4
+"<gierdastam>"
+	"gierdastit" <ctjHead> V PrfPrc <mv> @IMV #4->2
+"<ja>"
+	"ja" CC @CNP #5->6
+"<vuabbdám>"
+	"vuäbbdet" V PrfPrc <mv> @IMV #6->4
+"<muhtemav>"
+	"muhtem" Pron Indef Sg Acc @<OBJ #7->6
+"<,>"
+	"," CLB @PUNCT #8->9
+"<vuabbdám>"
+	"vuäbbdet" V PrfPrc <mv> @IMV #9->4
+"<mesijt>"
+	"miesse" N Pl Acc @<OBJ #10->9
+"<ja>"
+	"ja" CC @CNP #11->12
+"<gáskegijt>"
+	"gáskek" N Pl Acc @<OBJ #12->10
+"<ja>"
+	"ja" CC @CNP #13->14
+"<daggárijt>"
+	"daggár" Pron Indef Pl Acc @<OBJ #14->10
+"<.>"
+	"." CLB @PUNCT #15->2
+
+# sent_id = sje20150329b.048
+# text = Ja dä lij-, lijmen nuortas jåhtemin.
+# text_en = and then we moved north
+"<Ja>"
+	"ja" CC @CVP #1->3
+"<dä>"
+	"dä" Adv @ADVL> #2->3
+"<lij->"
+	"lij-" <ctjHead> V Ind Prt Du1 <mv> @FMV #3->0
+"<,>"
+	"," CLB <cvp> @PUNCT #4->5
+"<lijmen>"
+	"lä" V Ind Prt Du1 <aux> @FAUX #5->3
+"<nuortas>"
+	"nuortas" Adv @ADVL> #6->7
+"<jåhtemin>"
+	"jåhtet" V GerII <mv> @IMV #7->5
+"<.>"
+	"." CLB @PUNCT #8->3
+
+# sent_id = sje20150329b.049
+# text = Dalloj lij binná muohta.
+# text_en = at that point there was little snow
+"<Dalloj>"
+	"dalloj" Adv @ADVL> #1->2
+"<lij>"
+	"lä" V Ind Prt Sg3 <mv> @FMV #2->0
+"<binná>"
+	"binná" A Attr @>N #3->4
+"<muohta>"
+	"muohta" N Sg Nom <ext> @<SUBJ #4->2
+"<.>"
+	"." CLB @PUNCT #5->2
+
+# sent_id = sje20150329b.050
+# text = Dalloj ij lä nåv nievres guohtom, ij gujt váren.
+# text_en = the grazing conditions weren't that bad, at least not in the mountains
+"<Dalloj>"
+	"dalloj" Adv @ADVL> #1->3
+"<ij>"
+	"ij" <ctjHead> V Neg Prs Sg3 <aux> @FAUX #2->0
+"<lä>"
+	"lä" V ConNeg <mv> @IMV #3->2
+"<nåv>"
+	"nav" Adv @>A #4->5
+"<nievres>"
+	"nävvre" A Attr @>N #5->6
+"<guohtom>"
+	"guohtom" N Sg Nom <ext> @<SUBJ #6->2
+"<,>"
+	"," CLB <cvp> @PUNCT #7->8
+"<ij>"
+	"ij" V Neg Prs Sg3 <mv> @FMV #8->2
+"<gujt>"
+	"gujt" Adv @>N #9->10
+"<váren>"
+	"várre" N Sg Ine @<ADVL #10->8
+"<.>"
+	"." CLB @PUNCT #11->2
+
+# sent_id = sje20150329b.051
+# text = Dä váren, dä lij tjåskep urru-, tjåskes urrum, ja ...
+# text_en = in the mountains it had been colder, cold, and
+"<Dä>"
+	"dä" Adv @ADVL> #1->10
+"<váren>"
+	"várre" N Sg Ine @ADVL> #2->10
+"<,>"
+	"," CLB @PUNCT #3->2
+"<dä>"
+	"dä" Adv @ADVL> #4->10
+"<lij>"
+	"lä" V Ind Prt Sg3 <aux> @FAUX #5->0
+"<tjåskep>"
+	"tjåskep" X @X #6->10
+"<urru->"
+	"urru-" X @X #7->6
+"<,>"
+	"," CLB @PUNCT #8->7
+"<tjåskes>"
+	"tjåskes" A Sg Nom @SPRED> #9->10
+"<urrum>"
+	"lä" V PrfPrc <mv> @IMV #10->5
+"<,>"
+	"," CLB @PUNCT #11->10
+"<ja>"
+	"ja" CC @CVP #12->10
+"<...>"
+	"..." CLB @PUNCT #13->5
+
+# sent_id = sje20150329b.052/053
+# text = Lij ujtu gåjjke muaht-, gåjjke muohta dalloj, så att manaj gujt huj buoragijt jåhtet lukksa dajn ielojn.
+# text_en = and of course the snow was dry at that point, so that it went really quite well moving with the reindeer herd east
+"<Lij>"
+	"lä" V Ind Prt Sg3 <mv> @FMV #1->0
+"<ujtu>"
+	"ujtu" Adv @<ADVL #2->1
+"<gåjjke>"
+	"gåjkes" A Attr @>N #3->4
+"<muaht->"
+	"muaht-" ? @X #4->6
+"<gåjjke>"
+	"gåjkes" A Attr @>N #5->6
+"<muahta>"
+	"muohta" N Sg Nom @<SUBJ #6->1
+"<dalloj>"
+	"dalloj" Adv @<ADVL #7->1
+"<,>"
+	"," CLB <cvp> @PUNCT #8->11
+"<så>"
+	"så" Adv @ADVL>CS #9->10
+"<att>"
+	"ahte" CS @CVP #10->11
+"<manaj>"
+	"mannat" V Ind Prt Sg3 <mv> @FS-<ADVL #11->1
+"<gujt>"
+	"gujt" Adv @>ADVL #12->14
+"<huj>"
+	"huj" Adv @>ADVL #13->14
+"<buoragijt>"
+	"buoragijt" Adv @<ADVL #14->11
+"<jåhtet>"
+	"jåhtet" V Inf <mv> @ICL-SUBJ #15->11
+"<lukksa>"
+	"lukksa" Adv @<ADVL #16->15
+"<dajn>"
+	"dat" Det Pl Ine @>N #17->18
+"<ielojn>"
+	"iello" N Pl Ine @<ADVL #18->15
+"<.>"
+	"." CLB @PUNCT #19->1
+
+# sent_id = sje20150329b.054
+# text = Muhto dä mån lev tjállám dále att dat lä bivval urrum vuällen sieva gádde vuässte eller dállveiednamijt.
+# text_en = but then I wrote here that it had been warm down toward the sea shore, or in our winter grazing lands
+"<Muhto>"
+	"men" CC @CVP #1->4
+"<dä>"
+	"dä" Adv @ADVL> #2->5
+"<mån>"
+	"mån" Pron Pers Sg1 Nom @SUBJ> #3->4
+"<lev>"
+	"lä" V Ind Prs Sg1 <aux> @FAUX #4->0
+"<tjállám>"
+	"tjállet" V PrfPrc <mv> @IMV #5->4
+"<dále>"
+	"dále" Adv @<ADVL #6->5
+"<att>"
+	"ahte" CS @CVP #7->9
+"<dat>"
+	"dat" Pron Dem Sg Nom @SUBJ> #8->9
+"<lä>"
+	"lä" V Ind Prs Sg3 <aux> @FS-OBJ #9->5
+"<bivval>"
+	"bivval" A Sg Nom @SPRED #10->9
+"<urrum>"
+	"lä" V PrfPrc <mv> @FS-IMV #11->9
+"<vuällen>"
+	"vuällen" Adv @<ADVL #12->11
+"<sieva>"
+	"sievva" N Sg Gen @>N #13->14
+"<gádde>"
+	"gádde" N Sg Gen @>P #14->15
+"<vuässte>"
+	"vuässte" Po @<ADVL #15->11
+"<eller>"
+	"eller" CC @CNP #16->17
+"<dállveiednamijt>"
+	"dállveiednam" N Pl Acc @<ADVL #17->15
+"<.>"
+	"." CLB @PUNCT #18->4
+
+# sent_id = sje20150329b.056/057
+# text = Men dä lij gu buhtin jåvlå, jåvlå vuässte, dä älgij nevvrut huj spájjta.
+# text_en = but then as we got closer to Christmas, then it started to get bad really fast
+"<Men>"
+	"men" CC @CVP #1->3
+"<dä>"
+	"dä" Adv @ADVL> #2->3
+"<lij>"
+	"lä" V Ind Prt Sg3 <mv> @FMV #3->0
+"<gu>"
+	"gu" CS @CVP #4->5
+"<buhtin>"
+	"båhtet" V Ind Prs Du1 <mv> @FS-<ADVL #5->3
+"<jåvlå>"
+	"jåvvlå" N Sg Gen <ctjHead> @>P #6->9
+"<,>"
+	"," CLB <cvp> @PUNCT #7->8
+"<jåvlå>"
+	"jåvvlå" N Sg Gen @>P #8->6
+"<vuässte>"
+	"vuässte" Po @<ADVL #9->5
+"<,>"
+	"," CLB @PUNCT #10->12
+"<dä>"
+	"dä" Adv @ADVL> #11->12
+"<älgij>"
+	"állget" V TV Ind Prt Sg3 <mv> @FMV #12->3
+"<nevvrut>"
+	"nevvrut" V IV Inf <mv> @ICL-OBJ #13->12
+"<huj>"
+	"huj" Adv @>ADVL #14->15
+"<spájjta>"
+	"spájjta" Adv @<ADVL #15->13
+"<.>"
+	"." CLB @PUNCT #16->3
+
+# sent_id = sje20150329b.059
+# text = Ja dä huj garra bivval budij.
+# text_en = and then a strong warming phase came
+"<Ja>"
+	"ja" CC @CVP #1->6
+"<dä>"
+	"dä" Adv @ADVL> #2->6
+"<huj>"
+	"huj" Adv @>A #3->4
+"<garra>"
+	"garras" A Attr @>A #4->5
+"<bivval>"
+	"bivval" A Sg Nom @SPRED #5->6
+"<budij>"
+	"båhtet" V Ind Prt Sg3 <mv> @FMV #6->0
+"<.>"
+	"." CLB @PUNCT #7->6
+
+# sent_id = sje20150329b.063/064
+# text = Dalloj suddaj nåv vastet, ja luvaj dav mua-, muahttagav.
+# text_en = at that point everything melted so horribly, and it made it, the snow, wet
+"<Dalloj>"
+	"dalloj" Adv @ADVL> #1->2
+"<suddaj>"
+	"suddat" <ctjHead> V Ind Prt Sg3 <mv> @FMV #2->0
+"<nåv>"
+	"nav" Adv @>ADVL #3->4
+"<vastet>"
+	"vastet" Adv @<ADVL #4->2
+"<,>"
+	"," CLB <cvp> @PUNCT #5->7
+"<ja>"
+	"ja" CC @CVP #6->7
+"<luvaj>"
+	"luvvat" V Ind TV Prt Sg3 <mv> @FMV #7->2
+"<dav>"
+	"dat" Det Sg Acc @>N #8->11
+"<mua->"
+	"mua-" ? @X #9->11
+"<,>"
+	"," CLB @PUNCT #10->11
+"<muahttagav>"
+	"muohta" N Sg Acc @<OBJ #11->7
+"<.>"
+	"." CLB @PUNCT #12->2
+
+# sent_id = sje20150329b.065
+# text = Ja dä maŋŋel gilmij.
+# text_en = and then it froze
+"<Ja>"
+	"ja" CC @CVP #1->4
+"<dä>"
+	"dä" Adv @ADVL> #2->4
+"<maŋŋel>"
+	"maŋŋel" Adv @ADVL> #3->4
+"<gilmij>"
+	"galbmet" V Ind Prt Sg3 <mv> @FMV #4->0
+"<.>"
+	"." CLB @PUNCT #5->4
+
+# sent_id = sje20150329b.066
+# text = Dal verrtija årrot nag vige dälkijgum.
+# text_en = something must have been wrong with the weather at that point
+"<Dal>"
+	"dal" Pcle @PCLE #1->2
+"<verrtija>"
+	"verrtit" V IV Ind Prs Sg3 <aux> @FAUX #2->0
+"<årrot>"
+	"lä" V Inf <mv> @IMV #3->2
+"<nag>"
+	"nágan" A Attr @>N #4->5
+"<vige>"
+	"vihke" N Pl Nom @<SUBJ #5->3
+"<dälkijgum>"
+	"dállke" N Pl Com @<ADVL #6->3
+"<.>"
+	"." CLB @PUNCT #7->2
+
+# sent_id = sje20150329b.067/068RED
+# text = Årrå jage bäjjve lä bivvalup dä gu gasskagiese bäjjve.
+# text_en = New Years Day was warmer than Midsummer Day
+"<Årrå>"
+	"årås" A Attr @>N #1->2
+"<jage>"
+	"jahke" N Sg Gen @>N #2->3
+"<bäjjve>"
+	"bäjjve" N Sg Nom @SUBJ> #3->4
+"<lä>"
+	"lä" V Ind Prs Sg3 <mv> @FMV #4->0
+"<bivvalup>"
+	"bivval" A Comp Sg Nom @<SPRED #5->4
+"<dä>"
+	"dä" Adv @<ADVL #6->4
+"<gu>"
+	"gu" CS @CVP #7->9
+"<gasskagiese>"
+	"gasskagiesse" N Sg Gen @>N #8->9
+"<bäjjve>"
+	"bäjjve" N Sg Nom @HNOUN #9->4
+"<.>"
+	"." CLB @PUNCT #10->4
+
+# sent_id = sje20150329b.069
+# text = Dalloj lij, mån jáhkáv mån lev tjállám att dat muhtij.
+# text_en = at that point it had, I think I wrote here that it snowed
+"<Dalloj>"
+	"dalloj" Adv @ADVL> #1->2
+"<lij>"
+	"lä" <ctjHead> V Ind Prt Sg3 <mv> @FMV #2->0
+"<,>"
+	"," CLB <cvp> @PUNCT #3->5
+"<mån>"
+	"mån" Pron Pers Sg1 Nom @SUBJ> #4->5
+"<jáhkáv>"
+	"jáhkket" V TV Ind Prs Sg1 <mv> @FMV #5->2
+"<mån>"
+	"mån" Pron Pers Sg1 Nom @SUBJ> #6->7
+"<lev>"
+	"lä" V Ind Prs Sg1 <aux> @FS-OBJ #7->5
+"<tjállám>"
+	"tjállet" V PrfPrc <mv> @FS-IMV #8->7
+"<att>"
+	"ahte" CS @CVP #9->11
+"<dat>"
+	"dat" Pron Dem Sg Nom @SUBJ> #10->11
+"<muhtij>"
+	"muähttet" V Ind Prt Sg3 <mv> @FS-OBJ #11->8
+"<.>"
+	"." CLB @PUNCT #12->2
+
+# sent_id = sje20150329b.070
+# text = Muhtij ja lij bar guäkkte vaj gålbmå grader.
+# text_en = it snowed and was only 2 or 3 degrees above freezing
+"<Muhtij>"
+	"muähttet" <ctjHead> V Ind Prt Sg3 <mv> @FMV #1->0
+"<ja>"
+	"ja" CC @CVP #2->3
+"<lij>"
+	"lä" V Ind Prt Sg3 <mv> @FMV #3->1
+"<bar>"
+	"bär" Adv @>Num #4->5
+"<guäkkte>"
+	"guäkkte" Num <ctjHead> @>N #5->8
+"<vaj>"
+	"vaj" CC @CNP #6->7
+"<gålbmå>"
+	"gålbmå" Num @>N #7->5
+"<grader>"
+	"grader" N Pl Nom <ext> @<SUBJ #8->3
+"<.>"
+	"." CLB @PUNCT #9->1
+
+# sent_id = sje20150329b.071
+# text = Diedá mij lä "gasskogiese bäjjve"?
+# text_en = do you know what 'gasska giese bäjjve' means?
+"<Diedá>"
+	"diehtet" V TV Ind Prs Sg2 <mv> @FMV #1->0
+"<mij>"
+	"mij" Pron Interr Sg Nom @SUBJ> #2->3
+"<lä>"
+	"lä" V Ind Prs Sg3 <mv> @FS-OBJ #3->1
+"<">"
+	""" PUNCT @PUNCT #4->6
+"<gasskogiese>"
+	"gassko#giesse" N Sg Gen @>N #5->6
+"<bäjjve>"
+	"bäjjve" N Sg Nom @<SPRED #6->3
+"<">"
+	""" PUNCT @PUNCT #7->6
+"<?>"
+	"?" CLB @PUNCT #8->1
+
+# sent_id = sje20150329b.073
+# text = Jus mån galgav jårrgålit njuallga.
+# text_en = whether I translated that directly
+"<Jus>"
+	"jus" CS @CVP #1->3
+"<mån>"
+	"mån" Pron Pers Sg1 Nom @SUBJ> #2->3
+"<galgav>"
+	"gallgat" V Ind Prs Sg1 <aux> @FAUX #3->0
+"<jårrgålit>"
+	"jårrgålit" V Inf <mv> @IMV #4->3
+"<njuallga>"
+	"njuallga" Adv @<ADVL #5->4
+"<.>"
+	"." CLB @PUNCT #6->3
+
+# sent_id = sje20150329b.076
+# text = Ja verrtij nag, nag, nag vihke verrtij årrot, gu dat lä nåvt.
+# text_en = something must have been wrong, if it is like that
+"<Ja>"
+	"ja" CC @CVP #1->2
+"<verrtij>"
+	"verrtit" <ctjHead> V IV Ind Prt Sg3 <mv> @FMV #2->0
+"<,>"
+	"," CLB <cvp> @PUNCT #3->4
+"<nag>"
+	"nágan" A Attr <ctjHead> @>N #4->9
+"<,>"
+	"," CLB <cnp> @PUNCT #5->6
+"<nag>"
+	"nágan" A Attr @>N #6->4
+"<,>"
+	"," CLB <cnp> @PUNCT #7->8
+"<nag>"
+	"nágan" A Attr @>N #8->4
+"<vihke>"
+	"vihke" N Sg Nom @SUBJ> #9->10
+"<verrtij>"
+	"verrtit" V IV Ind Prt Sg3 <aux> @FAUX #10->2
+"<årrot>"
+	"lä" V Inf <mv> @IMV #11->10
+"<,>"
+	"," CLB <cvp> @PUNCT #12->15
+"<gu>"
+	"gu" CS @CVP #13->15
+"<dat>"
+	"dat" Pron Dem Sg Nom @SUBJ> #14->15
+"<lä>"
+	"lä" V Ind Prs Sg3 <mv> @FS-<ADVL #15->11
+"<nåvt>"
+	"navte" Adv @<ADVL #16->15
+"<.>"
+	"." CLB @PUNCT #17->2
+
+# sent_id = sje20150329b.077/078
+# text = Ja dä mij ráskatjijme Vuoldan vuällen dabben Tjårvega nuarrtalin.
+# text_en = and then we divided up (the reindeer) in Vuoldan, down there over to the north of Lake Hornavan
+"<Ja>"
+	"ja" CC @CVP #1->4
+"<dä>"
+	"dä" Adv @ADVL> #2->4
+"<mij>"
+	"mån" Pron Pers Pl1 Nom @SUBJ> #3->4
+"<ráskatjijme>"
+	"rátkátjit" V Ind Prt Pl1 <mv> @FMV #4->0
+"<Vuoldan>"
+	"Vuallda" Prop N Sg Ine @<ADVL #5->4
+"<vuällen>"
+	"vuällen" Adv @<ADVL #6->4
+"<dabben>"
+	"dabben" Adv @<ADVL #7->4
+"<Tjårvega>"
+	"Tjårvek" Prop N Sg Gen @>P #8->9
+"<nuarrtalin>"
+	"nuarrtalin" Po @<ADVL #9->4
+"<.>"
+	"." CLB @PUNCT #10->4
+
+# sent_id = sje20150329b.079
+# text = Ja judijme vulus, dállveiednamijda.
+# text_en = and we moved down to the winter lands
+"<Ja>"
+	"ja" CC @CVP #1->2
+"<judijme>"
+	"jåhtet" V Ind Prt Pl1 <mv> @FMV #2->0
+"<vulus>"
+	"vulus" Adv @<ADVL #3->2
+"<,>"
+	"," CLB @PUNCT #4->5
+"<dállveiednamijda>"
+	"dállveiednam" N Pl Ill @<ADVL #5->2
+"<.>"
+	"." CLB @PUNCT #6->2
+
+# sent_id = sje20150329b.080
+# text = Dåbben gal lij väha guohtom.
+# text_en = down there, the grazing was decent
+"<Dåbben>"
+	"dåbben" Adv @ADVL> #1->3
+"<gal>"
+	"gal" Pcle @PCLE #2->3
+"<lij>"
+	"lä" V Ind Prt Sg3 <mv> @FMV #3->0
+"<väha>"
+	"väha" Adv @<ADVL #4->3
+"<guohtom>"
+	"guohtom" N Sg Nom <ext> @<SUBJ #5->3
+"<.>"
+	"." CLB @PUNCT #6->3
+
+# sent_id = sje20150329b.082
+# text = Várátjajda ja itkabiele iednamijda ja smáva bietsastaga sinne, dä dåbben lä huj buorre guohtom.
+# text_en = to the little mountains and the lands behind the mountain and into the small dense pine forests, there the grazing was quite good
+"<Várátjajda>"
+	"várre" N Der/Dimin N Pl Ill <ctjHead> @ADVL> #1->12
+"<ja>"
+	"ja" CC @CNP #2->3
+"<itkabiele>"
+	"itkabielle" N Sg Gen @>N #3->4
+"<iednamijda>"
+	"iednam" N Pl Ill @ADVL> #4->1
+"<ja>"
+	"ja" CC @CNP #5->8
+"<smáva>"
+	"smávve" A Attr @>N #6->7
+"<bietsastaga>"
+	"bietsastak" N Sg Gen @>P #7->8
+"<sinne>"
+	"sinne" Po @ADVL> #8->1
+"<,>"
+	"," CLB @PUNCT #9->10
+"<dä>"
+	"dä" Adv @ADVL> #10->12
+"<dåbben>"
+	"dåbben" Adv @ADVL> #11->12
+"<lä>"
+	"lä" V Ind Prs Sg3 <mv> @FMV #12->0
+"<huj>"
+	"huj" Adv @>A #13->14
+"<buorre>"
+	"buorre" A Attr @>N #14->15
+"<guohtom>"
+	"guohtom" N Sg Nom <ext> @<SUBJ #15->12
+"<.>"
+	"." CLB @PUNCT #16->12
+
+# sent_id = sje20150329b.083
+# text = Rent guallbanijt ja vualladagajt, dasste lij nievres guohtom.
+# text_en = pure flat pine heath and low-lands, there it was bad grazing land
+"<Rent>"
+	"rent" A Attr @>N #1->2
+"<guallbanijt>"
+	"guolban" N Pl Acc <ctjHead> @OBJ> #2->7
+"<ja>"
+	"ja" CC @CNP #3->4
+"<vualladagajt>"
+	"vualladagajt" N Pl Acc @OBJ> #4->2
+"<,>"
+	"," CLB @PUNCT #5->7
+"<dasste>"
+	"dat" Pron Dem Sg Ela @ADVL> #6->7
+"<lij>"
+	"lä" V Ind Prt Sg3 <mv> @FMV #7->0
+"<nievres>"
+	"nävvre" A Attr @>N #8->9
+"<guohtom>"
+	"guohtom" N Sg Nom @<SUBJ #9->7
+"<.>"
+	"." CLB @PUNCT #10->7
+
+# sent_id = sje20150329b.084
+# text = Dat lij, jiegŋa lij båhtám bådne vuässte ja ...
+# text_en = that was, ice formed towards the bottom and
+"<Dat>"
+	"dat" Pron Dem Sg Nom @SUBJ> #1->2
+"<lij>"
+	"lä" <ctjHead> V Ind Prt Sg3 <mv> @FMV #2->0
+"<,>"
+	"," CLB <cvp> @PUNCT #3->5
+"<jiegŋa>"
+	"jiegŋa" N Sg Nom @SUBJ> #4->6
+"<lij>"
+	"lä" V Ind Prt Sg3 <aux> @FAUX #5->2
+"<båhtám>"
+	"båhtet" V PrfPrc <mv> @IMV #6->5
+"<bådne>"
+	"båddne" N Sg Gen @>P #7->8
+"<vuässte>"
+	"vuässte" Po @<ADVL #8->6
+"<ja>"
+	"ja" CC @CVP #9->8
+"<...>"
+	"..." CLB @PUNCT #10->2
+
+# sent_id = sje20150329b.085
+# text = Rent i muhtem sajen lä dabbránam, jiegŋa lij rent dabbránam iednamijt.
+# text_en = directly into som places, it formed, ice formed on the ground
+"<Rent>"
+	"rent" ? @X #1->6
+"<i>"
+	"i" ? @X #2->1
+"<muhtem>"
+	"muhtem" Pron Indef Sg Nom @>N #3->4
+"<sajen>"
+	"sadje" N Sg Ine @ADVL> #4->6
+"<lä>"
+	"lä" V Ind Prt Sg3 <aux> @FAUX #5->0
+"<dabbránam>"
+	"dabbránit" V PrfPrc <mv> @IMV #6->5
+"<,>"
+	"," CLB @PUNCT #7->9
+"<jiegŋa>"
+	"jiegŋa" N Sg Nom @SUBJ> #8->9
+"<lij>"
+	"lä" V Ind Prt Sg3 <aux> @FAUX #9->5
+"<rent>"
+	"rent" Adv @ADVL> #10->11
+"<dabbránam>"
+	"dabbránit" V PrfPrc <mv> @IMV #11->9
+"<iednamijt>"
+	"iednam" N Pl Acc @<OBJ #12->11
+"<.>"
+	"." CLB @PUNCT #13->5
