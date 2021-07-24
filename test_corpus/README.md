@@ -19,3 +19,5 @@ Results are obtained by running the input through _functions.cg3_, _dependency.c
 
 For better readability, morphological features are not converted to UD (e.g. PrsPrc would become Tense=Pres VerbForm=Part).
 AFTER-SECTIONS feature_substitution (lines 833 to 909) from GT_UD_conv.cg3 is therefore excluded.
+
+RES_UD.conll is the test corpus in Universal Dependencies CoNLL-U format.
