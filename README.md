@@ -1,5 +1,5 @@
 # Universal Dependencies for Pite Sámi
-Constraint Grammar source code from my master's thesis
+Constraint Grammar source code for the Master's thesis "Universal Dependencies for Pite Sámi" by Iris Perkmann, July 2021, Eberhard-Karls-Universität Tübingen.
 
 - _functions.cg3_ adds syntactic labels according to the GiellaLT annotation scheme.
 
