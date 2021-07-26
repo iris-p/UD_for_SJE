@@ -281,7 +281,7 @@ LIST @X = @X ;
 
 #!! temporary tags
 LIST <ctjHead> = <ctjHead> ; 	#!! * <ctjHead> : first conjunct
-LIST <swe> = <swe> ; 			#!! * <swe> : swedish
+LIST <swe> = <swe> ; 			#!! * <swe> : swedish code switching phrase
 LIST <mv> = <mv> ;				#!! * <mv> : main verb.
 LIST <aux> = <aux> ;			#!! * <aux> : auxilary verb.
 LIST <cnp> = <cnp> ; 			#!! "local" comma coordinating NPs etc., analogous to local coordinators
@@ -385,7 +385,7 @@ LIST ANY_GT_MAPPING = /^(@[A-Z-<>]+?)$/r ; # regex to match any of the giellatek
 #   §§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§§
 
 # count how many rules are not tagged SMI/SJE yet
-# ^(MAP|REMOVE|SUBST|ADD|SET).*(?<!E|I)$
+# ^(MAP|REMOVE|SUBST|ADD|SETPARENT).*(?<!E|I)$
 
 #!! !!!Dep grammar
 
@@ -398,21 +398,6 @@ SUBSTITUTE:FAUX_aux (@FAUX) (<aux> @FAUX) TARGET REAL-V - <mv>; # $SJE
 SUBSTITUTE:IAUX_aux (@IAUX) (<aux> @IAUX) TARGET REAL-V - <mv>; # $SJE
 
 SECTION SUBCLAUSE_SUBSTITUTES;
-
-
-### Subclause categories actually used in Korp:
-# FS-ADVL>
-# FS-IAUX
-# FS-IMV
-# FS-N<
-# FS-N<IAUX
-# FS-N<IMV
-# FS-OBJ
-# FS-P< - in dropodwn but no results!
-# FS-VFIN< - makes no sense, used for coordinated finite clauses
-# FS-<ADVL
-# FS-<SUBJ
-
 
 ### @FS-SUBJ - subject-subclauses:
 # probably needs more rules... these are with SPREDs
@@ -496,8 +481,8 @@ SELECT:FS-OBJ_after_TV (@FS-OBJ) IF (NEGATE *1 @FS-OBJ)(*-1 TV BARRIER <mv>); # 
 # the infinite mainverb of subclauses gets @FS-IMV:
 SUBSTITUTE:SubV=FS-IMVcs (@IMV) (@FS-IMV) TARGET REAL-V (*-1 @FS-OBJ OR @FS-SUBJ OR @FS-ADVL> OR @FS-<ADVL BARRIER VFIN OR S-BOUNDARY) ; # $SMI
 
-
 ### END_SECTION
+
 
 
 ### ICL-OBJ
@@ -505,13 +490,7 @@ SUBSTITUTE:SubV=FS-IMVcs (@IMV) (@FS-IMV) TARGET REAL-V (*-1 @FS-OBJ OR @FS-SUBJ
 SUBSTITUTE:SubV=iclobj @<OBJ OR @OBJ> (@ICL-OBJ) TARGET NONVFIN ; # $SJE
 
 SUBSTITUTE:SubV=iclsubj @<SUBJ OR @SUBJ> (@ICL-SUBJ) TARGET NONVFIN ; # $SJE
-# lots of specific rules in the common sámi script? is an Inf as subject not always ICL-SUBJ??
-
-### <ehead> not used
-# ellipses:
-#SUBSTITUTE:V=ehead (V) (<ehead> V) TARGET VFIN (*-1 Rel BARRIER VFIN OR COMMA LINK -1 BOS)(*1 (":") BARRIER VFIN) ;
-    # cases where ":" repleaces "leat", which should be the daughter of root
-	## Man dihte mon doaivvun dan: go gávdnojit sámegielat namat várppiin dain jávrriin, gos eai dáláš sámit bivdde šahten.
+# lots of specific rules in SMI? is an Inf as subject not always ICL-SUBJ??
 
 
 SECTION other_substitutes ;
@@ -519,8 +498,8 @@ SECTION other_substitutes ;
 SUBSTITUTE:SUBJ_APP (@SUBJ>) (@APP-N<) TARGET (N Nom) (*-1 COMMA BARRIER NOT-NPMODADV LINK -1 N) (*1 Rel BARRIER WORD LINK *1 VFIN LINK NEGATE *1 V-3 BARRIER @SUBJ>) ; # $SJE
 #MAP:appN_Nom+Rel (@APP-N<) TARGET (N Nom) IF (*-1 COMMA BARRIER APP-BOUNDARY OR CC LINK -1 N)(*1 Rel BARRIER WORD LINK *1 EOS 
 
-
 ### END_SECTION
+
 
 SECTION Mixed ;
 #!! section for changes to various not complex tags
@@ -715,7 +694,7 @@ SETPARENT:SetSubjVfinAfterRelCl @SUBJ> TO (*1 Rel BARRIER VFIN OR S-BOUNDARY LIN
 
 ### coordination ###
 #!! IP: like with commas, I use the UD rules for attaching CCs, because they are clearer and more regular than the giellatekno documentation & actual output from e.g. SME
-#!! CC attaches to the FOLLOWING conjunct, NOT the previous [word|conjunct]
+#!! CC attaches to the FOLLOWING conjunct, NOT the previous [word?conjunct]
 ### subjunction
 SETPARENT:SetCCellipse KONJ + @CVP TO (1 CC LINK 1 @CVP) ; # $SMI
 SETPARENT:SetCCellipse KONJ + @CVP TO (*1 @<SUBJ BARRIER VFIN) ; # $SMI
@@ -840,7 +819,6 @@ SETPARENT:InfinObj @ICL-OBJ TO (*-1 <mv>); # $SMI
 	## Muhtinlágan Stállu cáhpá goikebierggu sudnuide ja dáhttu mánáid boradit. # boradit
 SETPARENT:InfinObj @ICL-P< TO (*-1 Pr BARRIER @P<); # $SMI
 SETPARENT:InfinObj @ICL-SUBJ TO (*-1 <mv>); # $SMI
-
 
 
 ### SJE can't check for *intransitive* MVs since they are not tagged

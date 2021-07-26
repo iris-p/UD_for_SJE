@@ -266,7 +266,7 @@ LIST <mv> = <mv> ; #!! unambiguous main verb
 LIST <aux> = <aux> ; #!! auxiliary
 LIST <hab> = <hab> ;	#!! * <hab> : Habitive, specifying an adverbial, e.g. @ADVL> <hab> # rare in SJE, not used yet
 						#!! ** Máhtes: Máhtes lea beana.
-LIST <ext> = <ext> ;	#!! * <ext> : Extencial, specifying a subject, e.g. @<SUBJ <ext>
+LIST <ext> = <ext> ;	#!! * <ext> : Extential, specifying a subject, e.g. @<SUBJ <ext> # only used in SMI rules
 						#!! ** beana: Máhtes lea beana.
 LIST <cs> = <cs> ;	#!! * <cs> : # for e.g. ADVL that resemble s-boundaries, not used yet
 LIST <cnp> = <cnp> ; #!! "local" comma
@@ -303,16 +303,17 @@ SET NOT-COP-V = V - COPULAS ;
 
 # sme LIST MOD-ASP = áigut (skulle/ville) bállet (ha fred til) berret (burde) dáidit (maybe) fertet (måtte) galgat (shall) gillet (orke) lávet (pleie/bruke) sáhttit (kunne) seahtit (=sáhttit?) soaitit (kanskje) viggat (prøve/streve) ;
 # Verbs that never have arguments of their own
-LIST MOD-ASP = "bällit" "berrut" "gallgat" "nahkat" "vassjat" "viggat" "verrtit" "pruvvut" "dárbahit" "duasstat"; #"sihtat"
+# not 100% sure all of these qualify as auxiliaries
+LIST MOD-ASP = "gallgat" "nahkat" "vassjat" "viggat" "verrtit" "dárbahit" "duasstat"; #"sihtat" # "bällit" "berrut"
 # SJE MODs:
 # vassjat = feel like, have energy to - checked
 # nahkat = manage, orke - checked
 # verrtit = must - checked
-# pruvvkut = use/usually do - checked
-# duasstat = dare - in corpus, checked
+# duasstat = dare - checked
 # dárbahit = need - checked
-
 # gallgat = always aux, can be promoted: mån galgav iednoj - jag ska till älven
+
+# candidates from word lists:
 # bällit = get the opportunity to - not in corpus(?)
 # berrut = burde - not in corpus(?)
 # ájjgot = intend, mean to - not in corpus(?)
@@ -322,13 +323,17 @@ LIST MOD-ASP = "bällit" "berrut" "gallgat" "nahkat" "vassjat" "viggat" "verrtit
 # gähttjalit = try, attempt - not in corpus(?)
 # sáhttet = can - not in corpus(?)
 
-
-# verbs that take open clausal complements (subject determined by xcomp-verb)(concept from UD, but useful here)
-LIST XCOMP_VERBS = "pruvvut" "vassjat" "nahkat" "állget" "usjudit" "åjáldit" "åjáldahttet" "sihtat" "lijjsit" "bádjat" "häjjtet"; # try, feel like, orke, start, think/mean to, forget, forget, go, want, be worth doing/succeed, let/cause, stop
+# verbs that take open clausal complements (subject of dependent Inf is determined by xcomp-verb)
+# concept from UD, but useful here - xcomp is a normal complement in GT
+LIST XCOMP_VERBS = "pruvvut" "vassjat" "nahkat" "állget" "usjudit" "åjáldit" "åjáldahttet" "sihtat" "lijjsit" "häjjtet" "bádjat" "vuäjdnet"; # try, feel like, orke, start, think/mean to, forget, forget, want, be worth doing/succeed, stop, let/cause, see
+# xcomp where the object of the main verb becomes the subject of the dependent verb
+LIST XCOMP_ACC = "bádjat" "vuäjdnet" ;
+# let/cause, see
 
 LIST AUX-OR-MAIN = "máhttet" "årrot" "pruvvkut" "ådtjot"; #"sihtat" 
 # sihtat = ville - checked - don't want to use this as mod, behaves just like a TV
 # ådtjot = may, receive, be allowed to - checked
+# pruvvkut = use/usually do - checked
 
 
 LIST ESS-Vs = "gåhttjot" "sjaddat" ; # "gåhtjoduvvut"
@@ -550,10 +555,13 @@ LIST TEMPAcc = "tijbma" "vahkko";
 # WEATHER
 LIST WEATHER = ("[A-záåäŋ]*dállke"r N) ;
 
-
-
 ### END_SECTION
 
+
+# counting rules:
+# ^(MAP|REMOVE|SUBST|ADD|SETPAR|MERGEC)
+# ... which are not tagged SMI/SJE yet:
+# ^(MAP|REMOVE|SUBST|ADD|SETPAR|MERGEC).*(?<!E|I)$
 
 BEFORE-SECTIONS corrections ;
 #!! section that is run once at the beginning
@@ -592,10 +600,6 @@ SECTION TO-DO ;
 # see SECTION Infinite_subjects ; (commented), IMV>bádjat
 # --> replace OBJ with -FSUBJ in dependency.cg3!
 
-#!! expand word lists
-# temp Acc that function as ADVLs
-# see MAP:temp<ADVL / árrat
-
 #!! better systematic approach to fronted elements (UD: dislocated) / appositions
 
 #!! SPRED problems
@@ -603,10 +607,6 @@ SECTION TO-DO ;
 # see MAP:<spredSjaddat
 #!! numeral SPREDs
 #$ gu lidjiv akkta låk gålbmå dä lidjiv uktuk. (pit080924.072/073)
-
-#!! <ehead> for elliptical constructions??
-# see SMI dependency.cg3:
-    # cases where ":" repleaces "leat", which should be the daughter of root
 
 #!! is degu/gu a preposition??
 	#$ Dä båråjmä degu krema melkijn. - then we ate it like a cream with milk (pit080924.161)
@@ -1021,7 +1021,7 @@ MAP:<spred (@<SPRED) TARGET Nom - Pron IF (*-1 @<SUBJ BARRIER VFIN OR S-BOUNDARY
 
 #!! <SPRED for Nom; if copula to the left and nominative pronoun to the right
 	# dä lij fuodno dat - then it was the devil (pit081011.163)
-MAP:<spred @<SPRED TARGET Nom - Pron IF (*-1 COPULAS + MV BARRIER NOT-NPMODADV LINK NOT *-1 SPRED OR SUBJ)(1 (Pron Nom));
+MAP:<spred @<SPRED TARGET Nom - Pron IF (*-1 COPULAS + MV BARRIER NOT-NPMODADV LINK NOT *-1 SPRED OR SUBJ)(1 (Pron Nom)); # $SJE
 
 
 #!! Essive SPREDs
@@ -1365,8 +1365,9 @@ SUBSTITUTE:IMV_<obj (@IMV) (@<OBJ) TARGET (Inf) (*-1 MAIN + TV BARRIER S-BOUNDAR
 # OBJ is replaced with ICL-OBJ in dependency.cg3
 # cf. SMI: Sii lohket fatnasa gopmánan. - they said boat.acc keel.inf
 ### TO-DO: include more verbs
-SUBSTITUTE:IMV>bádjat @IMV @OBJ> TARGET Inf (*1 ("bádjat") BARRIER S-BOUNDARY OR VFIN LINK *0 @OBJ> OR @<OBJ BARRIER S-BOUNDARY)(NEGATE *0 VAUX - Inf BARRIER S-BOUNDARY); # $SJE
-SUBSTITUTE:<IMVbádjat @IMV @<OBJ TARGET Inf (*-1 ("bádjat") BARRIER S-BOUNDARY OR VFIN LINK *0 @OBJ> OR @<OBJ BARRIER S-BOUNDARY)(NEGATE *0 VAUX - Inf BARRIER S-BOUNDARY); # $SJE
+SUBSTITUTE:IMV>bádjat @IMV @OBJ> TARGET Inf (*1 XCOMP_ACC BARRIER S-BOUNDARY OR VFIN LINK *0 @OBJ> OR @<OBJ BARRIER S-BOUNDARY)(NEGATE *0 VAUX - Inf BARRIER S-BOUNDARY); # $SJE
+SUBSTITUTE:<IMVbádjat @IMV @<OBJ TARGET Inf (*-1 XCOMP_ACC BARRIER S-BOUNDARY OR VFIN LINK *0 @OBJ> OR @<OBJ BARRIER S-BOUNDARY)(NEGATE *0 VAUX - Inf BARRIER S-BOUNDARY); # $SJE
+	#$ bája mijav ávon årrot! - let us be happy (pit100323b.002)
 
 #!! remove acc/obj reading if no TV and followed by noun
 REMOVE:accPersPronIV (Pron Pers Acc) IF (0 Gen)(*1 N BARRIER WORD - A)(NEGATE *0 TV) ; # $SJE
