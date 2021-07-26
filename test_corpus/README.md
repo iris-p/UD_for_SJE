@@ -12,12 +12,12 @@ punctuation and capitalisation are standardised;
 spelling errors in the transcription are corrected.
 
 
-Input for the test is morphologically analysed and disambiguated text in CG-3 format (IN.cg3).
-The gold standard for the GiellaLT annotation scheme is GOLD_GT.cg3, the Universal Dependencies gold standard is GOLD_UD.cg3.
+Input for the test is morphologically analysed and disambiguated text in CG-3 format (**IN.cg3**).
+The gold standard for the GiellaLT annotation scheme is **GOLD_GT.cg3**, the Universal Dependencies gold standard is **GOLD_UD.cg3**.
 
-Results are obtained by running the input through _functions.cg3_, _dependency.cg3_ (= RES_GT.cg3) and the conversion grammar _GT_UD_conv.cg3_ (= RES_UD.cg3).
+Results are obtained by running the input through _functions.cg3_, _dependency.cg3_ (= **RES_GT.cg3**) and the conversion grammar _GT_UD_conv.cg3_ (= **RES_UD.cg3**).
 
-For better readability, morphological features are not converted to UD (e.g. PrsPrc would become Tense=Pres VerbForm=Part).
+For better readability, morphological features are not converted to UD in RES_UD.cg3 (e.g. PrsPrc would become Tense=Pres VerbForm=Part).
 AFTER-SECTIONS feature_substitution (lines 833 to 909) from GT_UD_conv.cg3 is therefore excluded.
 
-RES_UD.conll is the test corpus in Universal Dependencies CoNLL-U format.
+**RES_UD.conll** is the test corpus converted to the Universal Dependencies CoNLL-U format, including morphological features.
