@@ -7,6 +7,6 @@ Constraint Grammar source code for the Master's thesis "Universal Dependencies f
 
 - _GT\_UD\_conv.cg3_ converts the output of _dependency.cg3_ to the Universal Dependency annotation scheme.
 
-The version of the finite state morphological analyser used for testing is included because it contains some changes from the version at https://github.com/giellalt/lang-sje/tree/main/src/fst (some transitive verbs are tagged as such).
+The version of the finite state morphological analyser used for testing (*analyser-gt-desc.xfst*) is included because it contains some changes from the version at https://github.com/giellalt/lang-sje/tree/main/src/fst (some transitive verbs are tagged as such).
 
 **test_corpus** contains the data used to test the CGs.
