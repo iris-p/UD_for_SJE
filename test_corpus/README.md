@@ -1,6 +1,6 @@
 # Test corpus for Pite Sámi syntactic analysers
 
-The test set contains 150 sentences from 4 recordings:
+The test set contains 150 sentences from 4 recordings (used with permission):
 pit080708b, pit080924, pit100404, sje20150329b
 
 Source of recordings:
